@@ -1,5 +1,6 @@
 @import url("font-awesome.min.css");
 @import url("http://fonts.googleapis.com/css?family=Lato:300,400,900");
+@import url('https://fonts.googleapis.com/css?family=Lora');
 
 /* Basic */
 
@@ -254,3 +255,56 @@
 				background-size: 15em;
 			}
 	}
+
+#A_600 {
+    background-position: 0px 0px;
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    display: block;
+    float: left;
+    height: 52px;
+    letter-spacing: -0.8px;
+    text-align: center;
+    text-decoration: none solid rgb(255, 255, 255);
+    text-size-adjust: 100%;
+    width: 219.484px;
+    column-rule-color: rgb(255, 255, 255);
+    perspective-origin: 109.734px 26px;
+    transform-origin: 109.734px 26px;
+    caret-color: rgb(255, 255, 255);
+    background: rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box;
+    border: 2px solid rgb(255, 255, 255);
+    font: normal normal 300 normal 18px / 50px "Lora";
+    margin: 0px -2px 0px 0px;
+    outline: rgb(255, 255, 255) none 0px;
+    padding: 0px 20px;
+    transition: all 0.2s ease 0s;
+}/*#A_6*/
+
+#A_700 {
+    background-position: 0px 0px;
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    display: block;
+    float: right;
+    height: 52px;
+    letter-spacing: -0.8px;
+    text-align: center;
+    text-decoration: none solid rgb(255, 255, 255);
+    text-size-adjust: 100%;
+    width: 179.563px;
+    column-rule-color: rgb(255, 255, 255);
+    perspective-origin: 89.7813px 26px;
+    transform-origin: 89.7813px 26px;
+    caret-color: rgb(255, 255, 255);
+    background: rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box;
+    border: 2px solid rgb(255, 255, 255);
+    font: normal normal 300 normal 18px / 50px "Lora";
+    margin: 0px -2px 0px 0px;
+    outline: rgb(255, 255, 255) none 0px;
+    padding: 0px 20px;
+    transition: all 0.2s ease 0s;
+}/*#A_7*/
+
