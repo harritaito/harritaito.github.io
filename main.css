@@ -256,7 +256,7 @@
 			}
 	}
 
-#A_600 {
+.A_600 {
     background-position: 0px 0px;
     box-sizing: border-box;
     color: rgb(255, 255, 255);
@@ -280,9 +280,9 @@
     outline: rgb(255, 255, 255) none 0px;
     padding: 0px 20px;
     transition: all 0.2s ease 0s;
-}/*#A_6*/
+}
 
-#A_700 {
+.A_700 {
     background-position: 0px 0px;
     box-sizing: border-box;
     color: rgb(255, 255, 255);
@@ -306,5 +306,5 @@
     outline: rgb(255, 255, 255) none 0px;
     padding: 0px 20px;
     transition: all 0.2s ease 0s;
-}/*#A_7*/
+}
 
