@@ -1,7 +1,7 @@
 {
   "name": "harritaito.github.io",
   "version": "1.0.0",
-  "homepage": "https://harritaito.github.com/harritaito.github.io",
+  "homepage": "http://harritaito.com",
   "description": "portfolio of Harri Halonen",
   "scripts": {
     "dev": "next",
