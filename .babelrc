@@ -6,6 +6,7 @@
     ["transform-define", "./env-config.js"],
     ["inline-import-data-uri", {
       "extensions": [
+        ".html",
         ".svg",
         ".png",
         ".jpg"
