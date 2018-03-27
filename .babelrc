@@ -1,0 +1,15 @@
+{
+  "presets": [
+    "next/babel"
+  ],
+  "plugins": [
+    ["transform-define", "./env-config.js"],
+    ["inline-import-data-uri", {
+      "extensions": [
+        ".svg",
+        ".png",
+        ".jpg"
+      ]
+    }]
+  ]
+}
