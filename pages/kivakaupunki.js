@@ -325,8 +325,7 @@ class Aikakone extends Component {
                     <Row className="one-margin-top" content={
                       images.map(function (image, index) {
                         return (
-                          <div key={"sketch" + index} onClick={(e) => self.openLightbox(index, e)}
-                               className={"col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-2"}>
+                          <div key={"sketch" + index} onClick={(e) => self.openLightbox(index, e)} className={"col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-2"}>
                             <img className="mini-image" src={image} alt=""/>
                           </div>
                         )

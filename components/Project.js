@@ -23,7 +23,7 @@ class Project extends Component {
     title: "",
     description: "",
     link: "",
-    image: "",
+    image: "daretolearned",
     alt: "",
     color: "",
     parallax: true,
