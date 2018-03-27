@@ -9,7 +9,7 @@
     "start": "next start",
     "export": "next export",
     "clearCache": "rimraf node_modules/.cache/babel-loader",
-    "deploy": "rimraf node_modules/.cache && next build && next export && type nul >> out/.nojekyll && git add out/ && git commit -m \"Deploy Next.js to master\" && git subtree push --prefix out origin master"
+    "deploy": "rimraf node_modules/.cache && next build && next export && type nul >> out/.nojekyll && git add out/ && git commit -m \"Deploy Next.js to harritaito.github.io\" && git subtree push --prefix out origin harritaito.github.io"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,6 @@
   "author": "Harri Halonen",
   "license": "ISC",
   "dependencies": {
-    "fontfaceobserver": "^2.0.13",
     "next": "latest",
     "next-images": "^0.9.2",
     "react": "^16.2.0",
