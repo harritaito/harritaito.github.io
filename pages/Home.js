@@ -69,10 +69,10 @@ class Home extends Component {
                 Currently I'm planning my Master's degree thesis for Tampere University's HCI program and searching for opportunities starting Summer 2018 and beyond.
               </p>
               <p>
-                Scroll down to see some highlighted projects, or get an overall sense by <a href={process.env.BACKEND_URL + '/static/HarriHalonen_Resume.pdf'} target="_blank">reading my resume.<div style={{content: '',display: 'block', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a>
+                Scroll down to see some highlighted projects, or get an overall sense by <a href={'/static/HarriHalonen_Resume.pdf'} target="_blank">reading my resume.<div style={{content: '',display: 'block', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a>
               </p>
               <p>
-                Want to learn about the person behind the work? <Link prefetch href='/about' as={process.env.BACKEND_URL + '/about'}><a>Get to know me.<div style={{content: '',display: 'block', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a></Link>
+                Want to learn about the person behind the work? <Link prefetch href='/about' as={'/about'}><a>Get to know me.<div style={{content: '',display: 'block', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a></Link>
               </p>
             </div>
           }/>
