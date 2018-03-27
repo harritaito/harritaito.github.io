@@ -41,7 +41,7 @@ class Navbar extends Component {
           <div>
           <navbar className="navbar">
             <div className="navbar-link">
-            <Link prefetch href='/' as={ process.env.BACKEND_URL + this.props.link}>Home</Link>
+            <Link prefetch href='/' as={ process.env.BACKEND_URL + this.props.link}><a>Home</a></Link>
             </div>
             { this.props.nextProjectLink ?
               <div className="next navbar-link">

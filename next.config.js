@@ -15,7 +15,7 @@ module.exports = {
     }
   },
   //assetPrefix: '',
-  assetPrefix: !debug ? '/harritaito.github.io/' : '',
+  assetPrefix: !debug ? '/harritaito.com/' : '',
   webpack: (config, { dev }) => {
     // Perform customizations to webpack config
     // console.log('webpack');
