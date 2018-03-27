@@ -1,2 +1,6 @@
+# 1 Month for most static assets
+<filesMatch ".(css|jpg|jpeg|png|gif|js|ico|svg|pdf)$">
+Header set Cache-Control "max-age=2592000, public"
+</filesMatch>
 AddType image/svg+xml .svg .svgz
 ErrorDocument 404 http://www.harritaito.com/404

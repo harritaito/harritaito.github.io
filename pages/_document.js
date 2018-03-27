@@ -1,11 +1,15 @@
 import Document, {Head, Main, NextScript } from 'next/document'
 import flush from 'styled-jsx/server'
+import Fonts from '../components/Fonts'
 
 export default class MyDocument extends Document {
   static getInitialProps({ renderPage }) {
     const { html, head, errorHtml, chunks } = renderPage()
     const styles = flush()
     return { html, head, errorHtml, chunks, styles }
+  }
+  componentDidMount () {
+    Fonts()
   }
   
 
@@ -30,7 +34,6 @@ export default class MyDocument extends Document {
             <meta property="og:image" content="https://harritaito.com/static/media/twittericon.png" />
             <meta property="og:image:width" content="1200" />
             <meta property="og:image:height" content="630" />
-            <link href="https://fonts.googleapis.com/css?family=Rubik|Trirong" rel="stylesheet" />
             <style>{`
                 body {
                 margin: 0;
@@ -52,6 +55,7 @@ export default class MyDocument extends Document {
 
                 h1 {
                 font-family: 'Trirong', serif;
+                font-weight: 500;
                 font-size: 4em;
                 letter-spacing: .1rem;
                 }
@@ -63,7 +67,7 @@ export default class MyDocument extends Document {
                 }
 
                 h3 {
-                font-weight: 500;
+                font-weight: 300;
                 font-size: 2em;
                 margin-top: 0.5em;
                 margin-bottom: 0.5em;
