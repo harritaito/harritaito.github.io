@@ -1,4 +1,4 @@
-const FontFaceObserver = require('fontfaceobserver')
+const FontFaceObserver = require('fontfaceobserver');
 
 const Fonts = () => {
   const link = document.createElement('link')

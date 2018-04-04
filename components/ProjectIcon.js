@@ -94,7 +94,8 @@ class ProjectIcon extends Component {
     return (
       <div className={iconClass}>
         <span onClick={this.showModal}>
-        <Isvg src={this.props.svg} alt={this.props.alt} className={square || round} style={{margin:10, height: '7em', width: '7em', display: 'flex'}}/>
+          <object type="image/svg+xml" className={square || round} style={{margin:10, height: '7em', width: '7em', display: 'flex'}}></object>
+         
         </span>
         <Modal
           isOpen={this.state.modalOpen}

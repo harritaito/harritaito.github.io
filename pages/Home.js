@@ -60,8 +60,8 @@ class Home extends Component {
               <p>
                 An experience designer passionate about creating better customer insight, increasing business value and improving customer experience for every client. 
                 I believe in quick results withdrawn from user centered - hands on research and co-creation. 
-                </p>
-                <p>
+              </p>
+              <p>
                 You could say I'm on a quest to make technology delightful, intuitive, and accessible to
                 everyone.
               </p>

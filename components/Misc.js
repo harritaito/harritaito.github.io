@@ -8,7 +8,6 @@ import riitta from '../static/media/misc/icons/riitta.svg';
 import weekkiss from '../static/media/misc/pics/weekkiss.png';
 import edd from '../static/media/misc/icons/edd.svg';
 
-import dribbble from '../static/media/misc/icons/dribbble.svg';
 import insurance from '../static/media/misc/icons/insurance.svg';
 
 class Misc extends Component {

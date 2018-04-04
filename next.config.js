@@ -10,8 +10,7 @@ module.exports = {
       '/': { page: '/' },
       '/about': { page: '/about' },
       '/kivakaupunki': { page: '/kivakaupunki' },
-      '/aikakone': { page: '/aikakone' },
-      '/404': { page: '/404' }
+      '/aikakone': { page: '/aikakone' }
     }
   },
   //assetPrefix: '',
