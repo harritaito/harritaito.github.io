@@ -57,23 +57,23 @@ class Home extends Component {
 
           <Row content={
             <div className="col-xs-12 col-sm-8 col-md-9 col-lg-6 col-xl-6">
-              <p>
+              <div>
                 An experience designer passionate about creating better customer insight, increasing business value and improving customer experience for every client. 
                 I believe in quick results withdrawn from user centered - hands on research and co-creation. 
-              </p>
-              <p>
+              </div>
+              <div style={{marginTop: "1.5em"}}>
                 You could say I'm on a quest to make technology delightful, intuitive, and accessible to
                 everyone.
-              </p>
-              <p>
+              </div>
+              <div style={{marginTop: "1.5em"}}>
                 Currently I'm planning my Master's degree thesis for Tampere University's HCI program and searching for opportunities starting Summer 2018 and beyond.
-              </p>
-              <p>
+              </div>
+              <div style={{marginTop: "1.5em"}}>
                 Scroll down to see some highlighted projects, or get an overall sense by <a href={'/static/HarriHalonen_Resume.pdf'} target="_blank">reading my resume.<div style={{content: '',display: 'block', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a>
-              </p>
-              <p>
+              </div>
+              <div style={{marginTop: "1.5em"}}>
                 Want to learn about the person behind the work? <Link prefetch href='/about' as={'/about'}><a>Get to know me.<div style={{content: '',display: 'block', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a></Link>
-              </p>
+              </div>
             </div>
           }/>
 
@@ -95,9 +95,9 @@ class Home extends Component {
         }/>
 
         <Row content={
-          <p className={"col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 col-xl-4 col-xl-offset-4 contact"}>
+          <div style={{marginTop: "1.5em"}} className={"col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 col-xl-4 col-xl-offset-4 contact"}>
             Feel free to <a href="mailto:hi@harritaito.com">email me<div style={{content: '',display: 'block', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a> or <a href={"https://calendly.com/harritaito/45min/"}>book time on my calendar<div style={{content: '',display: 'block', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a>.
-          </p>
+          </div>
         }/>
 
         <Footer/>

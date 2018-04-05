@@ -36,7 +36,7 @@ class About extends Component {
             <ul className="about-me-copy col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6 list">
               <li>From Tampere, Finland <span className="emoji" role="img" aria-label="basketball">😊</span></li>
               <li>I brew craft beer <span className="emoji" role="img" aria-label="clinking beer glasses">🍻</span>and love parings of wine and food <span role="img" aria-label="wine glasss">🍷</span></li>
-              <li>I'm a non-fiction audiobook and podcast addict <span className="emoji" span role="img" aria-label="headphones">🎧</span></li>
+              <li>I'm a non-fiction audiobook and podcast addict <span className="emoji" role="img" aria-label="headphones">🎧</span></li>
               <li>I love film and capturing a moment myself <span className="emoji" role="img" aria-label="film">📽</span></li>
               <li>Lauri Markkanen fan <span className="emoji" role="img" aria-label="basketball">🏀</span></li>
             </ul>

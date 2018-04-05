@@ -25,7 +25,7 @@ class ProjectIcon extends Component {
     link: PropTypes.string.isRequired,
     svg: PropTypes.string.isRequired,
     alt: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
+    image: PropTypes.string,
     square: PropTypes.bool,
     round: PropTypes.bool,
     links: PropTypes.array,
@@ -48,8 +48,7 @@ class ProjectIcon extends Component {
   showModal() {
     this.setState({ modalOpen: true });
     document.body.style.overflow = "hidden";
-    ReactGA.set({ page: "/" + this.props.title });
-    ReactGA.pageview("/" + this.props.title);
+    Modal.setAppElement('body');
   }
 
   hideModal() {
@@ -93,9 +92,8 @@ class ProjectIcon extends Component {
 
     return (
       <div className={iconClass}>
-        <span onClick={this.showModal}>
-          <object type="image/svg+xml" className={square || round} style={{margin:10, height: '7em', width: '7em', display: 'flex'}}></object>
-         
+        <span onClick={this.showModal} style={{margin:10, height: '7em', width: '7em'}}>
+          <object><Isvg src={this.props.svg} alt={this.props.alt} className={square || round}/></object>
         </span>
         <Modal
           isOpen={this.state.modalOpen}
@@ -125,6 +123,12 @@ class ProjectIcon extends Component {
         </Modal>
 
         <style jsx>{`
+          Isvg {
+            margin:10;
+            height: '7em'; 
+            width: '7em';
+            display: 'flex'
+          }
           .project-icon {
             display: -ms-flexbox;
             display: flex;
@@ -252,6 +256,16 @@ class ProjectIcon extends Component {
       .modal-0-2 .loader {
         background: gray;
       }
+      h2{
+        display: block;
+        font-size: 1.5em;
+        -webkit-margin-before: 0.83em;
+        -webkit-margin-after: 0.83em;
+        -webkit-margin-start: 0px;
+        -webkit-margin-end: 0px;
+        font-weight: bold;
+     }
+
     `}</style>
 
       </div>

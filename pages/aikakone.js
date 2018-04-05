@@ -397,9 +397,9 @@ class Aikakone extends Component {
                       title={"Links"}
                       content={
                         <Row content={
-                          <p className={pStyle + " links"}>
+                          <div className={pStyle + " links"} style={{marginTop: "1.5em"}}>
                             <a href="http://leanservicecreation.com">Lean Service Creation<div style={{content: '', display: 'block', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a>
-                          </p>
+                          </div>
                         }/>
                       }
                     />

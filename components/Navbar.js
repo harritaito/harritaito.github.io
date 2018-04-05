@@ -39,19 +39,19 @@ class Navbar extends Component {
         </div>
         <Headroom style={{position: 'fixed'}}>
           <div>
-          <navbar className="navbar">
+          <nav className="navbar">
             <div className="navbar-link">
             <Link prefetch href='/' as={this.props.link}><a>Home</a></Link>
             </div>
             { this.props.nextProjectLink ?
               <div className="next navbar-link">
-                <Link prefetch href={this.props.nextProjectLink} as={this.props.link}>{this.props.nextProjectName}</Link>
+                <Link prefetch href={this.props.nextProjectLink} as={this.props.link}><a>{this.props.nextProjectName}</a></Link>
                 <Isvg className={"next-arrow"} src={arrow} style={{marginLeft: '3px', height: '27px', width: '18px', marginTop: 1}} />
               </div>
               :
               null
             }
-          </navbar>
+          </nav>
           </div>
         </Headroom>
         <style jsx>{`
