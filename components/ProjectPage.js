@@ -69,7 +69,6 @@ class ProjectPage extends Component {
               : <img  className="hero-image"
                      src={this.props.hero}
                      alt={this.props.heroAlt}
-                     loader={<div className={"loader"}></div>}
               />
             }
           </div>
@@ -118,45 +117,6 @@ class ProjectPage extends Component {
             max-height: 20em;
             -webkit-box-shadow: 0 0.5em 1em 0 rgba(0,0,0,0.30);
                     box-shadow: 0 0.5em 1em 0 rgba(0,0,0,0.30);
-          }
-
-          .project-page .loader {
-            width: 100%;
-            height: 20em;
-            max-height: 20em;
-            -webkit-animation-duration: 1s;
-                    animation-duration: 1s;
-            -webkit-animation-fill-mode: forwards;
-                    animation-fill-mode: forwards;
-            -webkit-animation-iteration-count: infinite;
-                    animation-iteration-count: infinite;
-            -webkit-animation-name: placeHolderShimmer;
-                    animation-name: placeHolderShimmer;
-            -webkit-animation-timing-function: linear;
-                    animation-timing-function: linear;
-            background: #f6f7f8;
-            background: -webkit-gradient(linear, left top, right top, color-stop(8%, #eeeeee), color-stop(18%, #dddddd), color-stop(33%, #eeeeee));
-            background: -webkit-linear-gradient(left, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
-            background: -o-linear-gradient(left, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
-            background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
-          }
-
-          @-webkit-keyframes placeHolderShimmer{
-            0%{
-              background-position: -25% 0
-            }
-            100%{
-              background-position: 125% 0
-            }
-          }
-
-          @keyframes placeHolderShimmer{
-            0%{
-              background-position: -25% 0
-            }
-            100%{
-              background-position: 125% 0
-            }
           }
 
           .project-page .next-project h3 {

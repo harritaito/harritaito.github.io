@@ -86,7 +86,7 @@ class ProjectIcon extends Component {
         background: "#FAFAFA"
       }
     }
-
+    
     let iconClass = "project-icon col-xs-6 col-sm-3 col-md-3 col-lg-3 col-xl-2";
     this.props.first ? iconClass += " col-xl-offset-4" : null;
 
@@ -109,15 +109,15 @@ class ProjectIcon extends Component {
             <div className="modal-content">
               {this.props.description}
               <img src={this.props.image} alt={this.props.alt} onLoad={() => this.setState({imageLoaded: true})} loader={<div className={"loader"}></div> }/>
-              <p>
+              <div style={{marginTop: "1.5em"}}>
               {
                 (this.props.links).map(function (link, index){
                   return (
-                    <a key={link.title + "link" + index} href={link.url} target="_blank" rel="noopener noreferrer">{link.title}<div style={{content: '',display: 'block', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a>
+                    <a key={link.title + "link" + index} href={link.url} target="_blank" rel="noopener noreferrer">{link.title}<div style={{display: 'block', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a>
                   )
                 })
               }
-              </p>
+              </div>
             </div>
           </div>
         </Modal>
@@ -158,7 +158,7 @@ class ProjectIcon extends Component {
       }
 
       .project-icon svg {
-        /*filter: url(grey.svg#grayscale) contrast(0);*/
+        filter: url(../static/grayscale.svg#grayscale) contrast(0);
         /* Firefox 3.5+ */
         -webkit-filter: grayscale(1) contrast(0);
         /* Google Chrome & Safari 6+ */

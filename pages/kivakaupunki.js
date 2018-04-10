@@ -462,8 +462,8 @@ class Aikakone extends Component {
                 content={
                   <Row content={
                     <div className={pStyle + " links"} style={{marginTop: "1.5em"}}>
-                      <a href="https://github.com/paaplo/lblkk">Github<div style={{content: '', display: 'block', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a>
-                      <div style={{marginTop: "1.5em"}}><a href="http://www.pasikuparinen.fi/">Pasi Kuparinen<div style={{content: '', display: 'block', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a></div>
+                      <a href="https://github.com/paaplo/lblkk">Github<div style={{display: 'block', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a>
+                      <div style={{marginTop: "1.5em"}}><a href="http://www.pasikuparinen.fi/">Pasi Kuparinen<div style={{display: 'block', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a></div>
                     </div>
                   }/>
                 }
@@ -526,22 +526,9 @@ class Aikakone extends Component {
             background: rgba(18, 164, 45, 0.565);
           }
 
-          #phoneEmoji {
-            -webkit-transform: scale(-1, 1);
-                -ms-transform: scale(-1, 1);
-                    transform: scale(-1, 1);
-            display: inline-block;
-          }
-
         .feature-image {
           max-width: 100%;
           height: auto;
-          margin: .75em 0;
-          -webkit-box-shadow: 0 0.5em 1em 0 rgba(0,0,0,0.30);
-                  box-shadow: 0 0.5em 1em 0 rgba(0,0,0,0.30);
-        }
-
-        iframe {
           margin: .75em 0;
           -webkit-box-shadow: 0 0.5em 1em 0 rgba(0,0,0,0.30);
                   box-shadow: 0 0.5em 1em 0 rgba(0,0,0,0.30);

@@ -65,15 +65,17 @@ class Project extends Component {
                   }
                 ]}
               >
-              <Link prefetch href={this.props.link} as={this.props.link}>
+              <Link prefetch href={this.props.link}>
                 <div className="project-link-container">
                   <div className={"project-blurb " + this.props.color}>
                     <h2>{this.props.title}</h2>
-                    <p>{this.props.description}</p>
+                    <div style={{marginTop: "1.5em"}}>{this.props.description}</div>
                     <div className="bottom">
                       <div className={"next navbar-link " + this.props.color}>
-                        <Link prefetch href={this.props.link} as={this.props.link}><a>Case Study</a></Link>
-                        <Isvg className={"next-arrow"} src={arrow} style={{marginLeft: '5px', height: '27px', width: '23px', marginTop: 2}}/>
+                        <Link prefetch href={this.props.link}><a>Case Study</a></Link>
+                        <span onClick={this.showModal} style={{marginLeft: '5px', height: '27px', width: '23px', marginTop: 2}}>
+                        <object><Isvg className={"next-arrow"} src={arrow} /></object>
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -81,15 +83,17 @@ class Project extends Component {
               </Link>
               </Plx> :
 
-              <Link prefetch href={this.props.link} as={this.props.link}>
+              <Link prefetch href={this.props.link}>
                 <div className="project-link-container">
                   <div className="project-blurb">
                     <h2>{this.props.title}</h2>
-                    <p>{this.props.description}</p>
+                    <div style={{marginTop: "1.5em"}}>{this.props.description}</div>
                     <div className="bottom">
                       <div className={"next navbar-link " + this.props.color}>
-                        <Link prefetch href={this.props.link} as={this.props.link}><a>Case Study</a></Link>
-                        <Isvg className={"next-arrow"} src={arrow} style={{marginLeft: '5px', height: '27px', width: '23px', marginTop: 2}}/>
+                        <Link prefetch href={this.props.link}><a>Case Study</a></Link>
+                        <span onClick={this.showModal} style={{marginLeft: '5px', height: '27px', width: '23px', marginTop: 2}}>
+                          <object><Isvg className={"next-arrow"} src={arrow} /></object>
+                        </span>
                       </div>
                     </div>
                   </div>

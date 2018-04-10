@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Link from 'next/link'
+import Link from 'next/link';
 import Headroom from 'react-headroom';
 import ReadingProgress from 'react-reading-progress';
 import Isvg from 'react-inlinesvg';
@@ -39,19 +39,19 @@ class Navbar extends Component {
         </div>
         <Headroom style={{position: 'fixed'}}>
           <div>
-          <nav className="navbar">
+          <div className="navbar">
             <div className="navbar-link">
-            <Link prefetch href='/' as={this.props.link}><a>Home</a></Link>
+            <Link prefetch href='/'><a>Home</a></Link>
             </div>
             { this.props.nextProjectLink ?
               <div className="next navbar-link">
-                <Link prefetch href={this.props.nextProjectLink} as={this.props.link}><a>{this.props.nextProjectName}</a></Link>
-                <Isvg className={"next-arrow"} src={arrow} style={{marginLeft: '3px', height: '27px', width: '18px', marginTop: 1}} />
+                <Link prefetch href={this.props.nextProjectLink}><a>{this.props.nextProjectName}</a></Link>
+                <object><Isvg className={"next-arrow"} src={arrow} style={{marginLeft: '3px', height: '27px', width: '18px', marginTop: 1}} /></object>
               </div>
               :
               null
             }
-          </nav>
+          </div>
           </div>
         </Headroom>
         <style jsx>{`
