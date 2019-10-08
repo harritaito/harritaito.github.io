@@ -1,3 +1,59 @@
+https://keybase.io/harritaito
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://harritaito.com
+  * I am harritaito (https://keybase.io/harritaito) on keybase.
+  * I have a public key ASBO_j9l-LZP60klpWHt0W0-znUGUVmfijD_SXKNtC_QOwo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120d2ee05f1183bc362af688660cbd8800d3b4b2653f11b0a869122ee318e4ad2bc0a",
+      "host": "keybase.io",
+      "kid": "01204efe3f65f8b64feb4925a561edd16d3ece750651599f8a30ff49728db42fd03b0a",
+      "uid": "6f607c8295365d70cef75ebd17184919",
+      "username": "harritaito"
+    },
+    "merkle_root": {
+      "ctime": 1533975549,
+      "hash": "d89d8495c87340bad6ec676591dbc0f5d520b9fcc693a7916509264802977fb86ad88edfc8aa6f537f25e9baed44231b0cf247f164c5d2cafe0b1253b22f443c",
+      "hash_meta": "070c4cae164884222229a694a17cb0cad86656cd94a2189e3cd64581d80d4a92",
+      "seqno": 3441560
+    },
+    "service": {
+      "entropy": "3mrALpLrZd5eS7dSg+r4XVGx",
+      "hostname": "harritaito.com",
+      "protocol": "http:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "2.5.1"
+  },
+  "ctime": 1533975597,
+  "expire_in": 504576000,
+  "prev": "a72b7bcbaaba6612624e6fc01f0b87af2e218fed8f0ea4a4183fc430b19a8f82",
+  "seqno": 20,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgTv4/Zfi2T+tJJaVh7dFtPs51BlFZn4ow/0lyjbQv0DsKp3BheWxvYWTESpcCFMQgpyt7y6q6ZhJiTm/AHwuHry4hj+2PDqSkGD/EMLGaj4LEIIl5qG/sWjwNsgoeT+D+J6iuKTpfdptpL4+N3/kgeeSJAgHCo3NpZ8RAM8xvwttoXFOdFhd0whruarzKqGddSoPW0VZHalp5AL2ATlQ3o/vDiCH9P3bmIwAotg65iVEOSXs8be9RMrURAqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIGWTjPAREXom1uYAgL2wdeYifOW6Z20KKwY4VfU/utkxo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/harritaito
+
+==================================================================
+=======
 ==================================================================
 https://keybase.io/harritaito
 --------------------------------------------------------------------
