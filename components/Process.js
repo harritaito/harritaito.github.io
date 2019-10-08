@@ -48,7 +48,7 @@ class Process extends Component {
         </ul>
 
 <style jsx>{`
-      .Process ul, .Process li {
+.Process ul, .Process li {
   list-style: none;
   padding: 0;
   position: relative;
@@ -63,7 +63,9 @@ class Process extends Component {
       flex-wrap: wrap;
   margin-top: 2.5em
 }
-
+@media only screen and (max-width: 45rem) {
+  .Process .timeline {justify-content: space-between;}
+}
 .Process .timeline .step {
   display: -ms-flexbox;
   display: flex;

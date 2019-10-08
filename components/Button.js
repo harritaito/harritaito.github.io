@@ -29,7 +29,7 @@ class Button extends Component {
           this.props.link ?
             (
               this.isLinkInternal() ?
-              <Link prefetch href={this.props.link}>
+              <Link href={this.props.link}>
                 {this.props.label}
               </Link> :
               <a href={this.props.link} target="_blank" rel="noopener noreferrer">
@@ -52,8 +52,11 @@ class Button extends Component {
           transition: all .6s linear;
           font-weight: 500;
         }
+        @media only screen and (max-width: 45rem) {
+        .button a {font-size: 0.9rem;}
+      }
 
-        .button a:hover {
+        .button:hover {
           cursor: pointer;
         }
 

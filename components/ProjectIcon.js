@@ -88,7 +88,7 @@ class ProjectIcon extends Component {
     }
     
     let iconClass = "project-icon col-xs-6 col-sm-3 col-md-3 col-lg-3 col-xl-2";
-    this.props.first ? iconClass += " col-xl-offset-4" : null;
+    this.props.first ? iconClass += " col-sm-offset-3 col-md-offset-3 col-xl-offset-4" : null;
 
     return (
       <div className={iconClass}>
@@ -123,8 +123,7 @@ class ProjectIcon extends Component {
         </Modal>
 
         <style jsx>{`
-          Isvg {
-            margin:10;
+          .isvg {
             height: '7em'; 
             width: '7em';
             display: 'flex'
@@ -132,10 +131,6 @@ class ProjectIcon extends Component {
           .project-icon {
             display: -ms-flexbox;
             display: flex;
-            -ms-flex-pack: center;
-                justify-content: center;
-            -ms-flex-align: center;
-                align-items: center;
           }
 
           .project-icon .isvg {
@@ -172,7 +167,7 @@ class ProjectIcon extends Component {
         max-width: 120%;
       }
 
-      .project-icon svg:hover {
+      .project-icon:hover {
         filter: none;
         -webkit-filter: grayscale(0%);
         cursor: pointer;

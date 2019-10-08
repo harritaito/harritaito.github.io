@@ -2,13 +2,17 @@ import React, { Component } from 'react';
 import ProjectIcon from './ProjectIcon';
 
 import daretolearn from '../static/media/misc/pics/daretolearn.png';
+import startupw from '../static/media/misc/pics/startupw.png';
+import streamers from '../static/media/misc/pics/streamers.png';
 import daretolearned from '../static/media/misc/icons/daretolearn.svg';
 import iamriitta from '../static/media/misc/pics/iamriitta.png';
 import riitta from '../static/media/misc/icons/riitta.svg';
 import weekkiss from '../static/media/misc/pics/weekkiss.png';
 import edd from '../static/media/misc/icons/edd.svg';
+import swsustain from '../static/media/misc/icons/swsustain.svg';
 
 import insurance from '../static/media/misc/icons/insurance.svg';
+import stream from '../static/media/misc/icons/stream.svg';
 
 class Misc extends Component {
 
@@ -20,18 +24,56 @@ class Misc extends Component {
     }
   }
 
-  static propTypes = {
-  }
-
-  static defaultProps = {
-  }
-
-
   render() {
     return (
       <div className="misc">
         <div className="row">
           <ProjectIcon
+            square={true}
+            svg={stream}
+            title={"Volunteer Lead – Stream Startup Festival"}
+            image={streamers}
+            first={true}
+            alt={"Stream"}
+            description={
+              <span>
+                <p>In the Fall of 2019 I acted as the Volunteer Organizer for Stream Startup festival. 1 day, 800 attendees, 120 volunteers in 15 teams. Huge gear up to a big day that was made by community for community. Definitely my biggest volunteer challenge to date. </p>
+              </span>
+            }
+
+            links={[
+              {
+                title: "Event page",
+                url: "https://streamfestival.org"
+              }
+            ]}
+          />
+          
+          <ProjectIcon
+            square={true}
+            svg={swsustain}
+            title={"Startup Weekend Sustainability Tampere"}
+            image={startupw}
+            alt={"SW logo"}
+            description={
+              <span>
+                <p>Designed digital and physical marketing material for Techstars made and Google for startups sponsored Startup Weekend Sustainability in Tampere.</p>
+              </span>
+            }
+
+            links={[
+              {
+                title: "Event page",
+                url: "http://communities.techstars.com/events/14666"
+              }
+            ]}
+          />
+          
+        </div>
+
+        <div className="row">
+          <ProjectIcon
+            square={true}
             svg={daretolearned}
             title={"SCIL – Dare to Learn Lean Service Creation Workshop"}
             image={daretolearn}
@@ -39,7 +81,7 @@ class Misc extends Component {
             alt={"SCIL"}
             description={
               <span>
-                <p>In the Fall of 2017 I facilitated educaters at Lean Service Creation workshop theme being Smart Campus for Tampere3 in Dare to Learn conference at Kaapeli Tehdas for intensive two hours. </p>
+                <p>In the Fall of 2017 I facilitated educators at Lean Service Creation workshop theme being Smart Campus for Tampere3 in Dare to Learn conference at Kaapeli Tehdas for intensive two hours. </p>
               </span>
             }
           />
@@ -99,7 +141,7 @@ class Misc extends Component {
 
           />
           <ProjectIcon
-            round={true}
+            square={true}
             svg={insurance}
             title={"Demola Tampere - Re-designing Claims Notification"}
             description={

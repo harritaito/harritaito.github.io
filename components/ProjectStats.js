@@ -54,6 +54,7 @@ class ProjectStats extends Component {
 
         .stats ul li {
           line-height: 1.4em;
+          font-size: 0.85rem;
           margin: 0.25em 0;
         }
       `}</style>

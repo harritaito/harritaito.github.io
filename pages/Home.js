@@ -20,22 +20,22 @@ class Home extends Component {
     if(hours < 12){
       this.state = {
         greeting: "Good morning"
-      }
+      };
     }
     else if (hours >= 12 && hours<= 17){
       this.state = {
         greeting: "Good afternoon"
-      }
+      };
     }
     else if (hours > 17 && hours <= 24){
       this.state = {
         greeting: "Good evening"
-      }
+      };
     }
     else {
       this.state = {
         greeting: "Hello"
-      }
+      };
     }
   }
 
@@ -58,7 +58,7 @@ class Home extends Component {
           <Row content={
             <div className="col-xs-12 col-sm-8 col-md-9 col-lg-6 col-xl-6">
               <div>
-                An experience designer passionate about creating better customer insight, increasing business value and improving customer experience for every client. 
+                Graduating experience designer passionate about creating better customer insight, increasing business value and improving customer experience for every client. 
                 I believe in quick results withdrawn from user centered - hands on research and co-creation. 
               </div>
               <div style={{marginTop: "1.5em"}}>
@@ -66,17 +66,16 @@ class Home extends Component {
                 everyone.
               </div>
               <div style={{marginTop: "1.5em"}}>
-                Currently I'm planning my Master's degree thesis for Tampere University's HCI program and searching for opportunities starting Summer 2018 and beyond.
+                Currently I'm working on my Master's thesis for Tampere University's HCI program and searching for opportunities starting Spring/Summer 2020 and beyond.
               </div>
               <div style={{marginTop: "1.5em"}}>
-                Scroll down to see some highlighted projects, or get an overall sense by <a href={'/static/HarriHalonen_Resume.pdf'} target="_blank">reading my resume.<div style={{display: 'block', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a>
+                Scroll down to see some highlighted projects, or get an overall sense by <a href={'/static/HarriHalonen_Resume.pdf'} target="_blank">reading my resume.<div style={{display: 'block', outline:'none', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a>
               </div>
-              <div style={{marginTop: "1.5em"}}>
-                Want to learn about the person behind the work? <Link prefetch href='/about' as={'/about'}><a>Get to know me.<div style={{display: 'block', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a></Link>
+              <div style={{marginTop: "1.5em", marginBottom: "1.5em"}}>
+                Want to learn about the person behind the work? <Link href='/about' as={'/about'}><a>Get to know me.<div style={{display: 'block', outline:'none', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a></Link>
               </div>
             </div>
           }/>
-
         </div>
 
         <Project title="Kiva Kaupunki" description="From thoughts to action. Information of surroundings to city officials as well as for the public, so they can be even better." image={kivakaupunki} link="/kivakaupunki" alt="Application for city reporting" color="blue" percentage='8%'/>
@@ -106,12 +105,15 @@ class Home extends Component {
         .Home h1 {
           margin-top: -.5rem;
           font-family: 'Trirong', serif;
+          margin-bottom: 1.2rem;
         }
-
-
         .Home {
           padding-top: 5rem;
           padding-bottom: 2rem;
+        }
+
+        @media only screen and (max-width: 45rem) {
+          .Home {padding-top: 2rem;}
         }
 
         .pohja {
@@ -125,20 +127,24 @@ class Home extends Component {
           z-index: -1;
           opacity: .55;
         }
-
-        .pohja svg {
-        }
-
+        
         .Home .other-stuff {
           text-align: center;
           margin-top: -1.5em;
           margin-bottom: 1.5em;
+        }
+        @media only screen and (max-width: 45rem) {
+          .Home .other-stuff {margin-top: -3.5em;}
         }
 
         .Home .get-in-touch {
           text-align: center;
           margin-top: 4em;
           margin-bottom: 0em;
+        }
+
+        @media only screen and (max-width: 45rem) {
+          .Home .get-in-touch {margin-top: 2em;}
         }
 
         .Home .contact {
@@ -148,7 +154,15 @@ class Home extends Component {
         @media only screen and (max-width: 412px)  {
           .Home .name {
             font-size: 2.8em;
+            line-height: 3rem;
           }
+        }
+        @media only screen and (max-width: 45rem) {
+          .Home name {font-size: 1.8em;}
+        }
+        .ReactModal__Content--after-open{
+          marginTop: 5vh;
+          maxWidth: 89vh;
         }
       `}</style>
       </div>

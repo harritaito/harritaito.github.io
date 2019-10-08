@@ -4,12 +4,16 @@ import Fonts from '../components/Fonts';
 
 export default class MyDocument extends Document {
   static getInitialProps({ renderPage }) {
-    const { html, head, errorHtml, chunks } = renderPage()
-    const styles = flush()
-    return { html, head, errorHtml, chunks, styles }
+    const { html, head, errorHtml, chunks } = renderPage();
+    const styles = flush();
+    return { html, head, errorHtml, chunks, styles };
   }
   componentDidMount () {
-    Fonts()
+    Fonts();
+    const script = document.createElement("script");
+    script.src = "static/fullStory.js";
+    script.async = true;
+    document.body.appendChild(script);
   }
   
 
@@ -18,7 +22,7 @@ export default class MyDocument extends Document {
       <html lang="en">
         <Head>
             <meta charSet="UTF-8" />
-            <title>Harri Halonen</title>
+            <meta httpEquiv="Cache-Control: max-age=86400" content="public" />
             <meta name="description" content="The website of Harri Halonen (@harritaito), a Finnish experience designer living and working in Tampere, Finland." />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <link rel="icon" sizes="192x192" href="/static/touch-icon.png" />
@@ -57,11 +61,19 @@ export default class MyDocument extends Document {
                 font-size: 4em;
                 letter-spacing: .1rem;
                 }
+                
+                @media only screen and (max-width: 45rem) {
+                    h1{font-size: 2em;}
+                }
 
                 h2 {
                 font-weight: 900;
                 font-size: 3em;
                 margin: .33em 0;
+                }
+                
+                @media only screen and (max-width: 45rem) {
+                    h2 {font-size: 2.5em;}
                 }
 
                 h3 {
@@ -113,6 +125,12 @@ export default class MyDocument extends Document {
                 display: inline-block;
                 color: #000;
                 overflow: visible;
+                cursor: pointer;
+                outline: none;
+                }
+
+                a:focus {
+                outline: none;
                 }
 
                 p a:visited {

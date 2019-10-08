@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import { Collapse } from 'react-collapse';
-import VisibilitySensor from 'react-visibility-sensor';
-import ImageZoom from 'react-medium-image-zoom';
-import Isvg from 'react-inlinesvg';
 
 import Button from '../components/Button';
 import ProjectPage from '../components/ProjectPage';
@@ -10,8 +7,7 @@ import Process from '../components/Process';
 import ProjectStats from '../components/ProjectStats';
 import ProjectSection from "../components/ProjectSection";
 import Row from '../components/Row';
-import Callout from '../components/Callout';
-import Video from '../components/Video';
+import Carousel, { Modal, ModalGateway } from 'react-images';
 
 import hero from '../static/media/aikakone/hero.jpg';
 
@@ -27,39 +23,26 @@ class Aikakone extends Component {
     super();
 
     this.state = {
-      researchOpen: false,
-      presentOpen: false,
-      discussOpen: false,
-      deployOpen: false,
+      _modalIsOpen: false,
+      get modalIsOpen() {
+        return this._modalIsOpen;
+      },
+      set modalIsOpen(value) {
+        this._modalIsOpen = value;
+      },
+      keyTakeawaysOpen: false
     }
 
-    this.collapseResearch = this.collapseResearch.bind(this);
-    this.collapsePresent = this.collapsePresent.bind(this);
-    this.collapseDiscuss = this.collapseDiscuss.bind(this);
-    this.collapseDeploy = this.collapseDeploy.bind(this);
+    this.collapseKeyTakeaways = this.collapseKeyTakeaways.bind(this);
   }
 
-  collapseResearch() {
-    this.setState({
-      researchOpen: !this.state.researchOpen
-    })
+  toggleModal = () => {
+    this.setState(state => ({ modalIsOpen: !state.modalIsOpen }));
   }
 
-  collapsePresent() {
+  collapseKeyTakeaways() {
     this.setState({
-      presentOpen: !this.state.presentOpen
-    })
-  }
-
-  collapseDiscuss() {
-    this.setState({
-      discussOpen: !this.state.discussOpen
-    })
-  }
-
-  collapseDeploy() {
-    this.setState({
-      deployOpen: !this.state.deployOpen
+      keyTakeawaysOpen: !this.state.keyTakeawaysOpen
     })
   }
 
@@ -70,21 +53,22 @@ class Aikakone extends Component {
 
     let steps = [
       {
-        title: "Research",
-        processes: ["Business approach", "Existing Solutions", "Academic studys", "Location visits", "Semi-structured Interviews", "User Needs"]
+        title: "Canvas sessions & Research",
+        processes: ["Including but not limited to:", "Business approach", "Existing Solutions", "Academic studys", "Contextual inquiry", "User Research", "Semi-structured Interviews"]
       },
       {
         title: "Design",
-        processes: ["Screens"]
+        processes: ["Use Cases", "Paper mockups", "Service blueprint", "Minimum lovable product", "Digital mockup"]
       },
       {
         title: "Prototype",
-        processes: ["Use Cases", "User Testing"]
+        processes: ["Usability Testing"]
       }
     ];
 
-    let compareStylesScroll = { borderRight: "3px dotted red" };
-
+    let views = [menu, aikakone, profile, elamankaari];
+    let self = this;
+    const { modalIsOpen } = this.state;
 
     return (
       <div className="Aikakone">
@@ -101,23 +85,20 @@ class Aikakone extends Component {
                 content={
                   <span>
                     <Row content={
-                      <p className={pStyle}>
-                        Elderly adults suffering dementia/Alzheimer diseases require brain-activating stimulus and entertainment.
+                      <p className={pStyle} >
+                        As the number of elderly is growing, so grows the number of people suffering from memory diseases. Providing individual high-quality care for all is a challenge widely recognized. Especially fulfillment of mental needs of the elderly and their psychological well-being has been a subject of lively debate in public over the last few years. 
                       </p>
                     }/>
-
-                    <Row content={
-                      <div className={pStyle} >
-                        The number of old people is increasing all the time, as is the number of people suffering from memory diseases. Providing individual high-quality care for everybody is the challenge that has been recognized widely.
-                      </div>
-                    }/>
-
                     <Row content={
                       <p className={pStyle}>
-                        Especially the fulfilment of the mental needs of the elderly and their psychological well-being has been a subject of lively debate in public over the last few years. In the case of Alzheimer patients, difficulties in creating a connection and a lack of motivation towards activities make this a particularly difficult task.
+                        In University of Tampere's & Futurice's, Let’s Re-Design Health Services -course, the client company Espericare ltd, specialized on care and housing services, gave the course attendees task of creating some kind of entertainment service for stimulus purposes for their residents who have different severe conditions of memory deceases. The workshop course organized students into randomized teams that would design service concepts to present at the end of the course.
                       </p>
                     }/>
-
+                    <Row content={
+                      <p className={pStyle}>
+                        Elderly adults suffering memory diseases require brain-activating stimulus and most important of all suitable entertainment. Especially in the case of Alzheimer patients, difficulties in creating a connection and a lack of motivation towards activities make this a particularly difficult task.
+                      </p>
+                    }/>
                   </span>
                 }
               />
@@ -128,25 +109,21 @@ class Aikakone extends Component {
                   <span>
                     <Row content={
                       <p className={pStyle}>
-                        Facilitating connection between people with memory disorder and caregivers is at the very core of Time Machine. We aim at creating meaningful connections and building a bridge between generations, which benefits also healthy older adults.
+                        Facilitating connection between people with memory disorder and caregivers was in the core of Aikakone (Time Machine). 
+                        As a web-service, Aikakone can be used anywhere, with bed-tied patients or with a group of people by a TV set, anytime, in short periods of time, and with anyone, with healthy senior citizen as well as a strongly cognitive impaired people, as a method of meaningful connection by building a bridge between generations.
                       </p>
                     }/>
 
                     <Row content={
-                      <div className={pStyle} >
-                        This we do by taking the elderly person back to the old times. We use the unique approach of combining pictures, sounds and texts all telling the same tale, which provides multisensory stimuli that retrieve memories more efficiently than a mere picture or a sound.
-                      </div>
-                    }/>
-
-                    <Row content={
-                      <p className={pStyle}>
-                        This kind of conversation inspired by old photos, sounds and music, is called reminiscence therapy. It has been scientifically shown to decrease depression in older adults. It improves self-esteem, as the persons can act as an expert on their own life instead of being mere objects of care.
+                      <p className={pStyle} >
+                        Taking elderly person back to the old times by combining pictures, sounds and texts all telling the same tale, which provides multisensory stimuli that retrieve memories.
+                        This kind of conversation inspired by old photos, sounds and music, is called reminiscence therapy, a method with scientifical merit of decreasing depression in older adults. It improves self-esteem, as the persons can act as an expert on their own life instead of being mere objects of care.
                       </p>
                     }/>
 
                     <Row content={
                       <p className={pStyle}>
-                        Time Machine can be used anywhere, anytime and with anyone - with a healthy senior citizen as well as a strongly demented person. As a web-service, it can be utilized even with bed-tied patients or with a group of people by a TV set.
+                       
                       </p>
                     }/>
 
@@ -158,15 +135,10 @@ class Aikakone extends Component {
                  title={"Process"}
                  content={
                    <span>
-                     <Row content={
-                       <p className={pStyle}>
-                        In Futurice & University of Tampere, Let’s Re-Design Health Services -course, the client company Espericare ltd gave a clear goal of achieving some kind of entertainment type off service for stimulus purposes for the residents, residents who have severe conditions of memory decease. The workshop course would organize students into random teams and we would all design service concepts to present at the end of the course.
-                       </p>
-                     }/>
 
                      <Row content={
                        <p className={pStyle}>
-                         In Service Creation we followed Futurice Ltd’s Open Source Lean Service Design canvases on organized sessions, this process was supported with expeditions to client company Espericare Ltd premises and meetings on our own, here’s roughly how it went:
+                         In Service Creation we followed Futurice Ltd’s Open Source <a href="http://leanservicecreation.com">Lean Service Creation<div style={{display: 'block', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a> canvases on organized sessions, this process was supported with expeditions to client company Espericare Ltd premises and meetings on our own, here’s roughly how it went:
                        </p>
                      }/>
 
@@ -187,7 +159,7 @@ class Aikakone extends Component {
                    <ProjectStats
                      team={["4 Designers"]}
                      responsibilities={["Service Design", "UX Research", "Interaction Design", "User Testing"]}
-                     time={"April'16 - June'17"}
+                     time={"March'16 - May'16"}
                    />
                  }
                />
@@ -198,70 +170,63 @@ class Aikakone extends Component {
                   <span>
                     <Row content={
                       <p className={pStyle}>
-                        Already after the first session we visited a facility of the client company Espericare, Villa Niemi, in Nokia. We got impressions of the facilities, took pictures, drew a floor plan of the area users inhabit and interviewed the staff and residents. We would return later to do more structured interviews and perform a test with paper prototypes.
+                        After the first session of team forming and canvas work. We visited a facility of the client company Espericare for a contextual inquiry acompanied by Futurice employee. We got impressions of the facilities, took pictures, drew a floor plan of the area users inhabit and asked questions from the staff and residents. We would return later to do more structured interviews and perform a test with paper prototypes.
                       </p>
                     }/>
                     <Row content={
                       <p className={pStyle}>
-                        Then own our own we looked at existing market solutions, concepts of entertainment and ways to spend time with people with memory diseases. An interesting idea was reminiscence therapy. A form of therapy that has been shown to improve the attitude of caregivers towards their patients. This is assumed to be due to caregivers’ increased knowledge of their patients’ backgrounds and personalities. Often in care homes, the turnover of personnel is quite high, which makes the need of a tool for such familiarization even more pressing.
-                      </p>
-                    }/>
-                    <Row content={
-                      <p className={pStyle}>
-                          In our vision, as a result of well-performed care, the elderly are surrounded by people who know them by their individual qualities, not just by their diagnoses. Every day brings the elderly meaningful interaction and positive moments that include a caring human contact.
-                      </p>
-                    }/>
-                    <Row content={
-                      <h4 className={pStyle}>Key takeways from location visits, interviews and user needs</h4>
-                    }/>
-
-                    <Row content={
-                      <p className={pStyle}>
-                        Residents are not able to tell about themselves so nurses have a hard time to get to know them and their history. Introduction to new nurses about the resident’s preferences is relies almost completely to coffeetabletalk. Family and friends of the residents want to do something for the resident’s benefit. It was hard for the nurses to get the residents excited about existing entertainment and stimuli options. Stimuli session should be something that is quickly started, because time to perform stimulus is scattered in to small time windows during shifts. Some of the residents were in poor health and spend most of their time in their own rooms.
+                        Meanwhile on our own we looked at existing market solutions, concepts of entertainment and ways to spend time with cognitive impaired people. Interesting idea we came across reminiscence therapy. Form of therapy that has been shown to improve the attitude of caregivers towards their patients. This is assumed to be due to caregivers’ increased knowledge of their patients’ backgrounds and personalities. Often in care homes, the turnover of personnel is quite high, which raises the need of a tool for such familiarization even more pressing.
                       </p>
                     }/>
 
                     <Row content={
-                      <div className="col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-lg-offset-2dot5 col-lg-7 col-xl-offset-3 col-xl-6 button-wrapper" onClick={this.collapseResearch}>
+                      <div className="col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-lg-offset-2dot5 col-lg-7 col-xl-offset-3 col-xl-12 button-wrapper" onClick={this.collapseKeyTakeaways}>
                         <Button
-                          label={this.state.researchOpen ? "Hide Preferences of Residents" : "See Preferences of Residents"}
+                          label={this.state.keyTakeawaysOpen ? "Hide Key takeaways" : "See Key takeaways"}
                           color={"outline purple"}
                         />
                       </div>
                     }/>
-                    
-                    <Collapse isOpened={this.state.researchOpen}>
-                    <Row content={
-                      <h4 className={pStyle}>Preferences of Residents</h4>
-                    }/>
-                    <Row content={
-                      <ol className={pStyle + " list"}>
-                        <li>Music, listened and sung</li>
-                        <li>Doing things together, interacting</li>
-                        <li>Telling about themselves</li>
-                        <li>Remeniscing about the times past and looking at old pictures</li>
-                        <li>Looking pictures of children and animals</li>
-                        <li>Watching TV, different subject matter preferences</li>
-                      </ol>
-                    }/>
+
+                    <Collapse isOpened={this.state.keyTakeawaysOpen}>
+                      <Row content={
+                        <ul className={pStyle + " list"}>
+                          <b>Key takeaways from research, location visits, interviews and user needs:</b>
+                          <li>
+                            Dementia/Alzheimer diseases increasing and growing concern about quality of health care systems.
+                          </li>
+
+                          <li>
+                            Nurses don’t have sufficient time to engage individually and it’s difficult to get patients excited in common activities.
+                          </li>
+
+                          <li>
+                          Residents are not able to tell about themselves so nurses have a hard time to get to know them and their history.
+                          </li>
+
+                          <li>
+                            Introduction to new nurses about the resident’s preferences is relies almost completely on coffeetabletalk.
+                          </li>
+
+                          <li>
+                            Family and friends of the residents want to do something for the resident’s benefit.
+                          </li>
+
+                          <li>
+                          It was hard for the nurses to get the residents excited about existing entertainment and stimuli options.
+                          </li>
+
+                          <li>
+                            Stimuli session should be something that is quickly started, because time to perform stimulus is scattered in to small time windows during shifts.
+                          </li>
+
+                          <li>
+                            Some of the residents were in poor health and spend most of their time in their own rooms.
+                          </li>
+
+                        </ul>
+                      }/>
                     </Collapse>
-
-                    <Row content={
-                      <ul className={pStyle + " list"}>
-                        <b>Things that came up in the research:</b>
-                        <li>
-                          Dementia/Alzheimer diseases increasing and growing concern about quality of health care systems
-                        </li>
-
-                        <li>
-                          Elderly adults suffering dementia/Alzheimer diseases require brain-activating stimulus and entertainment
-                        </li>
-
-                        <li>
-                          Nurses don’t have sufficient time to engage individually and it’s difficult to get patients excited in common activities
-                        </li>
-                      </ul>
-                    }/>
 
                   </span>
                 }
@@ -273,7 +238,7 @@ class Aikakone extends Component {
                   <span>
                     <Row content={
                       <p className={pStyle}>
-                        Design was strongly influenced by our research phase, in fact it can be directly derived from it.
+                        In our vision, as a result of well-performed care, the elderly are surrounded by people who know them by their individual qualities, not just by their diagnoses. Every day brings the elderly meaningful interaction and positive moments that include a caring human contact.
                       </p>
                     }/>
                     <Row content={
@@ -293,61 +258,57 @@ class Aikakone extends Component {
 
                     <Row content={
                       <p className={pStyle}>
-                        <b>The course was service design focused, so creating the MVP design was critical to accomplishing the course project.</b> Here the first ever draft of concept, done in PowerPoint of all the possible design tools available. 
+                        As the course was service design focused, creating an MVP design was critical for the course presentation. Here the first ever digital draft of the concept, done in Microsoft PowerPoint of all the possible design tools available. 😎
                       </p>
                     }/>
 
-                    <Row className={"one-margin-top"} content={
-                      <div className={"col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"}>
-                        <img className='feature-image acclaim' src={menu} alt='Menu of Aikakone' />
-                      </div>
+                    <ModalGateway>
+                    {modalIsOpen ? (
+                      <Modal onClose={this.toggleModal}>
+                        <Carousel views={[
+                        {
+                          src: menu,
+                          caption: 'First look of the menu of Aikakone.'
+
+                        },
+                        {
+                          src: aikakone,
+                          caption: 'Using Aikakone'
+                        },
+                        {
+                          src: profile,
+                          caption: 'Profile of elderly people'
+                        },
+                        {
+                          src: elamankaari,
+                          caption: 'Elämänkaari, a feature that has the lifespan of induvidual user'
+                        }
+                      ]} />
+                      </Modal>
+                    ) : null}
+                    </ModalGateway>
+
+                    <Row className="one-margin-top col-md-offset-1 col-lg-offset-3" content={views.map(function (image, index) {
+                        return (
+                          <div key={"sketch" + index} onClick={(e) => self.toggleModal(index, e)} className={"col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-2"}>
+                            <img className="mini-image" src={image} alt=""/>
+                          </div>
+                        )
+                      })
                     }/>
 
                     <Row content={
                       <p className={"caption " + pStyle}>
-                        First look of the menu of Aikakone.
+                        Main focus of Aikakone was to present common memories that would resonate with elderly persons with memory disabilities and spark a conversation with a nurse, family member or a volunteer. With multimodal output of a visual and related auditive que for the elderly. The text is mostly for the companion to provide context and words to encourage conversation about the subject as nurses are often fairly young and unfamiliar with such topics.
                       </p>
-                    }/>
-
-                    <Row className={"one-margin-top"} content={
-                      <div className={"col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"}>
-                        <img className='feature-image acclaim' src={aikakone} alt='Using Aikakone' />
-                      </div>
                     }/>
 
                     <Row content={
                       <p className={"caption " + pStyle}>
-                        Main focus of Aikakone was to present common memories that would resonate with elderly persons with memory disabilities and spark a conversation with a nurse, family member or a volunteer. With multimodal output of a visual and related auditive que for the elderly. The text is mostly for the companion to provide context and words to encourage conversation about the subject as nurses are often fairly young and unfamiliar with such subjects.
-                      </p>
-                    }/>
-                    <Row className={"one-margin-top"} content={
-                      <div className={"col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"}>
-                        <img className='feature-image acclaim' src={profile} alt='Profile of elderly people' />
-                      </div>
-                    }/>
-
-                    <Row content={
-                      <p className={"caption " + pStyle}>
-                        Profile offers for new nurses a glimpse to the character’s of the people they interact with. Filled in by family members and added to by nurses. Profile expedites the process of real caring and connecting between new staff and residents.
+                        Profile offers care givers a glimpse to character of the person they interact with. Filled in by family members and added to by nurses. Profile expedites the process of real caring and connecting between new staff members and residents.
                       </p>
                     }/>
 
-                    <Row className={"one-margin-top"} content={
-                      <div className={"col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"}>
-                        <img className='feature-image acclaim' src={elamankaari} alt='Elämänkaari or lifespan view' />
-                      </div>
-                    }/>
-
-                    <Row content={
-                      <p className={"caption " + pStyle}>
-                        Elämänkaari a feature that has the lifespan of induvidual user
-                      </p>
-                    }/>
-                    <Row content={
-                      <p className={pStyle}>
-                        In nursing homes, time is often scattered in small fragments. Our service can be used efficiently also in short times like 20 minutes, which enables nurses to provide patients with more stimuli with the same amount of resources as before.
-                      </p>
-                    }/>
                     <ProjectSection
                       title={"Prototype"}
                       content={
@@ -364,7 +325,7 @@ class Aikakone extends Component {
                           }/>
                           <Row content={
                             <p className={pStyle}>
-                             One of us would then interview them about feasibility, how would they use this kind of application, what would be most important and how well would it suite for stimulation purposes. We also asked them to reflect on when and for how long would they see themselves using the application with an elderly person.
+                             Then interviewed them about feasibility. How would they use this kind of application? What would be most important? How well would it suite for stimulation purposes? We also asked them to reflect on when and for how long would they see themselves using the application with an elderly person.
                             </p>
                           }/>
 
@@ -377,7 +338,17 @@ class Aikakone extends Component {
                         <span>
                           <Row content={
                             <p className={pStyle}>
-                              Lean Service Creation (LSC) canvases got us thinking about the to be created service from an outside-in perspective, the first one’s are about business goals and limitations and segmentation to concept and value proposition, even thinking about customer engagement.  LSC gave us a huge amount of confidence for continuing the project towards forming of a startup. It helped us easily into a local accelerator program.
+                              In nursing homes, time is often scattered in small fragments. Our service can be used efficiently also in short times like 20 minutes, which enables nurses to provide patients with more stimuli with the same amount of resources as before.
+                            </p>
+                          }/>
+                          <Row content={
+                            <p className={pStyle}>
+                              We were remarked as the second best concept in the course on the presentation day, based on vote by judges from Espericare, University of Tampere and Futurice.
+                            </p>
+                          }/>
+                          <Row content={
+                            <p className={pStyle}>
+                              Lean Service Creation taught me to think about creating services from outside-in perspective. It was my first glimpse into business goals and limitations, segmentation to concept and value proposition and even thinking about customer engagement. It inspired me to study 25 credits worth of customer centric marketing.
                             </p>
                           }/>
                           <Row content={
@@ -385,7 +356,7 @@ class Aikakone extends Component {
                           }/>
                           <Row content={
                             <p className={pStyle}>
-                              After positive feedback from Futurice, course mates and most importantly Usability tests, we stuck together and started developing the concept in to a working software. We entered into an incubator program and with encouraging, but cautious feedback from mentors we were on track for forming a company. More or less this was inadequately executed. In hindsight our mental states approached the project more from a hobby project. The fact that teams were randomized in the course factored into our team chemistry and sparks flew once in a while. Everybody believed in the product, but the team was off and so we called quits after 8 months of development and user testing. Oct ‘16 – May ’17 Push to market ultimately failed. Team decided to go its separate ways.
+                              After positive feedback from Futurice, course mates and most importantly usability tests, we stuck together and started developing the concept into a working software. We entered into an incubator program and with encouraging, but cautious feedback from mentors we were on track for forming a company. This is more or less where our courage gave out and our execution was inadequate. In hindsight our mental state approached the project more from a hobby project perspective. The fact that teams were randomized in the course factored into our team chemistry and sparks flew every once in a while. Everybody believed in the product, but the team was off and push to market ultimately failed, so we decided to go our separate ways after 8 months of development and user testing.
                             </p>
                           }/>
 
@@ -448,6 +419,18 @@ class Aikakone extends Component {
             color: #9157ff;
           }
 
+          .Aikakone ol {
+            padding-left: 28px;
+            margin-top: 0;
+          }
+          .Aikakone ul {
+            padding-left: 25px;
+            margin-top: 0;
+          }
+          .Aikakone li {
+            margin-bottom: 10px;
+          }
+
           .Aikakone .highlight {
             color: #9157ff;
             font-weight: bold;
@@ -455,6 +438,10 @@ class Aikakone extends Component {
 
           .Aikakone p a::after {
             background: rgba(30, 149, 237, 0.565);
+          }
+          .Aikakone .button-wrapper {
+          text-align: center;
+          margin: 1em 0;
           }
           .feature-image {
           max-width: 100%;

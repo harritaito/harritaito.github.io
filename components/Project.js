@@ -20,12 +20,12 @@ class Project extends Component {
   }
 
   static defaultProps = {
-    title: "",
-    description: "",
+    title: "abc",
+    description: "abc",
     link: "",
     image: "daretolearned",
-    alt: "",
-    color: "",
+    alt: "a",
+    color: "green",
     parallax: true,
     endValue: -100
   }
@@ -65,16 +65,15 @@ class Project extends Component {
                   }
                 ]}
               >
-              <Link prefetch href={this.props.link}>
+              <Link href={this.props.link}>
                 <div className="project-link-container">
                   <div className={"project-blurb " + this.props.color}>
                     <h2>{this.props.title}</h2>
                     <div style={{marginTop: "1.5em"}}>{this.props.description}</div>
                     <div className="bottom">
                       <div className={"next navbar-link " + this.props.color}>
-                        <Link prefetch href={this.props.link}><a>Case Study</a></Link>
-                        <span onClick={this.showModal} style={{marginLeft: '5px', height: '27px', width: '23px', marginTop: 2}}>
-                        <object><Isvg className={"next-arrow"} src={arrow} /></object>
+                        <Link href={this.props.link}><a>Case Study</a></Link>
+                        <span onClick={this.showModal}><object><Isvg className={"next-arrow"} src={arrow} /></object>
                         </span>
                       </div>
                     </div>
@@ -83,14 +82,14 @@ class Project extends Component {
               </Link>
               </Plx> :
 
-              <Link prefetch href={this.props.link}>
+              <Link href={this.props.link}>
                 <div className="project-link-container">
                   <div className="project-blurb">
                     <h2>{this.props.title}</h2>
                     <div style={{marginTop: "1.5em"}}>{this.props.description}</div>
                     <div className="bottom">
                       <div className={"next navbar-link " + this.props.color}>
-                        <Link prefetch href={this.props.link}><a>Case Study</a></Link>
+                        <Link href={this.props.link}><a>Case Study</a></Link>
                         <span onClick={this.showModal} style={{marginLeft: '5px', height: '27px', width: '23px', marginTop: 2}}>
                           <object><Isvg className={"next-arrow"} src={arrow} /></object>
                         </span>
@@ -104,8 +103,11 @@ class Project extends Component {
         </div>
         <style jsx>{`
           .Project {
-            margin-top: 12em;
-            margin-bottom: 12em;
+            margin-top: 9em;
+            margin-bottom: 9em;
+          }
+          @media only screen and (max-width: 45rem) {
+            .Project {margin-top: 5em; margin-bottom: 5em;}
           }
 
           .project-link-container {
@@ -156,6 +158,12 @@ class Project extends Component {
             -o-transition: all .6s ease;
             transition: all .6s ease;
             position: relative;
+          }
+
+          .project-blurb .next-arrow{
+            margin-left: 1rem;
+            height: 200px;
+            weight: 200px;
           }
 
           .project-blurb.green:hover {
@@ -258,9 +266,13 @@ class Project extends Component {
           }
 
           .bottom .next a {
+            outline: none; 
             -webkit-transition: all .6s ease;
             -o-transition: all .6s ease;
             transition: all .6s ease;
+          }
+          .bottom .next a:focus {
+            outline: none;
           }
 
           .bottom .next-arrow {
@@ -312,7 +324,13 @@ class Project extends Component {
             fill: #9157ff;
           }
 
-
+          .project-link-container{
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+          }
 
 
           @media only screen and (max-width: 575px) {

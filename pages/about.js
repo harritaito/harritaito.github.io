@@ -34,23 +34,17 @@ class About extends Component {
 
           <Row content={
             <ul className="about-me-copy col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6 list">
-              <li>From Tampere, Finland <span className="emoji" role="img" aria-label="basketball">😊</span></li>
+              <li>From Tampere, Finland, where I volunteer for <a href={'https://tribetampere.com/'} target="_blank">Tribe Tampere<div style={{display: 'block', outline:'none', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a><span className="emoji" role="img" aria-label="smile">😊</span></li>
               <li>I brew craft beer <span className="emoji" role="img" aria-label="clinking beer glasses">🍻</span>and love parings of wine and food <span role="img" aria-label="wine glasss">🍷</span></li>
-              <li>I'm a non-fiction audiobook and podcast addict <span className="emoji" role="img" aria-label="headphones">🎧</span></li>
+              <li>Non-fiction audiobook and podcast addict and help on <a href={'https://www.spreaker.com/user/tribetampere'} target="_blank">Tribecast TRE<div style={{display: 'block', outline:'none', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a> <span className="emoji" role="img" aria-label="headphones">🎧</span></li>
               <li>I love film and capturing a moment myself <span className="emoji" role="img" aria-label="film">📽</span></li>
-              <li>Lauri Markkanen fan <span className="emoji" role="img" aria-label="basketball">🏀</span></li>
+              <li>Lauri Markkanen and Chicago Bulls fan. I play for <a href={'https://www.akateeminenmahti.fi/koripallo/'} target="_blank">Akateeminen Mahti<div style={{display: 'block', outline:'none', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a> <span className="emoji" role="img" aria-label="basketball">🏀</span></li>
             </ul>
           }/>
-
+          
           <Row content={
             <p className="about-me-copy col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6">
-              Feel free to contact me in social media.
-            </p>
-          }/>
-
-          <Row content={
-            <p className="about-me-copy col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6">
-              Thanks for visiting, it truly means a lot. If you have any suggestions hit up the "webmaster" (me) at hi [at] harritaito [dot] com . <span className="emoji" role="img" aria-label="vulcan salute">🖖</span>
+              Thanks for visiting, it truly means a lot. The page does set at cookie for the media and user experience. If you have any suggestions hit up the "webmaster" (me) at hi [at] harritaito [dot] com . <span className="emoji" role="img" aria-label="vulcan salute">🖖</span>
             </p>
           }/>
 
@@ -59,7 +53,10 @@ class About extends Component {
         <Footer/>
         <style jsx>{`{
           .About .content {
-            padding-top: 60px;
+            padding-top: 1rem;
+          }
+          @media only screen and (max-width: 45rem) {
+            .About .content {padding-top: 0.5rem;}
           }
 
           .About .content .my-photo-container {
@@ -70,6 +67,10 @@ class About extends Component {
             height: 275px;
             display: inline-block;
             width: 275px;
+            border-radius: 999px
+          }
+          @media only screen and (max-width: 45rem) {
+            .About .my-photo {height: 12rem; width: 12rem;}
           }
 
           .About .my-photo img {

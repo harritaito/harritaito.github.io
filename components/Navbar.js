@@ -35,23 +35,20 @@ class Navbar extends Component {
     return (
       <div className="nav">
         <div className="progress-bar">
-          <ReadingProgress className={this.props.color} />
+          <ReadingProgress className={`${ this.props.color }`} />
         </div>
         <Headroom style={{position: 'fixed'}}>
-          <div>
           <div className="navbar">
-            <div className="navbar-link">
-            <Link prefetch href='/'><a>Home</a></Link>
-            </div>
+            <Link href='/'><a className="home navbar-link">Home</a></Link>
             { this.props.nextProjectLink ?
-              <div className="next navbar-link">
-                <Link prefetch href={this.props.nextProjectLink}><a>{this.props.nextProjectName}</a></Link>
-                <object><Isvg className={"next-arrow"} src={arrow} style={{marginLeft: '3px', height: '27px', width: '18px', marginTop: 1}} /></object>
-              </div>
+              <div>
+                <Link href={this.props.nextProjectLink}><a className="next navbar-link">{this.props.nextProjectName}<span onClick={this.showModal}><object>  <Isvg className={"next-arrow"} src={arrow} /></object></span>
+              </a></Link>
+                </div>
+              
               :
               null
             }
-          </div>
           </div>
         </Headroom>
         <style jsx>{`
@@ -88,7 +85,7 @@ class Navbar extends Component {
             z-index: 1; 
             transform: translateY(0px); 
             transition: all 0.2s ease-in-out;
-          }
+          } 
 
           .headroom--unfixed .navbar {
             -webkit-box-shadow: none;
@@ -98,27 +95,35 @@ class Navbar extends Component {
           .headroom--unfixed .progress-bar {
             display: none;
           }
-
+          .headroom-wrapper{height: 1rem;}
           .navbar {
-            padding-top: .6em;
+            padding-bottom: .6em;
             display: -ms-flexbox;
             display: flex;
             -ms-flex-pack: justify;
                 justify-content: space-between;
             -webkit-box-shadow: 0 .2em .2em 0 rgba(0,0,0,0.10);
                     box-shadow: 0 .2em .2em 0 rgba(0,0,0,0.10);
+            background: white;
           }
 
           .navbar-link {
             display: inline-block;
-            padding: .6em 2em .8em;
+            outline: none; 
             -webkit-transition: all .2s linear;
             -o-transition: all .2s linear;
             transition: all .2s linear;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+          }
+          .navbar-link:focus { 
+              outline: none; 
           }
 
           .navbar .next {
-            padding: .6em 2em .8em 2em;
+            padding: 1em 1em 0em 0em;
             display: -ms-flexbox;
             display: flex;
           }
@@ -133,19 +138,30 @@ class Navbar extends Component {
           }
 
           .navbar .next .next-arrow {
-            height: 1em;
-            width: 1em;
+            height: 1rem;
+            width: 1rem;
             margin-left: 4px;
             -webkit-transition: all .3s linear;
             -o-transition: all .3s linear;
             transition: all .3s linear;
-            margin-right: 2em
+            margin-right: 2em;
+          }
+
+          .next-arrow{
+            height: 1rem;
+            width: 1rem;
           }
 
           .navbar .next:hover .next-arrow{
             -webkit-transform: translateX(3px);
                 -ms-transform: translateX(3px);
                     transform: translateX(3px);
+          }
+
+          .navbar .home {
+            padding: 1em 0em 0em 1em;
+            display: -ms-flexbox;
+            display: flex;
           }
 
           .progress-bar {

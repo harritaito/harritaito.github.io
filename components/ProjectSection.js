@@ -29,6 +29,9 @@ class ProjectSection extends Component {
           font-weight: bold;
           margin: 3rem auto .5rem;
         }
+        @media only screen and (max-width: 45rem) {
+          .project-section h3 {font-size: 1.6rem; margin: 1.5rem auto 0rem;}
+        }
 
         .project-section .quote {
           font-style: italic;

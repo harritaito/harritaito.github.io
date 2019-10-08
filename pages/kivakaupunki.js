@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Collapse } from 'react-collapse';
 import VisibilitySensor from 'react-visibility-sensor';
 import ImageZoom from 'react-medium-image-zoom';
-import Isvg from 'react-inlinesvg';
 
 import Button from '../components/Button';
 import ProjectPage from '../components/ProjectPage';
@@ -10,10 +9,7 @@ import Process from '../components/Process';
 import ProjectStats from '../components/ProjectStats';
 import ProjectSection from "../components/ProjectSection";
 import Row from '../components/Row';
-import Lightbox from '../components/Lightbox';
-import Video from '../components/Video';
-import Callout from '../components/Callout';
-import PolarChart from '../components/PolarChart';
+import Carousel, { Modal, ModalGateway } from 'react-images';
 
 import hero from '../static/media/kivakaupunki/hero.jpg';
 
@@ -26,81 +22,34 @@ import popup from '../static/media/kivakaupunki/sketches/Topic_2.jpg';
 import watch from '../static/media/kivakaupunki/sketches/Comment.jpg';
 import footsteps from '../static/media/kivakaupunki/sketches/End.jpg';
 
-import testing from '../static/media/home/kivakaupunki.jpg';
-
-class Aikakone extends Component {
+class Kivakaupunki extends Component {
 
   constructor () {
     super();
 
     this.state = {
-      lightboxIsOpen: false,
-      index: 0,
-      researchOpen: false,
-      insightsOpen: false,
-      environmentOpen: false,
-      evaluateOpen: false,
-      resultsOpen: false,
+      _modalIsOpen: false,
+      get modalIsOpen() {
+        return this._modalIsOpen;
+      },
+      set modalIsOpen(value) {
+        this._modalIsOpen = value;
+      },
+      environmentOpen: false
     };
-
-    this.openLightbox = this.openLightbox.bind(this);
-    this.closeLightbox  = this.closeLightbox.bind(this);
-    this.collapseResearch = this.collapseResearch.bind(this);
-    this.collapseInsights = this.collapseInsights.bind(this);
+    
     this.collapseEnvironment = this.collapseEnvironment.bind(this);
-    this.collapseEvaluate = this.collapseEvaluate.bind(this);
-    this.collapseResults = this.collapseResults.bind(this);
   }
 
-  openLightbox(index, event) {
-    this.setState({
-      lightboxIsOpen: true,
-      index: index
-    })
-  }
-
-  closeLightbox() {
-    this.setState({
-      lightboxIsOpen: false
-    })
-  }
-
-  collapseResearch() {
-    this.closeLightbox();
-    this.setState({
-      researchOpen: !this.state.researchOpen
-    })
-  }
-
-  collapseInsights() {
-    this.closeLightbox();
-    this.setState({
-      insightsOpen: !this.state.insightsOpen
-    })
+  toggleModal = () => {
+    this.setState(state => ({ modalIsOpen: !state.modalIsOpen }));
   }
 
   collapseEnvironment() {
-    this.closeLightbox();
     this.setState({
       environmentOpen: !this.state.environmentOpen
     })
   }
-
-  collapseEvaluate() {
-    this.closeLightbox();
-    this.setState({
-      evaluateOpen: !this.state.evaluateOpen
-    })
-  }
-
-
-  collapseResults() {
-    this.closeLightbox();
-    this.setState({
-      resultsOpen: !this.state.resultsOpen
-    })
-  }
-
   render() {
 
     let pStyle = "col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-lg-offset-2dot5 col-lg-7 col-xl-offset-3 col-xl-6";
@@ -109,23 +58,24 @@ class Aikakone extends Component {
     let steps = [
       {
         title: "Research",
-        processes: ["Ideation", "Opendata Brainstorming", "Getting inspired"]
+        processes: ["Ideation"]
       },
       {
         title: "Design",
         processes: ["Use Case", "Sketches", "Mockups"]
       },
       {
-        title: "Prototype",
+        title: "MVP",
         processes: ["Back-end", "Front-end", "Deployment"]
       },
       {
-        title: "Evaluate",
+        title: "Evaluation",
         processes: ["Heuristics"]
       }
     ];
 
-    let images = [phone, phone_booth, popup, watch, physical, footsteps];
+    let views = [phone, phone_booth, popup, watch, physical, footsteps];
+    const { modalIsOpen } = this.state;
 
     let self = this;
 
@@ -145,7 +95,7 @@ class Aikakone extends Component {
                   <span>
                     <Row content={
                       <p className={pStyle}>
-                        <b>The Living Lab Bus (LLB) project consortium arranged a Student Software Competition, for developing an application that (in short) benefits bus passengers, with monetary prices.</b> Limitations of application: must be original work and unpublished, must benefit bus passengers somehow, must be a web application, must utilize at least one publicly available API, must be developed using LLB Developer Kit (https://github.com/llb-uta/development-kit) and submitted through LLB Developer Portal (https://llb.sis.uta.fi/portal/). https://llb.sis.uta.fi
+                        The Living Lab Bus (LLB) project consortium arranged a Student Software Competition, for developing <b> an application that benefits bus passengers</b>, with monetary prices. Limitations of application: must be original work and unpublished, must benefit bus passengers somehow, must be a web application, must utilize at least one publicly available API, must be developed using <a href="https://github.com/llb-uta/development-kit">LLB Developer Kit<div style={{display: 'block', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a> and submitted through <a href="https://llb.sis.uta.fi/portal/">LLB Developer Portal<div style={{display: 'block', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a>.
                       </p>
                     }/> 
                   </span>
@@ -158,7 +108,7 @@ class Aikakone extends Component {
                   <span>
                     <Row content={
                       <p className={pStyle}>
-                        Kiva kaupunki, named in Finnish for the catchy K-sound is an application through which user input about geolocation can be collected and visualized on a map. These comments can be either positive or negative in nature and they work to bring location knowledge to city officials as well as for the public, so actions can be made to make our surroundings even better.
+                        To make our surroundings even better and more enjoyable. Kiva kaupunki is an application where user input about geolocation is collected and visualized on a map. Comments of positive or negative in nature to bring location knowledge to user base, city officials as well as for the public.
                       </p>
                     }/>
 
@@ -201,27 +151,9 @@ class Aikakone extends Component {
                 content={
                   <ProjectStats
                     team={["1 Designer", "1 Developer"]}
-                    responsibilities={["Service Design", "Interaction Design", "UX Design", "UI Design"]}
+                    responsibilities={["Service Design", "Interaction Design", "UI Design"]}
                     time={"April ’17 – June ’17"}
                   />
-                }
-              />
-
-              <ProjectSection
-                title={"Ideation"}
-                content={
-                  <span>
-                    <Row content={
-                      <p className={pStyle}>
-                        We sat together for brainstorming, we pondered what was possible to accomplish in the timeframe available. Ideas were thrown around and topics discussed from useful, playful and full games, but schedule restrictions limited all of them.
-                      </p>
-                    }/>
-                    <Row content={
-                      <p className={pStyle}>
-                        We also tried to get an idea of bus capabilities, unfortunately these were poorly communicated by LLB partner VTT. Pasi, the developer, had also done a lot of work with open data so finding something motivating from his standpoint was important.
-                      </p>
-                    }/>
-                  </span>
                 }
               />
 
@@ -229,19 +161,20 @@ class Aikakone extends Component {
                 title={"Research"}
                 content={
                   <span>
+                    
                     <Row content={
                       <p className={pStyle}>
-                        I did most of the research on concept. Disconcerting was the lack of new API’s related to public transport as Pasi had little interest to work with the ones he was already familiar. Not to waste time, I went ahead by looking what kind of open data ideas have in past done in Finland. I made the call of instead of finding a great API we could try to make a data set gathering application and to make this data open.
+                        We asked ouselves what was possible to accomplish with bus capabilities, in the available timeframe as we had schedule restrictions.
                       </p>
                     }/>
                     <Row content={
                       <p className={pStyle}>
-                        Concepts in avoindata.fi inspired me a lot. There where concepts that were inquiries to collect data about cities that had a location tagged on to the comments collected.
+                        In search of an API we browsed the implementations available at avoindata.fi, though disconcerting was the lack of new ones related to public transport as Pasi, the developer, was not interested to work with the ones he had previously worked with.
                       </p>
                     }/>
                     <Row content={
                       <p className={pStyle}>
-                        They had collected location, subject and a comment. This was made so planning officials could take better notice on some of the things in their cities from the perspectives of the citizens. This idea felt like the perfect one to scale up to the potential audiences of LLB in cities of Tampere, Helsinki and Turku.
+                        There where concepts were inquiries were made to collect data about cities with a location tagged on to the comments collected, so planning officials could take better notice on some of the things in their cities from the perspectives of the citizens. I suggested we create our own system of collection for the potential audiences of LLB.
                       </p>
                     }/>
                   </span>
@@ -254,31 +187,30 @@ class Aikakone extends Component {
                   <span>
                     <Row content={
                       <p className={pStyle}>
-                        I started out by making couple user stories. After that I figured out what screens would be necessary. I draw quick pencil drafts of the screens, with the focus of user interactions available.
+                        Focus should be put on clear representation of the users task to be acomplished, status of the task and how to navigate forward to acomplish the whole job to be done. I made a use case description to figured out what screens would be necessary. After this I draw quick pencil drafts of the screens, with the focus of user interactions available.
                       </p>
                     }/>
-                    <Row content={
-                      <p className={pStyle}>
-                        Simplicity was the goal for the concept what is in itself a glorified webform.
-                      </p>
-                    }/>
-                    <Row content={
-                      <p className={pStyle}>
-                        In the use case, user opens LLB platform and our app within it in a location he or she feels like they have something to say about or want to share with others. This can be either negative or positive comment. User shares their location with the GPS on, chooses a topic from eight choices and then goes on to write the comment and sends it in.
-                      </p>
-                    }/>
-                    
-                    <Row content={
-                      <ul className={pStyle + " list"}>
-                        <li>
-                          Focus should be put on clear representation of the users task to be acomplished, status of the task and fow to navigate forward to acomplish the whole job to be done.
-                        </li>
 
-                        <li>
-                          Create the Unity environment and framework for user testing
-                        </li>
-                      </ul>
+                    <Row content={
+                      <div className="col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-lg-offset-2dot5 col-lg-7 col-xl-offset-3 col-xl-12 button-wrapper" onClick={this.collapseEnvironment}>
+                        <Button
+                          label={this.state.environmentOpen ? "Hide Use Case Description" : "See Use Case Description"}
+                          color={"outline blue"}
+                        />
+                      </div>
                     }/>
+
+                    <Collapse isOpened={this.state.environmentOpen}>
+                      <Row content={
+                        <h4 className={pStyle}>USE CASE DESCRIPTION</h4>
+                      }/>
+
+                      <Row content={
+                        <p className={pStyle}>
+                          A woman steps on a bus on her way to Hatanpää arboretum. She intends to enjoy the sight of beautiful flowers and read a book by the lake. During the bus ride, she sees a little girl crossing the road on a crossing. The girl manages to cross the road but it looks like she feared high traffic. Woman thinks that something should be done to make this specific crossing safer as she also has felt unsafe crossing it on her dog walks. Instead of passing on this thought she decides to do something about it as there is now an easy way to act. She goes home screen in her smartphone and touches the living lab buss icon, now she selects Kiva Kaupunki from the main screen of the application. She selects the crossing location on the app, selects the topic of "Difficult to walk on foot" and goes on to write a comment about the crossing. Application announces that the comment has been saved and will be available soon on the map. The woman continues her journey to location and decides to share also a comment on about arboretum on arriving there, as it is one of her favorite places to visit.
+                        </p>
+                      }/>
+                    </Collapse>
 
                     <Row content={
                       <h4 className={pStyle}>User Interface Design</h4>
@@ -286,12 +218,14 @@ class Aikakone extends Component {
 
                     <Row content={
                       <p className={pStyle}>
-                        I made a more honed UI mockup on my Ipad Air with an app called Pixelmator, while sunbathing in Sorsapuisto. For the style of the mockups I tried to find inspiration from different Instagram accounts and utilized the Design Guidelines made available from by the LLB team.
+                        With an app called Pixelmator on my Ipad I made a more honed UI mockup. Interaction inspiration I sought from different Instagram accounts. For visual style I followed Material Design and utilized colors of the Design Guidelines made available by the LLB team.
                       </p>
                     }/>
 
-                    <Lightbox
-                      images={[
+                    <ModalGateway>
+                    {modalIsOpen ? (
+                      <Modal onClose={this.toggleModal}>
+                        <Carousel views={[
                         {
                           src: phone,
                           caption: 'Start greeting scene of app'
@@ -317,14 +251,14 @@ class Aikakone extends Component {
                           src: footsteps,
                           caption: 'Final thank you screen'
                         }
-                      ]}
-                      open={this.state.lightboxIsOpen}
-                      index={this.state.index}
-                    />
+                      ]} />
+                      </Modal>
+                    ) : null}
+                    </ModalGateway>
 
-                    <Row className="one-margin-top" content={images.map(function (image, index) {
+                    <Row className="one-margin-top" content={views.map(function (image, index) {
                         return (
-                          <div key={"sketch" + index} onClick={(e) => self.openLightbox(index, e)} className={"col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-2"}>
+                          <div key={"sketch" + index} onClick={(e) => self.toggleModal(index, e)} className={"col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-2"}>
                             <img className="mini-image" src={image} alt=""/>
                           </div>
                         )
@@ -337,45 +271,17 @@ class Aikakone extends Component {
                       </p>
                     }/>
 
-                    <Row content={
-                      <div className="col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-lg-offset-2dot5 col-lg-7 col-xl-offset-3 col-xl-6 button-wrapper" onClick={this.collapseEnvironment}>
-                        <Button
-                          label={this.state.environmentOpen ? "Hide Use Case Description" : "See Use Case Description"}
-                          color={"outline blue"}
-                        />
-                      </div>
-                    }/>
-
-                    <Collapse isOpened={this.state.environmentOpen}>
-
-                    <Row content={
-                      <h4 className={pStyle}>USE CASE DESCRIPTION</h4>
-                    }/>
-
-                    <Row content={
-                      <p className={pStyle}>
-                         A woman steps on a bus on her way to Hatanpää arboretum. She intends to enjoy the sight of beautiful flowers and read a book by the lake. During the bus ride, she sees a little girl crossing the road on a crossing. The girl manages to cross the road but it looks like she feared high traffic. Woman thinks that something should be done to make this specific crossing safer as she also has felt unsafe crossing it on her dog walks. Instead of passing on this thought she decides to do something about it as there is now an easy way to act. She goes home screen in her smartphone and touches the living lab buss icon, now she selects Kiva Kaupunki from the main screen of the application. She selects the crossing location on the app, selects the topic of "Difficult to walk on foot" and goes on to write a comment about the crossing. Application announces that the comment has been saved and will be available soon on the map. The woman continues her journey to location and decides to share also a comment on about arboretum on arriving there, as it is one of her favorite places to visit.
-                      </p>
-                    }/>
-
-                    </Collapse>
-
                   </span>
                 }
               />
 
               <ProjectSection
-                title={"Prototype"}
+                title={"Minimum Viable Product"}
                 content={
                   <span>
                     <Row content={
                       <p className={pStyle}>
-                        The plan was to make the app, collect data and make a map data visualization when sufficient data has been collected and then pushing out and update with a feature for the users to inspect the map.
-                        </p>
-                    }/>
-                    <Row content={
-                      <p className={pStyle}>
-                        On May 25 Pasi annouced the Heroku backend he had established at as a very basic CRUD API, with POST adding, GET getting all and id:GET getting a unique entry.
+                        The plan was to collect data of location, subject and a comment and make a map data visualization when sufficient data has been collected and then possibly pushing out an update for the users to inspect the map.
                         </p>
                     }/>
                     
@@ -398,13 +304,13 @@ class Aikakone extends Component {
 
                     <Row content={
                       <p className={"caption " + pStyle}>
-                        It can be confirmed here that the api has a location, topic and comment. 
+                        Pasi established Heroku backend with a very basic CRUD API, with POST adding, GET getting all and id:GET getting a unique entry. It can be confirmed here that the api has a location, topic and a comment. 
                       </p>
                     }/>
 
                     <Row content={
                       <p className={pStyle}>
-                        June 7 we decided to use ReactJs to implement the app as Pasi is more familiar with it. I worked on the CSS styling and the HTML/REACTJS layout of the app  based on the mockups I made. On June 14, the final deadline of the course, Pasi and I work out the kinks in the app and I sent it in for the approval to the LLB Developer Portal. 
+                        We used ReactJs to implement the web app as Pasi is more familiar with it. I worked on the HTML/REACTJS layout and CSS styling of to fit the app to the mockup. Extended deadline breathing on our necks, Pasi and I worked out the kinks in the app and I sent it to approval on the LLB Developer Portal.
                       </p>
                     }/>
                   </span>
@@ -412,12 +318,12 @@ class Aikakone extends Component {
               />
 
               <ProjectSection
-                title={"Evaluate"}
+                title={"Evaluation"}
                 content = {
                   <span>
                     <Row content={
                       <p className={pStyle}>
-                        Usability heuristical analysis was performed me due to time constraints.
+                        I conducted heuristic usability analysis, based on Jakob Nielsen's 10 general principles for interaction design, to evaluate the MVP.
                       </p>
                     }/>
                     <Row content={
@@ -442,7 +348,7 @@ class Aikakone extends Component {
 
                   <Row content={
                     <p className={pStyle}>
-                      We won the competition, but not in a satisfactory way. From the start, we had a confident team together, we were sure to produce something. We had a solid concept, but because of our day jobs too little time was reserved for software development. <b> I learned that every project should start, by appointing project manager title, so that there would be someone who is responsible for scheduling. </b>
+                      We won the competition, but not in a satisfactory way. From the start, we had a confident team together, we were sure to produce something. We had a solid concept, but because of our day jobs too little time was reserved for software development. I learned that every project should start, by appointing a <b>product owner or project manager title</b>, so that there would be someone who is responsible for scheduling.
                     </p>
                   }
                   />
@@ -515,6 +421,13 @@ class Aikakone extends Component {
             color: #1e95ed;
           }
 
+          .KivaKaupunki ul {
+            padding-left: 25px;
+            margin-top: 0;
+          }
+          .KivaKaupunki li {
+            margin-bottom: 10px;
+          }
 
           .KivaKaupunki .highlight {
             color: #1e95ed;
@@ -524,6 +437,11 @@ class Aikakone extends Component {
 
           .KivaKaupunki p a::after {
             background: rgba(18, 164, 45, 0.565);
+          }
+
+          .KivaKaupunki .button-wrapper {
+           text-align: center;
+           margin: 1em 0;
           }
 
         .feature-image {
@@ -551,4 +469,4 @@ class Aikakone extends Component {
   }
 }
 
-export default Aikakone;
+export default Kivakaupunki;

@@ -103,6 +103,9 @@ class ProjectPage extends Component {
           .project-page .subtitle {
             font-size: 2em;
           }
+          @media only screen and (max-width: 45rem) {
+            .project-page .subtitle {font-size: 1em;}
+          }
 
           .project-page .subtitle p {
             margin-top: .5em;

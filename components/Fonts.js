@@ -11,11 +11,11 @@ const Fonts = () => {
   const trirong = new FontFaceObserver('Trirong');
 
   rubik.load().then(() => {
-    document.documentElement.classList.add('rubik');
-  })
+    document.documentElement.classList.add('Rubik');
+  });
   trirong.load().then(() => {
-    document.documentElement.classList.add('trirong');
-  })
-}
+    document.documentElement.classList.add('Trirong');
+  });
+};
 
-export default Fonts
+export default Fonts;

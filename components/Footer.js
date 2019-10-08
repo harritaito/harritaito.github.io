@@ -10,6 +10,9 @@ const Footer = () => (
       .footer {
         margin-top: 5em;
       }
+      @media only screen and (max-width: 45rem) {
+        .footer {margin-top: 2em;}
+      }
 
       @media only screen and (max-width: 575px)  {
         .footer {
