@@ -1,9 +1,18 @@
+import robotImage from '../static/media/home/languagerobot.jpg';
 import kivakaupunkiImage from '../static/media/home/kivakaupunki.jpg';
 import aikakoneImage from '../static/media/home/aikakone.jpg';
 
 class Projects {
 
   projects = [
+    {
+      name: "HRI Study",
+      description: "Human-Robot Interaction on language learning.",
+      image: robotImage,
+      link: "/hri-study",
+      alt: "Human-Robot Interaction",
+      color: "red"
+    },
     {
       name: "Kiva Kaupunki",
       description: "From thoughts to action...",
@@ -32,6 +41,12 @@ class Projects {
 
     if (index + 1 > this.projects.length - 1) {
       return this.projects[0]
+    }
+    else if (index + 2 > this.projects.length - 2) {
+      return this.projects[2]
+    }
+    else {
+      return this.projects[1]
     }
 
     return this.projects[index + 1];
