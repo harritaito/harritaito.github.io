@@ -11,7 +11,7 @@ export default class MyDocument extends Document {
   componentDidMount () {
     Fonts();
     const script = document.createElement("script");
-    script.src = "static/fullStory.js";
+    script.src = "../static/fullStory.js";
     script.async = true;
     document.body.appendChild(script);
   }
@@ -38,6 +38,8 @@ export default class MyDocument extends Document {
             <meta property="og:image" content="https://harritaito.com/static/media/twittericon.png" />
             <meta property="og:image:width" content="1200" />
             <meta property="og:image:height" content="630" />
+            <link rel="preload" href="static/fullStory.js" as="script"></link>
+            <link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=UA-83352544-1" as="script"></link>
             <style>{`
                 body {
                 margin: 0;

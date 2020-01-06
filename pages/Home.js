@@ -5,6 +5,7 @@ import Row from '../components/Row';
 import Misc from '../components/Misc';
 import Footer from '../components/Footer';
 
+import languagerobot from '../static/media/home/languagerobot.jpg';
 import kivakaupunki from '../static/media/home/kivakaupunki.jpg';
 import aikakone from '../static/media/home/aikakone.jpg';
 
@@ -66,10 +67,13 @@ class Home extends Component {
                 everyone.
               </div>
               <div style={{marginTop: "1.5em"}}>
-                Currently I'm working on my Master's thesis for Tampere University's HCI program and searching for opportunities starting Spring/Summer 2020 and beyond.
+                Currently I'm working on my Master's thesis "Industrial Interaction Heuristics/Design Principles for MR" for Tampere University's HCI program and searching for opportunities starting Spring/Summer 2020 and beyond.
               </div>
               <div style={{marginTop: "1.5em"}}>
-                Scroll down to see some highlighted projects, or get an overall sense by <a href={'/static/HarriHalonen_Resume.pdf'} target="_blank">reading my resume.<div style={{display: 'block', outline:'none', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a>
+                Scroll 👇 to see some highlighted projects, or get an overall sense by <a href={'/static/HarriHalonen_Resume.pdf'} target="_blank">reading my resume.<div style={{display: 'block', outline:'none', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a> 
+              </div>
+              <div style={{marginTop: "1.5em"}}>
+                Hope you enjoy this porfolio made with React and Next.js with JSX styles, it is my first crack at them and originally designed and made in 2018.
               </div>
               <div style={{marginTop: "1.5em", marginBottom: "1.5em"}}>
                 Want to learn about the person behind the work? <Link href='/about' as={'/about'}><a>Get to know me.<div style={{display: 'block', outline:'none', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a></Link>
@@ -77,6 +81,8 @@ class Home extends Component {
             </div>
           }/>
         </div>
+
+        <Project title="HRI study" description="Contextual inquiry study with interviews, affinity diagrams to figure out the interaction and bit of usability with a teaching assistant robot." image={languagerobot} link="/hri-study" alt="Application for city reporting" color="red" percentage='8%'/>
 
         <Project title="Kiva Kaupunki" description="From thoughts to action. Information of surroundings to city officials as well as for the public, so they can be even better." image={kivakaupunki} link="/kivakaupunki" alt="Application for city reporting" color="blue" percentage='8%'/>
 
@@ -95,7 +101,7 @@ class Home extends Component {
 
         <Row content={
           <div style={{marginTop: "1.5em"}} className={"col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 col-xl-4 col-xl-offset-4 contact"}>
-            Feel free to <a href="mailto:hi@harritaito.com">email me<div style={{display: 'block', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a> or <a href={"https://calendly.com/harritaito/45min/"}>book time on my calendar<div style={{display: 'block', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a>.
+            Feel free to <a href="mailto:harri@harritaito.com">email me<div style={{display: 'block', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a> or <a href={"https://calendly.com/harritaito/45min/"}>book time on my calendar<div style={{display: 'block', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a>.
           </div>
         }/>
 
@@ -104,7 +110,7 @@ class Home extends Component {
       <style jsx>{`
         .Home h1 {
           margin-top: -.5rem;
-          font-family: 'Trirong', serif;
+          font-family: Trirong, serif;
           margin-bottom: 1.2rem;
         }
         .Home {

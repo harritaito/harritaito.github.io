@@ -44,7 +44,7 @@ class About extends Component {
           
           <Row content={
             <p className="about-me-copy col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6">
-              Thanks for visiting, it truly means a lot. The page does set at cookie for the media and user experience. If you have any suggestions hit up the "webmaster" (me) at hi [at] harritaito [dot] com . <span className="emoji" role="img" aria-label="vulcan salute">🖖</span>
+              Thanks for visiting, it truly means a lot. The page does set at cookie for the media and user experience. If you have any suggestions hit up the "webmaster" (me) at harri [at] harritaito [dot] com . <span className="emoji" role="img" aria-label="vulcan salute">🖖</span>
             </p>
           }/>
 
