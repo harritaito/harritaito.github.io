@@ -28,7 +28,7 @@ class PageNotFound extends Component {
           -ms-flex-pack: center;
               justify-content: center;
           text-align: center;
-          background-color: rgba(255, 255, 255, 0.6), ;
+          background-color: rgba(255, 255, 255, 0.6);
         }
 
         .pohja {
@@ -41,9 +41,6 @@ class PageNotFound extends Component {
           background-size: cover;
           z-index: -1;
           opacity: .55;
-        }
-
-        .pohja svg {
         }
     `}</style>
       </div>
