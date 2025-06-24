@@ -54,7 +54,7 @@ class Aikakone extends Component {
     let steps = [
       {
         title: "Canvas sessions & Research",
-        processes: ["Including but not limited to:", "Business approach", "Existing Solutions", "Academic studys", "Contextual inquiry", "User Research", "Semi-structured Interviews"]
+        processes: ["Including but not limited to:", "Business approach", "Existing Solutions", "Academic studies", "Contextual inquiry", "User Research", "Semi-structured Interviews"]
       },
       {
         title: "Design",
@@ -91,7 +91,7 @@ class Aikakone extends Component {
                     }/>
                     <Row content={
                       <p className={pStyle}>
-                        In University of Tampere's & Futurice's, Let’s Re-Design Health Services -course, the client company Espericare ltd, specialized on care and housing services, gave the course attendees task of creating some kind of entertainment service for stimulus purposes for their residents who have different severe conditions of memory deceases. The workshop course organized students into randomized teams that would design service concepts to present at the end of the course.
+                        In University of Tampere's & Futurice's, Let’s Re-Design Health Services -course, the client company Espericare ltd, specialized on care and housing services, gave the course attendees task of creating some kind of entertainment service for stimulus purposes for their residents who have different severe conditions of memory diseases. The workshop course organized students into randomized teams that would design service concepts to present at the end of the course.
                       </p>
                     }/>
                     <Row content={

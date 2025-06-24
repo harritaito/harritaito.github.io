@@ -15,10 +15,19 @@ class Button extends Component {
   }
 
   isLinkInternal () {
-    if(this.props.link.indexOf("://") === -1)
-      return true;
+    if (!this.props.link)
+      return false;
 
-    return window.location.host === this.props.link.host;
+    if (this.props.link.indexOf('://') === -1) {
+      return true;
+    }
+
+    try {
+      const url = new URL(this.props.link);
+      return window.location && window.location.host === url.host;
+    } catch (e) {
+      return false;
+    }
   }
 
   render() {
