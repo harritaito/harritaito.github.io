@@ -9,7 +9,7 @@ class PolarChart extends Component {
   static propTypes = {
     data: PropTypes.array.isRequired,
     caption: PropTypes.string,
-    firstRow: PropTypes.bool,
+    first: PropTypes.bool,
   }
 
   static defaultProps = {

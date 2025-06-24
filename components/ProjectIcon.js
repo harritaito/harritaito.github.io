@@ -103,7 +103,7 @@ class ProjectIcon extends Component {
           contentLabel="Modal">
           <div>
             <button onClick={this.hideModal} className={"modal-close-button"}>
-              <img src={close} alt={"close button"} style={{border: 0, height: '1,5em', width: '1,5em', background: '#FAFAFA'}}/>
+              <img src={close} alt={"close button"} style={{border: 0, height: '1.5em', width: '1.5em', background: '#FAFAFA'}}/>
             </button>
             <h2>{this.props.title}</h2>
             <div className="modal-content">
