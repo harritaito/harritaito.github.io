@@ -1,5 +1,7 @@
-module.exports = {
-  exportPathMap: function () {
+const withBabelMinify = require('next-babel-minify')()
+
+module.exports = withBabelMinify({
+  exportPathMap() {
     return {
       '/': { page: '/' },
       '/about': { page: '/about' },
@@ -7,6 +9,4 @@ module.exports = {
       '/aikakone': { page: '/aikakone' }
     }
   }
-}
-const withBabelMinify = require('next-babel-minify')()
-module.exports = withBabelMinify()
+})
