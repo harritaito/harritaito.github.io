@@ -6,7 +6,7 @@ This portfolio highlights design and development projects and shares background 
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/) 12 or newer (includes `npm`)
+- [Node.js](https://nodejs.org/) 18 or newer (includes `npm`)
 
 ## Local development
 
@@ -19,6 +19,10 @@ npm run dev
 
 The site will be available at `http://localhost:3000`.
 
+If you are running Node 20 or newer the Next.js build may otherwise fail with an
+OpenSSL error. The npm scripts already set `NODE_OPTIONS=--openssl-legacy-provider`
+so no additional configuration is required.
+
 ## Building the static site
 
 To generate the static output under the `out/` directory:
@@ -27,6 +31,17 @@ To generate the static output under the `out/` directory:
 npm run build
 npm run export
 ```
+
+## Testing
+
+Run the unit tests with Jest:
+
+```bash
+npm test
+```
+
+Tests execute in a lightweight Node environment defined in `test-setup.js` so
+`jest-environment-jsdom` is not required.
 
 ## Deployment
 

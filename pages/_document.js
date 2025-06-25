@@ -1,12 +1,10 @@
-import Document, {Head, Main, NextScript } from 'next/document';
-import flush from 'styled-jsx/server';
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 import Fonts from '../components/Fonts';
 
 export default class MyDocument extends Document {
-  static getInitialProps({ renderPage }) {
-    const { html, head, errorHtml, chunks } = renderPage();
-    const styles = flush();
-    return { html, head, errorHtml, chunks, styles };
+  static async getInitialProps(ctx) {
+    const initialProps = await Document.getInitialProps(ctx);
+    return { ...initialProps };
   }
   componentDidMount () {
     Fonts();
@@ -19,7 +17,7 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <html lang="en">
+      <Html lang="en">
         <Head>
             <meta charSet="UTF-8" />
             <meta httpEquiv="Cache-Control: max-age=86400" content="public" />
@@ -1376,15 +1374,13 @@ export default class MyDocument extends Document {
 
             `}</style>
         </Head>
-        <div id="root">
         <body>
             {this.props.customValue}
             <noscript>Sorry! You'll need to enable JavaScript to see my site.</noscript>
             <Main />
             <NextScript />
         </body>
-        </div>
-      </html>
-    )
+      </Html>
+    );
   }
 }
