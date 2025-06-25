@@ -6,7 +6,7 @@ This portfolio highlights design and development projects and shares background 
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/) 12 or newer (includes `npm`)
+- [Node.js](https://nodejs.org/) 18 or newer (includes `npm`)
 
 ## Local development
 
