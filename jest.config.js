@@ -1,7 +1,5 @@
 module.exports = {
-  testEnvironment: 'jsdom',
-  environmentOptions: {},
-  transform: {
-    '\\.[jt]sx?$': 'babel-jest'
-  }
+  // Use the basic Node environment so tests run without needing jsdom
+  testEnvironment: 'node',
+  setupFiles: ['./test-setup.js']
 };
