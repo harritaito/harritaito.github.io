@@ -12,10 +12,12 @@ class Lightbox extends Component {
   }
 
   
-  componentWillReceiveProps (nextProps) {
-    this.setState ({
-      modalIsOpen: nextProps.open
-    });
+  componentDidUpdate(prevProps) {
+    if (prevProps.open !== this.props.open) {
+      this.setState({
+        modalIsOpen: this.props.open
+      });
+    }
   }
 
 
