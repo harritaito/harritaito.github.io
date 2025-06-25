@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 
 class Video extends Component {
 
-  componentWillReceiveProps(nextProps) {
-    nextProps.autoplay ? this.playVideo() : this.stopVideo();
+  componentDidUpdate(prevProps) {
+    if (prevProps.autoplay !== this.props.autoplay) {
+      this.props.autoplay ? this.playVideo() : this.stopVideo();
+    }
   }
 
   static propTypes = {
