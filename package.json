@@ -44,8 +44,8 @@
     "victory": "^33.1.7"
   },
   "devDependencies": {
-    "babel-jest": "^29.0.0",
+    "babel-jest": "^30.0.4",
     "babel-plugin-inline-import-data-uri": "^1.0.1",
-    "jest": "^29.0.0"
+    "jest": "^30.0.4"
   }
 }
