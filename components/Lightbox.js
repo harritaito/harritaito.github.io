@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Carousel, { Modal, ModalGateway } from 'react-images';
+import { Carousel } from 'react-responsive-carousel';
 
 class Lightbox extends Component {
 
@@ -24,7 +24,14 @@ class Lightbox extends Component {
   render () {
     return (
       <div className="lightbox">
-        <Carousel views={this.props.images}/>
+        <Carousel showThumbs={false} showStatus={false}>
+          {this.props.images.map((img, i) => (
+            <div key={i}>
+              <img src={img.src} alt={img.caption || ''} />
+              {img.caption && <p className="legend">{img.caption}</p>}
+            </div>
+          ))}
+        </Carousel>
       </div>
     );
   }

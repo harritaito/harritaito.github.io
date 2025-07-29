@@ -9,7 +9,8 @@ import Process from '../components/Process';
 import ProjectStats from '../components/ProjectStats';
 import ProjectSection from "../components/ProjectSection";
 import Row from '../components/Row';
-import Carousel, { Modal, ModalGateway } from 'react-images';
+import { Carousel } from 'react-responsive-carousel';
+import Modal from 'react-modal';
 
 import hero from '../static/media/kivakaupunki/hero.jpg';
 
@@ -222,39 +223,36 @@ class Kivakaupunki extends Component {
                       </p>
                     }/>
 
-                    <ModalGateway>
                     {modalIsOpen ? (
-                      <Modal onClose={this.toggleModal}>
-                        <Carousel views={[
-                        {
-                          src: phone,
-                          caption: 'Start greeting scene of app'
-
-                        },
-                        {
-                          src: phone_booth,
-                          caption: 'Location tagging by gps or by selecting and tapping.'
-                        },
-                        {
-                          src: physical,
-                          caption: 'Second screen, notice the return button'
-                        },
-                        {
-                          src: popup,
-                          caption: 'Comment categories'
-                        },
-                        {
-                          src: watch,
-                          caption: 'Comment input'
-                        },
-                        {
-                          src: footsteps,
-                          caption: 'Final thank you screen'
-                        }
-                      ]} />
+                      <Modal isOpen={modalIsOpen} onRequestClose={this.toggleModal}>
+                        <Carousel showThumbs={false} showStatus={false}>
+                          <div>
+                            <img src={phone} alt="Start greeting scene of app" />
+                            <p className="legend">Start greeting scene of app</p>
+                          </div>
+                          <div>
+                            <img src={phone_booth} alt="Location tagging by gps or by selecting and tapping." />
+                            <p className="legend">Location tagging by gps or by selecting and tapping.</p>
+                          </div>
+                          <div>
+                            <img src={physical} alt="Second screen, notice the return button" />
+                            <p className="legend">Second screen, notice the return button</p>
+                          </div>
+                          <div>
+                            <img src={popup} alt="Comment categories" />
+                            <p className="legend">Comment categories</p>
+                          </div>
+                          <div>
+                            <img src={watch} alt="Comment input" />
+                            <p className="legend">Comment input</p>
+                          </div>
+                          <div>
+                            <img src={footsteps} alt="Final thank you screen" />
+                            <p className="legend">Final thank you screen</p>
+                          </div>
+                        </Carousel>
                       </Modal>
                     ) : null}
-                    </ModalGateway>
 
                     <Row className="one-margin-top" content={views.map(function (image, index) {
                         return (
