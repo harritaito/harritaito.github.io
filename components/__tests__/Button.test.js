@@ -1,5 +1,14 @@
 import Button from '../Button';
 
+// Mock next/link to avoid Next.js internals in unit tests
+jest.mock('next/link', () => {
+  const React = require('react');
+  return {
+    __esModule: true,
+    default: ({ href, children }) => React.createElement('a', { href }, children)
+  };
+});
+
 describe('Button.isLinkInternal', () => {
   const originalLocation = window.location;
   beforeEach(() => {
