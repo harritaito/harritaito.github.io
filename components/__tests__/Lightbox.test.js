@@ -1,12 +1,11 @@
 import Lightbox from '../Lightbox';
 
-// Mock react-images to avoid DOM dependencies in tests
-jest.mock('react-images', () => {
+// Mock carousel library to avoid DOM dependencies in tests
+jest.mock('react-responsive-carousel', () => {
   const React = require('react');
-  const Carousel = () => React.createElement('div');
-  const Modal = (props) => React.createElement('div', props);
-  const ModalGateway = ({ children }) => React.createElement('div', null, children);
-  return { __esModule: true, default: Carousel, Modal, ModalGateway };
+  return {
+    Carousel: () => React.createElement('div'),
+  };
 });
 
 describe('Lightbox componentDidUpdate', () => {

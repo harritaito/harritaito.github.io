@@ -7,7 +7,8 @@ import Process from "../components/Process";
 import ProjectStats from "../components/ProjectStats";
 import ProjectSection from "../components/ProjectSection";
 import Row from "../components/Row";
-import Carousel, { Modal, ModalGateway } from "react-images";
+import { Carousel } from "react-responsive-carousel";
+import Modal from "react-modal";
 
 import hero from "../static/media/aikakone/hero.jpg";
 
@@ -412,33 +413,28 @@ class Aikakone extends Component {
                       }
                     />
 
-                    <ModalGateway>
-                      {modalIsOpen ? (
-                        <Modal onClose={this.toggleModal}>
-                          <Carousel
-                            views={[
-                              {
-                                src: menu,
-                                caption: "First look of the menu of Aikakone.",
-                              },
-                              {
-                                src: aikakone,
-                                caption: "Using Aikakone",
-                              },
-                              {
-                                src: profile,
-                                caption: "Profile of elderly people",
-                              },
-                              {
-                                src: elamankaari,
-                                caption:
-                                  "Elämänkaari, a feature that has the lifespan of induvidual user",
-                              },
-                            ]}
-                          />
-                        </Modal>
-                      ) : null}
-                    </ModalGateway>
+                    {modalIsOpen ? (
+                      <Modal isOpen={modalIsOpen} onRequestClose={this.toggleModal}>
+                        <Carousel showThumbs={false} showStatus={false}>
+                          <div>
+                            <img src={menu} alt="First look of the menu of Aikakone." />
+                            <p className="legend">First look of the menu of Aikakone.</p>
+                          </div>
+                          <div>
+                            <img src={aikakone} alt="Using Aikakone" />
+                            <p className="legend">Using Aikakone</p>
+                          </div>
+                          <div>
+                            <img src={profile} alt="Profile of elderly people" />
+                            <p className="legend">Profile of elderly people</p>
+                          </div>
+                          <div>
+                            <img src={elamankaari} alt="Elämänkaari, a feature that has the lifespan of induvidual user" />
+                            <p className="legend">Elämänkaari, a feature that has the lifespan of induvidual user</p>
+                          </div>
+                        </Carousel>
+                      </Modal>
+                    ) : null}
 
                     <Row
                       className="one-margin-top col-md-offset-1 col-lg-offset-3"

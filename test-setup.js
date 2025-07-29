@@ -7,7 +7,7 @@ if (typeof global.document === 'undefined') {
   };
 }
 if (typeof global.window === 'undefined') {
-  global.window = { location: { host: '' } };
+  global.window = { location: { host: 'localhost', protocol: 'https:' } };
 }
 
 if (typeof globalThis.performance === 'undefined') {
