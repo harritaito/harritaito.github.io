@@ -15,7 +15,7 @@ class PageNotFound extends Component {
         }/>
         <Row content={
           <div style={{marginTop: "1.5em"}} className="col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6">
-           Feel free to chill out, or <Link href='/' legacyBehavior><a>head back to the home page.<div style={{display: 'block', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a></Link>
+           Feel free to chill out, or <Link href='/'>head back to the home page.<div style={{display: 'block', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></Link>
           </div>
         }/>
         <style jsx>{`
