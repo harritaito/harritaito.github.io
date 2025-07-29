@@ -7,9 +7,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "export": "next export",
     "clearCache": "rimraf node_modules/.cache",
-    "deploy": "rimraf node_modules/.cache && next build && next export && type nul >> out/.nojekyll && git add out/ && git commit -m \"Deploy Next.js to harritaito.github.io\" && git subtree push --prefix out origin master",
+    "deploy": "rimraf node_modules/.cache && next build && type nul >> out/.nojekyll && git add out/ && git commit -m \"Deploy Next.js to harritaito.github.io\" && git subtree push --prefix out origin master",
     "test": "jest"
   },
   "repository": {
