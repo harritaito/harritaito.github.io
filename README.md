@@ -44,4 +44,4 @@ Tests execute in a lightweight Node environment defined in `test-setup.js` so
 
 ## Deployment
 
-Running `npm run deploy` builds the site, exports it to `out/`, creates a `.nojekyll` file and commits the folder. The script then pushes the contents of `out/` to the `master` branch using `git subtree` so the pages are available through GitHub Pages.
+The repository includes a GitHub Actions workflow (`.github/workflows/deploy.yml`) which builds the site and publishes the `out/` directory to the `gh-pages` branch. Configure GitHub Pages to serve from that branch so the published site always matches the latest static build.
