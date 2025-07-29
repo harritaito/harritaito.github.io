@@ -29,7 +29,6 @@ To generate the static output under the `out/` directory:
 
 ```bash
 npm run build
-npm run export
 ```
 
 ## Testing
@@ -46,4 +45,3 @@ Tests execute in a lightweight Node environment defined in `test-setup.js` so
 ## Deployment
 
 Running `npm run deploy` builds the site, exports it to `out/`, creates a `.nojekyll` file and commits the folder. The script then pushes the contents of `out/` to the `master` branch using `git subtree` so the pages are available through GitHub Pages.
-

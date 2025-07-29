@@ -5,7 +5,7 @@
   "description": "portfolio of Harri Halonen",
   "scripts": {
     "dev": "next",
-    "build": "next build",
+    "build": "next build && type nul >> out/.nojekyll",
     "start": "next start",
     "clearCache": "rimraf node_modules/.cache",
     "deploy": "rimraf node_modules/.cache && next build && type nul >> out/.nojekyll && git add out/ && git commit -m \"Deploy Next.js to harritaito.github.io\" && git subtree push --prefix out origin master",
