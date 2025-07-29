@@ -17,9 +17,8 @@ export default class MyDocument extends Document {
             name="description"
             content="The website of Harri Halonen (@harritaito), a Finnish experience designer living and working in Tampere, Finland."
           />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link rel="icon" sizes="192x192" href="/static/touch-icon.png" />
-          <link rel="apple-touch-icon" href="/static/touch-icon.png" />
+          <link rel="icon" sizes="192x192" href="/static/media/touch-icon.png" />
+          <link rel="apple-touch-icon" href="/static/media/touch-icon.png" />
           <link
             rel="mask-icon"
             href="/static/favicon-mask.svg"

@@ -81,21 +81,19 @@ class Home extends Component {
                 </div>
                 <div style={{ marginTop: "1.5em", marginBottom: "1.5em" }}>
                   Want to learn about the person behind the work?{" "}
-                  <Link href="/about" as={"/about"} legacyBehavior>
-                    <a>
-                      Get to know me.
-                      <div
-                        style={{
-                          display: "block",
-                          outline: "none",
-                          height: 8,
-                          width: "98%",
-                          background: "rgba(139, 200, 246, 0.565)",
-                          marginTop: -9,
-                          marginLeft: 2,
-                        }}
-                      />
-                    </a>
+                  <Link href="/about" as="/about">
+                    Get to know me.
+                    <div
+                      style={{
+                        display: "block",
+                        outline: "none",
+                        height: 8,
+                        width: "98%",
+                        background: "rgba(139, 200, 246, 0.565)",
+                        marginTop: -9,
+                        marginLeft: 2,
+                      }}
+                    />
                   </Link>
                 </div>
               </div>
