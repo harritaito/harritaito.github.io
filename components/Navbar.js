@@ -39,10 +39,10 @@ class Navbar extends Component {
         </div>
         <Headroom style={{position: 'fixed'}}>
           <div className="navbar">
-            <Link href='/'><a className="home navbar-link">Home</a></Link>
+            <Link href='/' legacyBehavior><a className="home navbar-link">Home</a></Link>
             { this.props.nextProjectLink ?
               <div>
-                <Link href={this.props.nextProjectLink}><a className="next navbar-link">{this.props.nextProjectName}<span onClick={this.showModal}><object>  <Isvg className={"next-arrow"} src={arrow} /></object></span>
+                <Link href={this.props.nextProjectLink} legacyBehavior><a className="next navbar-link">{this.props.nextProjectName}<span onClick={this.showModal}><object>  <Isvg className={"next-arrow"} src={arrow} /></object></span>
               </a></Link>
                 </div>
               
