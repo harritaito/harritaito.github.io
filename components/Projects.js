@@ -36,31 +36,13 @@ class Projects {
   };
 
   getNextProject = (project) => {
-
-    let index = this.getIndexOfProject(project);
-
-    if (index + 1 > this.projects.length - 1) {
-      return this.projects[0]
-    }
-    else if (index + 2 > this.projects.length - 2) {
-      return this.projects[2]
-    }
-    else {
-      return this.projects[1]
-    }
-
-    return this.projects[index + 1];
+    const index = this.getIndexOfProject(project);
+    return this.projects[(index + 1) % this.projects.length];
   };
 
   getPrevProject = (project) => {
-
-    let index = this.getIndexOfProject(project);
-
-    if (index - 1 < 0) {
-      return this.projects[this.projects.length - 1]
-    }
-
-    return this.projects[index - 1];
+    const index = this.getIndexOfProject(project);
+    return this.projects[(index - 1 + this.projects.length) % this.projects.length];
   };
 
   getRandomProject = () => {

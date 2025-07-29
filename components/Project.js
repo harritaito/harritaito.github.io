@@ -65,14 +65,14 @@ class Project extends Component {
                   }
                 ]}
               >
-              <Link href={this.props.link}>
+              <Link href={this.props.link} legacyBehavior>
                 <div className="project-link-container">
                   <div className={"project-blurb " + this.props.color}>
                     <h2>{this.props.title}</h2>
                     <div style={{marginTop: "1.5em"}}>{this.props.description}</div>
                     <div className="bottom">
                       <div className={"next navbar-link " + this.props.color}>
-                        <Link href={this.props.link}><a>Case Study</a></Link>
+                        <Link href={this.props.link} legacyBehavior><a>Case Study</a></Link>
                         <span onClick={this.showModal}><object><Isvg className={"next-arrow"} src={arrow} /></object>
                         </span>
                       </div>
@@ -82,14 +82,14 @@ class Project extends Component {
               </Link>
               </Plx> :
 
-              <Link href={this.props.link}>
+              <Link href={this.props.link} legacyBehavior>
                 <div className="project-link-container">
                   <div className="project-blurb">
                     <h2>{this.props.title}</h2>
                     <div style={{marginTop: "1.5em"}}>{this.props.description}</div>
                     <div className="bottom">
                       <div className={"next navbar-link " + this.props.color}>
-                        <Link href={this.props.link}><a>Case Study</a></Link>
+                        <Link href={this.props.link} legacyBehavior><a>Case Study</a></Link>
                         <span onClick={this.showModal} style={{marginLeft: '5px', height: '27px', width: '23px', marginTop: 2}}>
                           <object><Isvg className={"next-arrow"} src={arrow} /></object>
                         </span>

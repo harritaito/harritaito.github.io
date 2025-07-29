@@ -1,6 +1,5 @@
-const withBabelMinify = require('next-babel-minify')()
-
-module.exports = withBabelMinify({
+module.exports = {
+  reactStrictMode: true,
   exportPathMap() {
     return {
       '/': { page: '/' },
@@ -9,4 +8,4 @@ module.exports = withBabelMinify({
       '/aikakone': { page: '/aikakone' }
     }
   }
-})
+}
