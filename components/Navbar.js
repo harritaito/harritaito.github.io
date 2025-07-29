@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import Headroom from 'react-headroom';
-import ReadingProgress from 'react-reading-progress';
 import Isvg from 'react-inlinesvg';
 
 import arrow from '../static/media/icons/arrow-slim.svg';
@@ -13,8 +12,28 @@ class Navbar extends Component {
     super();
 
     this.state = {
-      visible: true
-    }
+      visible: true,
+      progress: 0
+    };
+
+    this.updateProgress = this.updateProgress.bind(this);
+  }
+
+  updateProgress() {
+    const height = document.documentElement.scrollHeight - window.innerHeight;
+    const value = height > 0 ? window.scrollY / height : 0;
+    this.setState({ progress: value });
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.updateProgress);
+    window.addEventListener('resize', this.updateProgress);
+    this.updateProgress();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.updateProgress);
+    window.removeEventListener('resize', this.updateProgress);
   }
 
   static propTypes = {
@@ -35,7 +54,11 @@ class Navbar extends Component {
     return (
       <div className="nav">
         <div className="progress-bar">
-          <ReadingProgress className={`${ this.props.color }`} />
+          <progress
+            className={`${this.props.color}`}
+            value={this.state.progress}
+            max={1}
+          />
         </div>
         <Headroom style={{position: 'fixed'}}>
           <div className="navbar">
