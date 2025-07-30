@@ -167,3 +167,23 @@ Project is considered **upgraded** when:
 2. Unit tests, ESLint, Playwright, and Percy visual snapshots are green.  
 
 ---
+
+## 10 · redesign/plan \U0001F310
+This section collects notes for a potential site redesign.
+
+### Key Goals
+- Modernize the portfolio with a clean, responsive layout.
+- Highlight UX/UI expertise and recent projects.
+
+### Must-Haves
+- Clear home page introduction with a call to action.
+- Individual project pages with summaries, images, and outcomes.
+- Accessible, mobile-friendly navigation.
+- Simple contact method (form or email link).
+
+### Nice-To-Haves
+- Blog or articles section for ongoing updates.
+- Theme switcher for light and dark modes.
+- Case study PDFs or downloadable resources.
+- Analytics integration.
+- Headless CMS for easier content management.
