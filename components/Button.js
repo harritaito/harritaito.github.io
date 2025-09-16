@@ -24,7 +24,10 @@ class Button extends Component {
 
     try {
       const url = new URL(this.props.link);
-      return window.location && window.location.host === url.host;
+      if (typeof window === 'undefined' || !window.location) {
+        return false;
+      }
+      return window.location.host === url.host;
     } catch (e) {
       return false;
     }
