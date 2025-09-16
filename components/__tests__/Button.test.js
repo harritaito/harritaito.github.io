@@ -27,4 +27,16 @@ describe('Button.isLinkInternal', () => {
     const btn = new Button({ label: 'Test', link: 'https://other.com', color: 'green' });
     expect(btn.isLinkInternal()).toBe(false);
   });
+
+  test('returns false when window is undefined (SSR)', () => {
+    const originalWindow = global.window;
+    global.window = undefined;
+
+    try {
+      const btn = new Button({ label: 'Test', link: 'https://example.com', color: 'green' });
+      expect(btn.isLinkInternal()).toBe(false);
+    } finally {
+      global.window = originalWindow;
+    }
+  });
 });
