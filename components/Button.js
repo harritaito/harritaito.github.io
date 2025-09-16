@@ -35,24 +35,31 @@ class Button extends Component {
 
   render() {
 
+    const content = <span>{this.props.label}</span>;
+
     return (
       <div className={"button " + this.props.color}>
         {
           this.props.link ?
             (
               this.isLinkInternal() ?
-              <Link href={this.props.link} legacyBehavior>
-                {this.props.label}
-              </Link> :
-              <a href={this.props.link} target="_blank" rel="noopener noreferrer">
-                {this.props.label}
-              </a>
-            ) : <a><span>{this.props.label}</span></a>
+                <Link href={this.props.link} className="button-link">
+                  {content}
+                </Link> :
+                <a
+                  className="button-link"
+                  href={this.props.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {content}
+                </a>
+            ) : <span className="button-link button-link--static" aria-disabled="true">{content}</span>
         }
         <style jsx>{`
           /* Solid Button Rules */
 
-          .button a {
+          .button .button-link {
             display: inline-block;
             position: relative;
             border-radius: 26px;
@@ -64,8 +71,11 @@ class Button extends Component {
             transition: all .6s linear;
             font-weight: 500;
           }
+          .button .button-link--static {
+            cursor: default;
+          }
           @media only screen and (max-width: 45rem) {
-          .button a {font-size: 0.9rem;}
+          .button .button-link {font-size: 0.9rem;}
         }
 
           .button:hover {
@@ -75,18 +85,18 @@ class Button extends Component {
 
           /* Outline Button Rules */
 
-          .button.outline a {
+          .button.outline .button-link {
             color: #696a6d;
             padding: 0;
           }
 
-          .button.outline a span {
+          .button.outline .button-link span {
             position: relative;
             display: inline-block;
             padding: .3em 1.3em;
           }
 
-          .button.outline a::before {
+          .button.outline .button-link::before {
             border: 2px solid #696a6d;
             border-radius: 26px;
             width: 100%;
@@ -99,37 +109,37 @@ class Button extends Component {
 
           /* Outline Button Colors */
 
-          .button.outline.blue a:hover span {
+          .button.outline.blue .button-link:hover span {
             color: #1e95ed
           }
 
-          .button.outline.blue a:hover::before {
+          .button.outline.blue .button-link:hover::before {
             border-color: #1e95ed;
           }
 
 
-          .button.outline.green a:hover span {
+          .button.outline.green .button-link:hover span {
             color: #12a42d
           }
 
-          .button.outline.green a:hover::before {
+          .button.outline.green .button-link:hover::before {
             border-color: #12a42d;
           }
 
-          .button.outline.red a:hover span {
+          .button.outline.red .button-link:hover span {
             color: #fa5858;
           }
 
-          .button.outline.red a:hover::before {
+          .button.outline.red .button-link:hover::before {
             border-color: #fa5858;
           }
 
 
-          .button.outline.purple a:hover span {
+          .button.outline.purple .button-link:hover span {
             color: #9157ff;
           }
 
-          .button.outline.purple a:hover::before {
+          .button.outline.purple .button-link:hover::before {
             border-color: #9157ff;
           }
         `}</style>
