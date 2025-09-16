@@ -30,6 +30,25 @@ class Project extends Component {
     endValue: -100
   }
 
+  renderProjectLink() {
+    return (
+      <Link href={this.props.link} className="project-link-container">
+        <div className={"project-blurb " + this.props.color}>
+          <h2>{this.props.title}</h2>
+          <div style={{marginTop: "1.5em"}}>{this.props.description}</div>
+          <div className="bottom">
+            <div className={"next navbar-link " + this.props.color}>
+              <span className="case-study-text">Case Study</span>
+              <span className="next-arrow" aria-hidden="true">
+                <Isvg className="next-arrow-icon" src={arrow} />
+              </span>
+            </div>
+          </div>
+        </div>
+      </Link>
+    );
+  }
+
   render() {
 
     return (
@@ -65,39 +84,10 @@ class Project extends Component {
                   }
                 ]}
               >
-              <Link href={this.props.link} legacyBehavior>
-                <div className="project-link-container">
-                  <div className={"project-blurb " + this.props.color}>
-                    <h2>{this.props.title}</h2>
-                    <div style={{marginTop: "1.5em"}}>{this.props.description}</div>
-                    <div className="bottom">
-                      <div className={"next navbar-link " + this.props.color}>
-                        <Link href={this.props.link} legacyBehavior><a>Case Study</a></Link>
-                        <span onClick={this.showModal}><object><Isvg className={"next-arrow"} src={arrow} /></object>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Link>
+              {this.renderProjectLink()}
               </Plx> :
 
-              <Link href={this.props.link} legacyBehavior>
-                <div className="project-link-container">
-                  <div className="project-blurb">
-                    <h2>{this.props.title}</h2>
-                    <div style={{marginTop: "1.5em"}}>{this.props.description}</div>
-                    <div className="bottom">
-                      <div className={"next navbar-link " + this.props.color}>
-                        <Link href={this.props.link} legacyBehavior><a>Case Study</a></Link>
-                        <span onClick={this.showModal} style={{marginLeft: '5px', height: '27px', width: '23px', marginTop: 2}}>
-                          <object><Isvg className={"next-arrow"} src={arrow} /></object>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Link>
+              this.renderProjectLink()
             }
           </div>
         </div>
@@ -112,6 +102,12 @@ class Project extends Component {
 
           .project-link-container {
             color: inherit;
+            display: block;
+            text-decoration: none;
+          }
+
+          .project-link-container:focus {
+            outline: none;
           }
 
           .Project:hover .project-image {
@@ -236,11 +232,11 @@ class Project extends Component {
             color: #FAFAFA;
           }
 
-          .Project .project-blurb:hover .next a {
+          .Project .project-blurb:hover .case-study-text {
             color: #FAFAFA;
           }
 
-          .Project .project-blurb:hover .next svg {
+          .Project .project-blurb:hover .next-arrow-icon {
             fill: #FAFAFA;
           }
 
@@ -265,14 +261,11 @@ class Project extends Component {
             padding: .5em 0 1em;
           }
 
-          .bottom .next a {
-            outline: none; 
+          .case-study-text {
+            display: inline-block;
             -webkit-transition: all .6s ease;
             -o-transition: all .6s ease;
             transition: all .6s ease;
-          }
-          .bottom .next a:focus {
-            outline: none;
           }
 
           .bottom .next-arrow {
@@ -285,42 +278,41 @@ class Project extends Component {
             display: block;
           }
 
-          .bottom .next-arrow svg {
+          .bottom .next-arrow-icon {
             -webkit-transition: all .6s ease;
             -o-transition: all .6s ease;
             transition: all .6s ease;
           }
 
-          .project-blurb .next.green a {
+          .project-blurb .next.green .case-study-text {
             color: #12a42d;
           }
 
-          .project-blurb .green .next-arrow svg {
+          .project-blurb .green .next-arrow-icon {
             fill: #12a42d;
           }
 
-          .project-blurb .next.blue a {
+          .project-blurb .next.blue .case-study-text {
             color: #1e95ed;
           }
 
-          .project-blurb .blue .next-arrow svg {
+          .project-blurb .blue .next-arrow-icon {
             fill: #1e95ed;
           }
 
-          .project-blurb .next.red a {
+          .project-blurb .next.red .case-study-text {
             color: #fa5858;
           }
 
-          .project-blurb .red .next-arrow svg {
+          .project-blurb .red .next-arrow-icon {
             fill: #fa5858;
           }
 
-
-          .project-blurb .purple a {
+          .project-blurb .purple .case-study-text {
             color: #9157ff;
           }
 
-          .project-blurb .purple .next-arrow svg {
+          .project-blurb .purple .next-arrow-icon {
             fill: #9157ff;
           }
 

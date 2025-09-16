@@ -1,3 +1,6 @@
+import React from 'react';
+import { renderToStaticMarkup } from 'react-dom/server';
+
 import Button from '../Button';
 
 // Mock next/link to avoid Next.js internals in unit tests
@@ -5,7 +8,7 @@ jest.mock('next/link', () => {
   const React = require('react');
   return {
     __esModule: true,
-    default: ({ href, children }) => React.createElement('a', { href }, children)
+    default: ({ href, children, ...props }) => React.createElement('a', { href, ...props }, children)
   };
 });
 
@@ -38,5 +41,18 @@ describe('Button.isLinkInternal', () => {
     } finally {
       global.window = originalWindow;
     }
+  });
+});
+
+describe('Button rendering', () => {
+  test('renders an anchor for internal links', () => {
+    const markup = renderToStaticMarkup(<Button label="Test" link="/about" color="green" />);
+    expect(markup).toContain('href="/about"');
+    expect(markup).toContain('class="button-link"');
+  });
+
+  test('renders a span when no link is provided', () => {
+    const markup = renderToStaticMarkup(<Button label="Test" color="green" />);
+    expect(markup).toContain('aria-disabled="true"');
   });
 });
