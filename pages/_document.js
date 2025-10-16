@@ -43,6 +43,7 @@ export default class MyDocument extends Document {
           />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="630" />
+          <meta name="color-scheme" content="light dark" />
           <style>{`
                 body {
                 margin: 0;
@@ -1375,6 +1376,27 @@ export default class MyDocument extends Document {
                 .hidden-xl {
                     display: none;
                 }
+                }
+
+                @media (prefers-color-scheme: dark) {
+                body {
+                    background: #121212;
+                    color: #eee;
+                }
+
+                a, p a:visited {
+                    color: #eee;
+                }
+                }
+
+                body.dark-theme {
+                    background: #121212;
+                    color: #eee;
+                }
+
+                body.dark-theme a,
+                body.dark-theme p a:visited {
+                    color: #eee;
                 }
 
             `}</style>
