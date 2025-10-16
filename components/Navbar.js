@@ -13,10 +13,13 @@ class Navbar extends Component {
 
     this.state = {
       visible: true,
-      progress: 0
+      progress: 0,
+      theme: 'light'
     };
 
     this.updateProgress = this.updateProgress.bind(this);
+    this.toggleTheme = this.toggleTheme.bind(this);
+    this.applyTheme = this.applyTheme.bind(this);
   }
 
   updateProgress() {
@@ -29,11 +32,28 @@ class Navbar extends Component {
     window.addEventListener('scroll', this.updateProgress);
     window.addEventListener('resize', this.updateProgress);
     this.updateProgress();
+    const stored = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = stored || (prefersDark ? 'dark' : 'light');
+    this.setState({ theme }, this.applyTheme);
   }
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.updateProgress);
     window.removeEventListener('resize', this.updateProgress);
+  }
+
+  toggleTheme() {
+    this.setState(
+      prev => ({ theme: prev.theme === 'dark' ? 'light' : 'dark' }),
+      this.applyTheme
+    );
+  }
+
+  applyTheme() {
+    const { theme } = this.state;
+    document.body.classList.toggle('dark-theme', theme === 'dark');
+    localStorage.setItem('theme', theme);
   }
 
   static propTypes = {
@@ -62,13 +82,21 @@ class Navbar extends Component {
         </div>
         <Headroom style={{position: 'fixed'}}>
           <div className="navbar">
-            <Link href='/' legacyBehavior><a className="home navbar-link">Home</a></Link>
+            <div className="links">
+              <Link href='/' legacyBehavior><a className="navbar-link">Home</a></Link>
+              <Link href='/projects' legacyBehavior><a className="navbar-link">Projects</a></Link>
+              <Link href='/about' legacyBehavior><a className="navbar-link">About</a></Link>
+              <Link href='/contact' legacyBehavior><a className="navbar-link">Contact</a></Link>
+            </div>
+            <button className="theme-toggle" onClick={this.toggleTheme} aria-label="Toggle dark mode">
+              {this.state.theme === 'dark' ? '☀️' : '🌙'}
+            </button>
             { this.props.nextProjectLink ?
               <div>
                 <Link href={this.props.nextProjectLink} legacyBehavior><a className="next navbar-link">{this.props.nextProjectName}<span onClick={this.showModal}><object>  <Isvg className={"next-arrow"} src={arrow} /></object></span>
-              </a></Link>
-                </div>
-              
+                </a></Link>
+              </div>
+
               :
               null
             }
@@ -130,6 +158,12 @@ class Navbar extends Component {
             background: white;
           }
 
+          .links {
+            display: flex;
+            gap: 1em;
+            padding: 1em;
+          }
+
           .navbar-link {
             display: inline-block;
             outline: none; 
@@ -181,11 +215,6 @@ class Navbar extends Component {
                     transform: translateX(3px);
           }
 
-          .navbar .home {
-            padding: 1em 0em 0em 1em;
-            display: -ms-flexbox;
-            display: flex;
-          }
 
           .progress-bar {
             -webkit-appearance: none;
@@ -269,6 +298,40 @@ class Navbar extends Component {
 
           progress.grey::-moz-progress-bar {
             background-color: #747a75;
+          }
+
+          @media (prefers-color-scheme: dark) {
+            .navbar {
+              background: #222;
+            }
+
+            .navbar-link {
+              color: #eee;
+            }
+
+            progress::-webkit-progress-bar {
+              background: #222;
+            }
+          }
+
+          .theme-toggle {
+            background: none;
+            border: none;
+            font-size: 1.2em;
+            cursor: pointer;
+            padding: 0 0.5em;
+          }
+
+          body.dark-theme .navbar {
+            background: #222;
+          }
+
+          body.dark-theme .navbar-link {
+            color: #eee;
+          }
+
+          body.dark-theme progress::-webkit-progress-bar {
+            background: #222;
           }
 
 
