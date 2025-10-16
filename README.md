@@ -45,3 +45,17 @@ Tests execute in a lightweight Node environment defined in `test-setup.js` so
 ## Deployment
 
 The repository includes a GitHub Actions workflow (`.github/workflows/deploy.yml`) which builds the site and publishes the `out/` directory to the `gh-pages` branch. Configure GitHub Pages to serve from that branch so the published site always matches the latest static build.
+
+To verify the static export before publishing, run the build locally and inspect the HTML under `out/`:
+
+```bash
+npm run build
+```
+
+When you are satisfied with the build output you can publish the contents of `out/` to GitHub Pages directly from your workstation:
+
+```bash
+npm run publish
+```
+
+The `publish` command keeps the `deploy` workflow's git subtree deployment for backwards compatibility while making it easy to separate the build and publishing steps when working locally.
