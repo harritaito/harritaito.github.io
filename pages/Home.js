@@ -72,7 +72,20 @@ class Home extends Component {
                   intuitive, and accessible to everyone.
                 </div>
                 <div style={{ marginTop: "1.5em" }}>
-                  Scroll 👇 to see some highlighted projects.
+                  Scroll 👇 to see some highlighted projects or
+                  <Link href="/projects" as="/projects"> view them all
+                    <div
+                      style={{
+                        display: "block",
+                        outline: "none",
+                        height: 8,
+                        width: "98%",
+                        background: "rgba(139, 200, 246, 0.565)",
+                        marginTop: -9,
+                        marginLeft: 2,
+                      }}
+                    />
+                  </Link>.
                 </div>
                 <div style={{ marginTop: "1.5em" }}>
                   Hope you enjoy this porfolio made with React and Next.js with

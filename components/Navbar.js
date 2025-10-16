@@ -62,13 +62,18 @@ class Navbar extends Component {
         </div>
         <Headroom style={{position: 'fixed'}}>
           <div className="navbar">
-            <Link href='/' legacyBehavior><a className="home navbar-link">Home</a></Link>
+            <div className="links">
+              <Link href='/' legacyBehavior><a className="navbar-link">Home</a></Link>
+              <Link href='/projects' legacyBehavior><a className="navbar-link">Projects</a></Link>
+              <Link href='/about' legacyBehavior><a className="navbar-link">About</a></Link>
+              <Link href='/contact' legacyBehavior><a className="navbar-link">Contact</a></Link>
+            </div>
             { this.props.nextProjectLink ?
               <div>
                 <Link href={this.props.nextProjectLink} legacyBehavior><a className="next navbar-link">{this.props.nextProjectName}<span onClick={this.showModal}><object>  <Isvg className={"next-arrow"} src={arrow} /></object></span>
-              </a></Link>
-                </div>
-              
+                </a></Link>
+              </div>
+
               :
               null
             }
@@ -130,6 +135,12 @@ class Navbar extends Component {
             background: white;
           }
 
+          .links {
+            display: flex;
+            gap: 1em;
+            padding: 1em;
+          }
+
           .navbar-link {
             display: inline-block;
             outline: none; 
@@ -181,11 +192,6 @@ class Navbar extends Component {
                     transform: translateX(3px);
           }
 
-          .navbar .home {
-            padding: 1em 0em 0em 1em;
-            display: -ms-flexbox;
-            display: flex;
-          }
 
           .progress-bar {
             -webkit-appearance: none;

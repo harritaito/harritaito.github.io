@@ -1,7 +1,7 @@
 # harritaito.github.io
 
 This repository contains the source code for Harri Halonen's personal portfolio website. The site is written with [Next.js](https://nextjs.org/) and exported to static HTML so it can be served via GitHub Pages.
-This portfolio highlights design and development projects and shares background about the author.
+This portfolio highlights design and development projects and shares background about the author. The site now includes a dedicated Projects page and a simple contact form for reaching out.
 
 
 ## Prerequisites
