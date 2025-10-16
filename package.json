@@ -1,7 +1,7 @@
 {
   "name": "harritaito.github.io",
   "version": "1.0.1",
-  "homepage": "http://harritaito.com",
+  "homepage": "https://harritaito.com",
   "description": "portfolio of Harri Halonen",
   "scripts": {
     "dev": "next",
@@ -10,7 +10,7 @@
     "postbuild": "node scripts/create-nojekyll.js",
     "start": "next start",
     "clearCache": "rimraf node_modules/.cache",
-    "publish": "git add out/ && git commit -m \"Deploy Next.js to harritaito.github.io\" && git subtree push --prefix out origin master",
+    "publish": "git add out/ && git commit -m \"Deploy Next.js to harritaito.github.io\" && git subtree push --prefix out origin gh-pages",
     "deploy": "npm run build && npm run publish",
     "test": "jest"
   },
