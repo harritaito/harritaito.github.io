@@ -26,7 +26,6 @@
   "dependencies": {
     "fontfaceobserver": "^2.3.0",
     "next": "^15.4.4",
-    "next-babel-minify": "^1.0.0",
     "next-images": "^1.8.5",
     "react": "^18.2.0",
     "react-collapse": "^5.1.1",
@@ -37,11 +36,11 @@
     "react-medium-image-zoom": "^5.2.14",
     "react-modal": "^3.16.3",
     "react-plx": "^2.1.2",
-    "react-reading-progress": "^0.3.0",
+    "react-reading-progress": "^0.2.7",
     "react-responsive-carousel": "^3.2.23",
     "react-visibility-sensor": "^5.1.1",
     "styled-jsx": "^5.1.7",
-    "victory": "^33.1.7"
+    "victory": "^37.3.6"
   },
   "devDependencies": {
     "babel-jest": "^30.0.4",
