@@ -57,59 +57,57 @@ class Home extends Component {
             }
           />
 
-        <Row
-          content={
-            <div className="col-xs-12 col-sm-8 col-md-9 col-lg-6 col-xl-6 hero">
-              <p className="tagline">
-                Product designer partnering with product teams to ship confident,
-                insight-led experiences.
-              </p>
-              <p className="hero-intro">
-                I translate messy problems into validated direction—running discovery, prototyping, and delivery rituals that keep
-                teams aligned on customer and business outcomes.
-              </p>
-              <ul className="value-list">
-                <li>
-                  <strong>Focus the roadmap:</strong> Turn research and analytics into opportunity frameworks and testable bets.
-                </li>
-                <li>
-                  <strong>Design with evidence:</strong> Blend field studies, co-creation, and iterative prototyping to remove uncertainty before engineers build.
-                </li>
-                <li>
-                  <strong>Scale collaboration:</strong> Facilitate product rituals and design systems that help teams ship accessible, measurable improvements faster.
-                </li>
-              </ul>
-              <div className="cta-group">
-                <a className="primary-cta" href="mailto:harri@harritaito.com">
-                  Request a portfolio walkthrough
-                </a>
-                <a className="secondary-cta" href="#case-studies">
-                  Skip to case studies ↓
-                </a>
+          <Row
+            content={
+              <div className="col-xs-12 col-sm-8 col-md-9 col-lg-6 col-xl-6 hero">
+                <p className="tagline">
+                  Product designer shaping research-led services with civic, health, and emerging tech teams.
+                </p>
+                <p className="hero-intro">
+                  I help cross-functional groups untangle complex problems, share what we learn in plain language, and steward experiences that feel considered.
+                </p>
+                <ul className="value-list">
+                  <li>
+                    <strong>Bring clarity:</strong> Facilitate discovery research and synthesis that highlight the needs behind the numbers.
+                  </li>
+                  <li>
+                    <strong>Prototype together:</strong> Explore flows, interactions, and service touchpoints alongside the people who rely on them.
+                  </li>
+                  <li>
+                    <strong>Support delivery:</strong> Maintain lightweight systems and rituals so teams can iterate with confidence.
+                  </li>
+                </ul>
+                <div className="cta-group">
+                  <a className="primary-cta" href="#case-studies">
+                    Browse selected work
+                  </a>
+                  <a className="secondary-cta" href="#product-impact">
+                    See how I collaborate
+                  </a>
+                </div>
+                <div className="availability">
+                  Currently supporting teams full-time and welcoming thoughtful collaborations and conversations.
+                </div>
+                <div className="about-link">
+                  Curious about the person behind the work?{" "}
+                  <Link href="/about" as="/about">
+                    Get to know me.
+                    <div
+                      style={{
+                        display: "block",
+                        outline: "none",
+                        height: 8,
+                        width: "98%",
+                        background: "rgba(139, 200, 246, 0.565)",
+                        marginTop: -9,
+                        marginLeft: 2,
+                      }}
+                    />
+                  </Link>
+                </div>
               </div>
-              <div className="availability">
-                Currently open to senior product designer roles with hybrid or remote teams.
-              </div>
-              <div className="about-link">
-                Want to learn about the person behind the work?{" "}
-                <Link href="/about" as="/about">
-                  Get to know me.
-                  <div
-                    style={{
-                      display: "block",
-                      outline: "none",
-                      height: 8,
-                      width: "98%",
-                      background: "rgba(139, 200, 246, 0.565)",
-                      marginTop: -9,
-                      marginLeft: 2,
-                    }}
-                  />
-                </Link>
-              </div>
-            </div>
-          }
-        />
+            }
+          />
         </div>
         <Row
           content={
@@ -117,7 +115,7 @@ class Home extends Component {
               className="col-xs-12 col-sm-10 col-md-9 col-lg-6 col-xl-6 section-heading"
               id="product-impact"
             >
-              How I create product impact
+              How I support teams
             </h2>
           }
         />
@@ -127,22 +125,19 @@ class Home extends Component {
               <div className="impact-card">
                 <h3>Discovery to clarity</h3>
                 <p>
-                  Align stakeholders around real problems by planning research, synthesising insights, and framing opportunities
-                  with JTBD and service blueprints.
+                  Bring people together around real problems by planning research, synthesising insights, and framing opportunities with service maps and JTBD.
                 </p>
               </div>
               <div className="impact-card">
                 <h3>Prototype to proof</h3>
                 <p>
-                  Build and test flows, interfaces, and content in rapid cycles—using mixed-method validation to prioritise what
-                  we ship next.
+                  Explore flows, interfaces, and content in quick cycles—testing with the communities we design for before committing to build.
                 </p>
               </div>
               <div className="impact-card">
                 <h3>Scale the craft</h3>
                 <p>
-                  Establish design rituals, systems, and handoffs that help product and engineering teams move faster without
-                  sacrificing quality or accessibility.
+                  Nurture design rituals, systems, and handoffs that help teams move with care, accessibility, and shared context.
                 </p>
               </div>
             </div>
@@ -166,8 +161,7 @@ class Home extends Component {
         <Row
           content={
             <p className="col-xs-12 col-sm-10 col-md-9 col-lg-8 col-xl-7 section-subheading">
-              A snapshot of how I help teams turn research insight into outcomes across public, healthcare, and emerging tech
-              domains.
+              A snapshot from collaborative work across public, healthcare, and emerging tech contexts.
             </p>
           }
         />
@@ -229,20 +223,10 @@ class Home extends Component {
                 "col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 col-xl-4 col-xl-offset-4 contact"
               }
             >
-              I'm currently interviewing for senior product designer roles and select consulting partnerships.{" "}
-              <a href="mailto:harri@harritaito.com">
-                email me
-                <div
-                  style={{
-                    display: "block",
-                    height: 8,
-                    width: "98%",
-                    background: "rgba(139, 200, 246, 0.565)",
-                    marginTop: -9,
-                    marginLeft: 2,
-                  }}
-                />
-              </a>{" "}
+              I enjoy swapping notes with curious teams and researchers. If you'd like to connect, send a short hello to{" "}
+              <span className="obfuscated-email" aria-label="harri@harritaito.com">
+                harri [at] harritaito [dot] com
+              </span>{" "}
               or{" "}
               <a href={"https://calendly.com/harritaito/45min/"}>
                 book time on my calendar
@@ -257,7 +241,7 @@ class Home extends Component {
                   }}
                 />
               </a>{" "}
-              to explore how we could work together.
+              when schedules align.
             </div>
           }
         />
@@ -459,6 +443,24 @@ class Home extends Component {
 
           .Home .contact {
             text-align: center;
+          }
+
+          .Home .obfuscated-email {
+            display: inline-block;
+            font-weight: 600;
+            position: relative;
+            z-index: 0;
+          }
+
+          .Home .obfuscated-email::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0.15em;
+            width: 100%;
+            height: 8px;
+            background: rgba(139, 200, 246, 0.565);
+            z-index: -1;
           }
 
           @media only screen and (max-width: 412px) {
