@@ -44,6 +44,8 @@ Tests execute in a lightweight Node environment defined in `test-setup.js` so
 
 ## Deployment
 
+GitHub Pages respects the `.nojekyll` marker in the repository root. Keeping that file prevents Pages from stripping the `_next` directory that holds the statically exported JavaScript assets, so the published site continues to load styles and scripts correctly.
+
 The repository includes a GitHub Actions workflow (`.github/workflows/deploy.yml`) which builds the site and publishes the `out/` directory to the `gh-pages` branch. Configure GitHub Pages to serve from that branch so the published site always matches the latest static build.
 
 To verify the static export before publishing, run the build locally and inspect the HTML under `out/`:
