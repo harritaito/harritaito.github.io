@@ -12,7 +12,10 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <meta charSet="UTF-8" />
-          <meta httpEquiv="Cache-Control: max-age=86400" content="public" />
+          <meta
+            httpEquiv="Cache-Control"
+            content="public, max-age=86400"
+          />
           <meta
             name="description"
             content="The website of Harri Halonen (@harritaito), a Finnish experience designer living and working in Tampere, Finland."
