@@ -10,20 +10,19 @@ export default class MyDocument extends Document {
   render() {
     const setInitialTheme = `(
       function() {
+        var doc = document.documentElement;
+        var theme = 'light';
         try {
           var storageKey = 'theme';
-          var doc = document.documentElement;
           var stored = localStorage.getItem(storageKey);
           if (stored === 'light' || stored === 'dark') {
-            doc.dataset.theme = stored;
-          } else if (window.matchMedia) {
-            var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            doc.dataset.theme = prefersDark ? 'dark' : 'light';
-          } else {
-            doc.dataset.theme = 'light';
+            theme = stored;
+          } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            theme = 'dark';
           }
-        } catch (e) {
-        }
+        } catch (e) {}
+        doc.dataset.theme = theme;
+        doc.style.colorScheme = theme;
       }
     )();`;
 
@@ -1444,18 +1443,7 @@ export default class MyDocument extends Document {
                 }
                 }
 
-                @media (prefers-color-scheme: dark) {
-                body {
-                    background: #121212;
-                    color: #eee;
-                }
-
-                a, p a:visited {
-                    color: #eee;
-                }
-                }
-
-            `}</style>
+                `}</style>
         </Head>
         <body>
           {this.props.customValue}
