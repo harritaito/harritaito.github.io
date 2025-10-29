@@ -1,6 +1,19 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import Fonts from "../components/Fonts";
 
+const SITE_METADATA = Object.freeze({
+  title: "Harri Halonen",
+  description:
+    "The website of Harri Halonen (@harritaito), a Finnish experience designer living and working in Tampere, Finland.",
+  siteUrl: "https://harritaito.com/",
+  locale: "en_US",
+  twitterHandle: "@harritaito",
+  socialImage: {
+    url: "https://harritaito.com/static/media/twittericon.png",
+    alt: "Harri Halonen logomark",
+  },
+});
+
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx);
@@ -8,12 +21,8 @@ export default class MyDocument extends Document {
   }
 
   render() {
-    const title = "Harri Halonen";
-    const description =
-      "The website of Harri Halonen (@harritaito), a Finnish experience designer living and working in Tampere, Finland.";
-    const siteUrl = "https://harritaito.com/";
-    const socialImage = "https://harritaito.com/static/media/twittericon.png";
-    const twitterHandle = "@harritaito";
+    const { title, description, siteUrl, locale, twitterHandle, socialImage } =
+      SITE_METADATA;
 
     return (
       <Html lang="en">
@@ -25,12 +34,13 @@ export default class MyDocument extends Document {
           />
           <meta
             name="viewport"
-            content="width=device-width, initial-scale=1"
+            content="width=device-width, initial-scale=1, viewport-fit=cover"
           />
           <meta
             name="description"
             content={description}
           />
+          <link rel="canonical" href={siteUrl} />
           <link rel="icon" sizes="192x192" href="/static/media/touch-icon.png" />
           <link rel="apple-touch-icon" href="/static/media/touch-icon.png" />
           <link
@@ -42,24 +52,27 @@ export default class MyDocument extends Document {
           <meta property="og:url" content={siteUrl} />
           <meta property="og:type" content="website" />
           <meta property="og:title" content={title} />
+          <meta property="og:site_name" content={title} />
           <meta
             property="og:description"
             content={description}
           />
+          <meta property="og:locale" content={locale} />
           <meta name="twitter:site" content={twitterHandle} />
+          <meta name="twitter:creator" content={twitterHandle} />
           <meta name="twitter:title" content={title} />
           <meta name="twitter:description" content={description} />
           <meta name="twitter:card" content="summary_large_image" />
           <meta
             name="twitter:image"
-            content={socialImage}
+            content={socialImage.url}
           />
+          <meta name="twitter:image:alt" content={socialImage.alt} />
           <meta
             property="og:image"
-            content={socialImage}
+            content={socialImage.url}
           />
-          <meta property="og:image:width" content="1200" />
-          <meta property="og:image:height" content="630" />
+          <meta property="og:image:alt" content={socialImage.alt} />
           <meta name="color-scheme" content="light dark" />
           <style>{`
                 body {
