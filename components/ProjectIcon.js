@@ -83,7 +83,7 @@ class ProjectIcon extends Component {
         border: "none",
         margin: "10vh auto",
         visibility: modalVisible,
-        background: "#FAFAFA"
+        background: "var(--surface-elevated-color)"
       }
     }
     
@@ -103,7 +103,7 @@ class ProjectIcon extends Component {
           contentLabel="Modal">
           <div>
             <button onClick={this.hideModal} className={"modal-close-button"}>
-              <img src={close} alt={"close button"} style={{border: 0, height: '1.5em', width: '1.5em', background: '#FAFAFA'}}/>
+              <img src={close} alt={"close button"} style={{border: 0, height: '1.5em', width: '1.5em', background: 'var(--surface-elevated-color)'}}/>
             </button>
             <h2>{this.props.title}</h2>
             <div className="modal-content">
@@ -207,7 +207,7 @@ class ProjectIcon extends Component {
         position: absolute;
         right: 1.5em;
         top: 1.5em;
-        background: #FAFAFA;
+        background: var(--surface-elevated-color);
       }
 
 
@@ -215,7 +215,7 @@ class ProjectIcon extends Component {
         height: 1.5em;
         width: 1.5em;
         border: 0;
-        background: #FAFAFA;
+        background: var(--surface-elevated-color);
       }
 
 

@@ -86,7 +86,7 @@ class Button extends Component {
           /* Outline Button Rules */
 
           .button.outline .button-link {
-            color: #696a6d;
+            color: var(--muted-text-color);
             padding: 0;
           }
 
@@ -97,7 +97,7 @@ class Button extends Component {
           }
 
           .button.outline .button-link::before {
-            border: 2px solid #696a6d;
+            border: 2px solid var(--muted-text-color);
             border-radius: 26px;
             width: 100%;
             height:100%;
