@@ -8,6 +8,13 @@ export default class MyDocument extends Document {
   }
 
   render() {
+    const title = "Harri Halonen";
+    const description =
+      "The website of Harri Halonen (@harritaito), a Finnish experience designer living and working in Tampere, Finland.";
+    const siteUrl = "https://harritaito.com/";
+    const socialImage = "https://harritaito.com/static/media/twittericon.png";
+    const twitterHandle = "@harritaito";
+
     return (
       <Html lang="en">
         <Head>
@@ -17,8 +24,12 @@ export default class MyDocument extends Document {
             content="public, max-age=86400"
           />
           <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1"
+          />
+          <meta
             name="description"
-            content="The website of Harri Halonen (@harritaito), a Finnish experience designer living and working in Tampere, Finland."
+            content={description}
           />
           <link rel="icon" sizes="192x192" href="/static/media/touch-icon.png" />
           <link rel="apple-touch-icon" href="/static/media/touch-icon.png" />
@@ -28,21 +39,24 @@ export default class MyDocument extends Document {
             color="#49B882"
           />
           <link rel="icon" href="/static/favicon.ico" />
-          <meta property="og:url" content="https://harritaito.com/" />
-          <meta property="og:title" content="Harri Halonen" />
+          <meta property="og:url" content={siteUrl} />
+          <meta property="og:type" content="website" />
+          <meta property="og:title" content={title} />
           <meta
             property="og:description"
-            content="The website of Harri Halonen (@harritaito), a Finnish experience designer living and working in Tampere, Finland."
+            content={description}
           />
-          <meta name="twitter:site" content="https://harritaito.com/" />
+          <meta name="twitter:site" content={twitterHandle} />
+          <meta name="twitter:title" content={title} />
+          <meta name="twitter:description" content={description} />
           <meta name="twitter:card" content="summary_large_image" />
           <meta
             name="twitter:image"
-            content="https://harritaito.com/static/media/twittericon.png"
+            content={socialImage}
           />
           <meta
             property="og:image"
-            content="https://harritaito.com/static/media/twittericon.png"
+            content={socialImage}
           />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="630" />
