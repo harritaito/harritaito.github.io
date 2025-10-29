@@ -10,7 +10,7 @@
     "postbuild": "node scripts/create-nojekyll.js",
     "start": "next start",
     "clearCache": "rimraf node_modules/.cache",
-    "publish": "git add out/ && git commit -m \"Deploy Next.js to harritaito.github.io\" && git subtree push --prefix out origin gh-pages",
+    "publish": "git add out/ && (git diff --cached --quiet && echo \"No changes to commit; deploying existing build.\" || git commit -m \"Deploy Next.js to harritaito.github.io\") && git subtree push --prefix out origin gh-pages",
     "deploy": "npm run build && npm run publish",
     "test": "jest"
   },

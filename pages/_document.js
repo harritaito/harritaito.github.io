@@ -1,6 +1,19 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import Fonts from "../components/Fonts";
 
+const SITE_METADATA = Object.freeze({
+  title: "Harri Halonen",
+  description:
+    "The website of Harri Halonen (@harritaito), a Finnish experience designer living and working in Tampere, Finland.",
+  siteUrl: "https://harritaito.com/",
+  locale: "en_US",
+  twitterHandle: "@harritaito",
+  socialImage: {
+    url: "https://harritaito.com/static/media/twittericon.png",
+    alt: "Harri Halonen logomark",
+  },
+});
+
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx);
@@ -25,16 +38,26 @@ export default class MyDocument extends Document {
         doc.style.colorScheme = theme;
       }
     )();`;
+    const { title, description, siteUrl, locale, twitterHandle, socialImage } =
+      SITE_METADATA;
 
     return (
       <Html lang="en">
         <Head>
           <meta charSet="UTF-8" />
-          <meta httpEquiv="Cache-Control: max-age=86400" content="public" />
+          <meta
+            httpEquiv="Cache-Control"
+            content="public, max-age=86400"
+          />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, viewport-fit=cover"
+          />
           <meta
             name="description"
-            content="The website of Harri Halonen (@harritaito), a Finnish experience designer living and working in Tampere, Finland."
+            content={description}
           />
+          <link rel="canonical" href={siteUrl} />
           <link rel="icon" sizes="192x192" href="/static/media/touch-icon.png" />
           <link rel="apple-touch-icon" href="/static/media/touch-icon.png" />
           <link
@@ -43,24 +66,30 @@ export default class MyDocument extends Document {
             color="#49B882"
           />
           <link rel="icon" href="/static/favicon.ico" />
-          <meta property="og:url" content="https://harritaito.com/" />
-          <meta property="og:title" content="Harri Halonen" />
+          <meta property="og:url" content={siteUrl} />
+          <meta property="og:type" content="website" />
+          <meta property="og:title" content={title} />
+          <meta property="og:site_name" content={title} />
           <meta
             property="og:description"
-            content="The website of Harri Halonen (@harritaito), a Finnish experience designer living and working in Tampere, Finland."
+            content={description}
           />
-          <meta name="twitter:site" content="https://harritaito.com/" />
+          <meta property="og:locale" content={locale} />
+          <meta name="twitter:site" content={twitterHandle} />
+          <meta name="twitter:creator" content={twitterHandle} />
+          <meta name="twitter:title" content={title} />
+          <meta name="twitter:description" content={description} />
           <meta name="twitter:card" content="summary_large_image" />
           <meta
             name="twitter:image"
-            content="https://harritaito.com/static/media/twittericon.png"
+            content={socialImage.url}
           />
+          <meta name="twitter:image:alt" content={socialImage.alt} />
           <meta
             property="og:image"
-            content="https://harritaito.com/static/media/twittericon.png"
+            content={socialImage.url}
           />
-          <meta property="og:image:width" content="1200" />
-          <meta property="og:image:height" content="630" />
+          <meta property="og:image:alt" content={socialImage.alt} />
           <meta name="color-scheme" content="light dark" />
           <script dangerouslySetInnerHTML={{ __html: setInitialTheme }} />
           <style>{`

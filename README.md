@@ -44,18 +44,32 @@ Tests execute in a lightweight Node environment defined in `test-setup.js` so
 
 ## Deployment
 
+GitHub Pages respects the `.nojekyll` marker in the repository root. Keeping that file prevents Pages from stripping the `_next` directory that holds the statically exported JavaScript assets, so the published site continues to load styles and scripts correctly.
+
+### Publishing with GitHub Actions
+
 The repository includes a GitHub Actions workflow (`.github/workflows/deploy.yml`) which builds the site and publishes the `out/` directory to the `gh-pages` branch. Configure GitHub Pages to serve from that branch so the published site always matches the latest static build.
 
-To verify the static export before publishing, run the build locally and inspect the HTML under `out/`:
+1. Push your changes to the `main` branch.
+2. GitHub Actions will run the `deploy` workflow automatically and update the `gh-pages` branch with the latest static export.
+3. Confirm the deployment succeeded by checking the workflow run and visiting the configured Pages URL once it completes.
 
-```bash
-npm run build
-```
+Because GitHub Pages serves files exactly as they exist in the published branch, avoid deleting `.nojekyll` or the `CNAME` marker when updating the `gh-pages` branch—both files are required for the production site to resolve correctly.
 
-When you are satisfied with the build output you can publish the contents of `out/` to GitHub Pages directly from your workstation:
+### Publishing manually
 
-```bash
-npm run publish
-```
+If you need to publish without waiting for CI, verify the static export locally and push it yourself.
 
-The `publish` command keeps the `deploy` workflow's git subtree deployment for backwards compatibility while making it easy to separate the build and publishing steps when working locally.
+1. Run a production build and inspect the generated HTML under `out/`:
+
+   ```bash
+   npm run build
+   ```
+
+2. When you are satisfied with the build output, publish the contents of `out/` to GitHub Pages from your workstation:
+
+   ```bash
+   npm run publish
+   ```
+
+The `publish` command keeps the `deploy` workflow's git subtree deployment for backwards compatibility while making it easy to separate the build and publishing steps when working locally. Make sure you have permission to push to the `gh-pages` branch before running it.
