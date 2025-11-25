@@ -21,6 +21,24 @@ export default class MyDocument extends Document {
   }
 
   render() {
+    const setInitialTheme = `(
+      function() {
+        var doc = document.documentElement;
+        var theme = 'light';
+        try {
+          var storageKey = 'theme';
+          var stored = localStorage.getItem(storageKey);
+          if (stored === 'light' || stored === 'dark') {
+            theme = stored;
+          } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            theme = 'dark';
+          }
+        } catch (e) {}
+        doc.dataset.theme = theme;
+        doc.style.colorScheme = theme;
+      }
+    )();`;
+ 
     const { title, description, siteUrl, locale, twitterHandle, socialImage } =
       SITE_METADATA;
 
@@ -74,7 +92,42 @@ export default class MyDocument extends Document {
           />
           <meta property="og:image:alt" content={socialImage.alt} />
           <meta name="color-scheme" content="light dark" />
+          <script dangerouslySetInnerHTML={{ __html: setInitialTheme }} />
           <style>{`
+                :root {
+                color-scheme: light dark;
+                --background-color: #fafafa;
+                --surface-color: #f5f5f5;
+                --surface-elevated-color: #ffffff;
+                --text-color: #111827;
+                --muted-text-color: #4b5563;
+                --link-color: #0f172a;
+                --link-hover-color: #49b882;
+                --border-color: rgba(15, 23, 42, 0.12);
+                --navbar-shadow: 0 .2em .2em 0 rgba(0,0,0,0.10);
+                --progress-track-color: #e5e7eb;
+                --icon-color: #1f1e1e;
+                --focus-outline: #49b882;
+                --surface-hover-color: rgba(15, 23, 42, 0.05);
+                }
+
+                :root[data-theme='dark'] {
+                color-scheme: dark;
+                --background-color: #0b1120;
+                --surface-color: #111827;
+                --surface-elevated-color: #1f2937;
+                --text-color: #e2e8f0;
+                --muted-text-color: #94a3b8;
+                --link-color: #e2e8f0;
+                --link-hover-color: #7ce3b2;
+                --border-color: rgba(148, 163, 184, 0.4);
+                --navbar-shadow: 0 .2em .8em 0 rgba(8, 15, 32, 0.8);
+                --progress-track-color: #1f2937;
+                --icon-color: #e2e8f0;
+                --focus-outline: #7ce3b2;
+                --surface-hover-color: rgba(148, 163, 184, 0.18);
+                }
+
                 body {
                 margin: 0;
                 padding: 0;
@@ -83,7 +136,9 @@ export default class MyDocument extends Document {
                 text-rendering: optimizeLegibility;
                 -webkit-font-smoothing: antialiased;
                 position: relative;
-                background: #fafafa;
+                background: var(--background-color);
+                color: var(--text-color);
+                transition: background-color 0.3s ease, color 0.3s ease;
                 }
 
                 #root {
@@ -159,18 +214,28 @@ export default class MyDocument extends Document {
                 a {
                 text-decoration: none;
                 display: inline-block;
-                color: #000;
+                color: var(--link-color);
                 overflow: visible;
                 cursor: pointer;
                 outline: none;
+                transition: color 0.2s ease;
+                }
+
+                a:hover {
+                color: var(--link-hover-color);
                 }
 
                 a:focus {
                 outline: none;
                 }
 
+                a:focus-visible {
+                outline: 2px solid var(--focus-outline);
+                outline-offset: 2px;
+                }
+
                 p a:visited {
-                color: #000;
+                color: var(--link-color);
                 text-decoration: none;
                 }
 
@@ -1408,18 +1473,7 @@ export default class MyDocument extends Document {
                 }
                 }
 
-                @media (prefers-color-scheme: dark) {
-                body {
-                    background: #121212;
-                    color: #eee;
-                }
-
-                a, p a:visited {
-                    color: #eee;
-                }
-                }
-
-            `}</style>
+                `}</style>
         </Head>
         <body>
           {this.props.customValue}

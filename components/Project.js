@@ -143,7 +143,7 @@ class Project extends Component {
           }
 
           .project-blurb {
-            background-color: white;
+            background-color: var(--surface-elevated-color);
             padding: 1em 1.5em;
             overflow: hidden;
             -webkit-box-shadow: 0 1em 2em 0 rgba(0,0,0,0.30);
@@ -199,7 +199,7 @@ class Project extends Component {
           }
 
           .project-blurb .bg-white, .project-blurb .bg-transition  {
-            background: #FAFAFA;
+            background: var(--surface-elevated-color);
           }
 
           .project-blurb .bg-gradient {
