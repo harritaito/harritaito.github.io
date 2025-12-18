@@ -345,6 +345,26 @@ class Project extends Component {
               margin-top: 100px;
             }
           }
+
+          @media only screen and (max-width: 45rem) {
+            .project-blurb {
+              margin-top: 1.5em;
+              -webkit-box-shadow: 0 0.75em 1.5em 0 rgba(0,0,0,0.22);
+                      box-shadow: 0 0.75em 1.5em 0 rgba(0,0,0,0.22);
+            }
+
+            .project-image {
+              border-radius: 0.75rem;
+            }
+
+            .plx {
+              margin-top: 1.5em;
+              opacity: 1 !important;
+              -webkit-transform: none !important;
+                  -ms-transform: none !important;
+                      transform: none !important;
+            }
+          }
         `}</style>
       </div>
     );
