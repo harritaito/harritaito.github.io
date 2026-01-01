@@ -267,6 +267,12 @@ class Home extends Component {
             margin-top: 1.5em;
           }
 
+          .Home .intro {
+            min-height: 100svh;
+            min-height: 100dvh;
+            padding-bottom: calc(2.5rem + var(--sab));
+          }
+
           .Home .tagline {
             font-size: 1.6em;
             font-weight: 600;

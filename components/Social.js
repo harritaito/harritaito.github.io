@@ -74,10 +74,20 @@ class Social extends Component {
         <style jsx>{`
       .social {
   text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .social a {
   text-decoration: none;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
 }
 
 .social a::after{
@@ -88,7 +98,6 @@ class Social extends Component {
   width: 20px;
   height: 20px;
   fill: var(--icon-color);
-  margin-left: .75em;
 }
 
 .social path, footer .social rect {
@@ -138,6 +147,7 @@ class Social extends Component {
 @media only screen and (max-width: 575px)  {
   .social {
     text-align: center;
+    justify-content: center;
   }
 }
 
