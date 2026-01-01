@@ -126,11 +126,19 @@ export default class MyDocument extends Document {
                 --icon-color: #e2e8f0;
                 --focus-outline: #7ce3b2;
                 --surface-hover-color: rgba(148, 163, 184, 0.18);
+                --sat: env(safe-area-inset-top);
+                --sab: env(safe-area-inset-bottom);
+                }
+
+                html {
+                scroll-padding-top: calc(var(--header-h, 0px) + var(--sat));
                 }
 
                 body {
                 margin: 0;
                 padding: 0;
+                padding-top: var(--sat);
+                padding-bottom: var(--sab);
                 font-family: Rubik, sans-serif;
                 font-size: 16px;
                 text-rendering: optimizeLegibility;
