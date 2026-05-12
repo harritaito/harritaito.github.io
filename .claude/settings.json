@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Write(/home/harri/Develop/yard-vision-codex/locales/*)",
+      "Bash(*)"
+    ]
+  }
+}

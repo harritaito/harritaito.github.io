@@ -1,0 +1,79 @@
+{
+  "northStar": "The Warm Case Study Desk",
+  "register": "brand",
+  "narrative": {
+    "overview": "A bright, authored portfolio surface that feels personal, calm, and quietly assured. The design should present work samples like artifacts spread across a designer's desk, with warm typography and selective project color.",
+    "antiReferences": [
+      "generic SaaS landing page",
+      "cold corporate consulting site",
+      "over-animated creative-developer portfolio"
+    ]
+  },
+  "shadows": {
+    "navbar": "0 0.2em 0.2em 0 rgba(0,0,0,0.10)",
+    "media": "0 0.5em 1em 0 rgba(0,0,0,0.30)",
+    "card": "0 1em 2em 0 rgba(0,0,0,0.30)",
+    "hover": "0 1.5em 2.5em 0 rgba(0,0,0,0.30)",
+    "light": "0 0.25em 0.5em 0 rgba(0,0,0,0.15)"
+  },
+  "motion": {
+    "transitions": {
+      "default": "all .6s linear",
+      "quick": "all .2s linear",
+      "hoverArrow": "all .3s linear"
+    },
+    "parallax": {
+      "enabled": true,
+      "component": "react-plx",
+      "signatureUse": "project-card reveal and translateY fade-in"
+    }
+  },
+  "breakpoints": {
+    "mobileMax": "45rem",
+    "xs": "576px",
+    "md": "768px",
+    "lg": "992px",
+    "xl": "1200px"
+  },
+  "components": {
+    "projectCard": {
+      "description": "Large case-study image with overlapping summary card and accent-reactive hover state.",
+      "padding": "1em 1.5em",
+      "offset": "-10em",
+      "background": "#FAFAFA",
+      "text": "#000000"
+    },
+    "buttonOutline": {
+      "radius": "26px",
+      "defaultText": "#696A6D",
+      "hoverColors": [
+        "#1E95ED",
+        "#12A42D",
+        "#FA5858",
+        "#9157FF"
+      ]
+    },
+    "navbar": {
+      "background": "#FAFAFA",
+      "progressDefault": "#9157FF",
+      "progressVariants": {
+        "red": "#FA5858",
+        "blue": "#1E95ED",
+        "green": "#12A42D",
+        "grey": "#747A75"
+      }
+    }
+  },
+  "rules": {
+    "dos": [
+      "Use the project accent system selectively, not as a page-wide wash.",
+      "Keep display serif usage scarce and intentional.",
+      "Preserve the paper-and-artifact feel through light backgrounds and soft shadows."
+    ],
+    "donts": [
+      "Do not drift into generic SaaS marketing patterns.",
+      "Do not introduce cold enterprise styling.",
+      "Do not prioritize animation tricks over readability."
+    ]
+  }
+}
