@@ -100,21 +100,21 @@ class Project extends Component {
             .Project {margin-top: 5em; margin-bottom: 5em;}
           }
 
-          .project-link-container {
+          .Project :global(.project-link-container) {
             color: inherit;
             display: block;
             text-decoration: none;
           }
 
-          .project-link-container:focus {
+          .Project :global(.project-link-container:focus) {
             outline: none;
           }
 
-          .plx {
+          .Project :global(.plx) {
             opacity: 0;
           }
 
-          .case-card {
+          .Project :global(.case-card) {
             border-radius: 1.5rem;
             overflow: hidden;
             background-color: var(--surface-elevated-color);
@@ -126,43 +126,43 @@ class Project extends Component {
             flex-direction: column;
           }
 
-          .project-link-container:hover .case-card {
+          .Project :global(.project-link-container:hover .case-card) {
             -webkit-box-shadow: 0 1.5em 2.5em 0 rgba(0,0,0,0.30);
                     box-shadow: 0 1.5em 2.5em 0 rgba(0,0,0,0.30);
           }
 
-          .case-card__media {
+          .Project :global(.case-card__media) {
             position: relative;
             aspect-ratio: 16 / 9;
             overflow: hidden;
           }
 
-          .case-card__image {
+          .Project :global(.case-card__image) {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
           }
 
-          .case-card__content {
+          .Project :global(.case-card__content) {
             padding: 1.5em;
           }
 
-          .case-card__title {
+          .Project :global(.case-card__title) {
             margin: 0 0 0.5em;
             font-size: clamp(1.125rem, 4vw, 1.75rem);
             line-height: 1.2;
           }
 
-          .case-card__description {
+          .Project :global(.case-card__description) {
             margin: 0 0 1.25em;
             line-height: 1.7;
           }
 
-          .case-card .next-arrow {
+          .Project :global(.case-card .next-arrow) {
             margin-left: 1rem;
             height: 200px;
-            weight: 200px;
+            width: 200px;
           }
 
           /* Gradient background code */
@@ -213,7 +213,7 @@ class Project extends Component {
 
           /* Hover Styling */
 
-          .case-card:hover .next-arrow {
+          .Project :global(.case-card:hover .next-arrow) {
             -webkit-transform: translateX(5px);
                 -ms-transform: translateX(5px);
                     transform: translateX(5px);
@@ -221,27 +221,27 @@ class Project extends Component {
 
           /* Link Styling */
 
-          .bottom {
+          .Project :global(.bottom) {
             display: -ms-flexbox;
             display: flex;
             -ms-flex-pack: justify;
                 justify-content: space-between
           }
 
-          .bottom .next {
+          .Project :global(.bottom .next) {
             display: -ms-flexbox;
             display: flex;
             padding: .5em 0 1em;
           }
 
-          .case-study-text {
+          .Project :global(.case-study-text) {
             display: inline-block;
             -webkit-transition: all .6s ease;
             -o-transition: all .6s ease;
             transition: all .6s ease;
           }
 
-          .bottom .next-arrow {
+          .Project :global(.bottom .next-arrow) {
             width: 1em;
             height: 1em;
             margin-left: 4px;
@@ -251,45 +251,45 @@ class Project extends Component {
             display: block;
           }
 
-          .bottom .next-arrow-icon {
+          .Project :global(.bottom .next-arrow-icon) {
             -webkit-transition: all .6s ease;
             -o-transition: all .6s ease;
             transition: all .6s ease;
           }
 
-          .case-card .next.green .case-study-text {
+          .Project :global(.case-card .next.green .case-study-text) {
             color: #12a42d;
           }
 
-          .case-card .green .next-arrow-icon {
+          .Project :global(.case-card .green .next-arrow-icon) {
             fill: #12a42d;
           }
 
-          .case-card .next.blue .case-study-text {
+          .Project :global(.case-card .next.blue .case-study-text) {
             color: #1e95ed;
           }
 
-          .case-card .blue .next-arrow-icon {
+          .Project :global(.case-card .blue .next-arrow-icon) {
             fill: #1e95ed;
           }
 
-          .case-card .next.red .case-study-text {
+          .Project :global(.case-card .next.red .case-study-text) {
             color: #fa5858;
           }
 
-          .case-card .red .next-arrow-icon {
+          .Project :global(.case-card .red .next-arrow-icon) {
             fill: #fa5858;
           }
 
-          .case-card .purple .case-study-text {
+          .Project :global(.case-card .purple .case-study-text) {
             color: #9157ff;
           }
 
-          .case-card .purple .next-arrow-icon {
+          .Project :global(.case-card .purple .next-arrow-icon) {
             fill: #9157ff;
           }
 
-          .project-link-container{
+          .Project :global(.project-link-container) {
             cursor: pointer;
             -webkit-user-select: none;
             -moz-user-select: none;
@@ -299,12 +299,12 @@ class Project extends Component {
 
 
           @media only screen and (max-width: 45rem) {
-            .case-card {
+            .Project :global(.case-card) {
               -webkit-box-shadow: 0 0.75em 1.5em 0 rgba(0,0,0,0.22);
                       box-shadow: 0 0.75em 1.5em 0 rgba(0,0,0,0.22);
             }
 
-            .plx {
+            .Project :global(.plx) {
               opacity: 1 !important;
               -webkit-transform: none !important;
                   -ms-transform: none !important;
