@@ -2,6 +2,7 @@
 name: Harri Halonen Portfolio
 description: Personal portfolio and case-study site for a thoughtful, warm, quietly confident experience designer.
 colors:
+  primary: "#9157FF"
   page-bg: "#FAFAFA"
   text-strong: "#000000"
   text-muted: "#696A6D"
@@ -49,7 +50,8 @@ spacing:
   xl: "5rem"
 components:
   button-solid:
-    textColor: "{colors.page-bg}"
+    backgroundColor: "{colors.primary}"
+    textColor: "{colors.text-strong}"
     rounded: "{rounded.pill}"
     padding: "0.5em 1.5em"
     typography: "{typography.label}"
@@ -66,6 +68,34 @@ components:
     backgroundColor: "{colors.page-bg}"
     textColor: "{colors.text-strong}"
     padding: "1em"
+  button-outline-green:
+    textColor: "{colors.accent-green}"
+    rounded: "{rounded.pill}"
+    padding: "0.3em 1.3em"
+    typography: "{typography.label}"
+  button-outline-blue:
+    textColor: "{colors.accent-blue}"
+    rounded: "{rounded.pill}"
+    padding: "0.3em 1.3em"
+    typography: "{typography.label}"
+  button-outline-red:
+    textColor: "{colors.accent-red}"
+    rounded: "{rounded.pill}"
+    padding: "0.3em 1.3em"
+    typography: "{typography.label}"
+  button-outline-purple:
+    textColor: "{colors.accent-purple}"
+    rounded: "{rounded.pill}"
+    padding: "0.3em 1.3em"
+    typography: "{typography.label}"
+  link-highlight:
+    backgroundColor: "{colors.accent-highlight}"
+    height: "8px"
+    width: "98%"
+  metadata-accent:
+    backgroundColor: "{colors.progress-green}"
+    textColor: "{colors.text-strong}"
+    rounded: "{rounded.pill}"
 ---
 
 # Design System: Harri Halonen Portfolio
