@@ -2,12 +2,45 @@
 
 These instructions apply to the entire repository.
 
+## Stack
+
 - Use Node.js 18 or newer.
-- After making any code changes, run:
+- App is Next.js portfolio site with page routes under `pages/`.
+- Shared UI lives under `components/`.
+- Extracted design-system primitives live under `components/design-system/`.
+- Static assets live under `static/`.
+- Static export output lives under `out/`.
+
+## Design Context
+
+- Read `PRODUCT.md` before making UX, copy, or layout decisions.
+- Read `DESIGN.md` before changing colors, type, spacing, elevation, or component styling.
+- Reuse existing tokens and primitives from `components/design-system/` before adding new hard-coded values.
+- Keep portfolio feel aligned with current design direction: light paper background, Trirong + Rubik typography, selective project accent colors, soft shadows, restrained motion.
+
+## Working Rules
+
+- Prefer small, low-churn edits over broad rewrites.
+- When a visual pattern is repeated 3+ times, extract into `components/design-system/` or an existing shared component instead of duplicating it again.
+- Avoid modifying `package-lock.json` unless dependency work requires it.
+- If you change source UI code, do not hand-edit `out/`; regenerate via build.
+
+## Verification
+
+- After making code changes, run:
   ```bash
   npm test
   npm run build
   ```
-  Ensure both commands succeed before committing.
-- Unless a TODO section specifically states otherwise, avoid modifying `package-lock.json`.
+- Ensure both commands succeed before committing.
+- `npm run build` performs static export and refreshes `out/`, including `out/.nojekyll`.
+
+## Repo Notes
+
+- `npm run build` is cross-platform. Keep it that way; do not reintroduce Windows-only shell snippets.
+- Repository contains generated static HTML at root and under `out/`. Treat `pages/` and `components/` as source of truth.
+- Jest tests live under `components/__tests__/`.
+
+## Commits
+
 - Follow Conventional Commits for commit messages.
