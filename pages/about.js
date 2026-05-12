@@ -31,8 +31,22 @@ class About extends Component {
           <Row
             content={
               <p className="about-me-copy col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6">
-                Hi, I'm glad you’d like to get more familiar! Here’s me in quick
-                bulletpoints:
+                I’m Harri Halonen, an experience designer rooted in Tampere,
+                Finland. I help multidisciplinary teams turn research insights
+                into digital products and services that feel considerate,
+                inclusive, and genuinely useful.
+              </p>
+            }
+          />
+
+          <Row
+            content={
+              <p className="about-me-copy col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6">
+                These days my work spans product discovery, service design, and
+                strategy for industrial, public sector, and healthcare projects.
+                I run field research, facilitate co-creation, and iterate on
+                prototypes so teams can make confident, evidence-based
+                decisions.
               </p>
             }
           />
@@ -41,17 +55,17 @@ class About extends Component {
             content={
               <ul className="about-me-copy col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6 list">
                 <li>
-                  From Tampere, Finlan.{" "}
-                  <span className="emoji" role="img" aria-label="smile">
-                    😊
-                  </span>
+                  <strong>Recent focus:</strong> Leading discovery sprints,
+                  design ops, and product experiments for cross-functional
+                  teams exploring industrial XR, AI-assisted tooling, and
+                  connected services.
                 </li>
-
-                <div style={{ marginTop: "1.5em" }}>
-                  Check out my 2021 Master's thesis called{" "}
+                <li>
+                  <strong>Academic highlight:</strong> My 2021 master’s thesis,{" "}
                   <a
                     href={"https://urn.fi/URN:NBN:fi:tuni-202107046179"}
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     Interaction Design Principles for Industrial XR
                     <div
@@ -66,19 +80,18 @@ class About extends Component {
                       }}
                     />
                   </a>{" "}
-                  for Tampere University's HCI program.
-                </div>
-                <li>
-                  I love film and capturing a moment myself{" "}
-                  <span className="emoji" role="img" aria-label="film">
-                    📽
-                  </span>
+                  for Tampere University’s HCI program continues to guide how I
+                  blend emerging tech with humane experiences.
                 </li>
                 <li>
-                  Still active hooper{" "}
-                  <span className="emoji" role="img" aria-label="basketball">
-                    🏀
-                  </span>
+                  <strong>Community:</strong> I stay active in the Finnish
+                  design and startup scene through volunteering, mentoring, and
+                  speaking—building on organising roles with events like Stream
+                  Startup Festival.
+                </li>
+                <li>
+                  <strong>Off the screen:</strong> Capturing everyday stories on
+                  film and keeping my basketball game sharp keep me energised.
                 </li>
               </ul>
             }
@@ -87,8 +100,25 @@ class About extends Component {
           <Row
             content={
               <p className="about-me-copy col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6">
-                Thanks for visiting, it truly means a lot. The page does set at
-                cookie for the media and user experience.
+                Thanks for stopping by—it truly means a lot. If you’d like to
+                chat,{" "}
+                <a href="mailto:harri@harritaito.com">send me an email</a> or
+                grab time via my{" "}
+                <a href="https://calendly.com/harritaito/45min/">
+                  open calendar
+                  <div
+                    style={{
+                      display: "block",
+                      height: 8,
+                      width: "98%",
+                      background: "rgba(139, 200, 246, 0.565)",
+                      marginTop: -9,
+                      marginLeft: 2,
+                    }}
+                  />
+                </a>
+                . This page uses a small cookie to keep embedded media behaving
+                nicely.
                 <span className="emoji" role="img" aria-label="vulcan salute">
                   🖖
                 </span>

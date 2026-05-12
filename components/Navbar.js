@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Headroom from 'react-headroom';
 import Isvg from 'react-inlinesvg';
 
+import ThemeToggle from './ThemeToggle';
 import arrow from '../static/media/icons/arrow-slim.svg';
 
 class Navbar extends Component {
@@ -62,16 +63,24 @@ class Navbar extends Component {
         </div>
         <Headroom style={{position: 'fixed'}}>
           <div className="navbar">
-            <Link href='/' legacyBehavior><a className="home navbar-link">Home</a></Link>
-            { this.props.nextProjectLink ?
-              <div>
-                <Link href={this.props.nextProjectLink} legacyBehavior><a className="next navbar-link">{this.props.nextProjectName}<span onClick={this.showModal}><object>  <Isvg className={"next-arrow"} src={arrow} /></object></span>
-              </a></Link>
+            <div className="links">
+              <Link href='/' legacyBehavior><a className="navbar-link">Home</a></Link>
+              <Link href='/projects' legacyBehavior><a className="navbar-link">Projects</a></Link>
+              <Link href='/about' legacyBehavior><a className="navbar-link">About</a></Link>
+              <Link href='/contact' legacyBehavior><a className="navbar-link">Contact</a></Link>
+            </div>
+            <div className="navbar-controls">
+              <ThemeToggle />
+              { this.props.nextProjectLink ?
+                <div className="next-wrapper">
+                  <Link href={this.props.nextProjectLink} legacyBehavior><a className="next navbar-link">{this.props.nextProjectName}<span onClick={this.showModal}><object>  <Isvg className={"next-arrow"} src={arrow} /></object></span>
+                  </a></Link>
                 </div>
-              
-              :
-              null
-            }
+
+                :
+                null
+              }
+            </div>
           </div>
         </Headroom>
         <style jsx>{`
@@ -80,9 +89,11 @@ class Navbar extends Component {
             top: 0px;
             left: 0px;
             right: 0px;
-            background: #FAFAFA;
+            background: var(--surface-elevated-color);
             z-index: 1 !important;
             transform: translateY(0px);
+            -webkit-box-shadow: var(--navbar-shadow);
+                    box-shadow: var(--navbar-shadow);
           }
           .headroom--unfixed {
             position: absolute !important;
@@ -125,14 +136,28 @@ class Navbar extends Component {
             display: flex;
             -ms-flex-pack: justify;
                 justify-content: space-between;
-            -webkit-box-shadow: 0 .2em .2em 0 rgba(0,0,0,0.10);
-                    box-shadow: 0 .2em .2em 0 rgba(0,0,0,0.10);
-            background: white;
+            -ms-flex-align: center;
+                align-items: center;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+            gap: 0.5em;
+            -webkit-box-shadow: var(--navbar-shadow);
+                    box-shadow: var(--navbar-shadow);
+            background: var(--surface-elevated-color);
+            color: var(--link-color);
+          }
+
+          .links {
+            display: flex;
+            gap: 1em;
+            padding: 1em;
+            -ms-flex-align: center;
+                align-items: center;
           }
 
           .navbar-link {
             display: inline-block;
-            outline: none; 
+            outline: none;
             -webkit-transition: all .2s linear;
             -o-transition: all .2s linear;
             transition: all .2s linear;
@@ -140,13 +165,30 @@ class Navbar extends Component {
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
+            color: inherit;
           }
-          .navbar-link:focus { 
-              outline: none; 
+          .navbar-link:focus {
+              outline: none;
           }
 
           .navbar .next {
             padding: 1em 1em 0em 0em;
+            display: -ms-flexbox;
+            display: flex;
+          }
+
+          .navbar-controls {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: center;
+                align-items: center;
+            gap: 1em;
+            padding: 0.5em 1em 0.5em 0;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+          }
+
+          .next-wrapper {
             display: -ms-flexbox;
             display: flex;
           }
@@ -181,11 +223,6 @@ class Navbar extends Component {
                     transform: translateX(3px);
           }
 
-          .navbar .home {
-            padding: 1em 0em 0em 1em;
-            display: -ms-flexbox;
-            display: flex;
-          }
 
           .progress-bar {
             -webkit-appearance: none;
@@ -226,7 +263,7 @@ class Navbar extends Component {
           }
 
           progress::-webkit-progress-bar {
-            background: #FAFAFA;
+            background: var(--progress-track-color);
           }
 
           progress::-webkit-progress-value {
@@ -269,6 +306,26 @@ class Navbar extends Component {
 
           progress.grey::-moz-progress-bar {
             background-color: #747a75;
+          }
+
+          @media only screen and (max-width: 575px) {
+            .navbar {
+              padding-bottom: 0.2em;
+            }
+
+            .links {
+              padding-bottom: 0;
+              width: 100%;
+              -ms-flex-wrap: wrap;
+                  flex-wrap: wrap;
+            }
+
+            .navbar-controls {
+              padding: 0 1em 0.5em;
+              width: 100%;
+              -ms-flex-pack: start;
+                  justify-content: flex-start;
+            }
           }
 
 

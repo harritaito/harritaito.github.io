@@ -30,75 +30,65 @@ class Project extends Component {
     endValue: -100
   }
 
+  renderProjectLink() {
+    return (
+      <Link href={this.props.link} className="project-link-container">
+        <article className={`case-card ${this.props.color}`}>
+          <div className="case-card__media">
+            <img className="case-card__image" src={this.props.image} alt={this.props.alt} />
+          </div>
+          <div className="case-card__content">
+            <h3 className="case-card__title">{this.props.title}</h3>
+            <p className="case-card__description">{this.props.description}</p>
+            <div className="bottom">
+              <div className={"next navbar-link " + this.props.color}>
+                <span className="case-study-text">Case Study</span>
+                <span className="next-arrow" aria-hidden="true">
+                  <Isvg className="next-arrow-icon" src={arrow} />
+                </span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </Link>
+    );
+  }
+
   render() {
 
     return (
       <div className={this.props.title + " Project"}>
         <div className="row">
-          <div className="col-xs-12 col-sm-10 col-md-10 col-lg-offset-0 col-lg-8 col-xl-offset-1 col-xl-7">
-            <img className="project-image" src={this.props.image} alt={this.props.alt}/>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-xs-12 col-sm-offset-2 col-sm-10 col-md-offset-4 col-md-8 col-lg-offset-6 col-lg-6 col-xl-5">
-            {this.props.parallax ?
+          <div className="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 col-xl-7 col-xl-offset-2">
+            {this.props.parallax ? (
               <Plx
                 className="plx"
                 animateWhenNotInViewport={true}
                 parallaxData={[
                   {
                     start: this.props.percentage,
-                    duration: this.props.parallax ? '9%' : "0%",
+                    duration: this.props.parallax ? "9%" : "0%",
                     properties: [
                       {
                         startValue: 0,
                         endValue: this.props.endValue,
-                        property: 'translateY',
-                        unit: "px"
+                        property: "translateY",
+                        unit: "px",
                       },
                       {
                         startValue: 0,
                         endValue: 1,
-                        property: 'opacity',
-                      }
-                    ]
-                  }
+                        property: "opacity",
+                      },
+                    ],
+                  },
                 ]}
               >
-              <Link href={this.props.link} legacyBehavior>
-                <div className="project-link-container">
-                  <div className={"project-blurb " + this.props.color}>
-                    <h2>{this.props.title}</h2>
-                    <div style={{marginTop: "1.5em"}}>{this.props.description}</div>
-                    <div className="bottom">
-                      <div className={"next navbar-link " + this.props.color}>
-                        <Link href={this.props.link} legacyBehavior><a>Case Study</a></Link>
-                        <span onClick={this.showModal}><object><Isvg className={"next-arrow"} src={arrow} /></object>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-              </Plx> :
-
-              <Link href={this.props.link} legacyBehavior>
-                <div className="project-link-container">
-                  <div className="project-blurb">
-                    <h2>{this.props.title}</h2>
-                    <div style={{marginTop: "1.5em"}}>{this.props.description}</div>
-                    <div className="bottom">
-                      <div className={"next navbar-link " + this.props.color}>
-                        <Link href={this.props.link} legacyBehavior><a>Case Study</a></Link>
-                        <span onClick={this.showModal} style={{marginLeft: '5px', height: '27px', width: '23px', marginTop: 2}}>
-                          <object><Isvg className={"next-arrow"} src={arrow} /></object>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            }
+                {this.renderProjectLink()}
+              </Plx>
+            ) : (
+              this.renderProjectLink()
+            )}
           </div>
         </div>
         <style jsx>{`
@@ -110,78 +100,69 @@ class Project extends Component {
             .Project {margin-top: 5em; margin-bottom: 5em;}
           }
 
-          .project-link-container {
+          .Project :global(.project-link-container) {
             color: inherit;
+            display: block;
+            text-decoration: none;
           }
 
-          .Project:hover .project-image {
-            -webkit-box-shadow: 0 0.75em 1.25em 0 rgba(0,0,0,0.30);
-                    box-shadow: 0 0.75em 1.25em 0 rgba(0,0,0,0.30);
+          .Project :global(.project-link-container:focus) {
+            outline: none;
           }
 
-          .Project:hover .project-blurb {
+          .Project :global(.plx) {
+            opacity: 0;
+          }
+
+          .Project :global(.case-card) {
+            border-radius: 1.5rem;
+            overflow: hidden;
+            background-color: var(--surface-elevated-color);
+            -webkit-box-shadow: 0 1em 2em 0 rgba(0,0,0,0.30);
+                    box-shadow: 0 1em 2em 0 rgba(0,0,0,0.30);
+            -webkit-transition: box-shadow .5s ease;
+            transition: box-shadow .5s ease;
+            display: flex;
+            flex-direction: column;
+          }
+
+          .Project :global(.project-link-container:hover .case-card) {
             -webkit-box-shadow: 0 1.5em 2.5em 0 rgba(0,0,0,0.30);
                     box-shadow: 0 1.5em 2.5em 0 rgba(0,0,0,0.30);
           }
 
-
-          .project-image {
-            display: block;
-            -o-object-fit: cover;
-              object-fit: cover;
-            max-width: 100%;
-            height: auto;
-            padding: 0;
-            overflow: hidden;
-            -webkit-box-shadow: 0 0.5em 1em 0 rgba(0,0,0,0.30);
-                    box-shadow: 0 0.5em 1em 0 rgba(0,0,0,0.30);
-            -webkit-transition: -webkit-box-shadow .5s ease;
-            transition: -webkit-box-shadow .5s ease;
-            -o-transition: box-shadow .5s ease;
-            transition: box-shadow .5s ease;
-            transition: box-shadow .5s ease, -webkit-box-shadow .5s ease;
-          }
-
-          .plx {
-            opacity: 0;
-          }
-
-          .project-blurb {
-            background-color: white;
-            padding: 1em 1.5em;
-            overflow: hidden;
-            -webkit-box-shadow: 0 1em 2em 0 rgba(0,0,0,0.30);
-                    box-shadow: 0 1em 2em 0 rgba(0,0,0,0.30);
-            height: auto;
-            margin-top: -10em;
-            -webkit-transition: all .6s ease;
-            -o-transition: all .6s ease;
-            transition: all .6s ease;
+          .Project :global(.case-card__media) {
             position: relative;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
           }
 
-          .project-blurb .next-arrow{
+          .Project :global(.case-card__image) {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+          }
+
+          .Project :global(.case-card__content) {
+            padding: 1.5em;
+          }
+
+          .Project :global(.case-card__title) {
+            margin: 0 0 0.5em;
+            font-size: clamp(1.125rem, 4vw, 1.75rem);
+            line-height: 1.2;
+          }
+
+          .Project :global(.case-card__description) {
+            margin: 0 0 1.25em;
+            line-height: 1.7;
+          }
+
+          .Project :global(.case-card .next-arrow) {
             margin-left: 1rem;
             height: 200px;
-            weight: 200px;
-          }
-
-          .project-blurb.green:hover {
-            background-color: #0BAB28;
-          }
-
-
-          .project-blurb.blue:hover {
-            background-color: #1e95ed;
-          }
-
-
-          .project-blurb.red:hover {
-            background-color: #fa5858;
-          }
-
-          .project-blurb.purple:hover {
-            background-color: #9157ff;
+            width: 200px;
           }
 
           /* Gradient background code */
@@ -203,7 +184,7 @@ class Project extends Component {
           }
 
           .project-blurb .bg-white, .project-blurb .bg-transition  {
-            background: #FAFAFA;
+            background: var(--surface-elevated-color);
           }
 
           .project-blurb .bg-gradient {
@@ -232,19 +213,7 @@ class Project extends Component {
 
           /* Hover Styling */
 
-          .project-blurb:hover {
-            color: #FAFAFA;
-          }
-
-          .Project .project-blurb:hover .next a {
-            color: #FAFAFA;
-          }
-
-          .Project .project-blurb:hover .next svg {
-            fill: #FAFAFA;
-          }
-
-          .project-blurb:hover .next-arrow{
+          .Project :global(.case-card:hover .next-arrow) {
             -webkit-transform: translateX(5px);
                 -ms-transform: translateX(5px);
                     transform: translateX(5px);
@@ -252,30 +221,27 @@ class Project extends Component {
 
           /* Link Styling */
 
-          .bottom {
+          .Project :global(.bottom) {
             display: -ms-flexbox;
             display: flex;
             -ms-flex-pack: justify;
                 justify-content: space-between
           }
 
-          .bottom .next {
+          .Project :global(.bottom .next) {
             display: -ms-flexbox;
             display: flex;
             padding: .5em 0 1em;
           }
 
-          .bottom .next a {
-            outline: none; 
+          .Project :global(.case-study-text) {
+            display: inline-block;
             -webkit-transition: all .6s ease;
             -o-transition: all .6s ease;
             transition: all .6s ease;
           }
-          .bottom .next a:focus {
-            outline: none;
-          }
 
-          .bottom .next-arrow {
+          .Project :global(.bottom .next-arrow) {
             width: 1em;
             height: 1em;
             margin-left: 4px;
@@ -285,46 +251,45 @@ class Project extends Component {
             display: block;
           }
 
-          .bottom .next-arrow svg {
+          .Project :global(.bottom .next-arrow-icon) {
             -webkit-transition: all .6s ease;
             -o-transition: all .6s ease;
             transition: all .6s ease;
           }
 
-          .project-blurb .next.green a {
+          .Project :global(.case-card .next.green .case-study-text) {
             color: #12a42d;
           }
 
-          .project-blurb .green .next-arrow svg {
+          .Project :global(.case-card .green .next-arrow-icon) {
             fill: #12a42d;
           }
 
-          .project-blurb .next.blue a {
+          .Project :global(.case-card .next.blue .case-study-text) {
             color: #1e95ed;
           }
 
-          .project-blurb .blue .next-arrow svg {
+          .Project :global(.case-card .blue .next-arrow-icon) {
             fill: #1e95ed;
           }
 
-          .project-blurb .next.red a {
+          .Project :global(.case-card .next.red .case-study-text) {
             color: #fa5858;
           }
 
-          .project-blurb .red .next-arrow svg {
+          .Project :global(.case-card .red .next-arrow-icon) {
             fill: #fa5858;
           }
 
-
-          .project-blurb .purple a {
+          .Project :global(.case-card .purple .case-study-text) {
             color: #9157ff;
           }
 
-          .project-blurb .purple .next-arrow svg {
+          .Project :global(.case-card .purple .next-arrow-icon) {
             fill: #9157ff;
           }
 
-          .project-link-container{
+          .Project :global(.project-link-container) {
             cursor: pointer;
             -webkit-user-select: none;
             -moz-user-select: none;
@@ -333,24 +298,17 @@ class Project extends Component {
           }
 
 
-          @media only screen and (max-width: 575px) {
-            .plx {
-              margin-top: 35vh;
-
+          @media only screen and (max-width: 45rem) {
+            .Project :global(.case-card) {
+              -webkit-box-shadow: 0 0.75em 1.5em 0 rgba(0,0,0,0.22);
+                      box-shadow: 0 0.75em 1.5em 0 rgba(0,0,0,0.22);
             }
-          }
 
-
-          @media only screen and (max-width: 767px) and (min-width: 576px) {
-            .plx {
-              margin-top: 150px;
-            }
-          }
-
-
-          @media only screen and (max-width: 992px) and (min-width: 768px) {
-            .plx {
-              margin-top: 100px;
+            .Project :global(.plx) {
+              opacity: 1 !important;
+              -webkit-transform: none !important;
+                  -ms-transform: none !important;
+                      transform: none !important;
             }
           }
         `}</style>

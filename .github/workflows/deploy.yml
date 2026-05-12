@@ -1,21 +1,45 @@
-name: Deploy
+name: Build and Publish
 
 on:
   push:
-    branches: [master, work]
+    branches: [master]
+  workflow_dispatch:
 
 jobs:
   build:
+    name: Build and Test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: '18'
-      - run: npm ci
-      - run: npm run build
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+      - name: Run tests
+        run: npm test -- --runInBand
+      - name: Build project
+        run: npm run build
+      - name: Upload production build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: next-out
+          path: out
+  deploy:
+    name: Publish to GitHub Pages
+    runs-on: ubuntu-latest
+    needs: build
+    permissions:
+      contents: write
+    steps:
+      - name: Download production build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: next-out
+          path: out
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
