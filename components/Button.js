@@ -59,7 +59,7 @@ class Button extends Component {
         <style jsx>{`
           /* Solid Button Rules */
 
-          .button .button-link {
+          .button :global(.button-link) {
             display: inline-block;
             position: relative;
             border-radius: 26px;
@@ -71,11 +71,11 @@ class Button extends Component {
             transition: all .6s linear;
             font-weight: 500;
           }
-          .button .button-link--static {
+          .button :global(.button-link--static) {
             cursor: default;
           }
           @media only screen and (max-width: 45rem) {
-          .button .button-link {font-size: 0.9rem;}
+          .button :global(.button-link) {font-size: 0.9rem;}
         }
 
           .button:hover {
@@ -85,18 +85,18 @@ class Button extends Component {
 
           /* Outline Button Rules */
 
-          .button.outline .button-link {
+          .button.outline :global(.button-link) {
             color: var(--muted-text-color);
             padding: 0;
           }
 
-          .button.outline .button-link span {
+          .button.outline :global(.button-link span) {
             position: relative;
             display: inline-block;
             padding: .3em 1.3em;
           }
 
-          .button.outline .button-link::before {
+          .button.outline :global(.button-link::before) {
             border: 2px solid var(--muted-text-color);
             border-radius: 26px;
             width: 100%;
@@ -109,37 +109,37 @@ class Button extends Component {
 
           /* Outline Button Colors */
 
-          .button.outline.blue .button-link:hover span {
+          .button.outline.blue :global(.button-link:hover span) {
             color: #1e95ed
           }
 
-          .button.outline.blue .button-link:hover::before {
+          .button.outline.blue :global(.button-link:hover::before) {
             border-color: #1e95ed;
           }
 
 
-          .button.outline.green .button-link:hover span {
+          .button.outline.green :global(.button-link:hover span) {
             color: #12a42d
           }
 
-          .button.outline.green .button-link:hover::before {
+          .button.outline.green :global(.button-link:hover::before) {
             border-color: #12a42d;
           }
 
-          .button.outline.red .button-link:hover span {
+          .button.outline.red :global(.button-link:hover span) {
             color: #fa5858;
           }
 
-          .button.outline.red .button-link:hover::before {
+          .button.outline.red :global(.button-link:hover::before) {
             border-color: #fa5858;
           }
 
 
-          .button.outline.purple .button-link:hover span {
+          .button.outline.purple :global(.button-link:hover span) {
             color: #9157ff;
           }
 
-          .button.outline.purple .button-link:hover::before {
+          .button.outline.purple :global(.button-link:hover::before) {
             border-color: #9157ff;
           }
         `}</style>
