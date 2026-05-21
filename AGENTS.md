@@ -44,3 +44,63 @@ These instructions apply to the entire repository.
 ## Commits
 
 - Follow Conventional Commits for commit messages.
+ 
+
+## Scope control
+
+Before editing, inspect the repository state:
+
+- Run `git status —short`
+- Run `git diff —stat`
+- If the diff is large, identify the largest changed files before editing.
+
+## Generated files
+
+Do not edit, stage, commit, or include generated output unless explicitly instructed.
+
+Treat these paths as generated:
+
+- `out/**`
+- `.next/**`
+- `dist/**`
+- `build/**`
+- `coverage/**`
+- `.turbo/**`
+- `.vercel/**`
+- `node_modules/**`
+- `*.map`
+- `*.min.js`
+- `*.min.css`
+- generated lockfile churn not directly related to the requested change
+
+If a build command modifies generated files, leave them unstaged and report that they changed.
+
+## Commit and diff hygiene
+
+Keep changes small and source-focused.
+
+Prefer changing:
+
+- `src/**`
+- `app/**`
+- `pages/**`
+- `components/**`
+- `public/**` only when actual static assets intentionally change
+- config files only when required
+
+Avoid mixing:
+
+- source changes
+- formatting-only changes
+- dependency updates
+- generated build output
+- deployment artifacts
+
+If deployment output is required, make it a separate deployment-only commit or branch, not part of the implementation diff.
+
+## Next.js / GitHub Pages
+
+For normal development tasks, do not commit `out/`.
+
+`out/` is deployment output, not source code. If GitHub Pages deployment needs it, use a separate deploy workflow, deploy branch, or explicit deployment step.
+
