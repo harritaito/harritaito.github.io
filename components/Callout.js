@@ -11,7 +11,8 @@ class Callout extends Component {
     middle: PropTypes.bool,
     delay: PropTypes.number,
     number: PropTypes.number,
-    middleOffset: PropTypes.bool
+    middleOffset: PropTypes.bool,
+    className: PropTypes.string
   }
 
   static defaultProps = {
@@ -23,7 +24,8 @@ class Callout extends Component {
     middle: false,
     middleOffset: false,
     number: 3,
-    delay: 0
+    delay: 0,
+    className: ""
   }
 
   render() {
@@ -33,7 +35,7 @@ class Callout extends Component {
 
     if(this.props.number === 2) {
       layout = this.props.title + " callout col-xs-offset-2 col-xs-8 col-sm-4 col-md-4 col-lg-3 col-xl-3";
-      this.props.first ? (layout += "col-sm-offset-2 col-md-offset-2 col-lg-offset-3 col-xl-offset-3") : (layout += " col-sm-offset-0 col-md-offset-0 col-lg-offset-0 col-xl-offset-0");
+      this.props.first ? (layout += " col-sm-offset-2 col-md-offset-2 col-lg-offset-3 col-xl-offset-3") : (layout += " col-sm-offset-0 col-md-offset-0 col-lg-offset-0 col-xl-offset-0");
     }
 
 

@@ -40,10 +40,25 @@ describe('Button rendering', () => {
     const markup = renderToStaticMarkup(<Button label="Test" link="/about" color="green" />);
     expect(markup).toContain('href="/about"');
     expect(markup).toMatch(/class="[^"]*button-link/);
+    expect(markup).not.toContain('target="_blank"');
+    expect(markup).not.toContain('rel="noopener noreferrer"');
   });
 
-  test('renders a span when no link is provided', () => {
-    const markup = renderToStaticMarkup(<Button label="Test" color="green" />);
+  test('renders external links with a new-tab safety contract', () => {
+    const markup = renderToStaticMarkup(
+      <Button label="Read case study" link="https://example.com/case" color="green" />
+    );
+
+    expect(markup).toContain('href="https://example.com/case"');
+    expect(markup).toContain('target="_blank"');
+    expect(markup).toContain('rel="noopener noreferrer"');
+    expect(markup).toMatch(/class="[^"]*button-link/);
+  });
+
+  test('renders a static accessible label when no link is provided', () => {
+    const markup = renderToStaticMarkup(<Button label="Contact" color="green" />);
     expect(markup).toContain('aria-disabled="true"');
+    expect(markup).toMatch(/class="[^"]*button-link--static/);
+    expect(markup).not.toContain('href=');
   });
 });
