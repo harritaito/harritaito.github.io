@@ -51,7 +51,6 @@
   },
   "devDependencies": {
     "babel-jest": "^30.0.4",
-    "babel-plugin-inline-import-data-uri": "^1.0.1",
     "jest": "^30.0.4",
     "jest-environment-jsdom": "^30.0.5",
     "rimraf": "^5.0.5"
