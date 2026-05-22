@@ -14,7 +14,7 @@ This portfolio highlights design and development projects and shares background 
 
 ## Prerequisites
 
-- Node.js 18 or newer
+- Node.js 20.9.0 or newer
 - npm
 
 ## Repo Structure
@@ -64,9 +64,15 @@ npm run build
 Build does 2 things:
 
 1. runs `next build`
-2. ensures `out/.nojekyll` exists for GitHub Pages
+2. ensures `out/.nojekyll` and `out/CNAME` exist for GitHub Pages
 
 Build refreshes generated files under `out/`.
+
+Verify the generated export without publishing it:
+
+```bash
+npm run verify:out
+```
 
 ## Design System Notes
 
@@ -81,13 +87,13 @@ If visual pattern repeated 3+ times, prefer extraction into shared component or 
 
 ## Deployment
 
-GitHub Pages respects the `.nojekyll` marker in the repository root. Keeping that file prevents Pages from stripping the `_next` directory that holds the statically exported JavaScript assets, so the published site continues to load styles and scripts correctly.
+GitHub Pages respects the `.nojekyll` marker in the published output. Keeping that file prevents Pages from stripping the `_next` directory that holds the statically exported JavaScript assets, so the published site continues to load styles and scripts correctly. The build also copies the root `CNAME` value into `out/CNAME` so branch-based Pages publishing keeps the custom domain.
 
 ### Publishing with GitHub Actions
 
 The repository includes a GitHub Actions workflow (`.github/workflows/deploy.yml`) which builds the site and publishes the `out/` directory to the `gh-pages` branch. Configure GitHub Pages to serve from that branch so the published site always matches the latest static build.
 
-1. Push your changes to the `main` branch.
+1. Push your changes to the `master` branch.
 2. GitHub Actions will run the `deploy` workflow automatically and update the `gh-pages` branch with the latest static export.
 3. Confirm the deployment succeeded by checking the workflow run and visiting the configured Pages URL once it completes.
 
@@ -101,12 +107,13 @@ If you need to publish without waiting for CI, verify the static export locally 
 
    ```bash
    npm run build
+   npm run verify:out
    ```
 
-2. When you are satisfied with the build output, publish the contents of `out/` to GitHub Pages from your workstation:
+2. When you are satisfied with the build output and intentionally want to use the old subtree path, publish the contents of `out/` to GitHub Pages from your workstation:
 
    ```bash
-   npm run publish
+   npm run publish:legacy
    ```
 
-The `publish` command keeps the `deploy` workflow's git subtree deployment for backwards compatibility while making it easy to separate the build and publishing steps when working locally. Make sure you have permission to push to the `gh-pages` branch before running it.
+The `publish:legacy` command keeps the old git subtree deployment available for emergencies. Prefer the GitHub Actions workflow for normal publishing so generated `out/` files stay out of implementation commits.

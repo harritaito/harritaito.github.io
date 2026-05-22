@@ -1,6 +1,11 @@
-module.exports = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   reactStrictMode: true,
   output: "export",
+  outputFileTracingRoot: __dirname,
+  images: {
+    unoptimized: true,
+  },
   exportPathMap() {
     return {
       "/": { page: "/" },
@@ -13,3 +18,5 @@ module.exports = {
     };
   },
 };
+
+module.exports = nextConfig;

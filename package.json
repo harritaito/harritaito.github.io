@@ -1,17 +1,25 @@
 {
   "name": "harritaito.github.io",
   "version": "1.0.1",
+  "private": true,
   "homepage": "https://harritaito.com",
   "description": "portfolio of Harri Halonen",
+  "packageManager": "npm@10.9.4",
+  "engines": {
+    "node": ">=20.9.0"
+  },
   "scripts": {
-    "dev": "next",
-    "prebuild": "rimraf node_modules/.cache",
+    "dev": "next dev",
+    "clean": "rimraf .next out node_modules/.cache",
+    "prebuild": "npm run clean",
     "build": "next build",
-    "postbuild": "node scripts/create-nojekyll.js",
-    "start": "next start",
-    "clearCache": "rimraf node_modules/.cache",
-    "publish": "git add out/ && (git diff --cached --quiet && echo \"No changes to commit; deploying existing build.\" || git commit -m \"Deploy Next.js to harritaito.github.io\") && git subtree push --prefix out origin gh-pages",
-    "deploy": "npm run build && npm run publish",
+    "postbuild": "node scripts/create-gh-pages-files.js",
+    "preview": "npm run verify:out && npx --yes serve out",
+    "start": "npm run preview",
+    "clearCache": "npm run clean",
+    "verify:out": "node scripts/verify-out.js",
+    "publish:legacy": "npm run verify:out && git add out/ && (git diff --cached --quiet && echo \"No changes to commit; deploying existing build.\" || git commit -m \"Deploy static site\") && git subtree push --prefix out origin gh-pages",
+    "deploy": "npm run build && npm run verify:out",
     "test": "jest"
   },
   "repository": {
@@ -26,7 +34,6 @@
   "dependencies": {
     "fontfaceobserver": "^2.3.0",
     "next": "^15.5.0",
-    "next-images": "^1.8.5",
     "react": "^18.3.1",
     "react-collapse": "^5.1.1",
     "react-dom": "^18.3.1",

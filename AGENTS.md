@@ -4,7 +4,7 @@ These instructions apply to the entire repository.
 
 ## Stack
 
-- Use Node.js 18 or newer.
+- Use Node.js 20.9.0 or newer.
 - App is Next.js portfolio site with page routes under `pages/`.
 - Shared UI lives under `components/`.
 - Extracted design-system primitives live under `components/design-system/`.
@@ -103,4 +103,3 @@ If deployment output is required, make it a separate deployment-only commit or b
 For normal development tasks, do not commit `out/`.
 
 `out/` is deployment output, not source code. If GitHub Pages deployment needs it, use a separate deploy workflow, deploy branch, or explicit deployment step.
-

@@ -4,10 +4,12 @@ This project is a Next.js portfolio site for Harri Halonen. The package metadata
 
 - **Scripts**
   - `dev`: Runs the Next.js development server.
-  - `build`: Builds the production output and ensures GitHub Pages ignores Jekyll processing by touching `.nojekyll`.
-  - `start`: Serves the production build.
-  - `clearCache`: Removes the Next.js cache under `node_modules/.cache`.
-  - `deploy`: Builds the site, adds the `out/` directory to git, commits, and pushes a subtree to the `master` branch for deployment.
+  - `clean`: Removes `.next`, `out`, and `node_modules/.cache` before static export.
+  - `build`: Builds the production static export and writes GitHub Pages markers into `out/`.
+  - `verify:out`: Confirms the export has the expected HTML, `_next` assets, `.nojekyll`, and `CNAME`.
+  - `preview` / `start`: Serves the generated `out/` directory locally.
+  - `deploy`: Builds and verifies the static export without publishing generated files from the source branch.
+  - `publish:legacy`: Keeps the old `git subtree` publishing path available for explicit manual recovery.
   - `test`: Executes the Jest test suite.
 
 - **Dependencies**
@@ -19,6 +21,6 @@ This project is a Next.js portfolio site for Harri Halonen. The package metadata
 
 - **Tooling**
   - Uses Jest with Babel for testing.
-  - Includes `next-babel-minify` for optimized builds and `next-images` for static asset handling.
+  - Uses Next.js static export with unoptimized image handling for GitHub Pages compatibility.
 
-Overall, the configuration is tailored for a media-rich portfolio with attention to image handling, animations, and deployment to GitHub Pages.
+Overall, the configuration is tailored for a media-rich portfolio with attention to image handling, animations, and verified deployment output for GitHub Pages.

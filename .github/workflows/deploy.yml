@@ -15,7 +15,7 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20.9.0'
           cache: 'npm'
       - name: Install dependencies
         run: npm ci
@@ -23,6 +23,8 @@ jobs:
         run: npm test -- --runInBand
       - name: Build project
         run: npm run build
+      - name: Verify static export
+        run: npm run verify:out
       - name: Upload production build artifact
         uses: actions/upload-artifact@v4
         with:
@@ -46,4 +48,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out
           publish_branch: gh-pages
-
