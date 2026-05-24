@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import VisibilitySensor from 'react-visibility-sensor';
+import InViewport from './InViewport';
 import Video from './Video';
 import Navbar from './Navbar';
 import Project from './Project';
@@ -56,7 +56,7 @@ class ProjectPage extends Component {
         <div className="row">
           <div className="col-sm-12 col-md-12 col-xs-12 col-lg-12 col-xl-12">
             {this.props.video ?
-              <VisibilitySensor>
+              <InViewport>
                 {({isVisible}) =>
                   <div>
                     <Video
@@ -65,7 +65,7 @@ class ProjectPage extends Component {
                       caption={null}/>
                   </div>
                 }
-              </VisibilitySensor>
+              </InViewport>
               : <img  className="hero-image"
                      src={this.props.hero}
                      alt={this.props.heroAlt}

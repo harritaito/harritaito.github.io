@@ -1,11 +1,21 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
-import Plx from 'react-plx';
 import Isvg from 'react-inlinesvg';
 import arrow from '../static/media/icons/arrow-slim.svg';
 
 class Project extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      animationProgress: 1
+    };
+
+    this.projectAnimation = React.createRef();
+    this.updateAnimation = this.updateAnimation.bind(this);
+    this.queueAnimationUpdate = this.queueAnimationUpdate.bind(this);
+  }
 
   static propTypes = {
     title: PropTypes.string.isRequired,
@@ -28,6 +38,90 @@ class Project extends Component {
     color: "green",
     parallax: true,
     endValue: -100
+  }
+
+  componentDidMount() {
+    this.prefersReducedMotion = typeof window.matchMedia === 'function'
+      ? window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      : false;
+
+    if (!this.props.parallax || this.prefersReducedMotion) {
+      this.setState({ animationProgress: 1 });
+      return;
+    }
+
+    window.addEventListener('scroll', this.queueAnimationUpdate);
+    window.addEventListener('resize', this.queueAnimationUpdate);
+    this.updateAnimation();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (
+      prevProps.parallax !== this.props.parallax ||
+      prevProps.percentage !== this.props.percentage ||
+      prevProps.endValue !== this.props.endValue
+    ) {
+      this.updateAnimation();
+    }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.queueAnimationUpdate);
+    window.removeEventListener('resize', this.queueAnimationUpdate);
+
+    if (this.animationFrame) {
+      window.cancelAnimationFrame(this.animationFrame);
+    }
+  }
+
+  getStartOffset() {
+    const percentage = parseFloat(this.props.percentage);
+
+    if (Number.isNaN(percentage)) {
+      return 0;
+    }
+
+    return window.innerHeight * (percentage / 100);
+  }
+
+  queueAnimationUpdate() {
+    if (this.animationFrame) {
+      return;
+    }
+
+    this.animationFrame = window.requestAnimationFrame(() => {
+      this.animationFrame = null;
+      this.updateAnimation();
+    });
+  }
+
+  updateAnimation() {
+    if (!this.projectAnimation.current || !this.props.parallax || this.prefersReducedMotion) {
+      return;
+    }
+
+    const rect = this.projectAnimation.current.getBoundingClientRect();
+    const scrollY = window.scrollY || window.pageYOffset;
+    const elementTop = rect.top + scrollY;
+    const start = elementTop - window.innerHeight + this.getStartOffset();
+    const duration = window.innerHeight * 0.09;
+    const progress = Math.min(Math.max((scrollY - start) / duration, 0), 1);
+
+    this.setState({ animationProgress: progress });
+  }
+
+  getParallaxStyle() {
+    if (this.prefersReducedMotion) {
+      return {
+        opacity: 1,
+        transform: 'none'
+      };
+    }
+
+    return {
+      opacity: this.state.animationProgress,
+      transform: `translate3d(0, ${this.props.endValue * this.state.animationProgress}px, 0)`
+    };
   }
 
   renderProjectLink() {
@@ -61,31 +155,13 @@ class Project extends Component {
         <div className="row">
           <div className="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 col-xl-7 col-xl-offset-2">
             {this.props.parallax ? (
-              <Plx
+              <div
                 className="plx"
-                animateWhenNotInViewport={true}
-                parallaxData={[
-                  {
-                    start: this.props.percentage,
-                    duration: this.props.parallax ? "9%" : "0%",
-                    properties: [
-                      {
-                        startValue: 0,
-                        endValue: this.props.endValue,
-                        property: "translateY",
-                        unit: "px",
-                      },
-                      {
-                        startValue: 0,
-                        endValue: 1,
-                        property: "opacity",
-                      },
-                    ],
-                  },
-                ]}
+                ref={this.projectAnimation}
+                style={this.getParallaxStyle()}
               >
                 {this.renderProjectLink()}
-              </Plx>
+              </div>
             ) : (
               this.renderProjectLink()
             )}
@@ -111,7 +187,14 @@ class Project extends Component {
           }
 
           .Project :global(.plx) {
-            opacity: 0;
+            will-change: opacity, transform;
+          }
+
+          @media (prefers-reduced-motion: reduce) {
+            .Project :global(.plx) {
+              opacity: 1 !important;
+              transform: none !important;
+            }
           }
 
           .Project :global(.case-card) {

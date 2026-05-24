@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Collapse } from 'react-collapse';
-import VisibilitySensor from 'react-visibility-sensor';
 import ImageZoom from 'react-medium-image-zoom';
 
 import Button from '../components/Button';
@@ -113,15 +112,6 @@ class Kivakaupunki extends Component {
                       </p>
                     }/>
 
-                    <Row className="one-margin-top" content={
-                      <VisibilitySensor>
-                        {({isVisible}) =>
-                          <div className={pStyle}>
-                            
-                          </div>
-                        }
-                      </VisibilitySensor>
-                    }/>
                   </span>
                 }
               />
