@@ -26,10 +26,21 @@ class Video extends Component {
   }
 
   playVideo = () => {
-    this._video.play();
+    if (!this._video || typeof this._video.play !== 'function') {
+      return;
+    }
+
+    const playPromise = this._video.play();
+    if (playPromise && typeof playPromise.catch === 'function') {
+      playPromise.catch(() => {});
+    }
   }
 
   stopVideo = () => {
+    if (!this._video || typeof this._video.pause !== 'function') {
+      return;
+    }
+
     this._video.pause();
   }
 
@@ -37,7 +48,15 @@ class Video extends Component {
 
     return (
       <span>
-        <video className={"video " + this.props.className} ref={(video) => { this._video = video; }} preload="meta" muted loop>
+        <video
+          className={"video " + this.props.className}
+          ref={(video) => { this._video = video; }}
+          preload="metadata"
+          muted
+          loop
+          controls={this.props.controls}
+          autoPlay={this.props.autoplay}
+        >
 
           <source src={this.props.webMsrc} type="video/webm" />
           <source src={this.props.mp4src} type="video/mp4" />
@@ -78,4 +97,3 @@ class Video extends Component {
 }
 
 export default Video;
-

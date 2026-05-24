@@ -15,18 +15,40 @@ class Button extends Component {
   }
 
   isLinkInternal () {
-    if (!this.props.link)
+    if (!this.props.link || typeof this.props.link !== 'string')
       return false;
 
-    if (this.props.link.indexOf('://') === -1) {
+    const link = this.props.link.trim();
+
+    if (!link) {
+      return false;
+    }
+
+    if (link.startsWith('//')) {
+      return false;
+    }
+
+    if (
+      link.startsWith('/') ||
+      link.startsWith('./') ||
+      link.startsWith('../') ||
+      link.startsWith('#') ||
+      link.startsWith('?')
+    ) {
       return true;
     }
 
     try {
-      const url = new URL(this.props.link);
+      const url = new URL(link);
+
+      if (url.protocol !== 'http:' && url.protocol !== 'https:') {
+        return false;
+      }
+
       if (typeof window === 'undefined' || !window.location) {
         return false;
       }
+
       return window.location.host === url.host;
     } catch (e) {
       return false;
@@ -149,4 +171,3 @@ class Button extends Component {
 }
 
 export default Button;
-
