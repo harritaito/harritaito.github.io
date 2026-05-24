@@ -20,4 +20,9 @@ describe('Projects navigation helpers', () => {
     expect(proj.getPrevProject(second.name)).toBe(first);
     expect(proj.getPrevProject(third.name)).toBe(second);
   });
+
+  test('returns null when navigating from unknown project name', () => {
+    expect(proj.getNextProject('Nonexistent Project')).toBeNull();
+    expect(proj.getPrevProject('Nonexistent Project')).toBeNull();
+  });
 });

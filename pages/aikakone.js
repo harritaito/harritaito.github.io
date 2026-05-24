@@ -87,6 +87,7 @@ class Aikakone extends Component {
     return (
       <div className="Aikakone">
         <ProjectPage
+          projectName={"Aikakone"}
           title={"Aikakone"}
           hero={hero}
           heroAlt={"Ideation on canvas."}

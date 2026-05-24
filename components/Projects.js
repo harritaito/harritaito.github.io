@@ -37,11 +37,17 @@ class Projects {
 
   getNextProject = (project) => {
     const index = this.getIndexOfProject(project);
+    if (index === -1) {
+      return null;
+    }
     return this.projects[(index + 1) % this.projects.length];
   };
 
   getPrevProject = (project) => {
     const index = this.getIndexOfProject(project);
+    if (index === -1) {
+      return null;
+    }
     return this.projects[(index - 1 + this.projects.length) % this.projects.length];
   };
 
