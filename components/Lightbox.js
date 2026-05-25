@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Carousel } from 'react-responsive-carousel';
+import { resolveAssetSrc } from './assetSource';
 
 class Lightbox extends Component {
 
@@ -27,7 +28,7 @@ class Lightbox extends Component {
         <Carousel showThumbs={false} showStatus={false}>
           {this.props.images.map((img, i) => (
             <div key={i}>
-              <img src={img.src} alt={img.caption || ''} />
+              <img src={resolveAssetSrc(img.src)} alt={img.caption || ''} />
               {img.caption && <p className="legend">{img.caption}</p>}
             </div>
           ))}

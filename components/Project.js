@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 import Isvg from 'react-inlinesvg';
+import { resolveAssetSrc } from './assetSource';
 import arrow from '../static/media/icons/arrow-slim.svg';
 
 class Project extends Component {
@@ -21,7 +22,7 @@ class Project extends Component {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     link: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
+    image: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
     alt: PropTypes.string.isRequired,
     color: PropTypes.string.isRequired,
     percentage: PropTypes.string,
@@ -129,7 +130,7 @@ class Project extends Component {
       <Link href={this.props.link} className="project-link-container">
         <article className={`case-card ${this.props.color}`}>
           <div className="case-card__media">
-            <img className="case-card__image" src={this.props.image} alt={this.props.alt} />
+            <img className="case-card__image" src={resolveAssetSrc(this.props.image)} alt={this.props.alt} />
           </div>
           <div className="case-card__content">
             <h3 className="case-card__title">{this.props.title}</h3>
@@ -138,7 +139,7 @@ class Project extends Component {
               <div className={"next navbar-link " + this.props.color}>
                 <span className="case-study-text">Case Study</span>
                 <span className="next-arrow" aria-hidden="true">
-                  <Isvg className="next-arrow-icon" src={arrow} />
+                  <Isvg className="next-arrow-icon" src={resolveAssetSrc(arrow)} />
                 </span>
               </div>
             </div>

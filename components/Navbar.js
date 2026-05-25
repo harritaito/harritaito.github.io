@@ -5,6 +5,7 @@ import Headroom from 'react-headroom';
 import Isvg from 'react-inlinesvg';
 
 import ThemeToggle from './ThemeToggle';
+import { resolveAssetSrc } from './assetSource';
 import arrow from '../static/media/icons/arrow-slim.svg';
 
 class Navbar extends Component {
@@ -74,7 +75,7 @@ class Navbar extends Component {
               <ThemeToggle />
               { this.props.nextProjectLink ?
                 <div className="next-wrapper">
-                  <Link href={this.props.nextProjectLink} legacyBehavior><a className="next navbar-link">{this.props.nextProjectName}<span onClick={this.showModal}><object>  <Isvg className={"next-arrow"} src={arrow} /></object></span>
+                  <Link href={this.props.nextProjectLink} legacyBehavior><a className="next navbar-link">{this.props.nextProjectName}<span onClick={this.showModal}><object>  <Isvg className={"next-arrow"} src={resolveAssetSrc(arrow)} /></object></span>
                   </a></Link>
                 </div>
 

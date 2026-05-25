@@ -5,6 +5,7 @@ import Video from './Video';
 import Navbar from './Navbar';
 import Project from './Project';
 import Projects from './Projects';
+import { resolveAssetSrc } from './assetSource';
 
 class ProjectPage extends Component {
 
@@ -27,7 +28,7 @@ class ProjectPage extends Component {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     content: PropTypes.object.isRequired,
-    hero: PropTypes.string.isRequired,
+    hero: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
     heroAlt: PropTypes.string.isRequired,
     video: PropTypes.bool,
     navbarColor: PropTypes.string,
@@ -65,13 +66,13 @@ class ProjectPage extends Component {
                   <div>
                     <Video
                       autoplay={isVisible}
-                      src={this.props.hero}
+                      src={resolveAssetSrc(this.props.hero)}
                       caption={null}/>
                   </div>
                 }
               </InViewport>
               : <img  className="hero-image"
-                     src={this.props.hero}
+                     src={resolveAssetSrc(this.props.hero)}
                      alt={this.props.heroAlt}
               />
             }

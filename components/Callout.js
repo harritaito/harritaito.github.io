@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { resolveAssetSrc } from './assetSource';
 
 class Callout extends Component {
   static propTypes = {
-    image: PropTypes.string.isRequired,
+    image: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
     altText: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
@@ -63,7 +64,7 @@ class Callout extends Component {
     return (
       <div className={layout}>
         <div className={"callout-image-container " + this.props.className}>
-          <img src={this.props.image} alt={this.props.altText} />
+          <img src={resolveAssetSrc(this.props.image)} alt={this.props.altText} />
         </div>
         <h5>{this.props.title}</h5>
         <p>

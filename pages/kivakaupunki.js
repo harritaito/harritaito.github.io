@@ -8,6 +8,7 @@ import Process from '../components/Process';
 import ProjectStats from '../components/ProjectStats';
 import ProjectSection from "../components/ProjectSection";
 import Row from '../components/Row';
+import { resolveAssetSrc } from '../components/assetSource';
 import { Carousel } from 'react-responsive-carousel';
 import Modal from 'react-modal';
 
@@ -218,27 +219,27 @@ class Kivakaupunki extends Component {
                       <Modal isOpen={modalIsOpen} onRequestClose={this.toggleModal}>
                         <Carousel showThumbs={false} showStatus={false}>
                           <div>
-                            <img src={phone} alt="Start greeting scene of app" />
+                            <img src={resolveAssetSrc(phone)} alt="Start greeting scene of app" />
                             <p className="legend">Start greeting scene of app</p>
                           </div>
                           <div>
-                            <img src={phone_booth} alt="Location tagging by gps or by selecting and tapping." />
+                            <img src={resolveAssetSrc(phone_booth)} alt="Location tagging by gps or by selecting and tapping." />
                             <p className="legend">Location tagging by gps or by selecting and tapping.</p>
                           </div>
                           <div>
-                            <img src={physical} alt="Second screen, notice the return button" />
+                            <img src={resolveAssetSrc(physical)} alt="Second screen, notice the return button" />
                             <p className="legend">Second screen, notice the return button</p>
                           </div>
                           <div>
-                            <img src={popup} alt="Comment categories" />
+                            <img src={resolveAssetSrc(popup)} alt="Comment categories" />
                             <p className="legend">Comment categories</p>
                           </div>
                           <div>
-                            <img src={watch} alt="Comment input" />
+                            <img src={resolveAssetSrc(watch)} alt="Comment input" />
                             <p className="legend">Comment input</p>
                           </div>
                           <div>
-                            <img src={footsteps} alt="Final thank you screen" />
+                            <img src={resolveAssetSrc(footsteps)} alt="Final thank you screen" />
                             <p className="legend">Final thank you screen</p>
                           </div>
                         </Carousel>
@@ -248,7 +249,7 @@ class Kivakaupunki extends Component {
                     <Row className="one-margin-top" content={views.map(function (image, index) {
                         return (
                           <div key={"sketch" + index} onClick={(e) => self.toggleModal(index, e)} className={"col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-2"}>
-                            <img className="mini-image" src={image} alt=""/>
+                            <img className="mini-image" src={resolveAssetSrc(image)} alt=""/>
                           </div>
                         )
                       })
@@ -279,12 +280,12 @@ class Kivakaupunki extends Component {
 
                         <ImageZoom
                           image={{
-                            src: api,
+                            src: resolveAssetSrc(api),
                             alt: 'Screen capture of our game environment with a controller, a blue ball, and a yellow circle goal in the distance',
                             className: 'feature-image'
                           }}
                           zoomImage={{
-                            src: api,
+                            src: resolveAssetSrc(api),
                             alt: 'Screen capture of our game environment with a controller, a blue ball, and a yellow circle goal in the distance'
                           }}
                         />

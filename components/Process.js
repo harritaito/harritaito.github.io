@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { resolveAssetSrc } from './assetSource';
 import first from '../static/media/icons/first.svg';
 import middle from '../static/media/icons/middle.svg';
 import last from '../static/media/icons/last.svg';
@@ -27,9 +28,9 @@ class Process extends Component {
                 <span key={"step" + index} className="step">
                   <div className="time">
                     <img
-                      src={index === 0 ? first :
+                      src={resolveAssetSrc(index === 0 ? first :
                         (index === stepsLength - 1 ? last
-                        : middle)}
+                        : middle))}
                       alt={index + " step"}
                     />
                   </div>

@@ -7,6 +7,7 @@ import Process from "../components/Process";
 import ProjectStats from "../components/ProjectStats";
 import ProjectSection from "../components/ProjectSection";
 import Row from "../components/Row";
+import { resolveAssetSrc } from "../components/assetSource";
 import { Carousel } from "react-responsive-carousel";
 import Modal from "react-modal";
 
@@ -418,19 +419,19 @@ class Aikakone extends Component {
                       <Modal isOpen={modalIsOpen} onRequestClose={this.toggleModal}>
                         <Carousel showThumbs={false} showStatus={false}>
                           <div>
-                            <img src={menu} alt="First look of the menu of Aikakone." />
+                            <img src={resolveAssetSrc(menu)} alt="First look of the menu of Aikakone." />
                             <p className="legend">First look of the menu of Aikakone.</p>
                           </div>
                           <div>
-                            <img src={aikakone} alt="Using Aikakone" />
+                            <img src={resolveAssetSrc(aikakone)} alt="Using Aikakone" />
                             <p className="legend">Using Aikakone</p>
                           </div>
                           <div>
-                            <img src={profile} alt="Profile of elderly people" />
+                            <img src={resolveAssetSrc(profile)} alt="Profile of elderly people" />
                             <p className="legend">Profile of elderly people</p>
                           </div>
                           <div>
-                            <img src={elamankaari} alt="Elämänkaari, a feature that has the lifespan of induvidual user" />
+                            <img src={resolveAssetSrc(elamankaari)} alt="Elämänkaari, a feature that has the lifespan of induvidual user" />
                             <p className="legend">Elämänkaari, a feature that has the lifespan of induvidual user</p>
                           </div>
                         </Carousel>
@@ -448,7 +449,7 @@ class Aikakone extends Component {
                               "col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-2"
                             }
                           >
-                            <img className="mini-image" src={image} alt="" />
+                            <img className="mini-image" src={resolveAssetSrc(image)} alt="" />
                           </div>
                         );
                       })}

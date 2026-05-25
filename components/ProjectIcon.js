@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Isvg from 'react-inlinesvg';
 import Modal from 'react-modal';
+import { resolveAssetSrc } from './assetSource';
 import close from '../static/media/icons/close.svg';
 
 
@@ -23,9 +24,9 @@ class ProjectIcon extends Component {
     title: PropTypes.string.isRequired,
     description: PropTypes.object.isRequired,
     link: PropTypes.string.isRequired,
-    svg: PropTypes.string.isRequired,
+    svg: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
     alt: PropTypes.string.isRequired,
-    image: PropTypes.string,
+    image: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
     square: PropTypes.bool,
     round: PropTypes.bool,
     links: PropTypes.array,
@@ -93,7 +94,7 @@ class ProjectIcon extends Component {
     return (
       <div className={iconClass}>
         <span onClick={this.showModal} style={{margin:10, height: '7em', width: '7em'}}>
-          <object><Isvg src={this.props.svg} alt={this.props.alt} className={square || round}/></object>
+          <object><Isvg src={resolveAssetSrc(this.props.svg)} alt={this.props.alt} className={square || round}/></object>
         </span>
         <Modal
           isOpen={this.state.modalOpen}
@@ -103,12 +104,12 @@ class ProjectIcon extends Component {
           contentLabel="Modal">
           <div>
             <button onClick={this.hideModal} className={"modal-close-button"}>
-              <img src={close} alt={"close button"} style={{border: 0, height: '1.5em', width: '1.5em', background: 'var(--surface-elevated-color)'}}/>
+              <img src={resolveAssetSrc(close)} alt={"close button"} style={{border: 0, height: '1.5em', width: '1.5em', background: 'var(--surface-elevated-color)'}}/>
             </button>
             <h2>{this.props.title}</h2>
             <div className="modal-content">
               {this.props.description}
-              <img src={this.props.image} alt={this.props.alt} onLoad={() => this.setState({imageLoaded: true})} loader={<div className={"loader"}></div> }/>
+              <img src={resolveAssetSrc(this.props.image)} alt={this.props.alt} onLoad={() => this.setState({imageLoaded: true})} loader={<div className={"loader"}></div> }/>
               <div style={{marginTop: "1.5em"}}>
               {
                 (this.props.links).map(function (link, index){

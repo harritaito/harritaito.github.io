@@ -8,6 +8,7 @@ import Process from '../components/Process';
 import ProjectStats from '../components/ProjectStats';
 import ProjectSection from "../components/ProjectSection";
 import Row from '../components/Row';
+import { resolveAssetSrc } from '../components/assetSource';
 
 import candy from '../static/media/hri-study/candy.png';
 import observation from '../static/media/hri-study/observation.jpg';
@@ -183,13 +184,13 @@ class Languagerobot extends Component {
 
                         <ImageZoom
                           image={{
-                            src: observation,
+                            src: resolveAssetSrc(observation),
                             alt: 'Screen capture of our game environment with a controller, a blue ball, and a yellow circle goal in the distance',
                             className: 'feature-image',
                             style:{maxWidth: "100%"}
                           }}
                           zoomImage={{
-                            src: observation,
+                            src: resolveAssetSrc(observation),
                             alt: 'Screen capture of our game environment with a controller, a blue ball, and a yellow circle goal in the distance'
                           }}
                         />
@@ -257,13 +258,13 @@ class Languagerobot extends Component {
 
                         <ImageZoom
                           image={{
-                            src: affinity,
+                            src: resolveAssetSrc(affinity),
                             alt: 'Screen capture of our game environment with a controller, a blue ball, and a yellow circle goal in the distance',
                             className: 'feature-image',
                             style:{maxWidth: "100%"}
                           }}
                           zoomImage={{
-                            src: affinity,
+                            src: resolveAssetSrc(affinity),
                             alt: 'Screen capture of our game environment with a controller, a blue ball, and a yellow circle goal in the distance'
                           }}
                         />
@@ -371,13 +372,13 @@ class Languagerobot extends Component {
 
                         <ImageZoom
                           image={{
-                            src: candy,
+                            src: resolveAssetSrc(candy),
                             alt: 'Screen capture of our game environment with a controller, a blue ball, and a yellow circle goal in the distance',
                             className: 'feature-image',
                             style:{maxWidth: "100%"}
                           }}
                           zoomImage={{
-                            src: candy,
+                            src: resolveAssetSrc(candy),
                             alt: 'Screen capture of our game environment with a controller, a blue ball, and a yellow circle goal in the distance'
                           }}
                         />
@@ -462,13 +463,13 @@ class Languagerobot extends Component {
 
                         <ImageZoom
                           image={{
-                            src: theatherical,
+                            src: resolveAssetSrc(theatherical),
                             alt: 'Screen capture of our game environment with a controller, a blue ball, and a yellow circle goal in the distance',
                             className: 'feature-image',
                             style:{maxWidth: "100%"}
                           }}
                           zoomImage={{
-                            src: theatherical,
+                            src: resolveAssetSrc(theatherical),
                             alt: 'Screen capture of our game environment with a controller, a blue ball, and a yellow circle goal in the distance'
                           }}
                         />
