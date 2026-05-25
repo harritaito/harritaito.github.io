@@ -56,9 +56,9 @@ class Navbar extends Component {
 
     return (
       <div className="nav">
-        <div className="progress-bar">
+        <div className="progress-bar-wrap">
           <progress
-            className={`${this.props.color}`}
+            className={`progress-bar ${this.props.color}`}
             value={this.state.progress}
             max={1}
           />
@@ -128,7 +128,7 @@ class Navbar extends Component {
                     box-shadow: none;
           }
 
-          .headroom--unfixed .progress-bar {
+          .headroom--unfixed .progress-bar-wrap {
             display: none;
           }
           .headroom-wrapper{height: 1rem;}
@@ -226,8 +226,7 @@ class Navbar extends Component {
           }
 
 
-          .progress-bar {
-            -webkit-appearance: none;
+          .progress-bar-wrap {
             position: fixed;
             top: 0;
             left: 0;
@@ -235,78 +234,82 @@ class Navbar extends Component {
             height: 0.4rem;
             border: 0;
             background-color: transparent;
-            color: rgb(97, 13, 255);
             z-index: 999;
           }
 
-          .red {
+          progress.progress-bar {
+            -webkit-appearance: none;
+            height: 0.4rem;
+            border: 0;
+            background-color: transparent;
+            width: 100%;
+            display: block;
+            appearance: none;
+          }
+
+          progress.progress-bar.red {
             color: #EC6565;
           }
 
-          .blue {
+          progress.progress-bar.blue {
             color: #7CE1EC;
           }
 
-          .green {
+          progress.progress-bar.green {
             color: #12a42d;
           }
 
-          .purple {
+          progress.progress-bar.purple {
             color: #9157ff;
           }
 
-         .grey {
+         progress.progress-bar.grey {
             color: #747a75
           }
 
-          .navbar .progress-bar {
-            position: absolute;
-            width: 100%;
-          }
-
-          progress::-webkit-progress-bar {
+          progress.progress-bar::-webkit-progress-bar {
             background: var(--progress-track-color);
           }
 
-          progress::-webkit-progress-value {
+          progress.progress-bar::-webkit-progress-value {
             background: #9157ff;
           }
 
-          progress::-moz-progress-bar {
+          progress.progress-bar::-moz-progress-bar {
             background: #9157ff;
           }
 
-          progress.red::-webkit-progress-value {
+          progress.progress-bar.red::-webkit-progress-value {
             background-color: #fa5858;
           }
 
-          progress.red::-moz-progress-bar {
+          progress.progress-bar.red::-moz-progress-bar {
             background-color: #fa5858;
           }
 
 
-          progress.blue::-webkit-progress-value {
+          progress.progress-bar.blue::-webkit-progress-value {
             background-color: #1e95ed;
           }
 
-          progress.blue::-moz-progress-bar {
+          progress.progress-bar.blue::-moz-progress-bar {
             background-color: #1e95ed;
           }
 
 
-          progress.green::-webkit-progress-value {
+          progress.progress-bar.green::-webkit-progress-value {
             background-color: #12a42d;
           }
 
-          progress.green::-moz-progress-bar {
+          progress.progress-bar.green::-moz-progress-bar {
             background-color: #12a42d;
           }
 
-          progress.grey::-webkit-progress-value {
+          progress.progress-bar.grey::-webkit-progress-value {
             background-color: #747a75;
           }
 
-          progress.grey::-moz-progress-bar {
+          progress.progress-bar.grey::-moz-progress-bar {
             background-color: #747a75;
           }
 

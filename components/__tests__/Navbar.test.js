@@ -1,4 +1,6 @@
 import Navbar from '../Navbar';
+import React from 'react';
+import { renderToStaticMarkup } from 'react-dom/server';
 
 jest.mock('next/link', () => {
   const React = require('react');
@@ -11,6 +13,11 @@ jest.mock('next/link', () => {
 jest.mock('react-headroom', () => {
   const React = require('react');
   return ({ children }) => React.createElement('div', null, children);
+});
+
+jest.mock('../ThemeToggle', () => {
+  const React = require('react');
+  return () => React.createElement('button', { type: 'button' }, 'Theme');
 });
 
 jest.mock('react-inlinesvg', () => {
@@ -101,5 +108,12 @@ describe('Navbar reading progress', () => {
     expect(window.addEventListener).toHaveBeenCalledWith('resize', navbar.updateProgress);
     expect(window.removeEventListener).toHaveBeenCalledWith('scroll', navbar.updateProgress);
     expect(window.removeEventListener).toHaveBeenCalledWith('resize', navbar.updateProgress);
+  });
+
+  test('renders the progress element with scoped class names', () => {
+    const markup = renderToStaticMarkup(<Navbar nextProjectLink={null} nextProjectName={null} color="blue" />);
+
+    expect(markup).toMatch(/<progress[^>]*class="[^"]*progress-bar[^"]*blue/);
+    expect(markup).toMatch(/class="[^"]*progress-bar-wrap/);
   });
 });
