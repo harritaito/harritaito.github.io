@@ -12,9 +12,11 @@ class ProjectPage extends Component {
     super(props);
 
     const proj = new Projects();
+    const projectIdentifier = props.projectName || props.title;
+    const resolvedNextProject = proj.getNextProject(projectIdentifier) || proj.getRandomProject();
 
     this.state = {
-      nextProject: proj.getNextProject(props.title)
+      nextProject: resolvedNextProject
     };
 
 
@@ -28,7 +30,8 @@ class ProjectPage extends Component {
     hero: PropTypes.string.isRequired,
     heroAlt: PropTypes.string.isRequired,
     video: PropTypes.bool,
-    navbarColor: PropTypes.string
+    navbarColor: PropTypes.string,
+    projectName: PropTypes.string
   }
 
   static defaultProps = {
@@ -38,7 +41,8 @@ class ProjectPage extends Component {
     hero: "",
     heroAlt: "",
     video: false,
-    navbarColor: ""
+    navbarColor: "",
+    projectName: ""
   }
 
   render () {

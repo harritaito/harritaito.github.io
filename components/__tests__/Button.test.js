@@ -33,6 +33,23 @@ describe('Button.isLinkInternal', () => {
       global.window = originalWindow;
     }
   });
+
+  test('returns true for root-relative links when window is undefined (SSR)', () => {
+    const originalWindow = global.window;
+    global.window = undefined;
+
+    try {
+      const btn = new Button({ label: 'Test', link: '/projects', color: 'green' });
+      expect(btn.isLinkInternal()).toBe(true);
+    } finally {
+      global.window = originalWindow;
+    }
+  });
+
+  test('returns false for protocol-relative links', () => {
+    const btn = new Button({ label: 'Test', link: '//example.com/path', color: 'green' });
+    expect(btn.isLinkInternal()).toBe(false);
+  });
 });
 
 describe('Button rendering', () => {

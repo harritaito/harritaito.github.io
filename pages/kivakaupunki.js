@@ -82,6 +82,7 @@ class Kivakaupunki extends Component {
     return (
       <div className="KivaKaupunki">
         <ProjectPage
+          projectName={"Kiva Kaupunki"}
           title={"Kiva Kaupunki"}
           hero={hero}
           heroAlt={"map"}

@@ -11,14 +11,16 @@ class Video extends Component {
 
   static propTypes = {
     autoplay: PropTypes.bool,
-    webMsrc: PropTypes.string.isRequired,
-    mp4src: PropTypes.string.isRequired,
+    src: PropTypes.string,
+    webMsrc: PropTypes.string,
+    mp4src: PropTypes.string,
     caption: PropTypes.string,
     controls: PropTypes.bool
   }
 
   static defaultProps = {
     autoplay: false,
+    src: "",
     webMsrc: "",
     mp4src: "",
     caption: "",
@@ -26,23 +28,46 @@ class Video extends Component {
   }
 
   playVideo = () => {
-    this._video.play();
+    if (!this._video || typeof this._video.play !== 'function') {
+      return;
+    }
+
+    const playPromise = this._video.play();
+    if (playPromise && typeof playPromise.catch === 'function') {
+      playPromise.catch(() => {});
+    }
   }
 
   stopVideo = () => {
+    if (!this._video || typeof this._video.pause !== 'function') {
+      return;
+    }
+
     this._video.pause();
   }
 
   render () {
+    const fallbackSrc = this.props.src || "";
+    const webMsrc = this.props.webMsrc || fallbackSrc;
+    const mp4src = this.props.mp4src || fallbackSrc;
+    const downloadSrc = mp4src || webMsrc || fallbackSrc;
 
     return (
       <span>
-        <video className={"video " + this.props.className} ref={(video) => { this._video = video; }} preload="meta" muted loop>
+        <video
+          className={"video " + this.props.className}
+          ref={(video) => { this._video = video; }}
+          preload="metadata"
+          muted
+          loop
+          controls={this.props.controls}
+          autoPlay={this.props.autoplay}
+        >
 
-          <source src={this.props.webMsrc} type="video/webm" />
-          <source src={this.props.mp4src} type="video/mp4" />
+          <source src={webMsrc} type="video/webm" />
+          <source src={mp4src} type="video/mp4" />
 
-          <p>Your browser does not support the video tag. You can alternatively <a href={this.props.mp4src}>download</a> the video.</p>
+          <p>Your browser does not support the video tag. You can alternatively <a href={downloadSrc}>download</a> the video.</p>
         </video>
         {this.props.caption ?
           <p className={"caption"}>
@@ -78,4 +103,3 @@ class Video extends Component {
 }
 
 export default Video;
-

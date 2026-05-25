@@ -71,6 +71,7 @@ class Languagerobot extends Component {
     return (
       <div className="Languagerobot">
         <ProjectPage
+          projectName={"HRI Study"}
           title={"Human-Robot Interaction"}
           hero={pupils}
           heroAlt={"map"}
