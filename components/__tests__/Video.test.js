@@ -40,4 +40,16 @@ describe('Video rendering', () => {
     expect(markup).toContain('autoplay=""');
     expect(markup).toContain('preload="metadata"');
   });
+
+  test('uses src as fallback for webm and mp4 sources', () => {
+    const markup = renderToStaticMarkup(
+      <Video
+        src="/hero-video.mp4"
+      />
+    );
+
+    expect(markup).toContain('src="/hero-video.mp4" type="video/webm"');
+    expect(markup).toContain('src="/hero-video.mp4" type="video/mp4"');
+    expect(markup).toContain('href="/hero-video.mp4"');
+  });
 });
