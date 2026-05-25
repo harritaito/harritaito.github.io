@@ -22,7 +22,8 @@ class Navbar extends Component {
 
   updateProgress() {
     const height = document.documentElement.scrollHeight - window.innerHeight;
-    const value = height > 0 ? window.scrollY / height : 0;
+    const rawValue = height > 0 ? window.scrollY / height : 0;
+    const value = Number.isFinite(rawValue) ? Math.min(1, Math.max(0, rawValue)) : 0;
     this.setState({ progress: value });
   }
 

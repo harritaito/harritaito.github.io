@@ -64,6 +64,28 @@ describe('Navbar reading progress', () => {
     expect(navbar.setState).toHaveBeenCalledWith({ progress: 0 });
   });
 
+  test('clamps progress to zero when scroll position is negative', () => {
+    document.documentElement = { scrollHeight: 1200 };
+    window.innerHeight = 200;
+    window.scrollY = -25;
+    const navbar = createNavbar();
+
+    navbar.updateProgress();
+
+    expect(navbar.setState).toHaveBeenCalledWith({ progress: 0 });
+  });
+
+  test('clamps progress to one when scroll position exceeds page height', () => {
+    document.documentElement = { scrollHeight: 1200 };
+    window.innerHeight = 200;
+    window.scrollY = 5000;
+    const navbar = createNavbar();
+
+    navbar.updateProgress();
+
+    expect(navbar.setState).toHaveBeenCalledWith({ progress: 1 });
+  });
+
   test('registers and removes progress listeners', () => {
     document.documentElement = { scrollHeight: 1000 };
     window.innerHeight = 500;
