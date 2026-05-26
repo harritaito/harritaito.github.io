@@ -38,7 +38,7 @@ export default class MyDocument extends Document {
         doc.style.colorScheme = theme;
       }
     )();`;
- 
+
     const { title, description, siteUrl, locale, twitterHandle, socialImage } =
       SITE_METADATA;
 
@@ -46,20 +46,18 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <meta charSet="UTF-8" />
-          <meta
-            httpEquiv="Cache-Control"
-            content="public, max-age=86400"
-          />
+          <meta httpEquiv="Cache-Control" content="public, max-age=86400" />
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1, viewport-fit=cover"
           />
-          <meta
-            name="description"
-            content={description}
-          />
+          <meta name="description" content={description} />
           <link rel="canonical" href={siteUrl} />
-          <link rel="icon" sizes="192x192" href="/static/media/touch-icon.png" />
+          <link
+            rel="icon"
+            sizes="192x192"
+            href="/static/media/touch-icon.png"
+          />
           <link rel="apple-touch-icon" href="/static/media/touch-icon.png" />
           <link
             rel="mask-icon"
@@ -71,25 +69,16 @@ export default class MyDocument extends Document {
           <meta property="og:type" content="website" />
           <meta property="og:title" content={title} />
           <meta property="og:site_name" content={title} />
-          <meta
-            property="og:description"
-            content={description}
-          />
+          <meta property="og:description" content={description} />
           <meta property="og:locale" content={locale} />
           <meta name="twitter:site" content={twitterHandle} />
           <meta name="twitter:creator" content={twitterHandle} />
           <meta name="twitter:title" content={title} />
           <meta name="twitter:description" content={description} />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta
-            name="twitter:image"
-            content={socialImage.url}
-          />
+          <meta name="twitter:image" content={socialImage.url} />
           <meta name="twitter:image:alt" content={socialImage.alt} />
-          <meta
-            property="og:image"
-            content={socialImage.url}
-          />
+          <meta property="og:image" content={socialImage.url} />
           <meta property="og:image:alt" content={socialImage.alt} />
           <meta name="color-scheme" content="light dark" />
           <script dangerouslySetInnerHTML={{ __html: setInitialTheme }} />

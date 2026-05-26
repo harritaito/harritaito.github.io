@@ -1,21 +1,20 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import Link from 'next/link';
-import Headroom from 'react-headroom';
-import Isvg from 'react-inlinesvg';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import Link from "next/link";
+import Headroom from "react-headroom";
+import Isvg from "react-inlinesvg";
 
-import ThemeToggle from './ThemeToggle';
-import { resolveAssetSrc } from './assetSource';
-import arrow from '../static/media/icons/arrow-slim.svg';
+import ThemeToggle from "./ThemeToggle";
+import { resolveAssetSrc } from "./assetSource";
+import arrow from "../static/media/icons/arrow-slim.svg";
 
 class Navbar extends Component {
-
   constructor() {
     super();
 
     this.state = {
       visible: true,
-      progress: 0
+      progress: 0,
     };
 
     this.updateProgress = this.updateProgress.bind(this);
@@ -24,36 +23,36 @@ class Navbar extends Component {
   updateProgress() {
     const height = document.documentElement.scrollHeight - window.innerHeight;
     const rawValue = height > 0 ? window.scrollY / height : 0;
-    const value = Number.isFinite(rawValue) ? Math.min(1, Math.max(0, rawValue)) : 0;
+    const value = Number.isFinite(rawValue)
+      ? Math.min(1, Math.max(0, rawValue))
+      : 0;
     this.setState({ progress: value });
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.updateProgress);
-    window.addEventListener('resize', this.updateProgress);
+    window.addEventListener("scroll", this.updateProgress);
+    window.addEventListener("resize", this.updateProgress);
     this.updateProgress();
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.updateProgress);
-    window.removeEventListener('resize', this.updateProgress);
+    window.removeEventListener("scroll", this.updateProgress);
+    window.removeEventListener("resize", this.updateProgress);
   }
 
   static propTypes = {
     nextProjectLink: PropTypes.string,
     nextProjectName: PropTypes.string,
-    color: PropTypes.string
-  }
+    color: PropTypes.string,
+  };
 
   static defaultProps = {
     nextProjectLink: "/",
     nextProjectName: "Next Project",
-    color: ""
-  }
-
+    color: "",
+  };
 
   render() {
-
     return (
       <div className="nav">
         <div className="progress-bar-wrap">
@@ -63,25 +62,42 @@ class Navbar extends Component {
             max={1}
           />
         </div>
-        <Headroom style={{position: 'fixed'}}>
+        <Headroom style={{ position: "fixed" }}>
           <div className="navbar">
             <div className="links">
-              <Link href='/' legacyBehavior><a className="navbar-link">Home</a></Link>
-              <Link href='/projects' legacyBehavior><a className="navbar-link">Projects</a></Link>
-              <Link href='/about' legacyBehavior><a className="navbar-link">About</a></Link>
-              <Link href='/contact' legacyBehavior><a className="navbar-link">Contact</a></Link>
+              <Link href="/" legacyBehavior>
+                <a className="navbar-link">Home</a>
+              </Link>
+              <Link href="/projects" legacyBehavior>
+                <a className="navbar-link">Projects</a>
+              </Link>
+              <Link href="/about" legacyBehavior>
+                <a className="navbar-link">About</a>
+              </Link>
+              <Link href="/contact" legacyBehavior>
+                <a className="navbar-link">Contact</a>
+              </Link>
             </div>
             <div className="navbar-controls">
               <ThemeToggle />
-              { this.props.nextProjectLink ?
+              {this.props.nextProjectLink ? (
                 <div className="next-wrapper">
-                  <Link href={this.props.nextProjectLink} legacyBehavior><a className="next navbar-link">{this.props.nextProjectName}<span onClick={this.showModal}><object>  <Isvg className={"next-arrow"} src={resolveAssetSrc(arrow)} /></object></span>
-                  </a></Link>
+                  <Link href={this.props.nextProjectLink} legacyBehavior>
+                    <a className="next navbar-link">
+                      {this.props.nextProjectName}
+                      <span onClick={this.showModal}>
+                        <object>
+                          {" "}
+                          <Isvg
+                            className={"next-arrow"}
+                            src={resolveAssetSrc(arrow)}
+                          />
+                        </object>
+                      </span>
+                    </a>
+                  </Link>
                 </div>
-
-                :
-                null
-              }
+              ) : null}
             </div>
           </div>
         </Headroom>
@@ -105,23 +121,23 @@ class Navbar extends Component {
             transition: transform 200ms ease-in-out;
           }
           .headroom--unpinned {
-            position: fixed; 
-            top: 0px; 
-            left: 0px; 
-            right: 0px; 
-            z-index: 1; 
-            transform: translateY(-100%); 
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            z-index: 1;
+            transform: translateY(-100%);
             transition: all 0.2s ease-in-out;
           }
           .headroom--pinned {
-            position: fixed; 
-            top: 0px; 
-            left: 0px; 
-            right: 0px; 
-            z-index: 1; 
-            transform: translateY(0px); 
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            z-index: 1;
+            transform: translateY(0px);
             transition: all 0.2s ease-in-out;
-          } 
+          }
 
           .headroom--unfixed .navbar {
             -webkit-box-shadow: none;
@@ -154,7 +170,8 @@ class Navbar extends Component {
             gap: 1em;
             padding: 1em;
             -ms-flex-align: center;
-                align-items: center;
+                align-items: center
+                padding: 1em 1em 0em 1em;
           }
 
           .navbar-link {
