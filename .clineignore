@@ -1,12 +1,17 @@
 # Dependencies and package manager state
 /node_modules/
 **/node_modules/
+/vendor/
+/.venv/
+**/.venv/
 /package-lock.json
+/npm-shrinkwrap.json
 /yarn.lock
 /pnpm-lock.yaml
 
 # Next.js build and static export output
 /.next/
+**/.next/
 /out/
 /_next/
 /_error/
@@ -25,12 +30,12 @@
 *.min.js
 *.min.css
 
-# Large local data/database files
-*.csv
-*.xlsx
-*.sqlite
-*.sqlite3
-*.parquet
+# Agent/tool payloads that are not portfolio source context
+/.agents/skills/
+/.cline/skills/
+/.claude/skills/
+/.claude-plugin/
+/.codex/
 
 # Logs
 *.log
@@ -46,9 +51,36 @@ pnpm-debug.log*
 .DS_Store
 /.idea/
 
-# Tracked agent skill bundles are not portfolio source context.
-/.agents/skills/
-/.cline/skills/
+# Large data files
+*.csv
+*.tsv
+*.xlsx
+*.xls
+*.sqlite
+*.sqlite3
+*.db
+*.parquet
+
+# Binary media; SVGs stay visible because they are editable source text
+*.png
+*.PNG
+*.jpg
+*.JPG
+*.jpeg
+*.JPEG
+*.gif
+*.webp
+*.ico
+*.avif
+*.mp4
+*.mov
+*.webm
+*.mp3
+*.wav
+*.woff
+*.woff2
+*.ttf
+*.otf
 
 # Generated root-level static export artifacts
 /*.html
