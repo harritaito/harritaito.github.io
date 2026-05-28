@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { radii } from "./design-system/tokens";
 
 const STORAGE_KEY = "theme";
 
@@ -142,7 +143,7 @@ const ThemeToggle = () => {
           align-items: center;
           background: transparent;
           border: 1px solid var(--border-color);
-          border-radius: 999px;
+          border-radius: ${radii.circle};
           color: inherit;
           cursor: pointer;
           display: inline-flex;

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import { shadows } from './design-system/tokens';
 
 class Video extends Component {
 
@@ -80,8 +81,8 @@ class Video extends Component {
         .video {
           width: 100%;
           margin: .75em auto;
-          -webkit-box-shadow: 0 0.5em 1em 0 rgba(0,0,0,0.30);
-                  box-shadow: 0 0.5em 1em 0 rgba(0,0,0,0.30);
+          -webkit-box-shadow: ${shadows.media};
+                  box-shadow: ${shadows.media};
         }
 
         .video + .caption {

@@ -6,6 +6,7 @@ import Isvg from "react-inlinesvg";
 
 import ThemeToggle from "./ThemeToggle";
 import { resolveAssetSrc } from "./assetSource";
+import { colors } from "./design-system/tokens";
 import arrow from "../static/media/icons/arrow-slim.svg";
 
 class Navbar extends Component {
@@ -265,23 +266,23 @@ class Navbar extends Component {
           }
 
           progress.progress-bar.red {
-            color: #EC6565;
+            color: ${colors.progressRed};
           }
 
           progress.progress-bar.blue {
-            color: #7CE1EC;
+            color: ${colors.progressBlue};
           }
 
           progress.progress-bar.green {
-            color: #12a42d;
+            color: ${colors.accentGreen};
           }
 
           progress.progress-bar.purple {
-            color: #9157ff;
+            color: ${colors.accentPurple};
           }
 
          progress.progress-bar.grey {
-            color: #747a75
+            color: ${colors.accentGrey}
           }
 
           progress.progress-bar::-webkit-progress-bar {
@@ -289,45 +290,45 @@ class Navbar extends Component {
           }
 
           progress.progress-bar::-webkit-progress-value {
-            background: #9157ff;
+            background: ${colors.accentPurple};
           }
 
           progress.progress-bar::-moz-progress-bar {
-            background: #9157ff;
+            background: ${colors.accentPurple};
           }
 
           progress.progress-bar.red::-webkit-progress-value {
-            background-color: #fa5858;
+            background-color: ${colors.accentRed};
           }
 
           progress.progress-bar.red::-moz-progress-bar {
-            background-color: #fa5858;
+            background-color: ${colors.accentRed};
           }
 
 
           progress.progress-bar.blue::-webkit-progress-value {
-            background-color: #1e95ed;
+            background-color: ${colors.accentBlue};
           }
 
           progress.progress-bar.blue::-moz-progress-bar {
-            background-color: #1e95ed;
+            background-color: ${colors.accentBlue};
           }
 
 
           progress.progress-bar.green::-webkit-progress-value {
-            background-color: #12a42d;
+            background-color: ${colors.accentGreen};
           }
 
           progress.progress-bar.green::-moz-progress-bar {
-            background-color: #12a42d;
+            background-color: ${colors.accentGreen};
           }
 
           progress.progress-bar.grey::-webkit-progress-value {
-            background-color: #747a75;
+            background-color: ${colors.accentGrey};
           }
 
           progress.progress-bar.grey::-moz-progress-bar {
-            background-color: #747a75;
+            background-color: ${colors.accentGrey};
           }
 
           @media only screen and (max-width: 575px) {

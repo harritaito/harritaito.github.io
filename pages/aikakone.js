@@ -9,6 +9,7 @@ import ProjectSection from "../components/ProjectSection";
 import Row from "../components/Row";
 import { resolveAssetSrc } from "../components/assetSource";
 import HighlightUnderline from "../components/design-system/HighlightUnderline";
+import { colors, shadows } from "../components/design-system/tokens";
 import { Carousel } from "react-responsive-carousel";
 import Modal from "react-modal";
 
@@ -641,19 +642,19 @@ class Aikakone extends Component {
           }
 
           .Aikakone .nav .navbar-link:hover {
-            color: #9157ff;
+            color: ${colors.accentPurple};
           }
 
           .Aikakone .nav .navbar-link:hover a {
-            color: #9157ff;
+            color: ${colors.accentPurple};
           }
 
           .Aikakone .nav .navbar-link:hover svg {
-            fill: #9157ff;
+            fill: ${colors.accentPurple};
           }
 
           .Aikakone b {
-            color: #9157ff;
+            color: ${colors.accentPurple};
           }
 
           .Aikakone ol {
@@ -669,7 +670,7 @@ class Aikakone extends Component {
           }
 
           .Aikakone .highlight {
-            color: #9157ff;
+            color: ${colors.accentPurple};
             font-weight: bold;
           }
 
@@ -684,14 +685,14 @@ class Aikakone extends Component {
             max-width: 100%;
             height: auto;
             margin: 0.75em 0;
-            -webkit-box-shadow: 0 0.5em 1em 0 rgba(0, 0, 0, 0.3);
-            box-shadow: 0 0.5em 1em 0 rgba(0, 0, 0, 0.3);
+            -webkit-box-shadow: ${shadows.media};
+            box-shadow: ${shadows.media};
           }
 
           iframe {
             margin: 0.75em 0;
-            -webkit-box-shadow: 0 0.5em 1em 0 rgba(0, 0, 0, 0.3);
-            box-shadow: 0 0.5em 1em 0 rgba(0, 0, 0, 0.3);
+            -webkit-box-shadow: ${shadows.media};
+            box-shadow: ${shadows.media};
           }
 
           .mini-image {

@@ -3,6 +3,7 @@ import Row from "../components/Row";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import HighlightUnderline from "../components/design-system/HighlightUnderline";
+import { colors, radii } from "../components/design-system/tokens";
 
 class About extends Component {
   render() {
@@ -126,7 +127,7 @@ class About extends Component {
             height: 275px;
             display: inline-block;
             width: 275px;
-            border-radius: 999px
+            border-radius: ${radii.circle}
           }
           @media only screen and (max-width: 45rem) {
             .About .my-photo {height: 12rem; width: 12rem;}
@@ -135,7 +136,7 @@ class About extends Component {
           .About .my-photo img {
             display: block;
             width: 100%;
-            border-radius: 999px
+            border-radius: ${radii.circle}
           }
 
           .About h3 {
@@ -149,15 +150,15 @@ class About extends Component {
 
 
           .About .nav .navbar-link:hover {
-            color: #747a75;
+            color: ${colors.accentGrey};
           }
 
           .About .nav .navbar-link:hover a {
-            color: #747a75;
+            color: ${colors.accentGrey};
           }
 
           .About .nav .navbar-link:hover svg {
-            fill: #747a75;
+            fill: ${colors.accentGrey};
           }
 
           .About .emoji {

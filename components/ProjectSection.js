@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import { shadows } from './design-system/tokens';
 
 class ProjectSection extends Component {
 
@@ -42,14 +43,14 @@ class ProjectSection extends Component {
           max-width: 100%;
           height: auto;
           margin: .75em 0;
-          -webkit-box-shadow: 0 0.5em 1em 0 rgba(0,0,0,0.30);
-                  box-shadow: 0 0.5em 1em 0 rgba(0,0,0,0.30);
+          -webkit-box-shadow: ${shadows.media};
+                  box-shadow: ${shadows.media};
         }
 
         .project-section iframe {
           margin: .75em 0;
-          -webkit-box-shadow: 0 0.5em 1em 0 rgba(0,0,0,0.30);
-                  box-shadow: 0 0.5em 1em 0 rgba(0,0,0,0.30);
+          -webkit-box-shadow: ${shadows.media};
+                  box-shadow: ${shadows.media};
         }
 
         .project-section .mini-image {

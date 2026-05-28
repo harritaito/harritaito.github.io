@@ -10,6 +10,7 @@ import ProjectSection from "../components/ProjectSection";
 import Row from '../components/Row';
 import { resolveAssetSrc } from '../components/assetSource';
 import HighlightUnderline from '../components/design-system/HighlightUnderline';
+import { colors, shadows } from '../components/design-system/tokens';
 import { Carousel } from 'react-responsive-carousel';
 import Modal from 'react-modal';
 
@@ -396,20 +397,20 @@ class Kivakaupunki extends Component {
           }
 
           .KivaKaupunki .nav .navbar-link:hover {
-            color: #1e95ed;
+            color: ${colors.accentBlue};
           }
 
           .KivaKaupunki .nav .navbar-link:hover a {
-            color: #1e95ed;
+            color: ${colors.accentBlue};
           }
 
           .KivaKaupunki .nav .navbar-link:hover svg {
-            fill: #1e95ed;
+            fill: ${colors.accentBlue};
           }
 
 
           .KivaKaupunki b {
-            color: #1e95ed;
+            color: ${colors.accentBlue};
           }
 
           .KivaKaupunki ul {
@@ -421,7 +422,7 @@ class Kivakaupunki extends Component {
           }
 
           .KivaKaupunki .highlight {
-            color: #1e95ed;
+            color: ${colors.accentBlue};
             font-weight: bold;
           }
 
@@ -439,8 +440,8 @@ class Kivakaupunki extends Component {
           max-width: 100%;
           height: auto;
           margin: .75em 0;
-          -webkit-box-shadow: 0 0.5em 1em 0 rgba(0,0,0,0.30);
-                  box-shadow: 0 0.5em 1em 0 rgba(0,0,0,0.30);
+          -webkit-box-shadow: ${shadows.media};
+                  box-shadow: ${shadows.media};
         }
 
         .mini-image {

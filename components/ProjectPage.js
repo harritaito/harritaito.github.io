@@ -6,6 +6,7 @@ import Navbar from './Navbar';
 import Project from './Project';
 import Projects from './Projects';
 import { resolveAssetSrc } from './assetSource';
+import { shadows } from './design-system/tokens';
 
 class ProjectPage extends Component {
 
@@ -123,8 +124,8 @@ class ProjectPage extends Component {
             width: 100%;
             height: auto;
             max-height: 20em;
-            -webkit-box-shadow: 0 0.5em 1em 0 rgba(0,0,0,0.30);
-                    box-shadow: 0 0.5em 1em 0 rgba(0,0,0,0.30);
+            -webkit-box-shadow: ${shadows.media};
+                    box-shadow: ${shadows.media};
           }
 
           .project-page .next-project h3 {

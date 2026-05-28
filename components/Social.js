@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Isvg from 'react-inlinesvg';
+import { radii } from './design-system/tokens';
 
 import dribbble from '../static/media/social/dribbble.svg';
 import github from '../static/media/social/github.svg';
@@ -87,7 +88,7 @@ class Social extends Component {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 999px;
+  border-radius: ${radii.circle};
 }
 
 .social a::after{

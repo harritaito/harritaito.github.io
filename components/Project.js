@@ -3,6 +3,7 @@ import Link from 'next/link';
 import PropTypes from 'prop-types';
 import Isvg from 'react-inlinesvg';
 import { resolveAssetSrc } from './assetSource';
+import { colors, shadows } from './design-system/tokens';
 import arrow from '../static/media/icons/arrow-slim.svg';
 
 class Project extends Component {
@@ -202,8 +203,8 @@ class Project extends Component {
             border-radius: 1.5rem;
             overflow: hidden;
             background-color: var(--surface-elevated-color);
-            -webkit-box-shadow: 0 1em 2em 0 rgba(0,0,0,0.30);
-                    box-shadow: 0 1em 2em 0 rgba(0,0,0,0.30);
+            -webkit-box-shadow: ${shadows.card};
+                    box-shadow: ${shadows.card};
             -webkit-transition: box-shadow .5s ease;
             transition: box-shadow .5s ease;
             display: flex;
@@ -211,8 +212,8 @@ class Project extends Component {
           }
 
           .Project :global(.project-link-container:hover .case-card) {
-            -webkit-box-shadow: 0 1.5em 2.5em 0 rgba(0,0,0,0.30);
-                    box-shadow: 0 1.5em 2.5em 0 rgba(0,0,0,0.30);
+            -webkit-box-shadow: ${shadows.cardHover};
+                    box-shadow: ${shadows.cardHover};
           }
 
           .Project :global(.case-card__media) {
@@ -342,35 +343,35 @@ class Project extends Component {
           }
 
           .Project :global(.case-card .next.green .case-study-text) {
-            color: #12a42d;
+            color: ${colors.accentGreen};
           }
 
           .Project :global(.case-card .green .next-arrow-icon) {
-            fill: #12a42d;
+            fill: ${colors.accentGreen};
           }
 
           .Project :global(.case-card .next.blue .case-study-text) {
-            color: #1e95ed;
+            color: ${colors.accentBlue};
           }
 
           .Project :global(.case-card .blue .next-arrow-icon) {
-            fill: #1e95ed;
+            fill: ${colors.accentBlue};
           }
 
           .Project :global(.case-card .next.red .case-study-text) {
-            color: #fa5858;
+            color: ${colors.accentRed};
           }
 
           .Project :global(.case-card .red .next-arrow-icon) {
-            fill: #fa5858;
+            fill: ${colors.accentRed};
           }
 
           .Project :global(.case-card .purple .case-study-text) {
-            color: #9157ff;
+            color: ${colors.accentPurple};
           }
 
           .Project :global(.case-card .purple .next-arrow-icon) {
-            fill: #9157ff;
+            fill: ${colors.accentPurple};
           }
 
           .Project :global(.project-link-container) {

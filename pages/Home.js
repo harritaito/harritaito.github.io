@@ -5,6 +5,7 @@ import Row from "../components/Row";
 import Misc from "../components/Misc";
 import Footer from "../components/Footer";
 import HighlightUnderline from "../components/design-system/HighlightUnderline";
+import { colors, radii } from "../components/design-system/tokens";
 
 import languagerobot from "../static/media/home/languagerobot.jpg";
 import kivakaupunki from "../static/media/home/kivakaupunki.jpg";
@@ -299,12 +300,12 @@ class Home extends Component {
             display: inline-block;
             font-weight: 600;
             text-decoration: none;
-            border-radius: 999px;
+            border-radius: ${radii.circle};
             padding: 0.75em 1.5em;
           }
 
           .Home .primary-cta {
-            background: #1e95ed;
+            background: ${colors.accentBlue};
             color: white;
           }
 
@@ -320,8 +321,8 @@ class Home extends Component {
 
           .Home .secondary-cta:hover,
           .Home .secondary-cta:focus {
-            border-color: #1e95ed;
-            color: #1e95ed;
+            border-color: ${colors.accentBlue};
+            color: ${colors.accentBlue};
           }
 
           .Home .availability {
@@ -447,7 +448,7 @@ class Home extends Component {
             bottom: 0.15em;
             width: 100%;
             height: 8px;
-            background: rgba(139, 200, 246, 0.565);
+            background: ${colors.markerHighlight};
             z-index: -1;
           }
 

@@ -10,6 +10,7 @@ import ProjectSection from "../components/ProjectSection";
 import Row from '../components/Row';
 import { resolveAssetSrc } from '../components/assetSource';
 import HighlightUnderline from '../components/design-system/HighlightUnderline';
+import { colors, shadows } from '../components/design-system/tokens';
 
 import candy from '../static/media/hri-study/candy.png';
 import observation from '../static/media/hri-study/observation.jpg';
@@ -346,7 +347,7 @@ class Languagerobot extends Component {
 
                     <Row content={
                       <p className={pStyle}>
-                       The robot’s unsatisfactory speech recognition and the lack of feedback were the most obvious problems that caused motivational lapses in children. Thus the robot must be made first to understand the speech of the children, a <a href="https://doi.org/10.3389/fnhum.2017.00073">known<HighlightUnderline /></a> technical issue of NAO robot, where Automatic Speech Recognition runs into problems when facing flawed pronunciation or pitch of speech different than adults. Still, as the robot is unable to listen multiple inputs, it should be more autonomous and control the pace of the interaction to ask what it needs, for example one input at a time, and buy time to process that information. 
+                       The robot’s unsatisfactory speech recognition and the lack of feedback were the most obvious problems that caused motivational lapses in children. Thus the robot must be made first to understand the speech of the children, a <a href="https://doi.org/10.3389/fnhum.2017.00073">known<HighlightUnderline /></a> technical issue of NAO robot, where Automatic Speech Recognition runs into problems when facing flawed pronunciation or pitch of speech different than adults. Still, as the robot is unable to listen multiple inputs, it should be more autonomous and control the pace of the interaction to ask what it needs, for example one input at a time, and buy time to process that information.
                       </p>
                     }/>
 
@@ -640,20 +641,20 @@ class Languagerobot extends Component {
           }
 
           .Languagerobot .nav .navbar-link:hover {
-            color: #fa5858;
+            color: ${colors.accentRed};
           }
 
           .Languagerobot .nav .navbar-link:hover a {
-            color: #fa5858;
+            color: ${colors.accentRed};
           }
 
           .Languagerobot .nav .navbar-link:hover svg {
-            fill: #fa5858;
+            fill: ${colors.accentRed};
           }
 
 
           .Languagerobot b {
-            color: #fa5858;
+            color: ${colors.accentRed};
           }
 
           .Languagerobot ul {
@@ -670,7 +671,7 @@ class Languagerobot extends Component {
           }
 
           .Languagerobot .highlight {
-            color: #fa5858;
+            color: ${colors.accentRed};
             font-weight: bold;
           }
 
@@ -691,8 +692,8 @@ class Languagerobot extends Component {
           max-width: 100%;
           height: auto;
           margin: .75em 0;
-          -webkit-box-shadow: 0 0.5em 1em 0 rgba(0,0,0,0.30);
-                  box-shadow: 0 0.5em 1em 0 rgba(0,0,0,0.30);
+          -webkit-box-shadow: ${shadows.media};
+                  box-shadow: ${shadows.media};
         }
 
         .caption{

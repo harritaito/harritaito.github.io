@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
+import { colors, radii, transitions } from './design-system/tokens';
 
 class Button extends Component {
   static propTypes = {
@@ -84,13 +85,13 @@ class Button extends Component {
           .button :global(.button-link) {
             display: inline-block;
             position: relative;
-            border-radius: 26px;
+            border-radius: ${radii.pill};
             padding: .5em 1.5em;
             color: #FAFAFA;
             text-decoration: none;
-            -webkit-transition: all .6s linear;
-            -o-transition: all .6s linear;
-            transition: all .6s linear;
+            -webkit-transition: ${transitions.smooth};
+            -o-transition: ${transitions.smooth};
+            transition: ${transitions.smooth};
             font-weight: 500;
           }
           .button :global(.button-link--static) {
@@ -120,7 +121,7 @@ class Button extends Component {
 
           .button.outline :global(.button-link::before) {
             border: 2px solid var(--muted-text-color);
-            border-radius: 26px;
+            border-radius: ${radii.pill};
             width: 100%;
             height:100%;
             content: '';
@@ -132,37 +133,37 @@ class Button extends Component {
           /* Outline Button Colors */
 
           .button.outline.blue :global(.button-link:hover span) {
-            color: #1e95ed
+            color: ${colors.accentBlue}
           }
 
           .button.outline.blue :global(.button-link:hover::before) {
-            border-color: #1e95ed;
+            border-color: ${colors.accentBlue};
           }
 
 
           .button.outline.green :global(.button-link:hover span) {
-            color: #12a42d
+            color: ${colors.accentGreen}
           }
 
           .button.outline.green :global(.button-link:hover::before) {
-            border-color: #12a42d;
+            border-color: ${colors.accentGreen};
           }
 
           .button.outline.red :global(.button-link:hover span) {
-            color: #fa5858;
+            color: ${colors.accentRed};
           }
 
           .button.outline.red :global(.button-link:hover::before) {
-            border-color: #fa5858;
+            border-color: ${colors.accentRed};
           }
 
 
           .button.outline.purple :global(.button-link:hover span) {
-            color: #9157ff;
+            color: ${colors.accentPurple};
           }
 
           .button.outline.purple :global(.button-link:hover::before) {
-            border-color: #9157ff;
+            border-color: ${colors.accentPurple};
           }
         `}</style>
       </div>
