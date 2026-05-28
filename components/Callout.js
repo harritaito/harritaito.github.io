@@ -45,7 +45,7 @@ class Callout extends Component {
       layout = this.props.title + " callout col-xs-offset-2 col-xs-8 col-sm-offset-0 col-sm-4 col-md-4 col-lg-3 col-xl-3";
       this.props.first ? (layout += " col-lg-offset-1dot5 col-xl-offset-1dot5") : null;
       this.props.middle ? (layout += " col-md-offset-0") : null;
-      !this.props.first || !this.props.middle ? (layout += " col-md-offset-0 col-lg-offset-0 col-xl-offset-0") : null;
+      !this.props.first && !this.props.middle ? (layout += " col-md-offset-0 col-lg-offset-0 col-xl-offset-0") : null;
     }
 
     if(this.props.number === 4) {
@@ -58,7 +58,7 @@ class Callout extends Component {
       this.props.first ? (layout += " col-lg-offset-1 col-xl-offset-1") : null;
       this.props.middle ? (layout += " col-sm-offset-3 col-md-offset-0") : null;
       this.props.middleOffset ? (layout += " col-md-offset-2") : null;
-      !this.props.first || !this.props.middle ? (layout += " col-md-offset-0 col-lg-offset-0 col-xl-offset-0") : null;
+      !this.props.first && !this.props.middle ? (layout += " col-md-offset-0 col-lg-offset-0 col-xl-offset-0") : null;
     }
 
     return (

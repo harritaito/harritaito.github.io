@@ -56,4 +56,35 @@ describe('Callout rendering', () => {
     expect(imageContainer.props.className).not.toContain('null');
     expect(imageContainer.props.className).not.toContain('undefined');
   });
+
+  test('preserves first-item wide-screen offset for three-column layouts', () => {
+    const tree = renderCallout({
+      image: '/static/research.svg',
+      altText: 'Research icon',
+      title: 'Research',
+      description: 'Field observations and synthesis',
+      number: 3,
+      first: true,
+      middle: false
+    });
+
+    expect(tree.props.className).toContain('col-lg-offset-1dot5');
+    expect(tree.props.className).not.toContain('col-lg-offset-0');
+  });
+
+  test('preserves first-item wide-screen offset for five-column layouts', () => {
+    const tree = renderCallout({
+      image: '/static/research.svg',
+      altText: 'Research icon',
+      title: 'Research',
+      description: 'Field observations and synthesis',
+      number: 5,
+      first: true,
+      middle: false
+    });
+
+    expect(tree.props.className).toContain('col-lg-offset-1');
+    expect(tree.props.className).not.toContain('col-lg-offset-0');
+  });
+
 });
