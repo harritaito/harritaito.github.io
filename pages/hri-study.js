@@ -9,6 +9,7 @@ import ProjectStats from '../components/ProjectStats';
 import ProjectSection from "../components/ProjectSection";
 import Row from '../components/Row';
 import { resolveAssetSrc } from '../components/assetSource';
+import HighlightUnderline from '../components/design-system/HighlightUnderline';
 
 import candy from '../static/media/hri-study/candy.png';
 import observation from '../static/media/hri-study/observation.jpg';
@@ -345,7 +346,7 @@ class Languagerobot extends Component {
 
                     <Row content={
                       <p className={pStyle}>
-                       The robot’s unsatisfactory speech recognition and the lack of feedback were the most obvious problems that caused motivational lapses in children. Thus the robot must be made first to understand the speech of the children, a <a href="https://doi.org/10.3389/fnhum.2017.00073">known<div style={{display: 'block', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a> technical issue of NAO robot, where Automatic Speech Recognition runs into problems when facing flawed pronunciation or pitch of speech different than adults. Still, as the robot is unable to listen multiple inputs, it should be more autonomous and control the pace of the interaction to ask what it needs, for example one input at a time, and buy time to process that information. 
+                       The robot’s unsatisfactory speech recognition and the lack of feedback were the most obvious problems that caused motivational lapses in children. Thus the robot must be made first to understand the speech of the children, a <a href="https://doi.org/10.3389/fnhum.2017.00073">known<HighlightUnderline /></a> technical issue of NAO robot, where Automatic Speech Recognition runs into problems when facing flawed pronunciation or pitch of speech different than adults. Still, as the robot is unable to listen multiple inputs, it should be more autonomous and control the pace of the interaction to ask what it needs, for example one input at a time, and buy time to process that information. 
                       </p>
                     }/>
 
@@ -400,7 +401,7 @@ class Languagerobot extends Component {
 
                     <Row content={
                       <p className={pStyle}>
-                        Click the button below to see our concept dialogue, which we formed utilizing first the Minja Axelsson’s Social Robot Design Toolkit, visioning the robot with <a href="https://github.com/minjaaxelsson/social_robot_co-design_canvases/blob/master/robot_canvases_a1/04_robot_mvp_canvas_v2_a1.pdf">“robot design minimum viable product”<div style={{display: 'block', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a>-canvas, and then the interaction outline, for which we used the <a href="https://github.com/minjaaxelsson/social_robot_co-design_canvases/blob/master/robot_canvases_a1/07_robot_interaction_canvas_v2_a1.pdf">“robot interaction”<div style={{display: 'block', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a>-canvas.
+                        Click the button below to see our concept dialogue, which we formed utilizing first the Minja Axelsson’s Social Robot Design Toolkit, visioning the robot with <a href="https://github.com/minjaaxelsson/social_robot_co-design_canvases/blob/master/robot_canvases_a1/04_robot_mvp_canvas_v2_a1.pdf">“robot design minimum viable product”<HighlightUnderline /></a>-canvas, and then the interaction outline, for which we used the <a href="https://github.com/minjaaxelsson/social_robot_co-design_canvases/blob/master/robot_canvases_a1/07_robot_interaction_canvas_v2_a1.pdf">“robot interaction”<HighlightUnderline /></a>-canvas.
                       </p>
                     }/>
                   
@@ -454,7 +455,7 @@ class Languagerobot extends Component {
                     }/>
                     <Row content={
                       <p className={pStyle}>
-                        User experience evaluation and a 25 minute semi-structured poststudy interview were done with teachers of both preschool groups utilizing <a href="https://doi.org/10.1109/ROMAN.2004.1374821">“Theatrical Robot”<div style={{display: 'block', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a> which is a method that allows research groups to test their Human-Robot Interaction without any software or hardware implementations, as a human plays a robot’s role in a way a robot would behave and appear. The interviews were recorded and the main findings transcribed from the recordings.
+                        User experience evaluation and a 25 minute semi-structured poststudy interview were done with teachers of both preschool groups utilizing <a href="https://doi.org/10.1109/ROMAN.2004.1374821">“Theatrical Robot”<HighlightUnderline /></a> which is a method that allows research groups to test their Human-Robot Interaction without any software or hardware implementations, as a human plays a robot’s role in a way a robot would behave and appear. The interviews were recorded and the main findings transcribed from the recordings.
                       </p>
                     }/>
                     
@@ -602,8 +603,8 @@ class Languagerobot extends Component {
                 content={
                   <Row content={
                     <div className={pStyle + " links"} style={{marginTop: "1.5em"}}>
-                      <a href="https://smarttampere.fi/lapsikeskeisempaa-robotiikkaa-opiskelijoilta-ideoita-opetusrobottien-kehittamiseksi/">Lapsikeskeisempää robotiikkaa<div style={{display: 'block', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a>
-                      <span style={{marginLeft: "1.5em"}}><a href="https://smarttampere.fi/en/towards-child-centered-robotics-ideas-from-students-to-develop-teaching-robots/">Towards child-centered robotics<div style={{display: 'block', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a></span>
+                      <a href="https://smarttampere.fi/lapsikeskeisempaa-robotiikkaa-opiskelijoilta-ideoita-opetusrobottien-kehittamiseksi/">Lapsikeskeisempää robotiikkaa<HighlightUnderline /></a>
+                      <span style={{marginLeft: "1.5em"}}><a href="https://smarttampere.fi/en/towards-child-centered-robotics-ideas-from-students-to-develop-teaching-robots/">Towards child-centered robotics<HighlightUnderline /></a></span>
                     </div>
                   }/>
                 }

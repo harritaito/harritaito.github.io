@@ -4,6 +4,7 @@ import Project from "../components/Project";
 import Row from "../components/Row";
 import Misc from "../components/Misc";
 import Footer from "../components/Footer";
+import HighlightUnderline from "../components/design-system/HighlightUnderline";
 
 import languagerobot from "../static/media/home/languagerobot.jpg";
 import kivakaupunki from "../static/media/home/kivakaupunki.jpg";
@@ -92,17 +93,7 @@ class Home extends Component {
                   Curious about the person behind the work?{" "}
                   <Link href="/about" as="/about">
                     Get to know me.
-                    <div
-                      style={{
-                        display: "block",
-                        outline: "none",
-                        height: 8,
-                        width: "98%",
-                        background: "rgba(139, 200, 246, 0.565)",
-                        marginTop: -9,
-                        marginLeft: 2,
-                      }}
-                    />
+                    <HighlightUnderline />
                   </Link>
                 </div>
               </div>
@@ -230,16 +221,7 @@ class Home extends Component {
               or{" "}
               <a href={"https://calendly.com/harritaito/45min/"}>
                 book time on my calendar
-                <div
-                  style={{
-                    display: "block",
-                    height: 8,
-                    width: "98%",
-                    background: "rgba(139, 200, 246, 0.565)",
-                    marginTop: -9,
-                    marginLeft: 2,
-                  }}
-                />
+                <HighlightUnderline />
               </a>{" "}
               when schedules align.
             </div>

@@ -9,6 +9,7 @@ import ProjectStats from '../components/ProjectStats';
 import ProjectSection from "../components/ProjectSection";
 import Row from '../components/Row';
 import { resolveAssetSrc } from '../components/assetSource';
+import HighlightUnderline from '../components/design-system/HighlightUnderline';
 import { Carousel } from 'react-responsive-carousel';
 import Modal from 'react-modal';
 
@@ -97,7 +98,7 @@ class Kivakaupunki extends Component {
                   <span>
                     <Row content={
                       <p className={pStyle}>
-                        The Living Lab Bus (LLB) project consortium arranged a Student Software Competition, for developing <b> an application that benefits bus passengers</b>, with monetary prices. Limitations of application: must be original work and unpublished, must benefit bus passengers somehow, must be a web application, must utilize at least one publicly available API, must be developed using <a href="https://github.com/llb-uta/development-kit">LLB Developer Kit<div style={{display: 'block', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a> and submitted through <a href="https://llb.sis.uta.fi/portal/">LLB Developer Portal<div style={{display: 'block', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a>.
+                        The Living Lab Bus (LLB) project consortium arranged a Student Software Competition, for developing <b> an application that benefits bus passengers</b>, with monetary prices. Limitations of application: must be original work and unpublished, must benefit bus passengers somehow, must be a web application, must utilize at least one publicly available API, must be developed using <a href="https://github.com/llb-uta/development-kit">LLB Developer Kit<HighlightUnderline /></a> and submitted through <a href="https://llb.sis.uta.fi/portal/">LLB Developer Portal<HighlightUnderline /></a>.
                       </p>
                     }/> 
                   </span>
@@ -358,8 +359,8 @@ class Kivakaupunki extends Component {
                 content={
                   <Row content={
                     <div className={pStyle + " links"} style={{marginTop: "1.5em"}}>
-                      <a href="https://github.com/paaplo/lblkk">Github<div style={{display: 'block', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a>
-                      <div style={{marginTop: "1.5em"}}><a href="http://www.pasikuparinen.fi/">Pasi Kuparinen<div style={{display: 'block', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a></div>
+                      <a href="https://github.com/paaplo/lblkk">Github<HighlightUnderline /></a>
+                      <div style={{marginTop: "1.5em"}}><a href="http://www.pasikuparinen.fi/">Pasi Kuparinen<HighlightUnderline /></a></div>
                     </div>
                   }/>
                 }

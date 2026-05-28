@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Row from "../components/Row";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import HighlightUnderline from "../components/design-system/HighlightUnderline";
 
 class About extends Component {
   render() {
@@ -68,17 +69,7 @@ class About extends Component {
                     rel="noopener noreferrer"
                   >
                     Interaction Design Principles for Industrial XR
-                    <div
-                      style={{
-                        display: "block",
-                        outline: "none",
-                        height: 8,
-                        width: "98%",
-                        background: "rgba(139, 200, 246, 0.565)",
-                        marginTop: -9,
-                        marginLeft: 2,
-                      }}
-                    />
+                    <HighlightUnderline />
                   </a>{" "}
                   for Tampere University’s HCI program continues to guide how I
                   blend emerging tech with humane experiences.
@@ -106,16 +97,7 @@ class About extends Component {
                 grab time via my{" "}
                 <a href="https://calendly.com/harritaito/45min/">
                   open calendar
-                  <div
-                    style={{
-                      display: "block",
-                      height: 8,
-                      width: "98%",
-                      background: "rgba(139, 200, 246, 0.565)",
-                      marginTop: -9,
-                      marginLeft: 2,
-                    }}
-                  />
+                  <HighlightUnderline />
                 </a>
                 . This page uses a small cookie to keep embedded media behaving
                 nicely.

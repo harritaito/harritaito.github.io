@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
 import Row from '../components/Row';
+import HighlightUnderline from '../components/design-system/HighlightUnderline';
 
 class PageNotFound extends Component {
 
@@ -15,7 +16,7 @@ class PageNotFound extends Component {
         }/>
         <Row content={
           <div style={{marginTop: "1.5em"}} className="col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6">
-           Feel free to chill out, or <Link href='/' className="home-link">head back to the home page.<span className="home-link__underline" aria-hidden="true" /></Link>
+           Feel free to chill out, or <Link href='/' className="home-link">head back to the home page.<HighlightUnderline /></Link>
           </div>
         }/>
         <style jsx>{`
@@ -45,15 +46,6 @@ class PageNotFound extends Component {
 
         :global(.home-link) {
           display: inline-block;
-        }
-
-        :global(.home-link__underline) {
-          display: block;
-          height: 8px;
-          width: 98%;
-          background: rgba(139, 200, 246, 0.565);
-          margin-top: -9px;
-          margin-left: 2px;
         }
 
         .pohja svg {

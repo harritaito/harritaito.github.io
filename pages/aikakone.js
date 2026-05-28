@@ -8,6 +8,7 @@ import ProjectStats from "../components/ProjectStats";
 import ProjectSection from "../components/ProjectSection";
 import Row from "../components/Row";
 import { resolveAssetSrc } from "../components/assetSource";
+import HighlightUnderline from "../components/design-system/HighlightUnderline";
 import { Carousel } from "react-responsive-carousel";
 import Modal from "react-modal";
 
@@ -197,16 +198,7 @@ class Aikakone extends Component {
                           Source{" "}
                           <a href="http://leanservicecreation.com">
                             Lean Service Creation
-                            <div
-                              style={{
-                                display: "block",
-                                height: 8,
-                                width: "98%",
-                                background: "rgba(139, 200, 246, 0.565)",
-                                marginTop: -9,
-                                marginLeft: 2,
-                              }}
-                            />
+                            <HighlightUnderline />
                           </a>{" "}
                           canvases on organized sessions, this process was
                           supported with expeditions to client company
@@ -614,16 +606,7 @@ class Aikakone extends Component {
                             >
                               <a href="http://leanservicecreation.com">
                                 Lean Service Creation
-                                <div
-                                  style={{
-                                    display: "block",
-                                    height: 8,
-                                    width: "98%",
-                                    background: "rgba(139, 200, 246, 0.565)",
-                                    marginTop: -9,
-                                    marginLeft: 2,
-                                  }}
-                                />
+                                <HighlightUnderline />
                               </a>
                             </div>
                           }

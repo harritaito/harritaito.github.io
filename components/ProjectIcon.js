@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Isvg from 'react-inlinesvg';
 import Modal from 'react-modal';
 import { resolveAssetSrc } from './assetSource';
+import HighlightUnderline from './design-system/HighlightUnderline';
 import close from '../static/media/icons/close.svg';
 
 
@@ -114,7 +115,7 @@ class ProjectIcon extends Component {
               {
                 (this.props.links).map(function (link, index){
                   return (
-                    <a key={link.title + "link" + index} href={link.url} target="_blank" rel="noopener noreferrer">{link.title}<div style={{display: 'block', height: 8, width: '98%', background: 'rgba(139, 200, 246, 0.565)', marginTop: -9, marginLeft: 2}} /></a>
+                    <a key={link.title + "link" + index} href={link.url} target="_blank" rel="noopener noreferrer">{link.title}<HighlightUnderline /></a>
                   )
                 })
               }
