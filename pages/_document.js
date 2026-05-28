@@ -4,7 +4,7 @@ import Fonts from "../components/Fonts";
 const SITE_METADATA = Object.freeze({
   title: "Harri Halonen",
   description:
-    "The website of Harri Halonen (@harritaito), a Finnish experience designer living and working in Tampere, Finland.",
+    "Portfolio of Harri Halonen, a Finnish experience designer shaping research-led services and humane digital products from Tampere.",
   siteUrl: "https://harritaito.com/",
   locale: "en_US",
   twitterHandle: "@harritaito",

@@ -31,7 +31,7 @@ class Misc extends Component {
           <ProjectIcon
             square={true}
             svg={stream}
-            title={"Volunteer Lead – Stream Startup Festival"}
+            title={"Volunteer Organizer – Stream Startup Festival"}
             image={streamers}
             first={true}
             alt={"Stream"}

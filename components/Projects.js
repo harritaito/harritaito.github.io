@@ -7,27 +7,30 @@ class Projects {
   projects = [
     {
       name: "HRI Study",
-      description: "Human-Robot Interaction on language learning.",
+      description: "Observation, teacher interviews, and theatrical prototyping for a classroom robot concept.",
       image: robotImage,
       link: "/hri-study",
       alt: "Human-Robot Interaction",
-      color: "red"
+      color: "red",
+      label: "Archive case study"
     },
     {
       name: "Kiva Kaupunki",
-      description: "From thoughts to action...",
+      description: "A citizen feedback platform shaped through service design, interface sketches, and an MVP.",
       image: kivakaupunkiImage,
       link: "/kivakaupunki",
       alt: "Application for city reporting",
-      color: "blue"
+      color: "blue",
+      label: "Archive case study"
     },
     {
       name: "Aikakone",
-      description: "Dementia/Alzheimer diseases increasing and growing ..",
+      description: "A memory-care reminiscence service explored through field research, service blueprinting, and prototype sessions.",
       image: aikakoneImage,
       link: "/aikakone",
-      alt: "Concept service for people with memory deseaces",
-      color: "purple"
+      alt: "Concept service for memory care",
+      color: "purple",
+      label: "Archive case study"
     },
   ];
 

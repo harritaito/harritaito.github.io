@@ -78,7 +78,10 @@ class Languagerobot extends Component {
           title={"Human-Robot Interaction"}
           hero={pupils}
           heroAlt={"map"}
-          description={"Preschoolers emerge themselves in language learning accompanied by an interactive agent"}
+          eyebrow={"Archive case study"}
+          description={
+            "Observation, teacher interviews, and theatrical prototyping for a classroom robot concept."
+          }
           navbarColor={"red"}
           content={
             <span>

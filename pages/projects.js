@@ -18,6 +18,7 @@ const ProjectsPage = () => {
           image={p.image}
           alt={p.alt}
           color={p.color}
+          label={p.label}
           parallax={false}
         />
       ))}

@@ -26,6 +26,7 @@ class Project extends Component {
     image: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
     alt: PropTypes.string.isRequired,
     color: PropTypes.string.isRequired,
+    label: PropTypes.string,
     percentage: PropTypes.string,
     parallax: PropTypes.bool,
     endValue: PropTypes.number,
@@ -38,6 +39,7 @@ class Project extends Component {
     image: "daretolearned",
     alt: "a",
     color: "green",
+    label: "Case Study",
     parallax: true,
     endValue: -100
   }
@@ -138,7 +140,7 @@ class Project extends Component {
             <p className="case-card__description">{this.props.description}</p>
             <div className="bottom">
               <div className={"next navbar-link " + this.props.color}>
-                <span className="case-study-text">Case Study</span>
+                <span className="case-study-text">{this.props.label}</span>
                 <span className="next-arrow" aria-hidden="true">
                   <Isvg className="next-arrow-icon" src={resolveAssetSrc(arrow)} />
                 </span>

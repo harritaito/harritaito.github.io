@@ -164,6 +164,7 @@ class Home extends Component {
           link="/hri-study"
           alt="Application for city reporting"
           color="red"
+          label="Archive case study"
           percentage="8%"
         />
         <Project
@@ -173,6 +174,7 @@ class Home extends Component {
           link="/kivakaupunki"
           alt="Application for city reporting"
           color="blue"
+          label="Archive case study"
           percentage="8%"
         />
         <Project
@@ -180,8 +182,9 @@ class Home extends Component {
           description="Designed a reminiscence service for memory care by partnering with nurses and families, prototyping multi-sensory moments that improve engagement for people with dementia."
           image={aikakone}
           link="/aikakone"
-          alt="Concept service for people with memory deseaces"
+          alt="Concept service for memory care"
           color="purple"
+          label="Archive case study"
           percentage="28%"
         />
         <Row
@@ -191,8 +194,15 @@ class Home extends Component {
                 "col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 other-stuff"
               }
             >
-              Some other stuff I’ve done
+              Earlier archive
             </h3>
+          }
+        />
+        <Row
+          content={
+            <p className="col-xs-12 col-sm-10 col-md-9 col-lg-8 col-xl-7 section-subheading">
+              Community, course, and volunteer notes kept as provenance for older work.
+            </p>
           }
         />
         <Misc />

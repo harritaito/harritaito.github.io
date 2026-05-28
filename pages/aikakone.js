@@ -94,7 +94,10 @@ class Aikakone extends Component {
           title={"Aikakone"}
           hero={hero}
           heroAlt={"Ideation on canvas."}
-          description={"Interaction around throwbacks creates happiness"}
+          eyebrow={"Archive case study"}
+          description={
+            "Memory-care reminiscence service explored through field research, service blueprinting, and prototype sessions."
+          }
           navbarColor={"purple"}
           content={
             <span>

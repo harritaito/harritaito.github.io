@@ -33,7 +33,8 @@ class ProjectPage extends Component {
     heroAlt: PropTypes.string.isRequired,
     video: PropTypes.bool,
     navbarColor: PropTypes.string,
-    projectName: PropTypes.string
+    projectName: PropTypes.string,
+    eyebrow: PropTypes.string
   }
 
   static defaultProps = {
@@ -44,7 +45,8 @@ class ProjectPage extends Component {
     heroAlt: "",
     video: false,
     navbarColor: "",
-    projectName: ""
+    projectName: "",
+    eyebrow: ""
   }
 
   render () {
@@ -53,6 +55,11 @@ class ProjectPage extends Component {
     return (
       <div className={"project-page container " + this.props.title}>
         <Navbar nextProjectName={this.state.nextProject.name} nextProjectLink={this.state.nextProject.link} color={this.props.navbarColor}/>
+        {this.props.eyebrow ? (
+          <div className="header row project-eyebrow-row">
+            <p className={`${this.pStyle} project-eyebrow`}>{this.props.eyebrow}</p>
+          </div>
+        ) : null}
         <div className="header row">
           <h1 className={this.pStyle}>{this.props.title}</h1>
         </div>
@@ -94,6 +101,7 @@ class ProjectPage extends Component {
           image={this.state.nextProject.image}
           alt={this.state.nextProject.alt}
           color={this.state.nextProject.color}
+          label={this.state.nextProject.label}
           percentage={'0%'}/>
 
 
@@ -104,6 +112,19 @@ class ProjectPage extends Component {
 
           .project-page h1 {
             margin: 0 auto;
+          }
+
+          .project-eyebrow-row {
+            margin-bottom: 0.25em;
+          }
+
+          .project-eyebrow {
+            color: var(--muted-text-color);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            margin: 0 auto;
+            text-transform: uppercase;
           }
 
           .project-page .subtitle {

@@ -89,7 +89,10 @@ class Kivakaupunki extends Component {
           title={"Kiva Kaupunki"}
           hero={hero}
           heroAlt={"map"}
-          description={"User location and comments about surroundings put to a map"}
+          eyebrow={"Archive case study"}
+          description={
+            "A citizen feedback platform shaped through service design, interface sketches, and an MVP."
+          }
           navbarColor={"blue"}
           content={
             <span>
