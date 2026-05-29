@@ -29,21 +29,21 @@ class Kivakaupunki extends Component {
     super();
 
     this.state = {
-      _modalIsOpen: false,
-      get modalIsOpen() {
-        return this._modalIsOpen;
-      },
-      set modalIsOpen(value) {
-        this._modalIsOpen = value;
-      },
+      modalIsOpen: false,
+      selectedSlideIndex: 0,
       environmentOpen: false
     };
     
     this.collapseEnvironment = this.collapseEnvironment.bind(this);
   }
 
-  toggleModal = () => {
-    this.setState(state => ({ modalIsOpen: !state.modalIsOpen }));
+  toggleModal = (selectedSlideIndex) => {
+    this.setState(state => ({
+      modalIsOpen: !state.modalIsOpen,
+      selectedSlideIndex: Number.isInteger(selectedSlideIndex)
+        ? selectedSlideIndex
+        : state.selectedSlideIndex,
+    }));
   }
 
   collapseEnvironment() {
@@ -217,7 +217,7 @@ class Kivakaupunki extends Component {
 
                     {modalIsOpen ? (
                       <Modal isOpen={modalIsOpen} onRequestClose={this.toggleModal}>
-                        <Carousel showThumbs={false} showStatus={false}>
+                        <Carousel showThumbs={false} showStatus={false} selectedItem={this.state.selectedSlideIndex}>
                           <div>
                             <img src={resolveAssetSrc(phone)} alt="Start greeting scene of app" />
                             <p className="legend">Start greeting scene of app</p>
