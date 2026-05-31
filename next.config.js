@@ -12,6 +12,7 @@ const nextConfig = {
       "/about": { page: "/about" },
       "/projects": { page: "/projects" },
       "/contact": { page: "/contact" },
+      "/checklist": { page: "/checklist" },
       "/kivakaupunki": { page: "/kivakaupunki" },
       "/aikakone": { page: "/aikakone" },
       "/hri-study": { page: "/hri-study" },
