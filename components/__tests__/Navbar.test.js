@@ -116,4 +116,18 @@ describe('Navbar reading progress', () => {
     expect(markup).toMatch(/<progress[^>]*class="[^"]*progress-bar[^"]*blue/);
     expect(markup).toMatch(/class="[^"]*progress-bar-wrap/);
   });
+
+  test('renders the expanded site navigation labels', () => {
+    const markup = renderToStaticMarkup(<Navbar nextProjectLink={null} nextProjectName={null} color="grey" />);
+
+    expect(markup).toContain('href="/#work"');
+    expect(markup).toContain('href="/#systems"');
+    expect(markup).toContain('href="/#research"');
+    expect(markup).toContain('href="/#ai-data"');
+    expect(markup).toContain('href="/projects"');
+    expect(markup).toContain('href="/about"');
+    expect(markup).toContain('href="/contact"');
+    expect(markup).toContain('>Archive<');
+    expect(markup).toContain('>AI &amp; Data<');
+  });
 });

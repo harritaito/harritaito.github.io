@@ -25,7 +25,7 @@ class About extends Component {
           <Row
             content={
               <h3 className="col-xs-12 col-sm-12 col-md-12 col-lg-offset-3 col-lg-6 col-xl-6">
-                Hey there!
+                About
               </h3>
             }
           />
@@ -57,7 +57,7 @@ class About extends Component {
             content={
               <ul className="about-me-copy col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6 list">
                 <li>
-                  <strong>Recent focus:</strong> Leading discovery sprints,
+                  <strong>Current focus:</strong> Leading discovery sprints,
                   design ops, and product experiments for cross-functional
                   teams exploring industrial XR, AI-assisted tooling, and
                   connected services.

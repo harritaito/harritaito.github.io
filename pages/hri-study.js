@@ -80,14 +80,14 @@ class Languagerobot extends Component {
           heroAlt={"map"}
           eyebrow={"Archive case study"}
           description={
-            "Observation, teacher interviews, and theatrical prototyping for a classroom robot concept."
+            "Explored how a classroom robot should behave around children through observation, teacher interviews, and prototyping."
           }
           navbarColor={"red"}
           content={
             <span>
             <Row content={
               <p className={pStyle}>
-                 This project was a project work for Tampere University's User Experience in Robotics -course, client  was a company that makes a language learning software on top of Softbanks's NAO robot. It was used as a teaching assistant with local elementary school and preschool pupils. In addition to the robot and the software, also a cloud-based web application has been developed to control the robot’s programs remotely.</p>
+                 This project examined a language-learning robot used as a teaching assistant in local elementary school and preschool settings. The work also included the surrounding software and a cloud-based control application for managing the robot’s programs remotely.</p>
             }/> 
               <ProjectSection
                 title={"Problem"}
@@ -100,7 +100,7 @@ class Languagerobot extends Component {
                     }/> 
                     <Row content={
                       <p className={pStyle}>
-                        What kind of interactional functionalities can be added or changed in the robot to support children’s learning? Design a concept based on your findings.
+                        What interaction patterns would help the robot support children’s learning instead of pulling attention away from it?
                       </p>
                     }/> 
                   </span>
@@ -113,7 +113,7 @@ class Languagerobot extends Component {
                   <span>
                     <Row content={
                       <p className={pStyle}>
-                         The designed concept consists of combined verbal and nonverbal cues. Solution consists of more natural dialogue, a button added into the application for extra feedback and finally, direction of gaze prioritizing children over the operator.
+                         The concept combined verbal and nonverbal cues: more natural dialogue, a button for extra feedback in the application, and gaze behavior that prioritised the children over the operator.
                       </p>
                     }/>
 

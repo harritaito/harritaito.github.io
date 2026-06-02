@@ -96,7 +96,7 @@ class Aikakone extends Component {
           heroAlt={"Ideation on canvas."}
           eyebrow={"Archive case study"}
           description={
-            "Memory-care reminiscence service explored through field research, service blueprinting, and prototype sessions."
+            "Explored a memory-care reminiscence service through field research, service blueprinting, and prototyping."
           }
           navbarColor={"purple"}
           content={
@@ -108,41 +108,21 @@ class Aikakone extends Component {
                     <Row
                       content={
                         <p className={pStyle}>
-                          As the number of elderly is growing, so grows the
-                          number of people suffering from memory diseases.
-                          Providing individual high-quality care for all is a
-                          challenge widely recognized. Especially fulfillment of
-                          mental needs of the elderly and their psychological
-                          well-being has been a subject of lively debate in
-                          public over the last few years.
+                          As the number of older adults grows, so does the need for care that supports memory, mood, and connection. The project focused on one part of that challenge: making stimulus and reminiscence easier to use in everyday care.
                         </p>
                       }
                     />
                     <Row
                       content={
                         <p className={pStyle}>
-                          In University of Tampere's & Futurice's, Let’s
-                          Re-Design Health Services -course, the client company
-                          Espericare ltd, specialized on care and housing
-                          services, gave the course attendees task of creating
-                          some kind of entertainment service for stimulus
-                          purposes for their residents who have different severe
-                          conditions of memory diseases. The workshop course
-                          organized students into randomized teams that would
-                          design service concepts to present at the end of the
-                          course.
+                          In the University of Tampere and Futurice's Let’s Re-Design Health Services course, the client Espericare asked teams to design an entertainment and stimulation service for residents living with memory disease.
                         </p>
                       }
                     />
                     <Row
                       content={
                         <p className={pStyle}>
-                          Elderly adults suffering memory diseases require
-                          brain-activating stimulus and most important of all
-                          suitable entertainment. Especially in the case of
-                          Alzheimer patients, difficulties in creating a
-                          connection and a lack of motivation towards activities
-                          make this a particularly difficult task.
+                          People living with memory disease often need gentle, low-friction ways to stay engaged. That made the brief a service-design problem as much as a content or interface one.
                         </p>
                       }
                     />
@@ -157,15 +137,7 @@ class Aikakone extends Component {
                     <Row
                       content={
                         <p className={pStyle}>
-                          Facilitating connection between people with memory
-                          disorder and caregivers was in the core of Aikakone
-                          (Time Machine). As a web-service, Aikakone can be used
-                          anywhere, with bed-tied patients or with a group of
-                          people by a TV set, anytime, in short periods of time,
-                          and with anyone, with healthy senior citizen as well
-                          as a strongly cognitive impaired people, as a method
-                          of meaningful connection by building a bridge between
-                          generations.
+                          Facilitating connection between people with memory disorder and caregivers was at the core of Aikakone. As a web service, it could be used in short sessions, with individuals or groups, and in settings ranging from bedside use to a shared screen.
                         </p>
                       }
                     />
@@ -173,15 +145,7 @@ class Aikakone extends Component {
                     <Row
                       content={
                         <p className={pStyle}>
-                          Taking elderly person back to the old times by
-                          combining pictures, sounds and texts all telling the
-                          same tale, which provides multisensory stimuli that
-                          retrieve memories. This kind of conversation inspired
-                          by old photos, sounds and music, is called
-                          reminiscence therapy, a method with scientifical merit
-                          of decreasing depression in older adults. It improves
-                          self-esteem, as the persons can act as an expert on
-                          their own life instead of being mere objects of care.
+                          The service combined pictures, sound, and text around the same story so caregivers could prompt reminiscence and invite the person to become the expert on their own life.
                         </p>
                       }
                     />

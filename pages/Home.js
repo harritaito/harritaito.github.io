@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Link from "next/link";
 import Project from "../components/Project";
 import Row from "../components/Row";
-import Misc from "../components/Misc";
 import Footer from "../components/Footer";
 import HighlightUnderline from "../components/design-system/HighlightUnderline";
 import { colors, radii } from "../components/design-system/tokens";
@@ -16,8 +15,7 @@ class Home extends Component {
     super();
 
     const date = new Date();
-
-    let hours = date.getHours();
+    const hours = date.getHours();
 
     if (hours < 12) {
       this.state = {
@@ -63,32 +61,32 @@ class Home extends Component {
             content={
               <div className="col-xs-12 col-sm-8 col-md-9 col-lg-6 col-xl-6 hero">
                 <p className="tagline">
-                  Product designer shaping research-led services with civic, health, and emerging tech teams.
+                  Product and systems designer helping civic, health, and emerging-tech teams turn research into workable products and services.
                 </p>
                 <p className="hero-intro">
-                  I help cross-functional groups untangle complex problems, share what we learn in plain language, and steward experiences that feel considered.
+                  I help cross-functional teams define the problem, align on tradeoffs, and carry a design through to something buildable. My work sits between discovery, information architecture, interaction design, and service thinking.
                 </p>
                 <ul className="value-list">
                   <li>
-                    <strong>Bring clarity:</strong> Facilitate discovery research and synthesis that highlight the needs behind the numbers.
+                    <strong>Systems:</strong> Information architecture, service flows, and interaction patterns that hold together as products and teams grow.
                   </li>
                   <li>
-                    <strong>Prototype together:</strong> Explore flows, interactions, and service touchpoints alongside the people who rely on them.
+                    <strong>Research:</strong> Interviews, contextual inquiry, synthesis, and workshops that make tradeoffs visible before the work gets expensive.
                   </li>
                   <li>
-                    <strong>Support delivery:</strong> Maintain lightweight systems and rituals so teams can iterate with confidence.
+                    <strong>AI & Data:</strong> Product thinking for AI-assisted tools, analytics, and connected services where the system matters as much as the interface.
                   </li>
                 </ul>
                 <div className="cta-group">
-                  <a className="primary-cta" href="#case-studies">
+                  <a className="primary-cta" href="#work">
                     Browse selected work
                   </a>
-                  <a className="secondary-cta" href="#product-impact">
-                    See how I collaborate
+                  <a className="secondary-cta" href="/projects">
+                    Open the archive
                   </a>
                 </div>
                 <div className="availability">
-                  Currently supporting teams full-time and welcoming thoughtful collaborations and conversations.
+                  I work best on problems that need structure, clarity, and a calm path from research to delivery.
                 </div>
                 <div className="about-link">
                   Curious about the person behind the work?{" "}
@@ -101,143 +99,210 @@ class Home extends Component {
             }
           />
         </div>
-        <Row
-          content={
-            <h2
-              className="col-xs-12 col-sm-10 col-md-9 col-lg-6 col-xl-6 section-heading"
-              id="product-impact"
-            >
-              How I support teams
-            </h2>
-          }
-        />
-        <Row
-          content={
-            <div className="col-xs-12 col-sm-10 col-md-9 col-lg-8 col-xl-7 impact-grid">
-              <div className="impact-card">
-                <h3>Discovery to clarity</h3>
-                <p>
-                  Bring people together around real problems by planning research, synthesising insights, and framing opportunities with service maps and JTBD.
-                </p>
+
+        <section className="section" id="work" aria-labelledby="work-heading">
+          <Row
+            content={
+              <h2
+                className="col-xs-12 col-sm-10 col-md-9 col-lg-6 col-xl-6 section-heading"
+                id="work-heading"
+              >
+                Work
+              </h2>
+            }
+          />
+          <Row
+            content={
+              <p className="col-xs-12 col-sm-10 col-md-9 col-lg-8 col-xl-7 section-subheading">
+                Three selected case studies that show the range without overfilling the page. Older work stays accessible in the archive so it does not set the tone for the whole site.
+              </p>
+            }
+          />
+          <Project
+            title="HRI study"
+            description="Used contextual inquiry, interviews, and usability testing to define how a teaching-assistant robot should fit classroom rituals and learning outcomes."
+            image={languagerobot}
+            link="/hri-study"
+            alt="Application for city reporting"
+            color="red"
+            label="Selected case study"
+            percentage="8%"
+          />
+          <Project
+            title="Kiva Kaupunki"
+            description="Co-created a city feedback platform that turned citizen reporting into actionable input for officials through service blueprints and iterative prototyping."
+            image={kivakaupunki}
+            link="/kivakaupunki"
+            alt="Application for city reporting"
+            color="blue"
+            label="Selected case study"
+            percentage="8%"
+          />
+          <Project
+            title="Aikakone"
+            description="Designed a reminiscence service for memory care by partnering with nurses and families, then prototyped multi-sensory moments that support engagement for people with dementia."
+            image={aikakone}
+            link="/aikakone"
+            alt="Concept service for memory care"
+            color="purple"
+            label="Selected case study"
+            percentage="28%"
+          />
+        </section>
+
+        <section className="section" id="systems" aria-labelledby="systems-heading">
+          <Row
+            content={
+              <h2 className="col-xs-12 col-sm-10 col-md-9 col-lg-6 col-xl-6 section-heading" id="systems-heading">
+                Systems
+              </h2>
+            }
+          />
+          <Row
+            content={
+              <div className="col-xs-12 col-sm-10 col-md-9 col-lg-8 col-xl-7 section-copy">
+                I work on the structure behind the screens: how flows connect, how information is grouped, and how teams keep a product legible after launch.
               </div>
-              <div className="impact-card">
-                <h3>Prototype to proof</h3>
-                <p>
-                  Explore flows, interfaces, and content in quick cycles—testing with the communities we design for before committing to build.
-                </p>
+            }
+          />
+          <Row
+            content={
+              <ul className="col-xs-12 col-sm-10 col-md-9 col-lg-8 col-xl-7 value-list section-list">
+                <li>
+                  Service maps and information architecture that reveal the real shape of a problem.
+                </li>
+                <li>
+                  Interaction patterns and handoffs that help product, design, and engineering stay aligned.
+                </li>
+                <li>
+                  Lightweight design systems and documentation that keep decisions repeatable instead of fragile.
+                </li>
+              </ul>
+            }
+          />
+        </section>
+
+        <section className="section" id="research" aria-labelledby="research-heading">
+          <Row
+            content={
+              <h2 className="col-xs-12 col-sm-10 col-md-9 col-lg-6 col-xl-6 section-heading" id="research-heading">
+                Research
+              </h2>
+            }
+          />
+          <Row
+            content={
+              <div className="col-xs-12 col-sm-10 col-md-9 col-lg-8 col-xl-7 section-copy">
+                I use research to reduce guesswork and make tradeoffs easier to explain. The goal is not just insight, but a clear path from evidence to design decisions.
               </div>
-              <div className="impact-card">
-                <h3>Scale the craft</h3>
-                <p>
-                  Nurture design rituals, systems, and handoffs that help teams move with care, accessibility, and shared context.
-                </p>
+            }
+          />
+          <Row
+            content={
+              <ul className="col-xs-12 col-sm-10 col-md-9 col-lg-8 col-xl-7 value-list section-list">
+                <li>
+                  Interviews, contextual inquiry, and field observation when the lived context matters.
+                </li>
+                <li>
+                  Synthesis, affinity work, and opportunity framing that keep teams focused on what the evidence actually says.
+                </li>
+                <li>
+                  Workshops and prototyping sessions that make it easier to align around the next decision.
+                </li>
+              </ul>
+            }
+          />
+        </section>
+
+        <section className="section" id="ai-data" aria-labelledby="ai-data-heading">
+          <Row
+            content={
+              <h2 className="col-xs-12 col-sm-10 col-md-9 col-lg-6 col-xl-6 section-heading" id="ai-data-heading">
+                AI & Data
+              </h2>
+            }
+          />
+          <Row
+            content={
+              <div className="col-xs-12 col-sm-10 col-md-9 col-lg-8 col-xl-7 section-copy">
+                I am interested in AI and data work when it is grounded in a real product problem. The focus stays on useful workflows, responsible defaults, and systems people can trust.
               </div>
-            </div>
-          }
-        />
-        <Row
-          content={
-            <div className="col-xs-12 col-sm-10 col-md-9 col-lg-8 col-xl-7 toolkit">
-              Toolkit: discovery research, facilitation, information architecture, interaction design, design systems,
-              accessibility, analytics, experimentation.
-            </div>
-          }
-        />
-        <Row
-          content={
-            <h2 className="col-xs-12 col-sm-10 col-md-9 col-lg-8 col-xl-7 section-heading" id="case-studies">
-              Selected case studies
-            </h2>
-          }
-        />
-        <Row
-          content={
-            <p className="col-xs-12 col-sm-10 col-md-9 col-lg-8 col-xl-7 section-subheading">
-              A snapshot from collaborative work across public, healthcare, and emerging tech contexts.
-            </p>
-          }
-        />
-        <Project
-          title="HRI study"
-          description="Led contextual inquiries, interviews, and usability studies to define how a teaching assistant robot should support classroom rituals and learning outcomes."
-          image={languagerobot}
-          link="/hri-study"
-          alt="Application for city reporting"
-          color="red"
-          label="Archive case study"
-          percentage="8%"
-        />
-        <Project
-          title="Kiva Kaupunki"
-          description="Co-created a city feedback platform that turned citizen reporting into actionable insights for officials through service blueprints and iterative prototyping."
-          image={kivakaupunki}
-          link="/kivakaupunki"
-          alt="Application for city reporting"
-          color="blue"
-          label="Archive case study"
-          percentage="8%"
-        />
-        <Project
-          title="Aikakone"
-          description="Designed a reminiscence service for memory care by partnering with nurses and families, prototyping multi-sensory moments that improve engagement for people with dementia."
-          image={aikakone}
-          link="/aikakone"
-          alt="Concept service for memory care"
-          color="purple"
-          label="Archive case study"
-          percentage="28%"
-        />
-        <Row
-          content={
-            <h3
-              className={
-                "col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 other-stuff"
-              }
-            >
-              Earlier archive
-            </h3>
-          }
-        />
-        <Row
-          content={
-            <p className="col-xs-12 col-sm-10 col-md-9 col-lg-8 col-xl-7 section-subheading">
-              Community, course, and volunteer notes kept as provenance for older work.
-            </p>
-          }
-        />
-        <Misc />
-        <Row
-          content={
-            <h3
-              className={
-                "col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 get-in-touch"
-              }
-            >
-              Get in touch
-            </h3>
-          }
-        />
-        <Row
-          content={
-            <div
-              style={{ marginTop: "1.5em" }}
-              className={
-                "col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 col-xl-4 col-xl-offset-4 contact"
-              }
-            >
-              I enjoy swapping notes with curious teams and researchers. If you'd like to connect, send a short hello to{" "}
-              <span className="obfuscated-email" aria-label="harri@harritaito.com">
-                harri [at] harritaito [dot] com
-              </span>{" "}
-              or{" "}
-              <a href={"https://calendly.com/harritaito/45min/"}>
-                book time on my calendar
-                <HighlightUnderline />
-              </a>{" "}
-              when schedules align.
-            </div>
-          }
-        />
+            }
+          />
+          <Row
+            content={
+              <ul className="col-xs-12 col-sm-10 col-md-9 col-lg-8 col-xl-7 value-list section-list">
+                <li>
+                  AI-assisted tooling that gives users clearer control instead of hiding the system behind a magic label.
+                </li>
+                <li>
+                  Analytics and feedback loops that inform design choices without turning the product into a dashboard.
+                </li>
+                <li>
+                  Connected services where the model, the interface, and the service flow need to work together.
+                </li>
+              </ul>
+            }
+          />
+        </section>
+
+        <section className="section" id="about" aria-labelledby="about-heading">
+          <Row
+            content={
+              <h2 className="col-xs-12 col-sm-10 col-md-9 col-lg-6 col-xl-6 section-heading" id="about-heading">
+                About
+              </h2>
+            }
+          />
+          <Row
+            content={
+              <div className="col-xs-12 col-sm-10 col-md-9 col-lg-8 col-xl-7 section-copy">
+                I’m Harri Halonen, based in Tampere, Finland. My work sits at the intersection of product design, service design, and research, with a bias toward clarity, useful structure, and honest collaboration.
+              </div>
+            }
+          />
+          <Row
+            content={
+              <div className="col-xs-12 col-sm-10 col-md-9 col-lg-8 col-xl-7 section-copy">
+                The full About page has a little more on background, community work, and the kinds of projects I’ve been close to.
+                <span className="section-inline-link">
+                  {" "}
+                  <Link href="/about" as="/about">
+                    Read more.
+                    <HighlightUnderline />
+                  </Link>
+                </span>
+              </div>
+            }
+          />
+        </section>
+
+        <section className="section" id="contact" aria-labelledby="contact-heading">
+          <Row
+            content={
+              <h2 className="col-xs-12 col-sm-10 col-md-9 col-lg-6 col-xl-6 section-heading" id="contact-heading">
+                Contact
+              </h2>
+            }
+          />
+          <Row
+            content={
+              <div className="col-xs-12 col-sm-10 col-md-9 col-lg-8 col-xl-7 section-copy contact-copy">
+                I’m happy to talk with teams that need product judgment, system thinking, or research-led design support. Reach me at{" "}
+                <span className="obfuscated-email" aria-label="harri@harritaito.com">
+                  harri [at] harritaito [dot] com
+                </span>{" "}
+                or{" "}
+                <a href={"https://calendly.com/harritaito/45min/"}>
+                  book time on my calendar
+                  <HighlightUnderline />
+                </a>
+                .
+              </div>
+            }
+          />
+        </section>
+
         <Footer />
         <style jsx>{`
           .Home h1 {
@@ -245,6 +310,7 @@ class Home extends Component {
             font-family: Trirong, serif;
             margin-bottom: 1.2rem;
           }
+
           .Home {
             padding-top: 5rem;
             padding-bottom: 2rem;
@@ -278,16 +344,21 @@ class Home extends Component {
             }
           }
 
+          .Home .hero-intro,
+          .Home .section-copy,
+          .Home .section-subheading,
+          .Home .section-list {
+            line-height: 1.7;
+          }
+
           .Home .hero-intro {
             margin-top: 1.5em;
             font-size: 1.05em;
-            line-height: 1.7;
           }
 
           .Home .value-list {
             margin-top: 1.5em;
             padding-left: 1.2em;
-            line-height: 1.7;
           }
 
           .Home .value-list li {
@@ -339,12 +410,16 @@ class Home extends Component {
             margin-top: 1.5em;
             font-size: 0.95em;
             font-weight: 600;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.05em;
             text-transform: uppercase;
           }
 
           .Home .about-link {
             margin-top: 1.5em;
+          }
+
+          .Home .section {
+            padding-top: 1px;
           }
 
           .Home .section-heading {
@@ -362,86 +437,18 @@ class Home extends Component {
 
           .Home .section-subheading {
             margin-bottom: 2.5em;
-            line-height: 1.7;
           }
 
-          .Home .impact-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5em;
-            margin-top: 1em;
+          .Home .section-list {
+            padding-left: 1.2em;
           }
 
-          .Home .impact-card {
-            background: rgba(255, 255, 255, 0.88);
-            border-radius: 1.2rem;
-            box-shadow: 0 1em 2em 0 rgba(0, 0, 0, 0.12);
-            padding: 1.75em;
-            flex: 1 1 14rem;
-            min-width: 14rem;
+          .Home .section-inline-link {
+            display: inline-block;
           }
 
-          .Home .impact-card h3 {
-            margin-top: 0;
-            margin-bottom: 0.75em;
-          }
-
-          .Home .impact-card p {
-            margin: 0;
-            line-height: 1.7;
-          }
-
-          .Home .toolkit {
-            margin-top: 1.5em;
-            line-height: 1.7;
-            font-size: 0.95em;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-          }
-
-          @media only screen and (max-width: 45rem) {
-            .Home .toolkit {
-              letter-spacing: 0.04em;
-            }
-          }
-
-          .pohja {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            background: url("../static/media/pohja.svg");
-            background-size: cover;
-            z-index: -1;
-            opacity: 0.55;
-          }
-
-          .Home .other-stuff {
-            text-align: center;
-            margin-top: 5em;
-            margin-bottom: 1.5em;
-          }
-          @media only screen and (max-width: 45rem) {
-            .Home .other-stuff {
-              margin-top: 3em;
-            }
-          }
-
-          .Home .get-in-touch {
-            text-align: center;
-            margin-top: 4em;
-            margin-bottom: 0em;
-          }
-
-          @media only screen and (max-width: 45rem) {
-            .Home .get-in-touch {
-              margin-top: 2em;
-            }
-          }
-
-          .Home .contact {
-            text-align: center;
+          .Home .contact-copy {
+            margin-top: 0.25em;
           }
 
           .Home .obfuscated-email {
@@ -468,11 +475,25 @@ class Home extends Component {
               line-height: 3rem;
             }
           }
+
           @media only screen and (max-width: 45rem) {
-            .Home name {
+            .Home .name {
               font-size: 1.8em;
             }
           }
+
+          .pohja {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: url("../static/media/pohja.svg");
+            background-size: cover;
+            z-index: -1;
+            opacity: 0.55;
+          }
+
           .ReactModal__Content--after-open {
             margintop: 5vh;
             maxwidth: 89vh;

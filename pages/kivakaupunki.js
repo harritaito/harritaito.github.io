@@ -91,7 +91,7 @@ class Kivakaupunki extends Component {
           heroAlt={"map"}
           eyebrow={"Archive case study"}
           description={
-            "A citizen feedback platform shaped through service design, interface sketches, and an MVP."
+            "Explored how citizen feedback could be structured into a simple map-based service for public use."
           }
           navbarColor={"blue"}
           content={
@@ -102,7 +102,7 @@ class Kivakaupunki extends Component {
                   <span>
                     <Row content={
                       <p className={pStyle}>
-                        The Living Lab Bus (LLB) project consortium arranged a Student Software Competition, for developing <b> an application that benefits bus passengers</b>, with monetary prices. Limitations of application: must be original work and unpublished, must benefit bus passengers somehow, must be a web application, must utilize at least one publicly available API, must be developed using <a href="https://github.com/llb-uta/development-kit">LLB Developer Kit<HighlightUnderline /></a> and submitted through <a href="https://llb.sis.uta.fi/portal/">LLB Developer Portal<HighlightUnderline /></a>.
+                        The Living Lab Bus consortium ran a student software competition for an application that would benefit bus passengers. The brief required something original, web-based, and built with the LLB Developer Kit and portal.
                       </p>
                     }/> 
                   </span>
@@ -115,7 +115,7 @@ class Kivakaupunki extends Component {
                   <span>
                     <Row content={
                       <p className={pStyle}>
-                        To make our surroundings even better and more enjoyable. Kiva kaupunki is an application where user input about geolocation is collected and visualized on a map. Comments of positive or negative in nature to bring location knowledge to user base, city officials as well as for the public.
+                        Kiva Kaupunki collected user input tied to location and visualized it on a map so residents, officials, and the public could read place-based feedback in one place.
                       </p>
                     }/>
 
@@ -129,7 +129,7 @@ class Kivakaupunki extends Component {
                   <span>
                     <Row content={
                       <p className={pStyle}>
-                        Project was very condensed and we had very little freetime to work on it.
+                        The project was condensed, so the work focused on a clear use case, a lightweight flow, and a fast path from sketch to MVP.
                       </p>
                     }/>
 

@@ -9,6 +9,16 @@ import { resolveAssetSrc } from "./assetSource";
 import { colors } from "./design-system/tokens";
 import arrow from "../static/media/icons/arrow-slim.svg";
 
+const defaultLinks = [
+  { label: "Work", href: "/#work" },
+  { label: "Systems", href: "/#systems" },
+  { label: "Research", href: "/#research" },
+  { label: "AI & Data", href: "/#ai-data" },
+  { label: "Archive", href: "/projects" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
+];
+
 class Navbar extends Component {
   constructor() {
     super();
@@ -45,12 +55,19 @@ class Navbar extends Component {
     nextProjectLink: PropTypes.string,
     nextProjectName: PropTypes.string,
     color: PropTypes.string,
+    links: PropTypes.arrayOf(
+      PropTypes.shape({
+        label: PropTypes.string.isRequired,
+        href: PropTypes.string.isRequired,
+      })
+    ),
   };
 
   static defaultProps = {
     nextProjectLink: "/",
     nextProjectName: "Next Project",
     color: "",
+    links: defaultLinks,
   };
 
   render() {
@@ -66,18 +83,11 @@ class Navbar extends Component {
         <Headroom style={{ position: "fixed" }}>
           <div className="navbar">
             <div className="links">
-              <Link href="/" legacyBehavior>
-                <a className="navbar-link">Home</a>
-              </Link>
-              <Link href="/projects" legacyBehavior>
-                <a className="navbar-link">Projects</a>
-              </Link>
-              <Link href="/about" legacyBehavior>
-                <a className="navbar-link">About</a>
-              </Link>
-              <Link href="/contact" legacyBehavior>
-                <a className="navbar-link">Contact</a>
-              </Link>
+              {this.props.links.map((link) => (
+                <Link href={link.href} key={link.label} legacyBehavior>
+                  <a className="navbar-link">{link.label}</a>
+                </Link>
+              ))}
             </div>
             <div className="navbar-controls">
               <ThemeToggle />
