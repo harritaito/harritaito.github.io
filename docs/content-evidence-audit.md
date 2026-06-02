@@ -65,7 +65,7 @@ Risk assessment:
 
 ### HRI Study
 
-Current status: featured on home/projects, labeled "Archive case study".
+Current status: featured on home/projects, labeled "Older work".
 
 Confirmed evidence:
 
@@ -99,7 +99,7 @@ Recommended disposition:
 
 ### Kiva Kaupunki
 
-Current status: featured on home/projects, labeled "Archive case study".
+Current status: featured on home/projects, labeled "Older work".
 
 Confirmed evidence:
 
@@ -132,7 +132,7 @@ Recommended disposition:
 
 ### Aikakone
 
-Current status: featured on home/projects, labeled "Archive case study".
+Current status: featured on home/projects, labeled "Older work".
 
 Confirmed evidence:
 
@@ -481,4 +481,3 @@ Before publishing the major repositioning, gather or create:
 - One quality-practice artifact: acceptance criteria, QA checklist, risk register, or evidence grading rubric.
 
 If these cannot be made public, frame the homepage around archive evidence and current practice rather than direct current-client claims.
-

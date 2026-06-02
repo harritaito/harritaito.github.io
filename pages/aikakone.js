@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { Collapse } from "react-collapse";
 
 import Button from "../components/Button";
+import CaseStudyMeta from "../components/CaseStudyMeta";
 import ProjectPage from "../components/ProjectPage";
 import Process from "../components/Process";
-import ProjectStats from "../components/ProjectStats";
 import ProjectSection from "../components/ProjectSection";
 import Row from "../components/Row";
 import { resolveAssetSrc } from "../components/assetSource";
@@ -94,13 +94,76 @@ class Aikakone extends Component {
           title={"Aikakone"}
           hero={hero}
           heroAlt={"Ideation on canvas."}
-          eyebrow={"Archive case study"}
+          eyebrow={"Older work"}
           description={
             "Explored a memory-care reminiscence service through field research, service blueprinting, and prototyping."
           }
           navbarColor={"purple"}
           content={
             <span>
+              <CaseStudyMeta
+                status={"Older work"}
+                summary={
+                  "A service-design archive case study about making reminiscence easier to use in everyday care."
+                }
+                note={
+                  "Older work. Missing metrics are not inferred, and the page keeps the result at concept level."
+                }
+                fields={{
+                  myRole: [
+                    "Service design",
+                    "UX research",
+                    "Interaction design",
+                    "User testing",
+                  ],
+                  team: "4 designers",
+                  timeline: "March 2016 to May 2016",
+                  context:
+                    "University of Tampere and Futurice's Let’s Re-Design Health Services course, working with Espericare on a memory-care stimulation service.",
+                  problem:
+                    "How can reminiscence and stimulation be made easier to use in everyday care?",
+                  users: [
+                    "Residents living with memory disease",
+                    "Caregivers",
+                    "Family members",
+                  ],
+                  businessContext:
+                    "The client brief asked for an entertainment and stimulation service for memory care.",
+                  constraints: [
+                    "Care time was limited",
+                    "The concept had to work in short sessions",
+                    "The page does not show a production launch",
+                  ],
+                  discovery: [
+                    "Contextual inquiry at Espericare",
+                    "Existing-solution review",
+                    "Structured interviews",
+                    "Paper prototype testing",
+                  ],
+                  keyInsights: [
+                    "Caregivers need low-friction ways to start a session.",
+                    "The service should help people become the expert on their own life.",
+                    "Shared stories can support connection between residents and caregivers.",
+                  ],
+                  conceptModel:
+                    "Pictures, sound, and text around the same story.",
+                  keyDecisions: [
+                    "Use short sessions with individuals or groups.",
+                    "Keep the experience flexible enough for bedside or shared-screen use.",
+                    "Center the caregiver as facilitator.",
+                  ],
+                  designDetails: [
+                    "Lean Service Creation canvases",
+                    "Service blueprint",
+                    "Paper mockups",
+                    "Digital mockup",
+                  ],
+                  outcome:
+                    "The concept was voted second-best in the course and received positive feedback, but it did not reach market.",
+                  reflection:
+                    "A useful archive example of service design under care constraints, not proof of clinical or commercial impact.",
+                }}
+              />
               <ProjectSection
                 title={"Problem"}
                 content={
@@ -184,22 +247,6 @@ class Aikakone extends Component {
                       }
                     />
                   </span>
-                }
-              />
-
-              <ProjectSection
-                title={"Logistics"}
-                content={
-                  <ProjectStats
-                    team={["4 Designers"]}
-                    responsibilities={[
-                      "Service Design",
-                      "UX Research",
-                      "Interaction Design",
-                      "User Testing",
-                    ]}
-                    time={"March'16 - May'16"}
-                  />
                 }
               />
 

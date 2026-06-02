@@ -3,9 +3,9 @@ import { Collapse } from 'react-collapse';
 import ImageZoom from 'react-medium-image-zoom';
 
 import Button from '../components/Button';
+import CaseStudyMeta from '../components/CaseStudyMeta';
 import ProjectPage from '../components/ProjectPage';
 import Process from '../components/Process';
-import ProjectStats from '../components/ProjectStats';
 import ProjectSection from "../components/ProjectSection";
 import Row from '../components/Row';
 import { resolveAssetSrc } from '../components/assetSource';
@@ -89,13 +89,73 @@ class Kivakaupunki extends Component {
           title={"Kiva Kaupunki"}
           hero={hero}
           heroAlt={"map"}
-          eyebrow={"Archive case study"}
+          eyebrow={"Older work"}
           description={
             "Explored how citizen feedback could be structured into a simple map-based service for public use."
           }
           navbarColor={"blue"}
           content={
             <span>
+              <CaseStudyMeta
+                status={"Older work"}
+                summary={
+                  "A civic service concept that tied citizen feedback to location and kept the flow simple enough for a competition MVP."
+                }
+                note={
+                  "Older work. The case keeps outcome claims limited to what is evidenced in source and does not invent metrics."
+                }
+                fields={{
+                  myRole: ["Service design", "Interaction design", "UI design"],
+                  team: ["1 designer", "1 developer"],
+                  timeline: "April 2017 to June 2017",
+                  context:
+                    "Living Lab Bus student software competition for a web app that would benefit bus passengers.",
+                  problem:
+                    "How can citizen feedback be captured and shown in a way that is easy to browse and act on?",
+                  users: [
+                    "Bus passengers",
+                    "Residents who submit feedback",
+                    "Officials and the public who read the map",
+                  ],
+                  businessContext:
+                    "The brief required something original, web-based, and built with the LLB Developer Kit and portal.",
+                  constraints: [
+                    "Schedule was tight",
+                    "The team had to work with available API options",
+                    "The project needed a quick path from sketch to MVP",
+                  ],
+                  discovery: [
+                    "Use case description",
+                    "API exploration",
+                    "Pencil drafts",
+                    "Heuristic evaluation",
+                  ],
+                  keyInsights: [
+                    "Task clarity matters more than visual detail when the flow is short.",
+                    "Users need to know the status of what they submit.",
+                    "Navigation should make the next step obvious.",
+                  ],
+                  conceptModel:
+                    "A map-based comment service that ties each comment to a location.",
+                  keyDecisions: [
+                    "Show task, status, and next action clearly.",
+                    "Use a lightweight flow from comment to map.",
+                    "Keep the representation simple enough for competition timing.",
+                  ],
+                  designDetails: [
+                    "Quick pencil drafts",
+                    "Pixelmator UI mockup",
+                    "Material Design color cues",
+                    "Use case description",
+                  ],
+                  implementationSupport:
+                    "Harri supported the HTML, ReactJS, and CSS layout while the developer set up the Heroku backend CRUD API.",
+                  outcome:
+                    "The team won part of the competition prize, though the page notes the result was not entirely satisfactory.",
+                  reflection:
+                    "A useful older-work example of implementation support under competition constraints, but not a claim of production adoption.",
+                }}
+              />
               <ProjectSection
                 title={"Problem"}
                 content={
@@ -141,17 +201,6 @@ class Kivakaupunki extends Component {
                       </div>
                     }/>
                   </span>
-                }
-              />
-
-              <ProjectSection
-                title={"Logistics"}
-                content={
-                  <ProjectStats
-                    team={["1 Designer", "1 Developer"]}
-                    responsibilities={["Service Design", "Interaction Design", "UI Design"]}
-                    time={"April ’17 – June ’17"}
-                  />
                 }
               />
 

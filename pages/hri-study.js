@@ -3,9 +3,9 @@ import { Collapse } from 'react-collapse';
 import ImageZoom from 'react-medium-image-zoom';
 
 import Button from '../components/Button';
+import CaseStudyMeta from '../components/CaseStudyMeta';
 import ProjectPage from '../components/ProjectPage';
 import Process from '../components/Process';
-import ProjectStats from '../components/ProjectStats';
 import ProjectSection from "../components/ProjectSection";
 import Row from '../components/Row';
 import { resolveAssetSrc } from '../components/assetSource';
@@ -78,17 +78,73 @@ class Languagerobot extends Component {
           title={"Human-Robot Interaction"}
           hero={pupils}
           heroAlt={"map"}
-          eyebrow={"Archive case study"}
+          eyebrow={"Older work"}
           description={
             "Explored how a classroom robot should behave around children through observation, teacher interviews, and prototyping."
           }
           navbarColor={"red"}
           content={
             <span>
-            <Row content={
-              <p className={pStyle}>
-                 This project examined a language-learning robot used as a teaching assistant in local elementary school and preschool settings. The work also included the surrounding software and a cloud-based control application for managing the robot’s programs remotely.</p>
-            }/> 
+              <CaseStudyMeta
+                status={"Older work"}
+                summary={
+                  "A research-led archive case study on a classroom robot concept under speech-recognition and classroom-ritual constraints."
+                }
+                note={
+                  "Older work. Missing metrics stay blank, and the page does not claim a shipped product or measured learning outcome."
+                }
+                fields={{
+                  myRole: "Interaction design",
+                  team: "3 designers",
+                  timeline: "March 2019 to April 2019",
+                  context:
+                    "Tampere University User Experience in Robotics course and the language-learning robot used in local elementary school and preschool settings.",
+                  problem:
+                    "What interaction patterns would help the robot support children’s learning instead of pulling attention away from it?",
+                  users: [
+                    "Children in Finnish and second-language classrooms",
+                    "Teachers who operated the robot",
+                  ],
+                  businessContext:
+                    "A teaching-assistant robot and its cloud-based control application needed a more usable interaction concept.",
+                  constraints: [
+                    "Speech recognition failed often",
+                    "The classroom setting left little room for awkward interaction",
+                    "The final concept was not publicly validated in the field",
+                  ],
+                  discovery: [
+                    "Literature review",
+                    "Two observation sessions",
+                    "Teacher interviews",
+                    "Affinity diagram",
+                  ],
+                  keyInsights: [
+                    "Children were excited by the robot but needed clearer feedback.",
+                    "Teachers ended up mediating many interactions.",
+                    "The robot’s gaze often favored the teacher over the children.",
+                  ],
+                  conceptModel:
+                    "More natural dialogue, a feedback button in the application, and gaze behavior that prioritized the children.",
+                  keyDecisions: [
+                    "Keep the robot’s attention on the children.",
+                    "Add a button for extra feedback in the application.",
+                    "Treat dialogue and gaze as part of the learning experience, not just the command layer.",
+                  ],
+                  designDetails: [
+                    "Observation form",
+                    "Affinity diagram",
+                    "Design implications",
+                    "Concept specification",
+                    "Theatrical robot evaluation",
+                  ],
+                  implementationSupport:
+                    "The case page mentions the surrounding software and cloud-based control application, but it does not show a shipped implementation by me.",
+                  outcome:
+                    "The concept was evaluated and developed further; the page does not claim a shipped product or measured learning result.",
+                  reflection:
+                    "Useful as a research archive, not as proof of delivery. The evidence stops at concept evaluation.",
+                }}
+              />
               <ProjectSection
                 title={"Problem"}
                 content={
@@ -139,17 +195,6 @@ class Languagerobot extends Component {
                       </div>
                     }/>
                   </span>
-                }
-              />
-
-              <ProjectSection
-                title={"Logistics"}
-                content={
-                  <ProjectStats
-                    team={["3 Designers"]}
-                    responsibilities={["Interaction Design"]}
-                    time={"March ’19 – April ’19"}
-                  />
                 }
               />
 

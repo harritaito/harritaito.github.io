@@ -120,32 +120,32 @@ class Home extends Component {
           />
           <Project
             title="HRI study"
-            description="Used contextual inquiry, interviews, and usability testing to define how a teaching-assistant robot should fit classroom rituals and learning outcomes."
+            description="Used contextual inquiry, teacher interviews, and theatrical prototyping to define how a teaching-assistant robot could better fit classroom rituals."
             image={languagerobot}
             link="/hri-study"
             alt="Application for city reporting"
             color="red"
-            label="Selected case study"
+            label="Older work"
             percentage="8%"
           />
           <Project
             title="Kiva Kaupunki"
-            description="Co-created a city feedback platform that turned citizen reporting into actionable input for officials through service blueprints and iterative prototyping."
+            description="Shaped a city feedback concept from civic problem framing into a map-based MVP through service design, interface sketches, and implementation support."
             image={kivakaupunki}
             link="/kivakaupunki"
             alt="Application for city reporting"
             color="blue"
-            label="Selected case study"
+            label="Older work"
             percentage="8%"
           />
           <Project
             title="Aikakone"
-            description="Designed a reminiscence service for memory care by partnering with nurses and families, then prototyped multi-sensory moments that support engagement for people with dementia."
+            description="Explored a reminiscence service for memory care with field research, service blueprinting, and facilitated prototype sessions."
             image={aikakone}
             link="/aikakone"
             alt="Concept service for memory care"
             color="purple"
-            label="Selected case study"
+            label="Older work"
             percentage="28%"
           />
         </section>
