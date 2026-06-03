@@ -5,7 +5,7 @@ import Video from './Video';
 import Navbar from './Navbar';
 import Project from './Project';
 import Projects from './Projects';
-import { resolveAssetSrc } from './assetSource';
+import { resolveAssetHeight, resolveAssetSrc, resolveAssetWidth } from './assetSource';
 import { shadows } from './design-system/tokens';
 
 class ProjectPage extends Component {
@@ -79,10 +79,14 @@ class ProjectPage extends Component {
                   </div>
                 }
               </InViewport>
-              : <img  className="hero-image"
-                     src={resolveAssetSrc(this.props.hero)}
-                     alt={this.props.heroAlt}
-              />
+              : <img
+                  className="hero-image"
+                  src={resolveAssetSrc(this.props.hero)}
+                  alt={this.props.heroAlt}
+                  width={resolveAssetWidth(this.props.hero)}
+                  height={resolveAssetHeight(this.props.hero)}
+                  decoding="async"
+                />
             }
           </div>
         </div>

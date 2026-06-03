@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Head from 'next/head';
 import Link from 'next/link';
 import Row from '../components/Row';
 import HighlightUnderline from '../components/design-system/HighlightUnderline';
@@ -9,6 +10,15 @@ class PageNotFound extends Component {
 
     return (
       <div className="PageNotFound container">
+        <Head>
+          <title>Page not found | Harri Halonen</title>
+          <meta name="description" content="The requested page could not be found on Harri Halonen's portfolio." key="description" />
+          <meta name="robots" content="noindex, follow" key="robots" />
+          <link rel="canonical" href="https://harritaito.com/404" key="canonical" />
+          <meta property="og:title" content="Page not found | Harri Halonen" key="og-title" />
+          <meta property="og:description" content="The requested page could not be found on Harri Halonen's portfolio." key="og-description" />
+          <meta property="og:url" content="https://harritaito.com/404" key="og-url" />
+        </Head>
         <div className="pohja">
         </div>
         <Row content={

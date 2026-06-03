@@ -162,7 +162,7 @@ class Home extends Component {
           description="Led contextual inquiries, interviews, and usability studies to define how a teaching assistant robot should support classroom rituals and learning outcomes."
           image={languagerobot}
           link="/hri-study"
-          alt="Application for city reporting"
+          alt="Classroom robot research and prototyping"
           color="red"
           label="Archive case study"
           percentage="8%"

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 import Isvg from 'react-inlinesvg';
-import { resolveAssetSrc } from './assetSource';
+import { resolveAssetHeight, resolveAssetSrc, resolveAssetWidth } from './assetSource';
 import { colors, shadows } from './design-system/tokens';
 import arrow from '../static/media/icons/arrow-slim.svg';
 
@@ -133,7 +133,15 @@ class Project extends Component {
       <Link href={this.props.link} className="project-link-container">
         <article className={`case-card ${this.props.color}`}>
           <div className="case-card__media">
-            <img className="case-card__image" src={resolveAssetSrc(this.props.image)} alt={this.props.alt} />
+            <img
+              className="case-card__image"
+              src={resolveAssetSrc(this.props.image)}
+              alt={this.props.alt}
+              width={resolveAssetWidth(this.props.image)}
+              height={resolveAssetHeight(this.props.image)}
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           <div className="case-card__content">
             <h3 className="case-card__title">{this.props.title}</h3>
