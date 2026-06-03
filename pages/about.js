@@ -53,48 +53,27 @@ class About extends Component {
 
           <Row
             content={
-              <ul className="about-me-copy col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6 list">
-                <li>
-                  <strong>Right now:</strong> Discovery sprints and product
-                  experiments — mostly in industrial XR, AI tooling, and
-                  connected services.
-                </li>
-                <li>
-                  <strong>Thesis:</strong>{" "}
-                  <a
-                    href={"https://urn.fi/URN:NBN:fi:tuni-202107046179"}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Interaction Design Principles for Industrial XR
-                    <HighlightUnderline />
-                  </a>
-                  , Tampere University 2021. Still the clearest thing I’ve
-                  written about designing for physically complex environments.
-                </li>
-                <li>
-                  <strong>Community:</strong> Volunteering, mentoring, and the
-                  occasional talk in the Finnish design and startup scene.
-                  Previously helped organise Stream Startup Festival.
-                </li>
-                <li>
-                  <strong>Off the clock:</strong> Film photography and
-                  basketball.
-                </li>
-              </ul>
+              <p className="about-me-copy col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6">
+                In 2021 I wrote my{" "}
+                <a
+                  href={"https://urn.fi/URN:NBN:fi:tuni-202107046179"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  master’s thesis on interaction design for industrial XR
+                  <HighlightUnderline />
+                </a>{" "}
+                at Tampere University. Off the clock: film photography and
+                basketball.
+              </p>
             }
           />
 
           <Row
             content={
               <p className="about-me-copy col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6">
-                If you want to talk,{" "}
-                <a href="mailto:harri@harritaito.com">send an email</a> or{" "}
-                <a href="https://calendly.com/harritaito/45min/">
-                  book time on my calendar
-                  <HighlightUnderline />
-                </a>
-                .
+                If something here made you curious,{" "}
+                <a href="mailto:harri@harritaito.com">let’s talk</a>.
               </p>
             }
           />
