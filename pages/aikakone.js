@@ -60,7 +60,28 @@ class Aikakone extends Component {
       },
     ];
 
-    const views = [menu, aikakone, profile, elamankaari];
+    const views = [
+      {
+        image: menu,
+        alt: "Aikakone menu screen.",
+        openLabel: "Open the Aikakone menu screen preview.",
+      },
+      {
+        image: aikakone,
+        alt: "Aikakone session screen.",
+        openLabel: "Open the Aikakone session screen preview.",
+      },
+      {
+        image: profile,
+        alt: "Profile screen for a resident.",
+        openLabel: "Open the resident profile screen preview.",
+      },
+      {
+        image: elamankaari,
+        alt: "Elämänkaari life-story screen.",
+        openLabel: "Open the Elämänkaari life-story screen preview.",
+      },
+    ];
     const { modalIsOpen } = this.state;
 
     return (
@@ -255,7 +276,7 @@ class Aikakone extends Component {
                     <Row
                       content={
                         <p className={pStyle}>
-                          The service needed to be easy to hand over. A family member, nurse, or volunteer should be able to pick it up quickly, understand the next step, and adapt the pace to the person in front of them.
+                          The service needed to be easy to hand over. A family member, nurse, or volunteer should be able to pick it up quickly, understand the next step, and still adapt the pace to the person in front of them.
                         </p>
                       }
                     />
@@ -277,14 +298,14 @@ class Aikakone extends Component {
                     <Row
                       content={
                         <p className={pStyle}>
-                          We started with a contextual inquiry at an Espericare facility, accompanied by a Futurice employee. We observed the environment, photographed the premises, drew a floor plan of the area residents used, and asked questions of staff and residents.
+                          We started with a contextual inquiry at an Espericare facility, accompanied by a Futurice employee. We observed the environment, photographed the premises, drew a floor plan of the area residents used, and asked staff and residents questions.
                         </p>
                       }
                     />
                     <Row
                       content={
                         <p className={pStyle}>
-                          We also reviewed existing solutions, entertainment concepts, and ways to support time spent with people living with cognitive impairment. One reference point was reminiscence therapy, which we treated carefully as a source of ideas about shared memory and caregiver familiarity rather than as proof of outcome.
+                          We also reviewed existing solutions, entertainment concepts, and ways to support time spent with people living with memory disease. One reference point was reminiscence therapy, which we treated carefully as a source of ideas about shared memory and caregiver familiarity rather than as proof of outcome.
                         </p>
                       }
                     />
@@ -407,7 +428,7 @@ class Aikakone extends Component {
                     <Row
                       content={
                         <p className={pStyle}>
-                          Near the end of the course we visited Villa Niemi and asked nurses to try the PowerPoint prototype. We then interviewed them about feasibility, important features, fit for stimulation sessions, and when they could imagine using the concept with an older person.
+                          Near the end of the course we visited Villa Niemi and asked nurses to try the PowerPoint prototype. We then interviewed them about feasibility, important features, fit for stimulation sessions, and when they could imagine using the concept with a resident.
                         </p>
                       }
                     />
@@ -448,15 +469,21 @@ class Aikakone extends Component {
 
                     <Row
                       className="one-margin-top col-md-offset-1 col-lg-offset-3"
-                      content={views.map((image, index) => {
+                      content={views.map((view, index) => {
                         return (
-                          <div
+                          <button
+                            type="button"
                             key={"sketch" + index}
+                            aria-label={view.openLabel}
                             onClick={() => this.toggleModal(index)}
-                            className="col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-2"
+                            className="thumbnail-button col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-2"
                           >
-                            <img className="mini-image" src={resolveAssetSrc(image)} alt="" />
-                          </div>
+                            <img
+                              className="mini-image"
+                              src={resolveAssetSrc(view.image)}
+                              alt={view.alt}
+                            />
+                          </button>
                         );
                       })}
                     />
@@ -586,6 +613,13 @@ class Aikakone extends Component {
             max-width: 100%;
             height: auto;
             margin: 0.75em 0;
+          }
+
+          .thumbnail-button {
+            appearance: none;
+            background: transparent;
+            border: 0;
+            text-align: left;
           }
 
           .mini-image:hover {
