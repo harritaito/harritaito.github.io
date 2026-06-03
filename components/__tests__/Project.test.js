@@ -28,5 +28,6 @@ describe('Project rendering', () => {
     expect(markup).toMatch(/class="[^"]*project-link-container/);
     expect(markup).toMatch(/class="[^"]*case-card[^"]*blue/);
     expect(markup).toContain('Project Name');
+    expect(markup).not.toContain('Test Project Project');
   });
 });

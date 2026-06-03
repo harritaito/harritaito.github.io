@@ -160,7 +160,7 @@ class Project extends Component {
   render() {
 
     return (
-      <div className={this.props.title + " Project"}>
+      <div className="Project">
         <div className="row">
           <div className="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 col-xl-7 col-xl-offset-2">
             {this.props.parallax ? (
@@ -251,7 +251,7 @@ class Project extends Component {
             color: ${colors.textMuted};
             font-size: 0.86rem;
             font-weight: 600;
-            letter-spacing: 0.04em;
+            letter-spacing: 0;
             text-transform: none;
           }
 
