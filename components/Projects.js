@@ -12,7 +12,7 @@ class Projects {
       link: "/hri-study",
       alt: "Human-Robot Interaction",
       color: "red",
-      label: "Older work"
+      label: "Older selected work"
     },
     {
       name: "Kiva Kaupunki",
@@ -21,7 +21,7 @@ class Projects {
       link: "/kivakaupunki",
       alt: "Application for city reporting",
       color: "blue",
-      label: "Older work"
+      label: "Archive / older work"
     },
     {
       name: "Aikakone",
@@ -30,7 +30,7 @@ class Projects {
       link: "/aikakone",
       alt: "Concept service for memory care",
       color: "purple",
-      label: "Older work"
+      label: "Older selected work"
     },
   ];
 

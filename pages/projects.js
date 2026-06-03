@@ -16,9 +16,16 @@ const ProjectsPage = () => {
           <div className="col-xs-12 col-sm-10 col-md-9 col-lg-8 col-xl-7 archive-intro">
             <h1>Archive</h1>
             <p>
-              Older work and community projects live here for reference. The selected work on the homepage carries the main narrative; this page keeps the rest accessible without competing with it.
+              Older selected work stays here because it still shows useful thinking, process, artifacts, and constraints. HRI Study and Aikakone remain the strongest archive cases while newer case-study material is being developed; Kiva Kaupunki is kept as supporting evidence for civic MVP and implementation work.
             </p>
           </div>
+        }
+      />
+      <Row
+        content={
+          <h2 className="col-xs-12 col-sm-10 col-md-9 col-lg-8 col-xl-7 archive-heading archive-heading-first">
+            Selected older cases
+          </h2>
         }
       />
       {projects.map((p) => (
@@ -37,14 +44,14 @@ const ProjectsPage = () => {
       <Row
         content={
           <h2 className="col-xs-12 col-sm-10 col-md-9 col-lg-8 col-xl-7 archive-heading">
-            Earlier archive
+            Foundations
           </h2>
         }
       />
       <Row
         content={
           <p className="col-xs-12 col-sm-10 col-md-9 col-lg-8 col-xl-7 archive-copy">
-            Community, course, and volunteer notes kept as provenance for older work.
+            Earlier community, course, and volunteer work is kept as provenance: useful context for facilitation, collaboration, and early service-design practice, without making it the lead professional signal.
           </p>
         }
       />
@@ -74,6 +81,10 @@ const ProjectsPage = () => {
         .archive-heading {
           margin-top: 4rem;
           margin-bottom: 0.25rem;
+        }
+
+        .archive-heading-first {
+          margin-top: 3rem;
         }
 
         .archive-copy {

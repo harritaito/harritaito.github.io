@@ -7,7 +7,6 @@ import HighlightUnderline from "../components/design-system/HighlightUnderline";
 import { colors, radii } from "../components/design-system/tokens";
 
 import languagerobot from "../static/media/home/languagerobot.jpg";
-import kivakaupunki from "../static/media/home/kivakaupunki.jpg";
 import aikakone from "../static/media/home/aikakone.jpg";
 
 class Home extends Component {
@@ -114,7 +113,7 @@ class Home extends Component {
           <Row
             content={
               <p className="col-xs-12 col-sm-10 col-md-9 col-lg-8 col-xl-7 section-subheading">
-                Three selected case studies that show the range without overfilling the page. Older work stays accessible in the archive so it does not set the tone for the whole site.
+                Two older selected cases stay featured because they show the clearest process evidence: research, synthesis, service thinking, and design decisions under real constraints. Newer case-study material is in development, so older work is labeled clearly instead of being presented as recent.
               </p>
             }
           />
@@ -123,19 +122,9 @@ class Home extends Component {
             description="Used contextual inquiry, teacher interviews, and theatrical prototyping to define how a teaching-assistant robot could better fit classroom rituals."
             image={languagerobot}
             link="/hri-study"
-            alt="Application for city reporting"
+            alt="Children interacting with a teaching-assistant robot"
             color="red"
-            label="Older work"
-            percentage="8%"
-          />
-          <Project
-            title="Kiva Kaupunki"
-            description="Shaped a city feedback concept from civic problem framing into a map-based MVP through service design, interface sketches, and implementation support."
-            image={kivakaupunki}
-            link="/kivakaupunki"
-            alt="Application for city reporting"
-            color="blue"
-            label="Older work"
+            label="Older selected work"
             percentage="8%"
           />
           <Project
@@ -145,8 +134,22 @@ class Home extends Component {
             link="/aikakone"
             alt="Concept service for memory care"
             color="purple"
-            label="Older work"
+            label="Older selected work"
             percentage="28%"
+          />
+          <Row
+            content={
+              <p className="col-xs-12 col-sm-10 col-md-9 col-lg-8 col-xl-7 section-subheading archive-note">
+                Kiva Kaupunki and earlier community, course, and volunteer projects remain available in the archive as foundations and supporting process evidence.
+                <span className="section-inline-link">
+                  {" "}
+                  <Link href="/projects" as="/projects">
+                    Open the archive.
+                    <HighlightUnderline />
+                  </Link>
+                </span>
+              </p>
+            }
           />
         </section>
 
@@ -437,6 +440,10 @@ class Home extends Component {
 
           .Home .section-subheading {
             margin-bottom: 2.5em;
+          }
+
+          .Home .archive-note {
+            margin-top: -2.5em;
           }
 
           .Home .section-list {
