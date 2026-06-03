@@ -16,7 +16,7 @@ const ProjectsPage = () => {
           <div className="col-xs-12 col-sm-10 col-md-9 col-lg-8 col-xl-7 archive-intro">
             <h1>Archive</h1>
             <p>
-              Older work, concept pieces, and in-development notes live here for reference. The homepage carries the main narrative; this page keeps the rest accessible with the same stage labels.
+              Older work and concept pieces live here for reference. The homepage carries the main narrative; this page keeps the archive accessible with the same stage labels.
             </p>
           </div>
         }

@@ -65,7 +65,7 @@ Risk assessment:
 
 ### HRI Study
 
-Current status: featured on home/projects, labeled "Earlier case study".
+Current status: featured on home/projects, labeled "Older work" on cards and "Earlier case study" on the case page.
 
 Confirmed evidence:
 
@@ -99,7 +99,7 @@ Recommended disposition:
 
 ### Kiva Kaupunki
 
-Current status: featured on home/projects, labeled "Earlier case study".
+Current status: featured on home/projects, labeled "Older work" on cards and "Earlier case study" on the case page.
 
 Confirmed evidence:
 
@@ -132,7 +132,7 @@ Recommended disposition:
 
 ### Aikakone
 
-Current status: featured on home/projects, labeled "Earlier case study".
+Current status: featured on home/projects, labeled "Concept work".
 
 Confirmed evidence:
 

@@ -63,7 +63,8 @@ Leave these out when the source does not support them:
 
 ## Honest Placeholder Rules
 
-- Archived work should be labeled `Earlier case study`.
+- Archive cards should use stage labels such as `Older work` or `Concept work`.
+- Archived case pages can use `Earlier case study` when the page is still a case study rather than concept-only work.
 - Concept-only pages should be labeled `Concept work`.
 - Missing metrics must not be fabricated.
 - If evidence is missing, prefer a short note like `Not documented in source`
