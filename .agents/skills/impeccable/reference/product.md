@@ -1,5 +1,32 @@
 # Product register
 
+## Copy and tone of voice
+
+**Who:** Harri Halonen — product and systems designer, based in Tampere. The voice is personable and millennial: direct, occasionally dry, never corporate. Smart wit lands through brevity and honest framing, not jokes.
+
+**The core idea:** Simply put is best — and that's not just a writing style, it's the thing Harri brings to teams. Copy should embody the same value as the work: make the complicated parts legible, then get out of the way.
+
+**Rules:**
+
+- Lead with a mild claim or hot take, then back it up in plain sentences. No setup paragraphs.
+- No consultant vocab: "align on tradeoffs," "cross-functional," "stakeholders," "deliverables," "leverage." If you wouldn't say it to a friend who works in tech, don't write it.
+- Don't pre-approve yourself for verticals or client types. If the work is good, it speaks to whoever needs it.
+- Don't explain how to read your own work. If the portfolio needs a manual, fix the portfolio.
+- One sentence doing the work of three is always better.
+- Rhetorical questions are almost always the wrong move.
+- Let the work carry the argument. Copy's job is to not get in the way.
+
+**In practice:**
+
+| Instead of | Write |
+|---|---|
+| "I help cross-functional teams align on tradeoffs" | "I work out what's actually going on, then help the team act on it" |
+| "Curious about the person behind the work?" | "More about me." |
+| "A small evidence map of archive, concept, and in-development work" | *(nothing — just show the work)* |
+| "My work sits between discovery, IA, interaction design, and service thinking" | "Most design problems are structure problems in disguise" |
+
+
+
 When design SERVES the product: app UIs, admin dashboards, settings panels, data tables, tools, authenticated surfaces, anything where the user is in a task.
 
 ## The product slop test
