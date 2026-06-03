@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Isvg from 'react-inlinesvg';
 import Modal from 'react-modal';
-import { resolveAssetSrc } from './assetSource';
+import { resolveAssetHeight, resolveAssetSrc, resolveAssetWidth } from './assetSource';
 import HighlightUnderline from './design-system/HighlightUnderline';
 import close from '../static/media/icons/close.svg';
 
@@ -105,12 +105,21 @@ class ProjectIcon extends Component {
           contentLabel="Modal">
           <div>
             <button onClick={this.hideModal} className={"modal-close-button"}>
-              <img src={resolveAssetSrc(close)} alt={"close button"} style={{border: 0, height: '1.5em', width: '1.5em', background: 'var(--surface-elevated-color)'}}/>
+              <img src={resolveAssetSrc(close)} alt={"close button"} width="24" height="24" decoding="async" style={{border: 0, height: '1.5em', width: '1.5em', background: 'var(--surface-elevated-color)'}}/>
             </button>
             <h2>{this.props.title}</h2>
             <div className="modal-content">
               {this.props.description}
-              <img src={resolveAssetSrc(this.props.image)} alt={this.props.alt} onLoad={() => this.setState({imageLoaded: true})} loader={<div className={"loader"}></div> }/>
+              <img
+                src={resolveAssetSrc(this.props.image)}
+                alt={this.props.alt}
+                width={resolveAssetWidth(this.props.image)}
+                height={resolveAssetHeight(this.props.image)}
+                loading="lazy"
+                decoding="async"
+                onLoad={() => this.setState({imageLoaded: true})}
+                loader={<div className={"loader"}></div> }
+              />
               <div style={{marginTop: "1.5em"}}>
               {
                 (this.props.links).map(function (link, index){

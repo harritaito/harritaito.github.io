@@ -7,7 +7,7 @@ import Process from "../components/Process";
 import ProjectStats from "../components/ProjectStats";
 import ProjectSection from "../components/ProjectSection";
 import Row from "../components/Row";
-import { resolveAssetSrc } from "../components/assetSource";
+import { resolveAssetHeight, resolveAssetSrc, resolveAssetWidth } from "../components/assetSource";
 import HighlightUnderline from "../components/design-system/HighlightUnderline";
 import { colors, shadows } from "../components/design-system/tokens";
 import { Carousel } from "react-responsive-carousel";
@@ -415,19 +415,19 @@ class Aikakone extends Component {
                       <Modal isOpen={modalIsOpen} onRequestClose={this.toggleModal}>
                         <Carousel showThumbs={false} showStatus={false} selectedItem={this.state.selectedSlideIndex}>
                           <div>
-                            <img src={resolveAssetSrc(menu)} alt="First look of the menu of Aikakone." />
+                            <img src={resolveAssetSrc(menu)} alt="First look of the menu of Aikakone." width={resolveAssetWidth(menu)} height={resolveAssetHeight(menu)} decoding="async" />
                             <p className="legend">First look of the menu of Aikakone.</p>
                           </div>
                           <div>
-                            <img src={resolveAssetSrc(aikakone)} alt="Using Aikakone" />
+                            <img src={resolveAssetSrc(aikakone)} alt="Using Aikakone" width={resolveAssetWidth(aikakone)} height={resolveAssetHeight(aikakone)} loading="lazy" decoding="async" />
                             <p className="legend">Using Aikakone</p>
                           </div>
                           <div>
-                            <img src={resolveAssetSrc(profile)} alt="Profile of elderly people" />
+                            <img src={resolveAssetSrc(profile)} alt="Profile of elderly people" width={resolveAssetWidth(profile)} height={resolveAssetHeight(profile)} loading="lazy" decoding="async" />
                             <p className="legend">Profile of elderly people</p>
                           </div>
                           <div>
-                            <img src={resolveAssetSrc(elamankaari)} alt="Elämänkaari, a feature that has the lifespan of induvidual user" />
+                            <img src={resolveAssetSrc(elamankaari)} alt="Elämänkaari, a feature that has the lifespan of induvidual user" width={resolveAssetWidth(elamankaari)} height={resolveAssetHeight(elamankaari)} loading="lazy" decoding="async" />
                             <p className="legend">Elämänkaari, a feature that has the lifespan of induvidual user</p>
                           </div>
                         </Carousel>
@@ -445,7 +445,7 @@ class Aikakone extends Component {
                               "col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-2"
                             }
                           >
-                            <img className="mini-image" src={resolveAssetSrc(image)} alt="" />
+                            <img className="mini-image" src={resolveAssetSrc(image)} alt="" width={resolveAssetWidth(image)} height={resolveAssetHeight(image)} loading="lazy" decoding="async" />
                           </div>
                         );
                       })}

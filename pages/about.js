@@ -16,7 +16,7 @@ class About extends Component {
             content={
               <div className="my-photo-container col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                 <div className={"my-photo"}>
-                  <img src="../static/media/about/me.jpg" alt={"Me"} />
+                  <img src="../static/media/about/me.jpg" alt={"Harri Halonen"} width="275" height="275" decoding="async" />
                 </div>
               </div>
             }

@@ -8,7 +8,7 @@ import Process from '../components/Process';
 import ProjectStats from '../components/ProjectStats';
 import ProjectSection from "../components/ProjectSection";
 import Row from '../components/Row';
-import { resolveAssetSrc } from '../components/assetSource';
+import { resolveAssetHeight, resolveAssetSrc, resolveAssetWidth } from '../components/assetSource';
 import HighlightUnderline from '../components/design-system/HighlightUnderline';
 import { colors, shadows } from '../components/design-system/tokens';
 import { Carousel } from 'react-responsive-carousel';
@@ -224,27 +224,27 @@ class Kivakaupunki extends Component {
                       <Modal isOpen={modalIsOpen} onRequestClose={this.toggleModal}>
                         <Carousel showThumbs={false} showStatus={false} selectedItem={this.state.selectedSlideIndex}>
                           <div>
-                            <img src={resolveAssetSrc(phone)} alt="Start greeting scene of app" />
+                            <img src={resolveAssetSrc(phone)} alt="Start greeting scene of app" width={resolveAssetWidth(phone)} height={resolveAssetHeight(phone)} decoding="async" />
                             <p className="legend">Start greeting scene of app</p>
                           </div>
                           <div>
-                            <img src={resolveAssetSrc(phone_booth)} alt="Location tagging by gps or by selecting and tapping." />
+                            <img src={resolveAssetSrc(phone_booth)} alt="Location tagging by gps or by selecting and tapping." width={resolveAssetWidth(phone_booth)} height={resolveAssetHeight(phone_booth)} loading="lazy" decoding="async" />
                             <p className="legend">Location tagging by gps or by selecting and tapping.</p>
                           </div>
                           <div>
-                            <img src={resolveAssetSrc(physical)} alt="Second screen, notice the return button" />
+                            <img src={resolveAssetSrc(physical)} alt="Second screen, notice the return button" width={resolveAssetWidth(physical)} height={resolveAssetHeight(physical)} loading="lazy" decoding="async" />
                             <p className="legend">Second screen, notice the return button</p>
                           </div>
                           <div>
-                            <img src={resolveAssetSrc(popup)} alt="Comment categories" />
+                            <img src={resolveAssetSrc(popup)} alt="Comment categories" width={resolveAssetWidth(popup)} height={resolveAssetHeight(popup)} loading="lazy" decoding="async" />
                             <p className="legend">Comment categories</p>
                           </div>
                           <div>
-                            <img src={resolveAssetSrc(watch)} alt="Comment input" />
+                            <img src={resolveAssetSrc(watch)} alt="Comment input" width={resolveAssetWidth(watch)} height={resolveAssetHeight(watch)} loading="lazy" decoding="async" />
                             <p className="legend">Comment input</p>
                           </div>
                           <div>
-                            <img src={resolveAssetSrc(footsteps)} alt="Final thank you screen" />
+                            <img src={resolveAssetSrc(footsteps)} alt="Final thank you screen" width={resolveAssetWidth(footsteps)} height={resolveAssetHeight(footsteps)} loading="lazy" decoding="async" />
                             <p className="legend">Final thank you screen</p>
                           </div>
                         </Carousel>
@@ -254,7 +254,7 @@ class Kivakaupunki extends Component {
                     <Row className="one-margin-top" content={views.map(function (image, index) {
                         return (
                           <div key={"sketch" + index} onClick={(e) => self.toggleModal(index, e)} className={"col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-2"}>
-                            <img className="mini-image" src={resolveAssetSrc(image)} alt=""/>
+                            <img className="mini-image" src={resolveAssetSrc(image)} alt="" width={resolveAssetWidth(image)} height={resolveAssetHeight(image)} loading="lazy" decoding="async" />
                           </div>
                         )
                       })
