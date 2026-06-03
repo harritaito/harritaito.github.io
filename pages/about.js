@@ -33,10 +33,10 @@ class About extends Component {
           <Row
             content={
               <p className="about-me-copy col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6">
-                I’m Harri Halonen, an experience designer rooted in Tampere,
-                Finland. I help multidisciplinary teams turn research insights
-                into digital products and services that feel considerate,
-                inclusive, and genuinely useful.
+                I’m Harri Halonen — product and service designer based in
+                Tampere, Finland. I do the structural thinking: what the problem
+                actually is, how a service fits together, and how to make the
+                design clear enough that a team can act on it.
               </p>
             }
           />
@@ -44,11 +44,9 @@ class About extends Component {
           <Row
             content={
               <p className="about-me-copy col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6">
-                These days my work spans product discovery, service design, and
-                strategy for industrial, public sector, and healthcare projects.
-                I run field research, facilitate co-creation, and iterate on
-                prototypes so teams can make confident, evidence-based
-                decisions.
+                My background runs through HCI, service design, and enough
+                field research to know that what people say they want and what
+                they actually need are usually two different conversations.
               </p>
             }
           />
@@ -57,13 +55,12 @@ class About extends Component {
             content={
               <ul className="about-me-copy col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6 list">
                 <li>
-                  <strong>Current focus:</strong> Leading discovery sprints,
-                  design ops, and product experiments for cross-functional
-                  teams exploring industrial XR, AI-assisted tooling, and
+                  <strong>Right now:</strong> Discovery sprints and product
+                  experiments — mostly in industrial XR, AI tooling, and
                   connected services.
                 </li>
                 <li>
-                  <strong>Academic highlight:</strong> My 2021 master’s thesis,{" "}
+                  <strong>Thesis:</strong>{" "}
                   <a
                     href={"https://urn.fi/URN:NBN:fi:tuni-202107046179"}
                     target="_blank"
@@ -71,19 +68,18 @@ class About extends Component {
                   >
                     Interaction Design Principles for Industrial XR
                     <HighlightUnderline />
-                  </a>{" "}
-                  for Tampere University’s HCI program continues to guide how I
-                  blend emerging tech with humane experiences.
+                  </a>
+                  , Tampere University 2021. Still the clearest thing I’ve
+                  written about designing for physically complex environments.
                 </li>
                 <li>
-                  <strong>Community:</strong> I stay active in the Finnish
-                  design and startup scene through volunteering, mentoring, and
-                  speaking—building on organising roles with events like Stream
-                  Startup Festival.
+                  <strong>Community:</strong> Volunteering, mentoring, and the
+                  occasional talk in the Finnish design and startup scene.
+                  Previously helped organise Stream Startup Festival.
                 </li>
                 <li>
-                  <strong>Off the screen:</strong> Capturing everyday stories on
-                  film and keeping my basketball game sharp keep me energised.
+                  <strong>Off the clock:</strong> Film photography and
+                  basketball.
                 </li>
               </ul>
             }
@@ -92,19 +88,13 @@ class About extends Component {
           <Row
             content={
               <p className="about-me-copy col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6">
-                Thanks for stopping by—it truly means a lot. If you’d like to
-                chat,{" "}
-                <a href="mailto:harri@harritaito.com">send me an email</a> or
-                grab time via my{" "}
+                If you want to talk,{" "}
+                <a href="mailto:harri@harritaito.com">send an email</a> or{" "}
                 <a href="https://calendly.com/harritaito/45min/">
-                  open calendar
+                  book time on my calendar
                   <HighlightUnderline />
                 </a>
-                . This page uses a small cookie to keep embedded media behaving
-                nicely.
-                <span className="emoji" role="img" aria-label="vulcan salute">
-                  🖖
-                </span>
+                .
               </p>
             }
           />
