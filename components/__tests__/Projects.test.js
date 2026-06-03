@@ -25,4 +25,12 @@ describe('Projects navigation helpers', () => {
     expect(proj.getNextProject('Nonexistent Project')).toBeNull();
     expect(proj.getPrevProject('Nonexistent Project')).toBeNull();
   });
+
+  test('labels featured archive cards as earlier case study', () => {
+    expect(proj.projects.map((project) => project.label)).toEqual([
+      'Earlier case study',
+      'Earlier case study',
+      'Earlier case study',
+    ]);
+  });
 });

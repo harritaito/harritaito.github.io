@@ -63,7 +63,7 @@ Leave these out when the source does not support them:
 
 ## Honest Placeholder Rules
 
-- Archived work should be labeled `Older work`.
+- Archived work should be labeled `Earlier case study`.
 - Concept-only pages should be labeled `Concept work`.
 - Missing metrics must not be fabricated.
 - If evidence is missing, prefer a short note like `Not documented in source`
@@ -79,13 +79,13 @@ Use the model like this:
 <ProjectPage
   title="..."
   description="..."
-  eyebrow="Older work"
+  eyebrow="Earlier case study"
   content={
     <span>
       <CaseStudyMeta
-        status="Older work"
+        status="Earlier case study"
         summary="..."
-        note="Missing metrics are left blank rather than inferred."
+        note="Shown here for its research method and interaction thinking."
         fields={{
           myRole: "...",
           team: "...",

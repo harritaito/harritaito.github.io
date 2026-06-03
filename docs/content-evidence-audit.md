@@ -65,7 +65,7 @@ Risk assessment:
 
 ### HRI Study
 
-Current status: featured on home/projects, labeled "Older work".
+Current status: featured on home/projects, labeled "Earlier case study".
 
 Confirmed evidence:
 
@@ -99,7 +99,7 @@ Recommended disposition:
 
 ### Kiva Kaupunki
 
-Current status: featured on home/projects, labeled "Older work".
+Current status: featured on home/projects, labeled "Earlier case study".
 
 Confirmed evidence:
 
@@ -132,7 +132,7 @@ Recommended disposition:
 
 ### Aikakone
 
-Current status: featured on home/projects, labeled "Older work".
+Current status: featured on home/projects, labeled "Earlier case study".
 
 Confirmed evidence:
 
@@ -458,9 +458,9 @@ About:
 
 Projects:
 
-- Split "Selected archive cases" from "Earlier notes".
+- Keep the archive page distinct from the homepage and give every featured case a reason for inclusion: research system, service system, MVP/implementation support.
 - Avoid presenting all old work as equal.
-- Give every featured case a reason for inclusion: research system, service system, MVP/implementation support.
+- Use concise archive labels and notes that explain why the work still belongs.
 
 Case pages:
 

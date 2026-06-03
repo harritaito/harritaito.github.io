@@ -94,7 +94,7 @@ class Aikakone extends Component {
           title={"Aikakone"}
           hero={hero}
           heroAlt={"Ideation on canvas."}
-          eyebrow={"Older work"}
+          eyebrow={"Earlier case study"}
           description={
             "Explored a memory-care reminiscence service through field research, service blueprinting, and prototyping."
           }
@@ -102,12 +102,12 @@ class Aikakone extends Component {
           content={
             <span>
               <CaseStudyMeta
-                status={"Older work"}
+                status={"Earlier case study"}
                 summary={
                   "A service-design archive case study about making reminiscence easier to use in everyday care."
                 }
                 note={
-                  "Older work. Missing metrics are not inferred, and the page keeps the result at concept level."
+                  "Shown here for service-design thinking and care-context constraints; the page stays at concept level and does not infer missing metrics."
                 }
                 fields={{
                   myRole: [

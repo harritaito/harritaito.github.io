@@ -7,7 +7,7 @@ describe('CaseStudyMeta', () => {
   test('renders the shared case-study framing in a fixed field order', () => {
     const markup = renderToStaticMarkup(
       <CaseStudyMeta
-        status="Older work"
+        status="Earlier case study"
         summary="A compact archive summary."
         note="Missing metrics are left blank."
         fields={{
@@ -24,7 +24,7 @@ describe('CaseStudyMeta', () => {
       />
     );
 
-    expect(markup).toContain('Older work');
+    expect(markup).toContain('Earlier case study');
     expect(markup).toContain('A compact archive summary.');
     expect(markup).toContain('Missing metrics are left blank.');
     expect(markup).toContain('col-md-offset-1');

@@ -16,7 +16,7 @@ const ProjectsPage = () => {
           <div className="col-xs-12 col-sm-10 col-md-9 col-lg-8 col-xl-7 archive-intro">
             <h1>Archive</h1>
             <p>
-              Older work and community projects live here for reference. The selected work on the homepage carries the main narrative; this page keeps the rest accessible without competing with it.
+              Earlier case studies and community projects live here for reference. The selected work on the homepage carries the main narrative; this page keeps supporting proof accessible without competing with it.
             </p>
           </div>
         }
@@ -37,14 +37,14 @@ const ProjectsPage = () => {
       <Row
         content={
           <h2 className="col-xs-12 col-sm-10 col-md-9 col-lg-8 col-xl-7 archive-heading">
-            Earlier archive
+            Selected archive cases
           </h2>
         }
       />
       <Row
         content={
           <p className="col-xs-12 col-sm-10 col-md-9 col-lg-8 col-xl-7 archive-copy">
-            Community, course, and volunteer notes kept as provenance for older work.
+            Community, course, and volunteer notes kept as provenance for the archive.
           </p>
         }
       />

@@ -51,26 +51,26 @@ class Languagerobot extends Component {
     ];
 
     return (
-      <div className="Languagerobot">
-        <ProjectPage
+        <div className="Languagerobot">
+          <ProjectPage
           projectName={'HRI Study'}
           title={'Human-Robot Interaction'}
-          hero={pupils}
+            hero={pupils}
           heroAlt={'Children and a classroom robot during a learning session.'}
-          eyebrow={'Older work'}
-          description={
-            'A classroom robot study about how to support learning rituals, child-teacher interaction, and predictable behavior when novelty alone was not enough.'
-          }
+          eyebrow={'Earlier case study'}
+            description={
+              'A classroom robot study about how to support learning rituals, child-teacher interaction, and predictable behavior when novelty alone was not enough.'
+            }
           navbarColor={'red'}
           content={
             <span>
               <CaseStudyMeta
-                status={'Older work'}
+                status={'Earlier case study'}
                 summary={
                   'A research-led archive case study showing how observation data was translated into interaction decisions for a teaching-assistant robot.'
                 }
                 note={
-                  'Older work. Missing metrics are left blank, and the page stays at concept and evaluation stage rather than claiming a shipped robot or measured learning outcome.'
+                  'Shown here for its research method and interaction thinking under classroom constraints; missing metrics are left blank, and the page stays at concept and evaluation stage rather than claiming a shipped robot or measured learning outcome.'
                 }
                 fields={{
                   myRole: 'Interaction design and UX research',

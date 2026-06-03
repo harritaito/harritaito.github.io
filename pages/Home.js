@@ -114,7 +114,7 @@ class Home extends Component {
           <Row
             content={
               <p className="col-xs-12 col-sm-10 col-md-9 col-lg-8 col-xl-7 section-subheading">
-                Three selected case studies that show the range without overfilling the page. Older work stays accessible in the archive so it does not set the tone for the whole site.
+                Three selected case studies that show the range without overfilling the page. Earlier case studies stay accessible in the archive so they add context without taking over the main narrative.
               </p>
             }
           />
@@ -125,7 +125,7 @@ class Home extends Component {
             link="/hri-study"
             alt="Application for city reporting"
             color="red"
-            label="Older work"
+            label="Earlier case study"
             percentage="8%"
           />
           <Project
@@ -135,7 +135,7 @@ class Home extends Component {
             link="/kivakaupunki"
             alt="Application for city reporting"
             color="blue"
-            label="Older work"
+            label="Earlier case study"
             percentage="8%"
           />
           <Project
@@ -145,7 +145,7 @@ class Home extends Component {
             link="/aikakone"
             alt="Concept service for memory care"
             color="purple"
-            label="Older work"
+            label="Earlier case study"
             percentage="28%"
           />
         </section>

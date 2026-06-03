@@ -89,7 +89,7 @@ class Kivakaupunki extends Component {
           title={"Kiva Kaupunki"}
           hero={hero}
           heroAlt={"map"}
-          eyebrow={"Older work"}
+          eyebrow={"Earlier case study"}
           description={
             "Explored how citizen feedback could be structured into a simple map-based service for public use."
           }
@@ -97,12 +97,12 @@ class Kivakaupunki extends Component {
           content={
             <span>
               <CaseStudyMeta
-                status={"Older work"}
+                status={"Earlier case study"}
                 summary={
                   "A civic service concept that tied citizen feedback to location and kept the flow simple enough for a competition MVP."
                 }
                 note={
-                  "Older work. The case keeps outcome claims limited to what is evidenced in source and does not invent metrics."
+                  "Shown here for civic MVP thinking and implementation support under tight competition constraints; the case keeps outcome claims limited to what is evidenced in source."
                 }
                 fields={{
                   myRole: ["Service design", "Interaction design", "UI design"],
@@ -153,7 +153,7 @@ class Kivakaupunki extends Component {
                   outcome:
                     "The team won part of the competition prize, though the page notes the result was not entirely satisfactory.",
                   reflection:
-                    "A useful older-work example of implementation support under competition constraints, but not a claim of production adoption.",
+                  "A useful archive example of implementation support under competition constraints, but not a claim of production adoption.",
                 }}
               />
               <ProjectSection
