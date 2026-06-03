@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import { Collapse } from "react-collapse";
 
-import Button from "../components/Button";
 import CaseStudyMeta from "../components/CaseStudyMeta";
 import ProjectPage from "../components/ProjectPage";
 import Process from "../components/Process";
@@ -14,7 +12,6 @@ import { Carousel } from "react-responsive-carousel";
 import Modal from "react-modal";
 
 import hero from "../static/media/aikakone/hero.jpg";
-
 import menu from "../static/media/aikakone/menu.jpg";
 import aikakone from "../static/media/aikakone/aikakone.jpg";
 import profile from "../static/media/aikakone/profile.jpg";
@@ -27,10 +24,7 @@ class Aikakone extends Component {
     this.state = {
       modalIsOpen: false,
       selectedSlideIndex: 0,
-      keyTakeawaysOpen: false,
     };
-
-    this.collapseKeyTakeaways = this.collapseKeyTakeaways.bind(this);
   }
 
   toggleModal = (selectedSlideIndex) => {
@@ -42,49 +36,31 @@ class Aikakone extends Component {
     }));
   };
 
-  collapseKeyTakeaways() {
-    this.setState({
-      keyTakeawaysOpen: !this.state.keyTakeawaysOpen,
-    });
-  }
-
   render() {
-    let pStyle =
+    const pStyle =
       "col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-lg-offset-2dot5 col-lg-7 col-xl-offset-3 col-xl-6";
-    let quoteStyle =
-      "quote col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-offset-4 col-xl-4";
 
-    let steps = [
+    const steps = [
       {
-        title: "Canvas sessions & Research",
+        title: "Discovery",
         processes: [
-          "Including but not limited to:",
-          "Business approach",
-          "Existing Solutions",
-          "Academic studies",
+          "Lean Service Creation canvases",
           "Contextual inquiry",
-          "User Research",
-          "Semi-structured Interviews",
+          "Existing-solution review",
+          "Semi-structured interviews",
         ],
       },
       {
-        title: "Design",
-        processes: [
-          "Use Cases",
-          "Paper mockups",
-          "Service blueprint",
-          "Minimum lovable product",
-          "Digital mockup",
-        ],
+        title: "Blueprinting",
+        processes: ["Use cases", "Service blueprint", "Paper mockups", "Digital mockup"],
       },
       {
         title: "Prototype",
-        processes: ["Usability Testing"],
+        processes: ["Usability testing"],
       },
     ];
 
-    let views = [menu, aikakone, profile, elamankaari];
-    let self = this;
+    const views = [menu, aikakone, profile, elamankaari];
     const { modalIsOpen } = this.state;
 
     return (
@@ -93,21 +69,21 @@ class Aikakone extends Component {
           projectName={"Aikakone"}
           title={"Aikakone"}
           hero={hero}
-          heroAlt={"Ideation on canvas."}
-          eyebrow={"Earlier case study"}
+          heroAlt={"Ideation on a service-design canvas."}
+          eyebrow={"Concept work"}
           description={
-            "Explored a memory-care reminiscence service through field research, service blueprinting, and prototyping."
+            "Explored a memory-care reminiscence service through field inquiry, service blueprinting, and facilitated prototyping."
           }
           navbarColor={"purple"}
           content={
             <span>
               <CaseStudyMeta
-                status={"Earlier case study"}
+                status={"Concept work"}
                 summary={
-                  "A service-design archive case study about making reminiscence easier to use in everyday care."
+                  "A service-design archive case study about supporting caregivers, families, and people living with memory disease through trust-sensitive reminiscence sessions."
                 }
                 note={
-                  "Shown here for service-design thinking and care-context constraints; the page stays at concept level and does not infer missing metrics."
+                  "Shown here for service-design thinking and care-context constraints; missing metrics are not inferred, and the page stays at concept level without claiming clinical or commercial outcomes."
                 }
                 fields={{
                   myRole: [
@@ -119,19 +95,21 @@ class Aikakone extends Component {
                   team: "4 designers",
                   timeline: "March 2016 to May 2016",
                   context:
-                    "University of Tampere and Futurice's Let’s Re-Design Health Services course, working with Espericare on a memory-care stimulation service.",
+                    "University of Tampere and Futurice's Let’s Re-Design Health Services course, working with Espericare on a memory-care service concept.",
                   problem:
-                    "How can reminiscence and stimulation be made easier to use in everyday care?",
+                    "How can a service support connection, dignity, and easier conversation in everyday care?",
                   users: [
-                    "Residents living with memory disease",
-                    "Caregivers",
+                    "People living with memory disease",
+                    "Caregivers and nurses",
                     "Family members",
+                    "Volunteers and new staff who need a quick way to learn the person's story",
                   ],
                   businessContext:
                     "The client brief asked for an entertainment and stimulation service for memory care.",
                   constraints: [
                     "Care time was limited",
-                    "The concept had to work in short sessions",
+                    "The concept had to work in short, interrupted sessions",
+                    "The tone needed to stay calm, respectful, and easy to hand over",
                     "The page does not show a production launch",
                   ],
                   discovery: [
@@ -141,16 +119,17 @@ class Aikakone extends Component {
                     "Paper prototype testing",
                   ],
                   keyInsights: [
-                    "Caregivers need low-friction ways to start a session.",
-                    "The service should help people become the expert on their own life.",
-                    "Shared stories can support connection between residents and caregivers.",
+                    "Caregivers needed a low-friction way to start a session.",
+                    "The service had to help people living with memory disease remain the focus of their own story.",
+                    "Shared stories could help staff, families, and residents build trust faster.",
                   ],
                   conceptModel:
-                    "Pictures, sound, and text around the same story.",
+                    "Pictures, sound, and text around the same story so a facilitator can adapt the session to the person and the moment.",
                   keyDecisions: [
-                    "Use short sessions with individuals or groups.",
-                    "Keep the experience flexible enough for bedside or shared-screen use.",
-                    "Center the caregiver as facilitator.",
+                    "Keep the caregiver, family member, or volunteer in the facilitator role.",
+                    "Design for bedside use and shared-screen use.",
+                    "Keep the flow short and calm enough for vulnerable users.",
+                    "Avoid treating personal history as generic entertainment content.",
                   ],
                   designDetails: [
                     "Lean Service Creation canvases",
@@ -164,28 +143,29 @@ class Aikakone extends Component {
                     "A useful archive example of service design under care constraints, not proof of clinical or commercial impact.",
                 }}
               />
+
               <ProjectSection
-                title={"Problem"}
+                title={"Care context"}
                 content={
                   <span>
                     <Row
                       content={
                         <p className={pStyle}>
-                          As the number of older adults grows, so does the need for care that supports memory, mood, and connection. The project focused on one part of that challenge: making stimulus and reminiscence easier to use in everyday care.
+                          Aikakone began in the University of Tampere and Futurice's Let’s Re-Design Health Services course. Espericare's brief asked for an entertainment and stimulation service for memory care.
                         </p>
                       }
                     />
                     <Row
                       content={
                         <p className={pStyle}>
-                          In the University of Tampere and Futurice's Let’s Re-Design Health Services course, the client Espericare asked teams to design an entertainment and stimulation service for residents living with memory disease.
+                          The goal was not to promise a cure or a medical result. It was to create a calmer way to support conversation, familiarity, and meaningful connection around personal memories.
                         </p>
                       }
                     />
                     <Row
                       content={
                         <p className={pStyle}>
-                          People living with memory disease often need gentle, low-friction ways to stay engaged. That made the brief a service-design problem as much as a content or interface one.
+                          The care context made the brief a service-design problem as much as a content or interface one. Time was fragmented, attention was limited, and the service had to fit into ordinary care routines without creating more work.
                         </p>
                       }
                     />
@@ -194,56 +174,96 @@ class Aikakone extends Component {
               />
 
               <ProjectSection
-                title={"Solution"}
+                title={"Users and stakeholders"}
                 content={
                   <span>
                     <Row
                       content={
                         <p className={pStyle}>
-                          Facilitating connection between people with memory disorder and caregivers was at the core of Aikakone. As a web service, it could be used in short sessions, with individuals or groups, and in settings ranging from bedside use to a shared screen.
+                          The service had to work for several people at once, each with a different reason to use it.
                         </p>
                       }
                     />
-
                     <Row
                       content={
                         <p className={pStyle}>
-                          The service combined pictures, sound, and text around the same story so caregivers could prompt reminiscence and invite the person to become the expert on their own life.
+                          People living with memory disease needed gentle prompts, not a test. Caregivers needed a quick way to start a session. Family members could add photos and stories. New staff and volunteers needed a simple way to learn what mattered to the person.
                         </p>
                       }
                     />
-
-                    <Row content={<p className={pStyle}></p>} />
+                    <Row
+                      content={
+                        <ul className={pStyle + " list"}>
+                          <li>The resident stayed at the center of the conversation.</li>
+                          <li>The caregiver acted as a facilitator, not as a gatekeeper.</li>
+                          <li>Family members could add context and personal history.</li>
+                          <li>New staff and volunteers could learn faster without relying on informal handover alone.</li>
+                        </ul>
+                      }
+                    />
                   </span>
                 }
               />
 
               <ProjectSection
-                title={"Process"}
+                title={"Emotional constraints"}
                 content={
                   <span>
                     <Row
                       content={
                         <p className={pStyle}>
-                          In Service Creation we followed Futurice Ltd’s Open
-                          Source{" "}
-                          <a href="http://leanservicecreation.com">
-                            Lean Service Creation
-                            <HighlightUnderline />
-                          </a>{" "}
-                          canvases on organized sessions, this process was
-                          supported with expeditions to client company
-                          Espericare Ltd premises and meetings on our own,
-                          here’s roughly how it went:
+                          Working in memory care meant keeping the tone calm, adult, and respectful. The interface had to avoid pressure, avoid clutter, and leave room for silence or pauses.
                         </p>
                       }
                     />
-
                     <Row
                       content={
-                        <div className="col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10 col-xl-offset-2 col-xl-8">
-                          <Process steps={steps} />
-                        </div>
+                        <p className={pStyle}>
+                          We treated reminiscence as a supported conversation, not as a test or a claim about treatment. The design had to feel safe enough to bring into a care routine without adding friction or embarrassment.
+                        </p>
+                      }
+                    />
+                    <Row
+                      content={
+                        <p className={pStyle}>
+                          Human agency mattered throughout: the facilitator had to follow the person's pace, pause when needed, and let the conversation move where the memory led instead of forcing a scripted flow.
+                        </p>
+                      }
+                    />
+                    <Row
+                      content={
+                        <p className={pStyle}>
+                          That constraint shaped what the product should not do. It should not diagnose, score, correct, or push someone through content just because the interface has a next screen.
+                        </p>
+                      }
+                    />
+                  </span>
+                }
+              />
+
+              <ProjectSection
+                title={"Accessibility and simplicity"}
+                content={
+                  <span>
+                    <Row
+                      content={
+                        <p className={pStyle}>
+                          The concept leaned on a low cognitive load: short paths, clear labels, large visuals, and only a few moving parts at a time. That mattered because the session could happen in a room, at a bedside, or on a shared screen with limited attention.
+                        </p>
+                      }
+                    />
+                    <Row
+                      content={
+                        <p className={pStyle}>
+                          The service needed to be easy to hand over. A family member, nurse, or volunteer should be able to pick it up quickly, understand the next step, and adapt the pace to the person in front of them.
+                        </p>
+                      }
+                    />
+                    <Row
+                      content={
+                        <p className={pStyle}>
+                          The aim was to reduce cognitive load, not add another tool to learn.
+                        </p>
                       }
                     />
                   </span>
@@ -257,189 +277,170 @@ class Aikakone extends Component {
                     <Row
                       content={
                         <p className={pStyle}>
-                          After the first session of team forming and canvas
-                          work. We visited a facility of the client company
-                          Espericare for a contextual inquiry acompanied by
-                          Futurice employee. We got impressions of the
-                          facilities, took pictures, drew a floor plan of the
-                          area users inhabit and asked questions from the staff
-                          and residents. We would return later to do more
-                          structured interviews and perform a test with paper
-                          prototypes.
+                          We started with a contextual inquiry at an Espericare facility, accompanied by a Futurice employee. We observed the environment, photographed the premises, drew a floor plan of the area residents used, and asked questions of staff and residents.
                         </p>
                       }
                     />
                     <Row
                       content={
                         <p className={pStyle}>
-                          Meanwhile on our own we looked at existing market
-                          solutions, concepts of entertainment and ways to spend
-                          time with cognitive impaired people. Interesting idea
-                          we came across reminiscence therapy. Form of therapy
-                          that has been shown to improve the attitude of
-                          caregivers towards their patients. This is assumed to
-                          be due to caregivers’ increased knowledge of their
-                          patients’ backgrounds and personalities. Often in care
-                          homes, the turnover of personnel is quite high, which
-                          raises the need of a tool for such familiarization
-                          even more pressing.
+                          We also reviewed existing solutions, entertainment concepts, and ways to support time spent with people living with cognitive impairment. One reference point was reminiscence therapy, which we treated carefully as a source of ideas about shared memory and caregiver familiarity rather than as proof of outcome.
                         </p>
                       }
                     />
-
                     <Row
                       content={
-                        <div
-                          className="col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-lg-offset-2dot5 col-lg-7 col-xl-offset-3 col-xl-12 button-wrapper"
-                          onClick={this.collapseKeyTakeaways}
-                        >
-                          <Button
-                            label={
-                              this.state.keyTakeawaysOpen
-                                ? "Hide Key takeaways"
-                                : "See Key takeaways"
-                            }
-                            color={"outline purple"}
-                          />
-                        </div>
+                        <p className={pStyle}>
+                          We returned later for structured interviews and a paper-prototype test. The research pointed to the same basic need from several directions: short sessions, low setup friction, and a way for staff to learn personal history without relying on informal coffee-break handovers.
+                        </p>
                       }
                     />
-
-                    <Collapse isOpened={this.state.keyTakeawaysOpen}>
-                      <Row
-                        content={
-                          <ul className={pStyle + " list"}>
-                            <b>
-                              Key takeaways from research, location visits,
-                              interviews and user needs:
-                            </b>
-                            <li>
-                              Dementia/Alzheimer diseases increasing and growing
-                              concern about quality of health care systems.
-                            </li>
-
-                            <li>
-                              Nurses don’t have sufficient time to engage
-                              individually and it’s difficult to get patients
-                              excited in common activities.
-                            </li>
-
-                            <li>
-                              Residents are not able to tell about themselves so
-                              nurses have a hard time to get to know them and
-                              their history.
-                            </li>
-
-                            <li>
-                              Introduction to new nurses about the resident’s
-                              preferences is relies almost completely on
-                              coffeetabletalk.
-                            </li>
-
-                            <li>
-                              Family and friends of the residents want to do
-                              something for the resident’s benefit.
-                            </li>
-
-                            <li>
-                              It was hard for the nurses to get the residents
-                              excited about existing entertainment and stimuli
-                              options.
-                            </li>
-
-                            <li>
-                              Stimuli session should be something that is
-                              quickly started, because time to perform stimulus
-                              is scattered in to small time windows during
-                              shifts.
-                            </li>
-
-                            <li>
-                              Some of the residents were in poor health and
-                              spend most of their time in their own rooms.
-                            </li>
-                          </ul>
-                        }
-                      />
-                    </Collapse>
+                    <Row
+                      content={
+                        <ul className={pStyle + " list"}>
+                          <li>Caregivers did not have much time for long setup or explanation.</li>
+                          <li>Residents needed support that could start quickly and remain gentle.</li>
+                          <li>Families wanted to contribute in a way that felt useful, not symbolic.</li>
+                          <li>Shared memories could help staff understand the person behind the diagnosis.</li>
+                        </ul>
+                      }
+                    />
                   </span>
                 }
               />
 
               <ProjectSection
-                title={"Design"}
+                title={"Service blueprinting"}
                 content={
                   <span>
                     <Row
                       content={
                         <p className={pStyle}>
-                          In our vision, as a result of well-performed care, the
-                          elderly are surrounded by people who know them by
-                          their individual qualities, not just by their
-                          diagnoses. Every day brings the elderly meaningful
-                          interaction and positive moments that include a caring
-                          human contact.
+                          The blueprint connected what the resident experiences, what the facilitator does, and what has to happen before a session can start. That made the service easier to reason about in a care environment where the handoff matters as much as the interface.
                         </p>
                       }
                     />
                     <Row
                       content={
                         <p className={pStyle}>
-                          We introduced Aikakone (Timemachine) a tool for
-                          reminiscence therapy and entertainment with features
-                          of shared history (Aikakone), personal history
-                          (Elämänkaari), profile of and elderly person
-                          (Profiili), pictures of aikakone in categories
-                          (Kuvat), musicplayed with old enjoyable tunes
-                          (Musiikki), animal, baby and other videos in Videot.
+                          Lean Service Creation canvases helped us keep the concept honest about the real service around it: who prepares content, who opens the session, who adapts the pace, and who closes the loop for the next time.
                         </p>
                       }
                     />
                     <Row
                       content={
-                        <p className={pStyle}>
-                          Instead of old people using the service alone by
-                          themselves, a facilitator uses it with them. This
-                          person can be a nurse, a relative, a friend or a
-                          voluntary worker. By encouraging the involvement of
-                          these people, the service may even multiply the
-                          quality time spent with the elderly.
-                        </p>
+                        <ul className={pStyle + " list"}>
+                          <li>Before the session: family or staff help gather memory material.</li>
+                          <li>During the session: the facilitator chooses media and reads the person's response.</li>
+                          <li>After the session: staff can leave with a little more context for future care moments.</li>
+                        </ul>
                       }
                     />
+                    <Row
+                      content={
+                        <div className="col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10 col-xl-offset-2 col-xl-8">
+                          <Process steps={steps} />
+                        </div>
+                      }
+                    />
+                  </span>
+                }
+              />
 
-                    <Row content={<h4 className={pStyle}>User Interface</h4>} />
-
+              <ProjectSection
+                title={"Concept decisions"}
+                content={
+                  <span>
                     <Row
                       content={
                         <p className={pStyle}>
-                          As the course was service design focused, creating an
-                          MVP design was critical for the course presentation.
-                          Here the first ever digital draft of the concept, done
-                          in Microsoft PowerPoint of all the possible design
-                          tools available. 😎
+                          Aikakone combined pictures, sound, and text around the same story so a facilitator could pick the right entry point for the person in front of them. The shared-history view supported common memories, while Elämänkaari and Profiili focused on personal history and what staff should know about the person.
+                        </p>
+                      }
+                    />
+                    <Row
+                      content={
+                        <p className={pStyle}>
+                          The most important decision was to keep the experience guided rather than self-serve. The tool was there to support the relationship, not replace the caregiver, family member, or volunteer who brought the memory to life.
+                        </p>
+                      }
+                    />
+                    <Row
+                      content={
+                        <p className={pStyle}>
+                          We also kept the concept flexible across shared and individual settings. Images, music, and video material could work bedside, in a common room, or in a quick one-on-one moment between other tasks.
+                        </p>
+                      }
+                    />
+                    <Row
+                      content={
+                        <ul className={pStyle + " list"}>
+                          <li>Aikakone: shared history prompts for common memories.</li>
+                          <li>Elämänkaari: a personal life-story view for individual history.</li>
+                          <li>Profiili: practical context about the person for staff and facilitators.</li>
+                          <li>Media categories: images, music, and video as alternate ways into the same conversation.</li>
+                        </ul>
+                      }
+                    />
+                  </span>
+                }
+              />
+
+              <ProjectSection
+                title={"Prototype"}
+                content={
+                  <span>
+                    <Row
+                      content={
+                        <p className={pStyle}>
+                          The first digital draft was built in PowerPoint because the course was focused on service design and fast learning, not polished production UI. We made it behave enough like an app for staff to move through a guided Aikakone session.
+                        </p>
+                      }
+                    />
+                    <Row
+                      content={
+                        <p className={pStyle}>
+                          We also tested the idea with simple printed images from different decades. Sitting close and speaking at an easy pace helped keep the interaction calm and gave residents room to respond in their own way.
+                        </p>
+                      }
+                    />
+                    <Row
+                      content={
+                        <p className={pStyle}>
+                          Near the end of the course we visited Villa Niemi and asked nurses to try the PowerPoint prototype. We then interviewed them about feasibility, important features, fit for stimulation sessions, and when they could imagine using the concept with an older person.
+                        </p>
+                      }
+                    />
+                    <Row
+                      content={
+                        <p className={pStyle}>
+                          The prototype was deliberately rough. Its job was to test whether the service moment made sense to staff, not to prove a finished interface or a measured care outcome.
                         </p>
                       }
                     />
 
                     {modalIsOpen ? (
                       <Modal isOpen={modalIsOpen} onRequestClose={this.toggleModal}>
-                        <Carousel showThumbs={false} showStatus={false} selectedItem={this.state.selectedSlideIndex}>
+                        <Carousel
+                          showThumbs={false}
+                          showStatus={false}
+                          selectedItem={this.state.selectedSlideIndex}
+                        >
                           <div>
-                            <img src={resolveAssetSrc(menu)} alt="First look of the menu of Aikakone." />
-                            <p className="legend">First look of the menu of Aikakone.</p>
+                            <img src={resolveAssetSrc(menu)} alt="Aikakone menu screen." />
+                            <p className="legend">Aikakone menu screen.</p>
                           </div>
                           <div>
-                            <img src={resolveAssetSrc(aikakone)} alt="Using Aikakone" />
-                            <p className="legend">Using Aikakone</p>
+                            <img src={resolveAssetSrc(aikakone)} alt="Aikakone session screen." />
+                            <p className="legend">Aikakone session screen.</p>
                           </div>
                           <div>
-                            <img src={resolveAssetSrc(profile)} alt="Profile of elderly people" />
-                            <p className="legend">Profile of elderly people</p>
+                            <img src={resolveAssetSrc(profile)} alt="Profile screen for a resident." />
+                            <p className="legend">Profile screen for a resident.</p>
                           </div>
                           <div>
-                            <img src={resolveAssetSrc(elamankaari)} alt="Elämänkaari, a feature that has the lifespan of induvidual user" />
-                            <p className="legend">Elämänkaari, a feature that has the lifespan of induvidual user</p>
+                            <img src={resolveAssetSrc(elamankaari)} alt="Elämänkaari life-story screen." />
+                            <p className="legend">Elämänkaari life-story screen.</p>
                           </div>
                         </Carousel>
                       </Modal>
@@ -447,14 +448,12 @@ class Aikakone extends Component {
 
                     <Row
                       className="one-margin-top col-md-offset-1 col-lg-offset-3"
-                      content={views.map(function (image, index) {
+                      content={views.map((image, index) => {
                         return (
                           <div
                             key={"sketch" + index}
-                            onClick={(e) => self.toggleModal(index, e)}
-                            className={
-                              "col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-2"
-                            }
+                            onClick={() => this.toggleModal(index)}
+                            className="col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-2"
                           >
                             <img className="mini-image" src={resolveAssetSrc(image)} alt="" />
                           </div>
@@ -465,167 +464,54 @@ class Aikakone extends Component {
                     <Row
                       content={
                         <p className={"caption " + pStyle}>
-                          Main focus of Aikakone was to present common memories
-                          that would resonate with elderly persons with memory
-                          disabilities and spark a conversation with a nurse,
-                          family member or a volunteer. With multimodal output
-                          of a visual and related auditive que for the elderly.
-                          The text is mostly for the companion to provide
-                          context and words to encourage conversation about the
-                          subject as nurses are often fairly young and
-                          unfamiliar with such topics.
+                          The menu, session, profile, and Elämänkaari screens show how the concept could be organized around shared memories, personal history, and a facilitator-led session.
                         </p>
                       }
                     />
+                  </span>
+                }
+              />
 
+              <ProjectSection
+                title={"Reflection"}
+                content={
+                  <span>
                     <Row
                       content={
-                        <p className={"caption " + pStyle}>
-                          Profile offers care givers a glimpse to character of
-                          the person they interact with. Filled in by family
-                          members and added to by nurses. Profile expedites the
-                          process of real caring and connecting between new
-                          staff members and residents.
+                        <p className={pStyle}>
+                          The strongest lesson from Aikakone was that trust is part of the product. A care service only works when it respects the person's pace, gives staff a simple way to act, and leaves space for family and volunteers to contribute without taking over.
                         </p>
                       }
                     />
-
-                    <ProjectSection
-                      title={"Prototype"}
+                    <Row
                       content={
-                        <span>
-                          <Row
-                            content={
-                              <p className={pStyle}>
-                                In the spirit of lean, I suggested to the team
-                                while we were still doing research that we try
-                                reminiscence idea. I performed this by printing
-                                out images from different decades from the web
-                                and engaged the elderly in talks after they had
-                                a moment to themselves to take the image in. I
-                                sat close next to them on a bed to be on the
-                                same side and in ease. The talks went fine, I
-                                had a decent success of guiding their attention
-                                to the image and got a reminiscence response
-                                from them and shared a few laughs.
-                              </p>
-                            }
-                          />
-                          <Row
-                            content={
-                              <p className={pStyle}>
-                                Close to the end of the course we visited Villa
-                                Niemi to perform prototyping of our PowerPoint
-                                made MVP. We let the nurses get a feel to the
-                                concept by making the PowerPoint presentation to
-                                work like an app, they would get to “test”
-                                Aikakone in a guided session.
-                              </p>
-                            }
-                          />
-                          <Row
-                            content={
-                              <p className={pStyle}>
-                                Then interviewed them about feasibility. How
-                                would they use this kind of application? What
-                                would be most important? How well would it suite
-                                for stimulation purposes? We also asked them to
-                                reflect on when and for how long would they see
-                                themselves using the application with an elderly
-                                person.
-                              </p>
-                            }
-                          />
-                        </span>
+                        <p className={pStyle}>
+                          It also showed the limits of an older course concept. The project earned positive feedback and a second-place course result, but it stayed at archive level and did not become a launched service.
+                        </p>
                       }
                     />
-                    <ProjectSection
-                      title={"Conclusion"}
+                    <Row
                       content={
-                        <span>
-                          <Row
-                            content={
-                              <p className={pStyle}>
-                                In nursing homes, time is often scattered in
-                                small fragments. Our service can be used
-                                efficiently also in short times like 20 minutes,
-                                which enables nurses to provide patients with
-                                more stimuli with the same amount of resources
-                                as before.
-                              </p>
-                            }
-                          />
-                          <Row
-                            content={
-                              <p className={pStyle}>
-                                We were remarked as the second best concept in
-                                the course on the presentation day, based on
-                                vote by judges from Espericare, University of
-                                Tampere and Futurice.
-                              </p>
-                            }
-                          />
-                          <Row
-                            content={
-                              <p className={pStyle}>
-                                Lean Service Creation taught me to think about
-                                creating services from outside-in perspective.
-                                It was my first glimpse into business goals and
-                                limitations, segmentation to concept and value
-                                proposition and even thinking about customer
-                                engagement. It inspired me to study 25 credits
-                                worth of customer centric marketing.
-                              </p>
-                            }
-                          />
-                          <Row
-                            content={
-                              <h4 className={pStyle}>More of the story</h4>
-                            }
-                          />
-                          <Row
-                            content={
-                              <p className={pStyle}>
-                                After positive feedback from Futurice, course
-                                mates and most importantly usability tests, we
-                                stuck together and started developing the
-                                concept into a working software. We entered into
-                                an incubator program and with encouraging, but
-                                cautious feedback from mentors we were on track
-                                for forming a company. This is more or less
-                                where our courage gave out and our execution was
-                                inadequate. In hindsight our mental state
-                                approached the project more from a hobby project
-                                perspective. The fact that teams were randomized
-                                in the course factored into our team chemistry
-                                and sparks flew every once in a while. Everybody
-                                believed in the product, but the team was off
-                                and push to market ultimately failed, so we
-                                decided to go our separate ways after 8 months
-                                of development and user testing.
-                              </p>
-                            }
-                          />
-                        </span>
+                        <p className={pStyle}>
+                          The later attempt to push the idea further taught a less comfortable lesson: belief in a concept is not enough if the team, ownership model, and execution discipline are not strong enough to carry it into practice.
+                        </p>
                       }
                     />
-
-                    <ProjectSection
-                      title={"Links"}
+                    <Row
                       content={
-                        <Row
-                          content={
-                            <div
-                              className={pStyle + " links"}
-                              style={{ marginTop: "1.5em" }}
-                            >
-                              <a href="http://leanservicecreation.com">
-                                Lean Service Creation
-                                <HighlightUnderline />
-                              </a>
-                            </div>
-                          }
-                        />
+                        <p className={pStyle}>
+                          That makes it useful as evidence for trust-sensitive design: the work is strongest where human agency, emotional tone, and service handoff are treated as first-class constraints rather than afterthoughts.
+                        </p>
+                      }
+                    />
+                    <Row
+                      content={
+                        <div className={pStyle + " links"} style={{ marginTop: "1.5em" }}>
+                          <a href="http://leanservicecreation.com">
+                            Lean Service Creation
+                            <HighlightUnderline />
+                          </a>
+                        </div>
                       }
                     />
                   </span>
@@ -650,11 +536,6 @@ class Aikakone extends Component {
             height: 15px;
           }
 
-          .Aikakone .project-section .acclaim {
-            -webkit-box-shadow: noneh;
-            box-shadow: none;
-          }
-
           .Aikakone .nav .navbar-link:hover {
             color: ${colors.accentPurple};
           }
@@ -675,26 +556,16 @@ class Aikakone extends Component {
             padding-left: 28px;
             margin-top: 0;
           }
+
           .Aikakone ul {
             padding-left: 25px;
             margin-top: 0;
           }
+
           .Aikakone li {
             margin-bottom: 10px;
           }
 
-          .Aikakone .highlight {
-            color: ${colors.accentPurple};
-            font-weight: bold;
-          }
-
-          .Aikakone p a::after {
-            background: rgba(30, 149, 237, 0.565);
-          }
-          .Aikakone .button-wrapper {
-            text-align: center;
-            margin: 1em 0;
-          }
           .feature-image {
             max-width: 100%;
             height: auto;
