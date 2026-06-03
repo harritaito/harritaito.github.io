@@ -13,6 +13,7 @@ describe('Project rendering', () => {
     const markup = renderToStaticMarkup(
       <Project
         title="Test Project"
+        projectName="Project Name"
         description="A test case study"
         image="/static/test.jpg"
         link="/test-project"
@@ -26,5 +27,6 @@ describe('Project rendering', () => {
     expect(markup).toMatch(/class="[^"]*plx/);
     expect(markup).toMatch(/class="[^"]*project-link-container/);
     expect(markup).toMatch(/class="[^"]*case-card[^"]*blue/);
+    expect(markup).toContain('Project Name');
   });
 });

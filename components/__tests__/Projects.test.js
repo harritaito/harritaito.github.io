@@ -26,11 +26,14 @@ describe('Projects navigation helpers', () => {
     expect(proj.getPrevProject('Nonexistent Project')).toBeNull();
   });
 
-  test('labels featured archive cards as earlier case study', () => {
-    expect(proj.projects.map((project) => project.label)).toEqual([
-      'Earlier case study',
-      'Earlier case study',
-      'Earlier case study',
-    ]);
+  test('exposes featured work with problem-first headings and status labels', () => {
+    const featured = proj.featuredProjects;
+
+    expect(featured).toHaveLength(4);
+    expect(featured[0].problemTitle).toBe('Operational complexity in civic reporting');
+    expect(featured[0].projectName).toBe('Kiva Kaupunki');
+    expect(featured[3].problemTitle).toBe('Coming soon');
+    expect(featured[3].label).toBe('In development');
+    expect(featured[3].archive).toBe(false);
   });
 });

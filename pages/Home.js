@@ -1,14 +1,11 @@
 import React, { Component } from "react";
 import Link from "next/link";
 import Project from "../components/Project";
+import ProjectsList from "../components/Projects";
 import Row from "../components/Row";
 import Footer from "../components/Footer";
 import HighlightUnderline from "../components/design-system/HighlightUnderline";
 import { colors, radii } from "../components/design-system/tokens";
-
-import languagerobot from "../static/media/home/languagerobot.jpg";
-import kivakaupunki from "../static/media/home/kivakaupunki.jpg";
-import aikakone from "../static/media/home/aikakone.jpg";
 
 class Home extends Component {
   constructor() {
@@ -37,6 +34,8 @@ class Home extends Component {
   }
 
   render() {
+    const featuredProjects = new ProjectsList().featuredProjects;
+
     return (
       <div className="Home container">
         <div className="pohja"></div>
@@ -114,40 +113,29 @@ class Home extends Component {
           <Row
             content={
               <p className="col-xs-12 col-sm-10 col-md-9 col-lg-8 col-xl-7 section-subheading">
-                Three selected case studies that show the range without overfilling the page. Earlier case studies stay accessible in the archive so they add context without taking over the main narrative.
+                A small evidence map: archive, concept, and in-development work. Each card leads with the problem type and the kind of proof it provides. The full archive stays reachable from the{" "}
+                <Link href="/projects" as="/projects">
+                  projects page
+                  <HighlightUnderline />
+                </Link>
+                .
               </p>
             }
           />
-          <Project
-            title="HRI study"
-            description="Used contextual inquiry, teacher interviews, and theatrical prototyping to define how a teaching-assistant robot could better fit classroom rituals."
-            image={languagerobot}
-            link="/hri-study"
-            alt="Application for city reporting"
-            color="red"
-            label="Earlier case study"
-            percentage="8%"
-          />
-          <Project
-            title="Kiva Kaupunki"
-            description="Shaped a city feedback concept from civic problem framing into a map-based MVP through service design, interface sketches, and implementation support."
-            image={kivakaupunki}
-            link="/kivakaupunki"
-            alt="Application for city reporting"
-            color="blue"
-            label="Earlier case study"
-            percentage="8%"
-          />
-          <Project
-            title="Aikakone"
-            description="Explored a reminiscence service for memory care with field research, service blueprinting, and facilitated prototype sessions."
-            image={aikakone}
-            link="/aikakone"
-            alt="Concept service for memory care"
-            color="purple"
-            label="Earlier case study"
-            percentage="28%"
-          />
+          {featuredProjects.map((project, index) => (
+            <Project
+              key={project.name}
+              title={project.problemTitle}
+              projectName={project.projectName}
+              description={project.description}
+              image={project.image}
+              link={project.link}
+              alt={project.alt}
+              color={project.color}
+              label={project.label}
+              percentage={index < 3 ? "8%" : "28%"}
+            />
+          ))}
         </section>
 
         <section className="section" id="systems" aria-labelledby="systems-heading">

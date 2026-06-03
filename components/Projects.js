@@ -1,38 +1,78 @@
 import robotImage from '../static/media/home/languagerobot.jpg';
 import kivakaupunkiImage from '../static/media/home/kivakaupunki.jpg';
 import aikakoneImage from '../static/media/home/aikakone.jpg';
+import placeholderTexture from '../static/media/pohja.svg';
+
+const PROJECT_MANIFEST = [
+  {
+    name: "HRI Study",
+    projectName: "HRI Study",
+    problemTitle: "Trust-sensitive classroom robot design",
+    description: "Observation, teacher interviews, and theatrical prototyping shaped how a teaching-assistant robot should behave around classroom rituals.",
+    image: robotImage,
+    link: "/hri-study",
+    alt: "Human-Robot Interaction",
+    color: "red",
+    label: "Archive",
+    featuredOrder: 2,
+    archive: true,
+    featured: true,
+  },
+  {
+    name: "Kiva Kaupunki",
+    projectName: "Kiva Kaupunki",
+    problemTitle: "Operational complexity in civic reporting",
+    description: "A civic feedback idea translated into a map-based MVP with service design, interface sketches, and implementation support.",
+    image: kivakaupunkiImage,
+    link: "/kivakaupunki",
+    alt: "Application for city reporting",
+    color: "blue",
+    label: "Archive",
+    featuredOrder: 1,
+    archive: true,
+    featured: true,
+  },
+  {
+    name: "Aikakone",
+    projectName: "Aikakone",
+    problemTitle: "Discovery for memory-care services",
+    description: "Field research, service blueprinting, and facilitated prototype sessions explored what families, staff, and residents would need to trust.",
+    image: aikakoneImage,
+    link: "/aikakone",
+    alt: "Concept service for memory care",
+    color: "purple",
+    label: "Concept",
+    featuredOrder: 3,
+    archive: true,
+    featured: true,
+  },
+  {
+    name: "AI and data decision support",
+    projectName: "AI and data decision support",
+    problemTitle: "Coming soon",
+    description: "This shell is reserved for product work where AI and data help teams make decisions they can explain, review, and trust.",
+    image: placeholderTexture,
+    link: "/projects",
+    alt: "Paper texture placeholder for an in-development case study shell",
+    color: "grey",
+    label: "In development",
+    featuredOrder: 4,
+    archive: false,
+    featured: true,
+  },
+];
 
 class Projects {
+  get projects() {
+    return PROJECT_MANIFEST.filter((project) => project.archive);
+  }
 
-  projects = [
-    {
-      name: "HRI Study",
-      description: "Observation, teacher interviews, and theatrical prototyping for a classroom robot concept.",
-      image: robotImage,
-      link: "/hri-study",
-      alt: "Human-Robot Interaction",
-      color: "red",
-      label: "Earlier case study"
-    },
-    {
-      name: "Kiva Kaupunki",
-      description: "A citizen feedback platform shaped through service design, interface sketches, and an MVP.",
-      image: kivakaupunkiImage,
-      link: "/kivakaupunki",
-      alt: "Application for city reporting",
-      color: "blue",
-      label: "Earlier case study"
-    },
-    {
-      name: "Aikakone",
-      description: "A memory-care reminiscence service explored through field research, service blueprinting, and prototype sessions.",
-      image: aikakoneImage,
-      link: "/aikakone",
-      alt: "Concept service for memory care",
-      color: "purple",
-      label: "Earlier case study"
-    },
-  ];
+  get featuredProjects() {
+    return PROJECT_MANIFEST
+      .filter((project) => project.featured)
+      .slice()
+      .sort((a, b) => a.featuredOrder - b.featuredOrder);
+  }
 
   getIndexOfProject = (project) => {
     return this.projects.findIndex(x => x.name === project);

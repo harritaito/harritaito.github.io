@@ -21,6 +21,7 @@ class Project extends Component {
 
   static propTypes = {
     title: PropTypes.string.isRequired,
+    projectName: PropTypes.string,
     description: PropTypes.string.isRequired,
     link: PropTypes.string.isRequired,
     image: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
@@ -34,6 +35,7 @@ class Project extends Component {
 
   static defaultProps = {
     title: "abc",
+    projectName: "",
     description: "abc",
     link: "",
     image: "daretolearned",
@@ -137,6 +139,9 @@ class Project extends Component {
           </div>
           <div className="case-card__content">
             <h3 className="case-card__title">{this.props.title}</h3>
+            {this.props.projectName && this.props.projectName !== this.props.title ? (
+              <p className="case-card__project-name">{this.props.projectName}</p>
+            ) : null}
             <p className="case-card__description">{this.props.description}</p>
             <div className="bottom">
               <div className={"next navbar-link " + this.props.color}>
@@ -239,6 +244,15 @@ class Project extends Component {
             margin: 0 0 0.5em;
             font-size: clamp(1.125rem, 4vw, 1.75rem);
             line-height: 1.2;
+          }
+
+          .Project :global(.case-card__project-name) {
+            margin: 0 0 0.85em;
+            color: ${colors.textMuted};
+            font-size: 0.86rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: none;
           }
 
           .Project :global(.case-card__description) {
@@ -374,6 +388,14 @@ class Project extends Component {
 
           .Project :global(.case-card .purple .next-arrow-icon) {
             fill: ${colors.accentPurple};
+          }
+
+          .Project :global(.case-card .next.grey .case-study-text) {
+            color: ${colors.accentGrey};
+          }
+
+          .Project :global(.case-card .grey .next-arrow-icon) {
+            fill: ${colors.accentGrey};
           }
 
           .Project :global(.project-link-container) {
