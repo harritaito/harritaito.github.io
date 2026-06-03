@@ -57,7 +57,7 @@ class Languagerobot extends Component {
           title={'Human-Robot Interaction'}
           hero={pupils}
           heroAlt={'Children and a classroom robot during a learning session.'}
-          eyebrow={'Older work'}
+          eyebrow={'Earlier case study'}
           description={
             'A classroom robot study about how to support learning rituals, child-teacher interaction, and predictable behavior when novelty alone was not enough.'
           }
@@ -65,7 +65,7 @@ class Languagerobot extends Component {
           content={
             <span>
               <CaseStudyMeta
-                status={'Older work'}
+                status={'Earlier case study'}
                 summary={
                   'A research-led archive case study showing how observation data was translated into interaction decisions for a teaching-assistant robot.'
                 }
@@ -469,7 +469,7 @@ class Languagerobot extends Component {
                     <Row
                       content={
                         <p className={pStyle}>
-                          The project did not ship as a classroom product, so the strongest public evidence is the research archive around it: the observation notes, the theatrical evaluation, and the external coverage below. Together they support the claim that the work translated field data into interaction decisions rather than novelty-driven concept art.
+                          The project did not ship as a classroom product, so the strongest public evidence is the research archive around it: observation notes, theatrical evaluation, and external coverage. Together they support the claim that the work translated field data into interaction decisions rather than novelty-driven concept art.
                         </p>
                       }
                     />
