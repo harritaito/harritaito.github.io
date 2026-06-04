@@ -130,11 +130,14 @@ class Navbar extends Component {
           }
           .headroom-wrapper{height: 3.5rem;}
           .navbar {
-            padding: 1em 1.5em 0.75em;
+            padding-bottom: .6em;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: var(--navbar-shadow);
+            flex-wrap: wrap;
+            gap: 0.5em;
+            -webkit-box-shadow: var(--navbar-shadow);
+                    box-shadow: var(--navbar-shadow);
             background: var(--surface-elevated-color);
             color: var(--link-color);
           }
@@ -142,8 +145,14 @@ class Navbar extends Component {
           .navbar-link {
             display: inline-flex;
             align-items: center;
+            padding: 1em 1em 0em 1em;
             outline: none;
+            -webkit-transition: all .2s linear;
+            -o-transition: all .2s linear;
             transition: all .2s linear;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
             user-select: none;
             color: inherit;
           }
@@ -151,7 +160,14 @@ class Navbar extends Component {
             outline: none;
           }
 
+          .navbar .next {
+            padding: 1em 1em 0em 0em;
+            display: -ms-flexbox;
+            display: flex;
+          }
+
           .next-wrapper {
+            display: -ms-flexbox;
             display: flex;
           }
 
@@ -163,6 +179,8 @@ class Navbar extends Component {
             height: 1rem;
             width: 1rem;
             margin-left: 4px;
+            -webkit-transition: all .3s linear;
+            -o-transition: all .3s linear;
             transition: all .3s linear;
           }
 
@@ -172,7 +190,9 @@ class Navbar extends Component {
           }
 
           .navbar .next:hover .next-arrow {
-            transform: translateX(3px);
+            -webkit-transform: translateX(3px);
+                -ms-transform: translateX(3px);
+                    transform: translateX(3px);
           }
 
 
@@ -265,7 +285,11 @@ class Navbar extends Component {
 
           @media only screen and (max-width: 575px) {
             .navbar {
-              padding: 0.75em 1em 0.6em;
+              padding-bottom: 0.2em;
+            }
+
+            .navbar-link {
+              padding: 0.75em 0.75em 0 0.75em;
             }
           }
 
