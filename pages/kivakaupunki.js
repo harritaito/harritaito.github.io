@@ -86,12 +86,12 @@ class Kivakaupunki extends Component {
       <div className="KivaKaupunki">
         <ProjectPage
           projectName={"Kiva Kaupunki"}
-          title={"Kiva Kaupunki"}
+          title={"Map-Based Citizen Feedback for Bus Passengers"}
           hero={hero}
           heroAlt={"map"}
           eyebrow={"Earlier case study"}
           description={
-            "Explored how citizen feedback could be structured into a simple map-based service for public use."
+            "How a competition brief became a map-based feedback flow that kept the task simple enough for a fast MVP."
           }
           navbarColor={"blue"}
           content={
@@ -99,19 +99,19 @@ class Kivakaupunki extends Component {
               <CaseStudyMeta
                 status={"Earlier case study"}
                 summary={
-                  "A civic service concept that tied citizen feedback to location and kept the flow simple enough for a competition MVP."
+                  "A civic service concept that tied citizen feedback to location and kept the flow simple enough to evaluate as a competition MVP."
                 }
                 note={
-                  "Shown here for civic MVP thinking and implementation support under tight competition constraints; the case keeps outcome claims limited to what is evidenced in source."
+                  "What this case proves: I can keep a civic concept understandable, buildable, and testable under tight competition constraints without overstating the result."
                 }
                 fields={{
-                  myRole: ["Service design", "Interaction design", "UI design"],
+                  myRole: ["Service design", "Interaction design", "UI design", "HTML/CSS layout support"],
                   team: ["1 designer", "1 developer"],
                   timeline: "April 2017 to June 2017",
                   context:
                     "Living Lab Bus student software competition for a web app that would benefit bus passengers.",
                   problem:
-                    "How can citizen feedback be captured and shown in a way that is easy to browse and act on?",
+                    "Problem type: civic feedback routing and map-based browsing for location-specific comments.",
                   users: [
                     "Bus passengers",
                     "Residents who submit feedback",
@@ -149,20 +149,34 @@ class Kivakaupunki extends Component {
                     "Use case description",
                   ],
                   implementationSupport:
-                    "Harri supported the HTML, ReactJS, and CSS layout while the developer set up the Heroku backend CRUD API.",
+                    "I supported the HTML, React, and CSS layout while the developer set up the Heroku backend CRUD API.",
                   outcome:
-                    "The team won part of the competition prize, though the page notes the result was not entirely satisfactory.",
+                    "The team won part of the competition prize, but the archive keeps the result framed as a partial competition success rather than a product launch.",
                   reflection:
                   "A useful archive example of implementation support under competition constraints, but not a claim of production adoption.",
                 }}
               />
+
+              <ProjectSection
+                title={"My role"}
+                content={
+                  <span>
+                    <Row content={
+                      <p className={pStyle}>
+                        I led the service, interaction, and UI framing: use case, pencil drafts, Pixelmator mockups, screen flow, and heuristic evaluation. I also supported the HTML, React, and CSS layout work, while the developer set up the Heroku backend and CRUD API. The MVP and competition result were team output.
+                      </p>
+                    }/>
+                  </span>
+                }
+              />
+
               <ProjectSection
                 title={"Problem"}
                 content={
                   <span>
                     <Row content={
                       <p className={pStyle}>
-                        The Living Lab Bus consortium ran a student software competition for an application that would benefit bus passengers. The brief required something original, web-based, and built with the LLB Developer Kit and portal.
+                        The brief asked for something original, web-based, and useful to bus passengers, but the real design challenge was turning scattered civic comments into a clear task that people would actually finish.
                       </p>
                     }/> 
                   </span>

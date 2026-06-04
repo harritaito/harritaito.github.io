@@ -88,12 +88,12 @@ class Aikakone extends Component {
       <div className="Aikakone">
         <ProjectPage
           projectName={"Aikakone"}
-          title={"Aikakone"}
+          title={"A Memory-Care Reminiscence Service"}
           hero={hero}
           heroAlt={"Ideation on a service-design canvas."}
           eyebrow={"Concept work"}
           description={
-            "Explored a memory-care reminiscence service through field inquiry, service blueprinting, and facilitated prototyping."
+            "How field inquiry and service blueprinting shaped a calmer reminiscence service for caregivers, families, and people living with memory disease."
           }
           navbarColor={"purple"}
           content={
@@ -101,10 +101,10 @@ class Aikakone extends Component {
               <CaseStudyMeta
                 status={"Concept work"}
                 summary={
-                  "A service-design archive case study about supporting caregivers, families, and people living with memory disease through trust-sensitive reminiscence sessions."
+                  "A service-design archive case study showing how trust-sensitive reminiscence sessions can support conversation and handoff in memory care."
                 }
                 note={
-                  "Shown here for service-design thinking and care-context constraints; missing metrics are not inferred, and the page stays at concept level without claiming clinical or commercial outcomes."
+                  "What this case proves: I can work through a sensitive service problem, keep the facilitator role clear, and avoid overstating outcomes that the archive does not support."
                 }
                 fields={{
                   myRole: [
@@ -112,13 +112,14 @@ class Aikakone extends Component {
                     "UX research",
                     "Interaction design",
                     "User testing",
+                    "Facilitated prototype testing",
                   ],
                   team: "4 designers",
                   timeline: "March 2016 to May 2016",
                   context:
                     "University of Tampere and Futurice's Let’s Re-Design Health Services course, working with Espericare on a memory-care service concept.",
                   problem:
-                    "How can a service support connection, dignity, and easier conversation in everyday care?",
+                    "Problem type: trust-sensitive service design for everyday care conversations and memory sharing.",
                   users: [
                     "People living with memory disease",
                     "Caregivers and nurses",
@@ -163,6 +164,21 @@ class Aikakone extends Component {
                   reflection:
                     "A useful archive example of service design under care constraints, not proof of clinical or commercial impact.",
                 }}
+              />
+
+              <ProjectSection
+                title={"My role"}
+                content={
+                  <span>
+                    <Row
+                      content={
+                        <p className={pStyle}>
+                          I contributed across service design, UX research, interaction design, and testing: contextual inquiry, interviews, Lean Service Creation canvases, service blueprinting, prototype screens, and facilitated prototype testing. The concept and course result were produced by the four-person team, so this page does not claim solo ownership or a launched care product.
+                        </p>
+                      }
+                    />
+                  </span>
+                }
               />
 
               <ProjectSection

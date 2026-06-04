@@ -54,12 +54,12 @@ class Languagerobot extends Component {
       <div className="Languagerobot">
         <ProjectPage
           projectName={'HRI Study'}
-          title={'Human-Robot Interaction'}
+          title={'Teaching-Assistant Robot in the Classroom'}
           hero={pupils}
           heroAlt={'Children and a classroom robot during a learning session.'}
           eyebrow={'Earlier case study'}
           description={
-            'A classroom robot study about how to support learning rituals, child-teacher interaction, and predictable behavior when novelty alone was not enough.'
+            'How classroom research turned speech-failure, teacher mediation, and child attention into a calmer interaction concept for a teaching-assistant robot.'
           }
           navbarColor={'red'}
           content={
@@ -67,19 +67,19 @@ class Languagerobot extends Component {
               <CaseStudyMeta
                 status={'Earlier case study'}
                 summary={
-                  'A research-led archive case study showing how observation data was translated into interaction decisions for a teaching-assistant robot.'
+                  'A research-led case study showing how observation data and teacher interviews became a clearer behavior model for a classroom robot.'
                 }
                 note={
-                  'Shown here for its research method and interaction thinking under classroom constraints; missing metrics are left blank, and the page stays at concept and evaluation stage rather than claiming a shipped robot or measured learning outcome.'
+                  'What this case proves: I can turn messy field evidence into concrete interaction decisions under classroom constraints, without claiming a shipped robot or measured learning outcome.'
                 }
                 fields={{
-                  myRole: 'Interaction design and UX research',
+                  myRole: 'Interaction design and UX research for the concept and evaluation flow; the team carried the course project together.',
                   team: '3 designers',
                   timeline: 'March 2019 to April 2019',
                   context:
                     'Tampere University User Experience in Robotics course, working with a language-learning robot in local preschool and elementary-school settings.',
                   problem:
-                    'How can a teaching-assistant robot support classroom learning rituals and child-teacher interaction without relying on novelty?',
+                    'Problem type: trust-sensitive interaction design for a classroom robot that had to stay legible when speech recognition failed.',
                   users: [
                     'Children learning in Finnish and second-language classrooms',
                     'Teachers who operated the robot and mediated the session',
@@ -123,6 +123,21 @@ class Languagerobot extends Component {
                   reflection:
                     'The strongest lesson was that trust-sensitive behavior mattered more than novelty. The robot had to stay legible, bounded, and teacher-led if it was going to support learning rather than interrupt it.',
                 }}
+              />
+
+              <ProjectSection
+                title={'My role'}
+                content={
+                  <span>
+                    <Row
+                      content={
+                        <p className={pStyle}>
+                          I worked on the UX research and interaction design: observation synthesis, teacher-interview synthesis, design implications, robot behavior decisions, and the theatrical robot evaluation flow. The concept, report, and course outcome were team output by three designers, so this page treats the findings and final direction as shared work.
+                        </p>
+                      }
+                    />
+                  </span>
+                }
               />
 
               <ProjectSection
