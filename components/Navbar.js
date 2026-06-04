@@ -4,20 +4,9 @@ import Link from "next/link";
 import Headroom from "react-headroom";
 import Isvg from "react-inlinesvg";
 
-import ThemeToggle from "./ThemeToggle";
 import { resolveAssetSrc } from "./assetSource";
 import { colors } from "./design-system/tokens";
 import arrow from "../static/media/icons/arrow-slim.svg";
-
-const defaultLinks = [
-  { label: "Work", href: "/#work" },
-  { label: "Systems", href: "/#systems" },
-  { label: "Research", href: "/#research" },
-  { label: "AI & Data", href: "/#ai-data" },
-  { label: "Archive", href: "/projects" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
-];
 
 class Navbar extends Component {
   constructor() {
@@ -55,19 +44,12 @@ class Navbar extends Component {
     nextProjectLink: PropTypes.string,
     nextProjectName: PropTypes.string,
     color: PropTypes.string,
-    links: PropTypes.arrayOf(
-      PropTypes.shape({
-        label: PropTypes.string.isRequired,
-        href: PropTypes.string.isRequired,
-      })
-    ),
   };
 
   static defaultProps = {
-    nextProjectLink: "/",
-    nextProjectName: "Next Project",
+    nextProjectLink: null,
+    nextProjectName: "Next",
     color: "",
-    links: defaultLinks,
   };
 
   render() {
@@ -82,34 +64,22 @@ class Navbar extends Component {
         </div>
         <Headroom style={{ position: "fixed" }}>
           <div className="navbar">
-            <div className="links">
-              {this.props.links.map((link) => (
-                <Link href={link.href} key={link.label} legacyBehavior>
-                  <a className="navbar-link">{link.label}</a>
+            <Link href="/" legacyBehavior>
+              <a className="navbar-link">Home</a>
+            </Link>
+            {this.props.nextProjectLink ? (
+              <div className="next-wrapper">
+                <Link href={this.props.nextProjectLink} legacyBehavior>
+                  <a className="next navbar-link">
+                    {this.props.nextProjectName}
+                    <Isvg
+                      className={"next-arrow"}
+                      src={resolveAssetSrc(arrow)}
+                    />
+                  </a>
                 </Link>
-              ))}
-            </div>
-            <div className="navbar-controls">
-              <ThemeToggle />
-              {this.props.nextProjectLink ? (
-                <div className="next-wrapper">
-                  <Link href={this.props.nextProjectLink} legacyBehavior>
-                    <a className="next navbar-link">
-                      {this.props.nextProjectName}
-                      <span onClick={this.showModal}>
-                        <object>
-                          {" "}
-                          <Isvg
-                            className={"next-arrow"}
-                            src={resolveAssetSrc(arrow)}
-                          />
-                        </object>
-                      </span>
-                    </a>
-                  </Link>
-                </div>
-              ) : null}
-            </div>
+              </div>
+            ) : null}
           </div>
         </Headroom>
         <style jsx>{`
@@ -160,66 +130,28 @@ class Navbar extends Component {
           }
           .headroom-wrapper{height: 1rem;}
           .navbar {
-            padding-bottom: .6em;
-            display: -ms-flexbox;
+            padding: 0.75em 1em;
             display: flex;
-            -ms-flex-pack: justify;
-                justify-content: space-between;
-            -ms-flex-align: center;
-                align-items: center;
-            -ms-flex-wrap: wrap;
-                flex-wrap: wrap;
-            gap: 0.5em;
-            -webkit-box-shadow: var(--navbar-shadow);
-                    box-shadow: var(--navbar-shadow);
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--navbar-shadow);
             background: var(--surface-elevated-color);
             color: var(--link-color);
           }
 
-          .links {
-            display: flex;
-            gap: 1em;
-            padding: 1em;
-            -ms-flex-align: center;
-                align-items: center
-                padding: 1em 1em 0em 1em;
-          }
-
           .navbar-link {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
             outline: none;
-            -webkit-transition: all .2s linear;
-            -o-transition: all .2s linear;
             transition: all .2s linear;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
             user-select: none;
             color: inherit;
           }
           .navbar-link:focus {
-              outline: none;
-          }
-
-          .navbar .next {
-            padding: 1em 1em 0em 0em;
-            display: -ms-flexbox;
-            display: flex;
-          }
-
-          .navbar-controls {
-            display: -ms-flexbox;
-            display: flex;
-            -ms-flex-align: center;
-                align-items: center;
-            gap: 1em;
-            padding: 0.5em 1em 0.5em 0;
-            -ms-flex-wrap: wrap;
-                flex-wrap: wrap;
+            outline: none;
           }
 
           .next-wrapper {
-            display: -ms-flexbox;
             display: flex;
           }
 
@@ -227,30 +159,20 @@ class Navbar extends Component {
             cursor: pointer;
           }
 
-          .navbar .next a {
-            padding: 0
-
-          }
-
           .navbar .next .next-arrow {
             height: 1rem;
             width: 1rem;
             margin-left: 4px;
-            -webkit-transition: all .3s linear;
-            -o-transition: all .3s linear;
             transition: all .3s linear;
-            margin-right: 2em;
           }
 
-          .next-arrow{
+          .next-arrow {
             height: 1rem;
             width: 1rem;
           }
 
-          .navbar .next:hover .next-arrow{
-            -webkit-transform: translateX(3px);
-                -ms-transform: translateX(3px);
-                    transform: translateX(3px);
+          .navbar .next:hover .next-arrow {
+            transform: translateX(3px);
           }
 
 
@@ -343,21 +265,7 @@ class Navbar extends Component {
 
           @media only screen and (max-width: 575px) {
             .navbar {
-              padding-bottom: 0.2em;
-            }
-
-            .links {
-              padding-bottom: 0;
-              width: 100%;
-              -ms-flex-wrap: wrap;
-                  flex-wrap: wrap;
-            }
-
-            .navbar-controls {
-              padding: 0 1em 0.5em;
-              width: 100%;
-              -ms-flex-pack: start;
-                  justify-content: flex-start;
+              padding: 0.6em 0.75em;
             }
           }
 

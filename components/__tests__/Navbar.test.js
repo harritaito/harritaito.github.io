@@ -15,10 +15,6 @@ jest.mock('react-headroom', () => {
   return ({ children }) => React.createElement('div', null, children);
 });
 
-jest.mock('../ThemeToggle', () => {
-  const React = require('react');
-  return () => React.createElement('button', { type: 'button' }, 'Theme');
-});
 
 jest.mock('react-inlinesvg', () => {
   const React = require('react');
@@ -117,17 +113,19 @@ describe('Navbar reading progress', () => {
     expect(markup).toMatch(/class="[^"]*progress-bar-wrap/);
   });
 
-  test('renders the expanded site navigation labels', () => {
-    const markup = renderToStaticMarkup(<Navbar nextProjectLink={null} nextProjectName={null} color="grey" />);
+  test('renders Home link on the left and no next link when not provided', () => {
+    const markup = renderToStaticMarkup(<Navbar nextProjectLink={null} color="grey" />);
 
-    expect(markup).toContain('href="/#work"');
-    expect(markup).toContain('href="/#systems"');
-    expect(markup).toContain('href="/#research"');
-    expect(markup).toContain('href="/#ai-data"');
-    expect(markup).toContain('href="/projects"');
+    expect(markup).toContain('href="/"');
+    expect(markup).toContain('>Home<');
+    expect(markup).not.toContain('href="/#work"');
+  });
+
+  test('renders the next page link on the right when provided', () => {
+    const markup = renderToStaticMarkup(<Navbar nextProjectLink="/about" nextProjectName="About" color="grey" />);
+
+    expect(markup).toContain('>Home<');
     expect(markup).toContain('href="/about"');
-    expect(markup).toContain('href="/contact"');
-    expect(markup).toContain('>Archive<');
-    expect(markup).toContain('>AI &amp; Data<');
+    expect(markup).toContain('>About<');
   });
 });
