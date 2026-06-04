@@ -128,9 +128,9 @@ class Navbar extends Component {
           .headroom--unfixed .progress-bar-wrap {
             display: none;
           }
-          .headroom-wrapper{height: 1rem;}
+          .headroom-wrapper{height: 3.5rem;}
           .navbar {
-            padding: 0.75em 1em;
+            padding: 1em 1.5em 0.75em;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -265,7 +265,7 @@ class Navbar extends Component {
 
           @media only screen and (max-width: 575px) {
             .navbar {
-              padding: 0.6em 0.75em;
+              padding: 0.75em 1em 0.6em;
             }
           }
 
