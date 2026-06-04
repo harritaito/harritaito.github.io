@@ -4,21 +4,19 @@ describe('Projects navigation helpers', () => {
   const proj = new Projects();
 
   test('getNextProject cycles through projects', () => {
-    const first = proj.projects[0];
-    const second = proj.projects[1];
-    const third = proj.projects[2];
-    expect(proj.getNextProject(first.name)).toBe(second);
-    expect(proj.getNextProject(second.name)).toBe(third);
-    expect(proj.getNextProject(third.name)).toBe(first);
+    const projects = proj.projects;
+    for (let i = 0; i < projects.length - 1; i++) {
+      expect(proj.getNextProject(projects[i].name)).toBe(projects[i + 1]);
+    }
+    expect(proj.getNextProject(projects[projects.length - 1].name)).toBe(projects[0]);
   });
 
   test('getPrevProject cycles backwards', () => {
-    const first = proj.projects[0];
-    const second = proj.projects[1];
-    const third = proj.projects[2];
-    expect(proj.getPrevProject(first.name)).toBe(third);
-    expect(proj.getPrevProject(second.name)).toBe(first);
-    expect(proj.getPrevProject(third.name)).toBe(second);
+    const projects = proj.projects;
+    for (let i = 1; i < projects.length; i++) {
+      expect(proj.getPrevProject(projects[i].name)).toBe(projects[i - 1]);
+    }
+    expect(proj.getPrevProject(projects[0].name)).toBe(projects[projects.length - 1]);
   });
 
   test('returns null when navigating from unknown project name', () => {
@@ -29,13 +27,12 @@ describe('Projects navigation helpers', () => {
   test('exposes featured work with problem-first headings and status labels', () => {
     const featured = proj.featuredProjects;
 
-    expect(featured).toHaveLength(4);
-    expect(featured[0].problemTitle).toBe('Operational complexity in civic reporting');
-    expect(featured[0].projectName).toBe('Kiva Kaupunki');
-    expect(featured[0].label).toBe('Older work');
-    expect(featured[2].label).toBe('Concept work');
-    expect(featured[3].problemTitle).toBe('Coming soon');
-    expect(featured[3].label).toBe('In development');
-    expect(featured[3].archive).toBe(false);
+    expect(featured).toHaveLength(5);
+    expect(featured[0].projectName).toBe('Thesis');
+    expect(featured[0].label).toBe('Research');
+    const last = featured[featured.length - 1];
+    expect(last.problemTitle).toBe('Coming soon');
+    expect(last.label).toBe('In development');
+    expect(last.archive).toBe(false);
   });
 });
