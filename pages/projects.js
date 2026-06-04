@@ -16,7 +16,7 @@ const ProjectsPage = () => {
           <div className="col-xs-12 col-sm-10 col-md-9 col-lg-8 col-xl-7 archive-intro">
             <h1>Archive</h1>
             <p>
-              Older work and concept pieces live here for reference. The homepage carries the main narrative; this page keeps the archive accessible with the same stage labels.
+              Older work and concept pieces. The home page has the main selection — this is everything else.
             </p>
           </div>
         }
@@ -44,7 +44,7 @@ const ProjectsPage = () => {
       <Row
         content={
           <p className="col-xs-12 col-sm-10 col-md-9 col-lg-8 col-xl-7 archive-copy">
-            Community, course, and volunteer notes stay here as provenance for older work and keep the archive honest about what is finished, conceptual, or still forming.
+            Community, course, and volunteer projects — kept here to be honest about what shipped, what's conceptual, and what never quite made it.
           </p>
         }
       />

@@ -211,17 +211,12 @@ class Kivakaupunki extends Component {
                     
                     <Row content={
                       <p className={pStyle}>
-                        We asked ouselves what was possible to accomplish with bus capabilities, in the available timeframe as we had schedule restrictions.
+                        The first question was what could realistically be built in the time available. We browsed APIs on avoindata.fi looking for something related to public transport, but the options were limited and Pasi had already worked with most of them.
                       </p>
                     }/>
                     <Row content={
                       <p className={pStyle}>
-                        In search of an API we browsed the implementations available at avoindata.fi, though disconcerting was the lack of new ones related to public transport as Pasi, the developer, was not interested to work with the ones he had previously worked with.
-                      </p>
-                    }/>
-                    <Row content={
-                      <p className={pStyle}>
-                        There where concepts were inquiries were made to collect data about cities with a location tagged on to the comments collected, so planning officials could take better notice on some of the things in their cities from the perspectives of the citizens. I suggested we create our own system of collection for the potential audiences of LLB.
+                        We found an existing pattern worth adapting: services that let citizens tag location-based comments so planning officials could see what residents actually noticed about their city. That felt like the right fit for the LLB audience, so I suggested we build our own version of it.
                       </p>
                     }/>
                   </span>
@@ -234,7 +229,7 @@ class Kivakaupunki extends Component {
                   <span>
                     <Row content={
                       <p className={pStyle}>
-                        Focus should be put on clear representation of the users task to be acomplished, status of the task and how to navigate forward to acomplish the whole job to be done. I made a use case description to figured out what screens would be necessary. After this I draw quick pencil drafts of the screens, with the focus of user interactions available.
+                        The design priority was clarity: what the user is doing right now, where they are in the flow, and what comes next. I wrote a use case description to work out which screens were actually needed, then sketched them quickly in pencil with the focus on available interactions.
                       </p>
                     }/>
 
@@ -265,7 +260,7 @@ class Kivakaupunki extends Component {
 
                     <Row content={
                       <p className={pStyle}>
-                        With an app called Pixelmator on my Ipad I made a more honed UI mockup. Interaction inspiration I sought from different Instagram accounts. For visual style I followed Material Design and utilized colors of the Design Guidelines made available by the LLB team.
+                        I moved the sketches into a higher-fidelity mockup in Pixelmator. Visual style followed Material Design and the LLB color guidelines.
                       </p>
                     }/>
 
@@ -354,7 +349,7 @@ class Kivakaupunki extends Component {
 
                     <Row content={
                       <p className={pStyle}>
-                        We used ReactJs to implement the web app as Pasi is more familiar with it. I worked on the HTML/REACTJS layout and CSS styling of to fit the app to the mockup. Extended deadline breathing on our necks, Pasi and I worked out the kinks in the app and I sent it to approval on the LLB Developer Portal.
+                        We built in React — Pasi's comfort zone. I handled the HTML layout and CSS to match the mockup. With the deadline close, we worked through the remaining issues together and submitted through the LLB Developer Portal.
                       </p>
                     }/>
                   </span>
@@ -372,7 +367,7 @@ class Kivakaupunki extends Component {
                     }/>
                     <Row content={
                       <p className={pStyle}>
-                        Visibility on system status is clear as communicated by headlines, top right corner indicator and existance of back button. The system does it's best to use users' language if possible. Emergency exit is always possible as application exists in browser. Screens are consistent and try to fit the flatdesign and atleast LLB standards. Unfortunately error messages were not implemented. Recognition over recall is implied by clear systems states and guidance on questions. System is flexible as user is able to skip and complete the task without filling out everything. The design is as minimalistic as possible and gives out and aesthetic appearance. Unfortunately errors are not handled properly, help and documentation are non existant, but on LLB right top corner there is a feedback form link with topics defined by us the developers.
+                        I ran a heuristic evaluation against Nielsen's 10 principles. Status visibility was handled through headlines and the back button. Language matched the user's context. The browser itself served as the emergency exit. Screens were consistent with Material Design and LLB standards. Error handling was not implemented — that was a gap. Recognition over recall worked because the flow was short and states were clearly labeled. The interface stayed minimal. The main missing pieces were proper error messaging and in-app help, though the LLB portal included a feedback form.
                       </p>
                     }/>
 

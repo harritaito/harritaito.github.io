@@ -60,15 +60,14 @@ class Home extends Component {
             content={
               <div className="col-xs-12 col-sm-8 col-md-9 col-lg-6 col-xl-6 hero">
                 <p className="tagline">
-                  Product and systems designer helping civic, health, and emerging-tech teams turn research into workable products and services.
+                  Product designer. I make the complicated parts legible — and bring that with me to every team.
                 </p>
                 <p className="hero-intro">
-                  I help cross-functional teams define the problem, align on tradeoffs, and carry a design through to something buildable. My work sits between discovery, information architecture, interaction design, and service thinking.
+                  Most design problems are structure problems in disguise. I work out what's actually going on, make it clear, and help the team carry it somewhere real.
                 </p>
                 <div className="about-link">
-                  Curious about the person behind the work?{" "}
                   <Link href="/about" as="/about">
-                    Get to know me.
+                    More about me.
                     <HighlightUnderline />
                   </Link>
                 </div>
@@ -86,18 +85,6 @@ class Home extends Component {
               >
                 Work
               </h2>
-            }
-          />
-          <Row
-            content={
-              <p className="col-xs-12 col-sm-10 col-md-9 col-lg-8 col-xl-7 section-subheading">
-                A small evidence map: archive, concept, and in-development work. Each card leads with the problem type and the kind of proof it provides. The full archive stays reachable from the{" "}
-                <Link href="/projects" as="/projects">
-                  projects page
-                  <HighlightUnderline />
-                </Link>
-                .
-              </p>
             }
           />
           {featuredProjects.map((project, index) => (
