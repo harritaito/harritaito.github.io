@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import { Collapse } from "react-collapse";
 
+import Button from "../components/Button";
 import CaseStudyMeta from "../components/CaseStudyMeta";
 import ProjectPage from "../components/ProjectPage";
 import Process from "../components/Process";
@@ -11,6 +13,20 @@ import { colors } from "../components/design-system/tokens";
 import hero from "../static/media/pohja.svg";
 
 class Thesis extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      evidenceOpen: false,
+    };
+  }
+
+  toggleEvidence = () => {
+    this.setState((state) => ({
+      evidenceOpen: !state.evidenceOpen,
+    }));
+  };
+
   render() {
     const pStyle =
       "col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-lg-offset-2dot5 col-lg-7 col-xl-offset-3 col-xl-6";
@@ -57,14 +73,32 @@ class Thesis extends Component {
                     "Master's programme in Human-Technology Interaction, Tampere University. Published May 2021.",
                   problem:
                     "What interaction techniques suit industrial XR environments best, and what makes XR solutions easy to adopt in field work?",
+                  users: [
+                    "Maintenance technicians and field workers",
+                    "Interaction designers and developers building industrial XR",
+                    "Industrial companies evaluating XR adoption",
+                  ],
+                  constraints: [
+                    "6 participants — findings are not statistically generalizable",
+                    "All Finnish — cultural context is a variable",
+                    "COVID moved interviews to video conference, removing in-person observation",
+                    "NDA limitations meant participants described publicized projects only",
+                  ],
                   discovery: [
                     "Semi-structured expert interviews with 6 Finnish industrial XR professionals",
                     "Grounded theory methodology — theory emerges from data, not hypothesis testing",
                     "Supplementary literature review guided by interview findings",
                     "XR industry meetup observation and participant recruitment",
                   ],
+                  keyInsights: [
+                    "Speech is the most mature and accepted hands-free technology — familiar from personal devices, functional even in noisy environments with the right mic setup",
+                    "Technology acceptance is the biggest barrier: wearables are intimidating, expensive, and make technicians feel self-conscious in front of clients",
+                    "The smartphone on a holder, extended with touchless input, is still more practical for large-scale field deployment than most current HMDs",
+                  ],
                   outcome:
                     "A grounded theory of industrial XR interaction, three core design principles, and a literature-backed review of input techniques suitable for field maintenance contexts.",
+                  reflection:
+                    "The grounded theory remains untested in a production deployment. The value is in clarifying why certain techniques fail and what an interaction designer needs to prioritise — not in claiming a shipped industrial product.",
                 }}
               />
 
@@ -127,34 +161,121 @@ class Thesis extends Component {
               />
 
               <ProjectSection
-                title={"What the interviews found"}
+                title={"Touchless interaction"}
                 content={
                   <span>
                     <Row
                       content={
                         <p className={pStyle}>
-                          Three core categories emerged from the data.
+                          Speech is the most mature hands-free technology and the easiest for users to accept. Familiar from personal devices, straightforward to implement, and functional even in noisy environments with the right microphone setup. Every participant described it as the most viable primary input channel. The bar is high though: <em>"Good voice control is such that the user does not have to remember anything."</em>
                         </p>
                       }
                     />
                     <Row
                       content={
                         <p className={pStyle}>
-                          <strong>Touchless interaction.</strong> Speech is the most mature hands-free technology and the easiest for users to accept — familiar from personal devices, straightforward to implement, and functional even in noisy environments with the right mic setup. Mid-air gestures have real potential but come with reliability and safety concerns: optical capture fails in poor lighting, broad arm movements near running machinery are a hazard, and gloves break most current implementations. Gaze works as a side-channel signal, not a primary input. Every participant agreed that multimodal input is required — no single modality covers all situations, users, or environments.
+                          Mid-air gestures have real potential but come with reliability and safety concerns. Optical capture fails in poor lighting. Broad arm movements near running machinery are a hazard. Gloves break most current implementations. The threshold the interviews kept returning to: reliable as a touchscreen, or don't implement it at all. Direct manipulation gestures — pointing at an object to select it — outperform symbolic gestures that require the user to memorize a vocabulary.
                         </p>
                       }
                     />
                     <Row
                       content={
                         <p className={pStyle}>
-                          <strong>Occupational safety and ergonomics.</strong> Unencumbered perception is the single most important factor. The interface has to stay out of the way of the user's awareness of their environment. PPE compatibility is non-negotiable. Display readability matters more than immersiveness — a monocular pass-through display the technician can actually read beats a binocular HMD with a narrow FOV and poor outdoor brightness. Users need to be able to choose the display that works for them.
+                          Gaze is useful as a side-channel or implicit signal — directing system attention, confirming focus — but not as a primary selection mechanism. The precision demands are too high and the fatigue too significant for sustained use. Every participant agreed that multimodal input is required: no single modality covers all situations, users, or environments.
+                        </p>
+                      }
+                    />
+                  </span>
+                }
+              />
+
+              <ProjectSection
+                title={"Safety and ergonomics"}
+                content={
+                  <span>
+                    <Row
+                      content={
+                        <p className={pStyle}>
+                          Unencumbered perception is the single most important factor. The interface has to stay out of the way of the user's awareness of their physical environment — a technician who is focused on a display instead of the machine they're servicing is a safety problem, not a UX problem.
                         </p>
                       }
                     />
                     <Row
                       content={
                         <p className={pStyle}>
-                          <strong>Empowering worker and technology acceptance.</strong> Technicians need just-in-time information access — quick help mid-maintenance, not step-by-step guidance for tasks they already know. Reporting is a significant burden (one participant cited 2–4 hours of an 8-hour shift). Wearables are intimidating: technicians worry about looking silly, about damaging a €1,500 device, about what clients will think. Technology acceptance is individual and can be supported, but not forced. For large-scale field deployment, the smartphone on a suitable holder, extended with touchless input, is still more practical than most current HMDs.
+                          PPE compatibility is non-negotiable. Gloves, helmets, hearing protection — the device has to work with all of them. That alone rules out most touchscreen-first design assumptions and pushes heavily toward voice and touchless freehand as the baseline.
+                        </p>
+                      }
+                    />
+                    <Row
+                      content={
+                        <p className={pStyle}>
+                          Display readability matters more than immersiveness. A monocular pass-through display the technician can actually read beats a binocular HMD with a narrow FOV and poor outdoor brightness. Participants were clear: <em>"It is very important to get the FOV wide enough."</em> Users need to be able to choose the display that works for their job and conditions. For large-scale field deployment, the smartphone on a suitable holder, extended with touchless input, is still more practical than most current HMDs.
+                        </p>
+                      }
+                    />
+                  </span>
+                }
+              />
+
+              <ProjectSection
+                title={"Worker empowerment and technology acceptance"}
+                content={
+                  <span>
+                    <Row
+                      content={
+                        <p className={pStyle}>
+                          Technicians need just-in-time information access — quick help mid-maintenance, not step-by-step guidance for tasks they already know. The interviews were emphatic about this. Industrial XR content often overcorrects toward explaining everything: <em>"Videos of AR maintenance contain an awful amount of great looking 3D animations... 'We know how to open a screw. We do not need help with that.'"</em> The interface should surface what the technician doesn't know, not rehearse what they do.
+                        </p>
+                      }
+                    />
+                    <Row
+                      content={
+                        <p className={pStyle}>
+                          Reporting is a significant and underappreciated burden. One participant cited 2–4 hours of an 8-hour shift spent on documentation. <em>"If 2-4 hours of an 8-hour workday is spent on reporting, it is a clear indicator that something has failed."</em> XR has real potential to reduce this — in-situ documentation, automatic logging, photo capture — but only if reporting is designed as a first-class use case, not an afterthought.
+                        </p>
+                      }
+                    />
+                    <Row
+                      content={
+                        <p className={pStyle}>
+                          Wearables are intimidating in ways that go beyond ergonomics. Technicians worry about looking unprofessional in front of clients, about damaging a €1,500 device in a harsh environment, about being visibly different from their colleagues. <em>"Some of the technicians even think that they don't want to be seen using smartphones on the client's location as the client may think ill of them."</em> Technology acceptance is individual and situational. It can be supported, but not mandated.
+                        </p>
+                      }
+                    />
+                    <Row
+                      content={
+                        <p className={pStyle}>
+                          When it works, it works well. A technician with the right tool, arriving on site prepared and capable: <em>"Maintenance technician feels like they are a hero because they can solve those problems."</em> That's the experience industrial XR is capable of — and the bar to design toward.
+                        </p>
+                      }
+                    />
+                  </span>
+                }
+              />
+
+              <ProjectSection
+                title={"The core theory"}
+                content={
+                  <span>
+                    <Row
+                      content={
+                        <p className={pStyle}>
+                          The grounded theory produced a central statement of what industrial XR interaction has to be:
+                        </p>
+                      }
+                    />
+                    <Row
+                      content={
+                        <blockquote className={pStyle + " blockquote"}>
+                          A feasible industrial XR solution requires affordable and robust hands-free operation, with a freehand touchless alternative, of a readable display and an opportunity for eyes-free output — all in a usable and safe manner.
+                        </blockquote>
+                      }
+                    />
+                    <Row
+                      content={
+                        <p className={pStyle}>
+                          In practice: every design decision for an industrial XR interface should be stress-tested against those five constraints simultaneously. A solution that satisfies one while failing another isn't a trade-off — it's a deployment risk.
                         </p>
                       }
                     />
@@ -189,6 +310,82 @@ class Thesis extends Component {
                       }
                     />
                   </span>
+                }
+              />
+
+              <ProjectSection
+                title={"Interview evidence"}
+                content={
+                  <span>
+                    <Row
+                      content={
+                        <p className={pStyle}>
+                          The grounded theory structured 6 expert interviews into concepts, subcategories, and categories through constant comparison coding. The full table from the thesis:
+                        </p>
+                      }
+                    />
+                    <Row
+                      content={
+                        <div
+                          className="col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-lg-offset-2dot5 col-lg-7 col-xl-offset-3 col-xl-12 button-wrapper"
+                          onClick={this.toggleEvidence}
+                        >
+                          <Button
+                            label={this.state.evidenceOpen ? "Hide interview categories" : "Show interview categories"}
+                            color={"outline green"}
+                          />
+                        </div>
+                      }
+                    />
+                    <Collapse isOpened={this.state.evidenceOpen}>
+                      <Row
+                        content={
+                          <ul className={pStyle + " list evidence-list"}>
+                            <li>
+                              <strong>Touchless interaction</strong>
+                              <ul>
+                                <li>Speech recognition — maturity, naturalness, noise robustness, vocabulary-free use</li>
+                                <li>Mid-air gestures — optical reliability, safety near machinery, direct vs. symbolic, glove compatibility</li>
+                                <li>Gaze — side-channel signal, implicit targeting, not primary selection</li>
+                                <li>Multimodality — no single modality sufficient; context determines the combination</li>
+                              </ul>
+                            </li>
+                            <li>
+                              <strong>Occupational safety and ergonomics</strong>
+                              <ul>
+                                <li>Unencumbered perception — situational awareness as a safety requirement</li>
+                                <li>PPE compatibility — gloves, helmets, hearing protection as hard constraints</li>
+                                <li>Display readability — FOV, outdoor brightness, monocular vs. binocular</li>
+                                <li>Device choice — smartphone holder as practical deployment baseline</li>
+                              </ul>
+                            </li>
+                            <li>
+                              <strong>Empowering worker and technology acceptance</strong>
+                              <ul>
+                                <li>Just-in-time information — on-demand help, not step-by-step walkthroughs</li>
+                                <li>Reporting burden — documentation as a first-class use case</li>
+                                <li>Technology acceptance — self-consciousness, device cost, client perception</li>
+                                <li>Worker empowerment — XR as a capability multiplier, not a surveillance tool</li>
+                              </ul>
+                            </li>
+                          </ul>
+                        }
+                      />
+                    </Collapse>
+                  </span>
+                }
+              />
+
+              <ProjectSection
+                title={"Scope and limitations"}
+                content={
+                  <Row
+                    content={
+                      <p className={pStyle}>
+                        Six participants is a small sample. All were Finnish, which means the findings carry a cultural context that may not generalize to industrial XR adoption elsewhere. COVID moved interviews online, removing any in-person observation. NDA constraints meant participants could only describe work they were already comfortable discussing publicly. The grounded theory is also untested in a production deployment — its value is in structuring what experienced practitioners know, not in predicting what will ship in any specific industrial context. Read it as a design lens, not a guarantee.
+                      </p>
+                    }
+                  />
                 }
               />
 
@@ -245,6 +442,36 @@ class Thesis extends Component {
           .Thesis .list li {
             margin-bottom: 1em;
             line-height: 1.7;
+          }
+
+          .Thesis .evidence-list li {
+            margin-bottom: 0.75em;
+          }
+
+          .Thesis .evidence-list ul {
+            margin-top: 0.4em;
+            padding-left: 1.2rem;
+          }
+
+          .Thesis .evidence-list ul li {
+            margin-bottom: 0.3em;
+            color: ${colors.textMuted};
+            font-size: 0.92rem;
+          }
+
+          .Thesis .blockquote {
+            display: block;
+            border-left: 3px solid ${colors.accentGreen};
+            padding-left: 1.25rem;
+            margin: 0.5rem 0 0.5rem 0;
+            font-style: italic;
+            line-height: 1.7;
+            color: ${colors.textStrong};
+          }
+
+          .Thesis .button-wrapper {
+            margin-top: 1rem;
+            cursor: pointer;
           }
         `}</style>
       </div>
