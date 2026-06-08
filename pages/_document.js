@@ -1,6 +1,8 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import Fonts from "../components/Fonts";
 
+const v = process.env.NEXT_PUBLIC_BUILD_ID;
+
 const SITE_METADATA = Object.freeze({
   title: "Harri Halonen",
   description:
@@ -56,15 +58,15 @@ export default class MyDocument extends Document {
           <link
             rel="icon"
             sizes="192x192"
-            href="/static/media/touch-icon.png"
+            href={`/static/media/touch-icon.png?v=${v}`}
           />
-          <link rel="apple-touch-icon" href="/static/media/touch-icon.png" />
+          <link rel="apple-touch-icon" href={`/static/media/touch-icon.png?v=${v}`} />
           <link
             rel="mask-icon"
-            href="/static/favicon-mask.svg"
+            href={`/static/favicon-mask.svg?v=${v}`}
             color="#49B882"
           />
-          <link rel="icon" href="/static/favicon.ico" />
+          <link rel="icon" href={`/static/favicon.ico?v=${v}`} />
           <meta property="og:url" content={siteUrl} />
           <meta property="og:type" content="website" />
           <meta property="og:title" content={title} />
