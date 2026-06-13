@@ -5,7 +5,7 @@ import ProjectPage from "../components/ProjectPage";
 import Process from "../components/Process";
 import ProjectSection from "../components/ProjectSection";
 import Row from "../components/Row";
-import { resolveAssetSrc } from "../components/assetSource";
+import { resolveAssetHeight, resolveAssetSrc, resolveAssetWidth } from "../components/assetSource";
 import HighlightUnderline from "../components/design-system/HighlightUnderline";
 import { colors, shadows } from "../components/design-system/tokens";
 import { Carousel } from "react-responsive-carousel";
@@ -464,19 +464,19 @@ class Aikakone extends Component {
                           selectedItem={this.state.selectedSlideIndex}
                         >
                           <div>
-                            <img src={resolveAssetSrc(menu)} alt="Aikakone menu screen." />
+                            <img src={resolveAssetSrc(menu)} alt="Aikakone menu screen." width={resolveAssetWidth(menu)} height={resolveAssetHeight(menu)} decoding="async" />
                             <p className="legend">Aikakone menu screen.</p>
                           </div>
                           <div>
-                            <img src={resolveAssetSrc(aikakone)} alt="Aikakone session screen." />
+                            <img src={resolveAssetSrc(aikakone)} alt="Aikakone session screen." width={resolveAssetWidth(aikakone)} height={resolveAssetHeight(aikakone)} loading="lazy" decoding="async" />
                             <p className="legend">Aikakone session screen.</p>
                           </div>
                           <div>
-                            <img src={resolveAssetSrc(profile)} alt="Profile screen for a resident." />
+                            <img src={resolveAssetSrc(profile)} alt="Profile screen for a resident." width={resolveAssetWidth(profile)} height={resolveAssetHeight(profile)} loading="lazy" decoding="async" />
                             <p className="legend">Profile screen for a resident.</p>
                           </div>
                           <div>
-                            <img src={resolveAssetSrc(elamankaari)} alt="Elämänkaari life-story screen." />
+                            <img src={resolveAssetSrc(elamankaari)} alt="Elämänkaari life-story screen." width={resolveAssetWidth(elamankaari)} height={resolveAssetHeight(elamankaari)} loading="lazy" decoding="async" />
                             <p className="legend">Elämänkaari life-story screen.</p>
                           </div>
                         </Carousel>
@@ -498,6 +498,10 @@ class Aikakone extends Component {
                               className="mini-image"
                               src={resolveAssetSrc(view.image)}
                               alt={view.alt}
+                              width={resolveAssetWidth(view.image)}
+                              height={resolveAssetHeight(view.image)}
+                              loading="lazy"
+                              decoding="async"
                             />
                           </button>
                         );

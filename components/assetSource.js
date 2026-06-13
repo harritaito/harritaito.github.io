@@ -9,3 +9,11 @@ export function resolveAssetSrc(asset) {
 
   return asset;
 }
+
+export function resolveAssetWidth(asset) {
+  return asset && typeof asset.width === 'number' ? asset.width : undefined;
+}
+
+export function resolveAssetHeight(asset) {
+  return asset && typeof asset.height === 'number' ? asset.height : undefined;
+}

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { resolveAssetSrc } from './assetSource';
+import { resolveAssetHeight, resolveAssetSrc, resolveAssetWidth } from './assetSource';
 import first from '../static/media/icons/first.svg';
 import middle from '../static/media/icons/middle.svg';
 import last from '../static/media/icons/last.svg';
@@ -32,6 +32,14 @@ class Process extends Component {
                         (index === stepsLength - 1 ? last
                         : middle))}
                       alt={index + " step"}
+                      width={resolveAssetWidth(index === 0 ? first :
+                        (index === stepsLength - 1 ? last
+                        : middle))}
+                      height={resolveAssetHeight(index === 0 ? first :
+                        (index === stepsLength - 1 ? last
+                        : middle))}
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   <li key={index} className="step-details">

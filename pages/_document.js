@@ -4,11 +4,8 @@ import Fonts from "../components/Fonts";
 const v = process.env.NEXT_PUBLIC_BUILD_ID;
 
 const SITE_METADATA = Object.freeze({
-  title: "Harri Halonen",
-  description:
-    "Portfolio of Harri Halonen, a Finnish experience designer shaping research-led services and humane digital products from Tampere.",
-  siteUrl: "https://harritaito.com/",
   locale: "en_US",
+  siteName: "Harri Halonen",
   twitterHandle: "@harritaito",
   socialImage: {
     url: "https://harritaito.com/static/media/twittericon.png",
@@ -41,8 +38,7 @@ export default class MyDocument extends Document {
       }
     )();`;
 
-    const { title, description, siteUrl, locale, twitterHandle, socialImage } =
-      SITE_METADATA;
+    const { locale, siteName, twitterHandle, socialImage } = SITE_METADATA;
 
     return (
       <Html lang="en">
@@ -53,8 +49,6 @@ export default class MyDocument extends Document {
             name="viewport"
             content="width=device-width, initial-scale=1, viewport-fit=cover"
           />
-          <meta name="description" content={description} />
-          <link rel="canonical" href={siteUrl} />
           <link
             rel="icon"
             sizes="192x192"
@@ -67,16 +61,14 @@ export default class MyDocument extends Document {
             color="#49B882"
           />
           <link rel="icon" href={`/static/favicon.ico?v=${v}`} />
-          <meta property="og:url" content={siteUrl} />
+          <link rel="manifest" href="/manifest.webmanifest" />
+          <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)" />
+          <meta name="theme-color" content="#0b1120" media="(prefers-color-scheme: dark)" />
           <meta property="og:type" content="website" />
-          <meta property="og:title" content={title} />
-          <meta property="og:site_name" content={title} />
-          <meta property="og:description" content={description} />
+          <meta property="og:site_name" content={siteName} />
           <meta property="og:locale" content={locale} />
           <meta name="twitter:site" content={twitterHandle} />
           <meta name="twitter:creator" content={twitterHandle} />
-          <meta name="twitter:title" content={title} />
-          <meta name="twitter:description" content={description} />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:image" content={socialImage.url} />
           <meta name="twitter:image:alt" content={socialImage.alt} />

@@ -54,7 +54,7 @@ class Navbar extends Component {
 
   render() {
     return (
-      <div className="nav">
+      <header className="nav">
         <div className="progress-bar-wrap">
           <progress
             className={`progress-bar ${this.props.color}`}
@@ -63,7 +63,7 @@ class Navbar extends Component {
           />
         </div>
         <Headroom style={{ position: "fixed" }}>
-          <div className="navbar">
+          <nav className="navbar" aria-label="Primary navigation">
             <Link href="/" legacyBehavior>
               <a className="navbar-link">Home</a>
             </Link>
@@ -80,7 +80,7 @@ class Navbar extends Component {
                 </Link>
               </div>
             ) : null}
-          </div>
+          </nav>
         </Headroom>
         <style jsx>{`
           .headroom {
@@ -295,7 +295,7 @@ class Navbar extends Component {
 
 
     `}</style>
-      </div>
+      </header>
     );
   }
 }
