@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar";
 import HighlightUnderline from "../components/design-system/HighlightUnderline";
 import { colors, radii } from "../components/design-system/tokens";
 import mePhoto from "../static/media/about/me.jpg";
-import { resolveAssetSrc } from "../components/assetSource";
+import { resolveAssetHeight, resolveAssetSrc, resolveAssetWidth } from "../components/assetSource";
 
 class About extends Component {
   render() {
@@ -18,7 +18,13 @@ class About extends Component {
             content={
               <div className="my-photo-container col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                 <div className={"my-photo"}>
-                  <img src={resolveAssetSrc(mePhoto)} alt={"Me"} />
+                  <img
+                    src={resolveAssetSrc(mePhoto)}
+                    alt="Harri Halonen"
+                    width={resolveAssetWidth(mePhoto)}
+                    height={resolveAssetHeight(mePhoto)}
+                    decoding="async"
+                  />
                 </div>
               </div>
             }

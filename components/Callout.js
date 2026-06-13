@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { resolveAssetSrc } from './assetSource';
+import { resolveAssetHeight, resolveAssetSrc, resolveAssetWidth } from './assetSource';
 
 class Callout extends Component {
   static propTypes = {
@@ -64,7 +64,14 @@ class Callout extends Component {
     return (
       <div className={layout}>
         <div className={"callout-image-container " + this.props.className}>
-          <img src={resolveAssetSrc(this.props.image)} alt={this.props.altText} />
+          <img
+            src={resolveAssetSrc(this.props.image)}
+            alt={this.props.altText}
+            width={resolveAssetWidth(this.props.image)}
+            height={resolveAssetHeight(this.props.image)}
+            loading="lazy"
+            decoding="async"
+          />
         </div>
         <h5>{this.props.title}</h5>
         <p>

@@ -1,0 +1,23 @@
+{
+  "name": "Harri Halonen",
+  "short_name": "Harri",
+  "description": "Portfolio of Harri Halonen, a Finnish experience designer shaping research-led services and humane digital products.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "minimal-ui",
+  "background_color": "#fafafa",
+  "theme_color": "#49B882",
+  "icons": [
+    {
+      "src": "/static/media/touch-icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/static/media/touch-icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
