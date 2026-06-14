@@ -4,6 +4,7 @@ import Project from "../components/Project";
 import ProjectsList from "../components/Projects";
 import Row from "../components/Row";
 import Footer from "../components/Footer";
+import HeroLineArt from "../components/HeroLineArt";
 import HighlightUnderline from "../components/design-system/HighlightUnderline";
 import { colors, radii } from "../components/design-system/tokens";
 
@@ -40,6 +41,7 @@ class Home extends Component {
       <div className="Home container">
         <div className="pohja"></div>
         <div className="intro">
+          <HeroLineArt />
           <Row
             content={
               <h3 className="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
@@ -153,6 +155,7 @@ class Home extends Component {
           }
 
           .Home .intro {
+            position: relative;
             min-height: 100svh;
             min-height: 100dvh;
             padding-bottom: calc(2.5rem + var(--sab));

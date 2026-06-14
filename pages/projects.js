@@ -1,10 +1,16 @@
 import React from "react";
+import dynamic from "next/dynamic";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Misc from "../components/Misc";
 import Project from "../components/Project";
 import ProjectsList from "../components/Projects";
 import Row from "../components/Row";
+
+const MorphingMesh = dynamic(() => import("../components/MorphingMesh"), {
+  ssr: false,
+  loading: () => null,
+});
 
 const ProjectsPage = () => {
   const projects = new ProjectsList().projects;
@@ -21,6 +27,7 @@ const ProjectsPage = () => {
           </div>
         }
       />
+      <Row content={<div className="col-xs-12"><MorphingMesh /></div>} />
       {projects.map((p) => (
         <Project
           key={p.name}
