@@ -114,6 +114,13 @@ class ProjectPage extends Component {
             padding: 3em 0 1em;
           }
 
+          @media only screen and (max-width: 45rem) {
+            .project-page .content {
+              padding-left: 0.75rem;
+              padding-right: 0.75rem;
+            }
+          }
+
           .project-page h1 {
             margin: 0 auto;
           }
