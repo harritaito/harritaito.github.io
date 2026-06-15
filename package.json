@@ -13,7 +13,7 @@
     "clean": "rimraf .next out node_modules/.cache",
     "prebuild": "npm run clean",
     "build": "next build",
-    "postbuild": "node scripts/create-gh-pages-files.js",
+    "postbuild": "node scripts/encrypt-protected.js && node scripts/create-gh-pages-files.js",
     "preview": "npm run verify:out && npx --yes serve out",
     "start": "npm run preview",
     "clearCache": "npm run clean",
@@ -34,15 +34,18 @@
   "dependencies": {
     "@babel/runtime": "^7.29.2",
     "fontfaceobserver": "^2.3.0",
+    "gray-matter": "^4.0.3",
     "next": "^15.5.0",
     "react": "^18.3.1",
     "react-collapse": "^5.1.1",
     "react-dom": "^18.3.1",
     "react-headroom": "^3.2.1",
     "react-inlinesvg": "^4.2.0",
+    "react-markdown": "^10.1.0",
     "react-medium-image-zoom": "^5.2.14",
     "react-modal": "^3.16.3",
     "react-responsive-carousel": "^3.2.23",
+    "remark-gfm": "^4.0.1",
     "styled-jsx": "^5.1.7",
     "three": "^0.184.0",
     "victory": "^37.3.6"
@@ -51,6 +54,7 @@
     "babel-jest": "^30.0.4",
     "jest": "^30.0.4",
     "jest-environment-jsdom": "^30.0.5",
-    "rimraf": "^5.0.5"
+    "rimraf": "^5.0.5",
+    "staticrypt": "^3.5.4"
   }
 }

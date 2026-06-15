@@ -34,7 +34,8 @@ class ProjectPage extends Component {
     video: PropTypes.bool,
     navbarColor: PropTypes.string,
     projectName: PropTypes.string,
-    eyebrow: PropTypes.string
+    eyebrow: PropTypes.string,
+    showNextProject: PropTypes.bool
   }
 
   static defaultProps = {
@@ -46,7 +47,8 @@ class ProjectPage extends Component {
     video: false,
     navbarColor: "",
     projectName: "",
-    eyebrow: ""
+    eyebrow: "",
+    showNextProject: true
   }
 
   render () {
@@ -94,19 +96,23 @@ class ProjectPage extends Component {
           {this.props.content}
         </div>
 
-        <div className="row next-project">
-          <h3 className={this.pStyle}>Next Project</h3>
-        </div>
+        {this.props.showNextProject ? (
+          <React.Fragment>
+            <div className="row next-project">
+              <h3 className={this.pStyle}>Next Project</h3>
+            </div>
 
-        <Project
-          title={this.state.nextProject.name}
-          description={this.state.nextProject.description}
-          link={this.state.nextProject.link}
-          image={this.state.nextProject.image}
-          alt={this.state.nextProject.alt}
-          color={this.state.nextProject.color}
-          label={this.state.nextProject.label}
-          percentage={'0%'}/>
+            <Project
+              title={this.state.nextProject.name}
+              description={this.state.nextProject.description}
+              link={this.state.nextProject.link}
+              image={this.state.nextProject.image}
+              alt={this.state.nextProject.alt}
+              color={this.state.nextProject.color}
+              label={this.state.nextProject.label}
+              percentage={'0%'}/>
+          </React.Fragment>
+        ) : null}
 
 
         <style jsx>{`

@@ -88,7 +88,7 @@ class About extends Component {
         </div>
 
         <Footer />
-        <style jsx>{`{
+        <style jsx>{`
           .About .content {
             padding-top: 1rem;
           }
@@ -104,7 +104,9 @@ class About extends Component {
             height: 275px;
             display: inline-block;
             width: 275px;
-            border-radius: ${radii.circle}
+            aspect-ratio: 1;
+            overflow: hidden;
+            border-radius: ${radii.circle};
           }
           @media only screen and (max-width: 45rem) {
             .About .my-photo {height: 12rem; width: 12rem;}
@@ -113,7 +115,10 @@ class About extends Component {
           .About .my-photo img {
             display: block;
             width: 100%;
-            border-radius: ${radii.circle}
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: ${radii.circle};
           }
 
           .About h3 {

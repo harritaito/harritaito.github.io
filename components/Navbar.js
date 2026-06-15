@@ -64,9 +64,14 @@ class Navbar extends Component {
         </div>
         <Headroom style={{ position: "fixed" }}>
           <nav className="navbar" aria-label="Primary navigation">
-            <Link href="/" legacyBehavior>
-              <a className="navbar-link">Home</a>
-            </Link>
+            <div className="nav-left">
+              <Link href="/" legacyBehavior>
+                <a className="navbar-link">Home</a>
+              </Link>
+              <Link href="/writing" legacyBehavior>
+                <a className="navbar-link">Writing</a>
+              </Link>
+            </div>
             {this.props.nextProjectLink ? (
               <div className="next-wrapper">
                 <Link href={this.props.nextProjectLink} legacyBehavior>
@@ -140,6 +145,10 @@ class Navbar extends Component {
                     box-shadow: var(--navbar-shadow);
             background: var(--surface-elevated-color);
             color: var(--link-color);
+          }
+
+          .nav-left {
+            display: flex;
           }
 
           .navbar-link {

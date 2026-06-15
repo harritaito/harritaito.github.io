@@ -12,6 +12,7 @@ const requiredFiles = [
   "about.html",
   "projects.html",
   "contact.html",
+  "writing.html",
   ".nojekyll",
   "CNAME",
 ];

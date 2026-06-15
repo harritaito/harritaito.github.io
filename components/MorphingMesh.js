@@ -88,8 +88,13 @@ class MorphingMesh extends Component {
     }
 
     const canvas = document.createElement("canvas");
-    const gl =
-      canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+    let gl = null;
+    try {
+      gl =
+        canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+    } catch (error) {
+      return;
+    }
     if (!gl) {
       // No WebGL support — leave the empty container, graceful fallback.
       return;
@@ -107,11 +112,15 @@ class MorphingMesh extends Component {
     this.camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
     this.camera.position.z = 3.2;
 
-    this.renderer = new THREE.WebGLRenderer({
-      canvas,
-      alpha: true,
-      antialias: true,
-    });
+    try {
+      this.renderer = new THREE.WebGLRenderer({
+        canvas,
+        alpha: true,
+        antialias: true,
+      });
+    } catch (error) {
+      return;
+    }
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     this.renderer.setSize(width, height);
     this.renderer.setClearColor(0x000000, 0);
