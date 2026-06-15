@@ -17,7 +17,9 @@ const FIELD_ORDER = [
   { key: 'keyDecisions', label: 'Key decisions' },
   { key: 'designDetails', label: 'Design details' },
   { key: 'implementationSupport', label: 'Implementation support' },
-  { key: 'outcome', label: 'Outcome' },
+  { key: 'hardMetrics', label: 'Hard metrics' },
+  { key: 'qualitativeEvidence', label: 'Qualitative evidence' },
+  { key: 'proxyEvidence', label: 'Proxy evidence' },
   { key: 'reflection', label: 'Reflection' },
 ];
 
@@ -185,7 +187,9 @@ CaseStudyMeta.propTypes = {
     keyDecisions: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.array]),
     designDetails: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.array]),
     implementationSupport: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.array]),
-    outcome: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.array]),
+    hardMetrics: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.array]),
+    qualitativeEvidence: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.array]),
+    proxyEvidence: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.array]),
     reflection: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.array]),
   }),
 };

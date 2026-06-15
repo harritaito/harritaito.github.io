@@ -118,8 +118,12 @@ class Languagerobot extends Component {
                     'Concept specification',
                     'Theatrical robot evaluation',
                   ],
-                  outcome:
-                    'Teachers responded positively to the concept and saw value in the interaction ideas, but the work remained at concept-validation stage and did not become a measured classroom deployment.',
+                  hardMetrics:
+                    'No measured learning, adoption, or classroom usage metrics are documented for the final concept.',
+                  qualitativeEvidence:
+                    'Teachers responded positively to the concept and saw value in the interaction ideas, while still making clear that younger children needed a teacher present.',
+                  proxyEvidence:
+                    'Observation notes, the affinity diagram, theatrical evaluation, and external Smart Tampere coverage show the work translated field data into interaction decisions.',
                   reflection:
                     'The strongest lesson was that trust-sensitive behavior mattered more than novelty. The robot had to stay legible, bounded, and teacher-led if it was going to support learning rather than interrupt it.',
                 }}
@@ -147,7 +151,7 @@ class Languagerobot extends Component {
                     <Row
                       content={
                         <p className={pStyle}>
-                          The real challenge was not to make the robot impressive. It was to make it useful in a classroom, where the teacher, the children, and the robot needed to stay aligned with the lesson instead of competing for attention.
+                          The real challenge was not to make the robot impressive. It was to make it useful in a classroom, where the teacher, the children, and the robot needed to stay coordinated with the lesson instead of competing for attention.
                         </p>
                       }
                     />
@@ -469,7 +473,7 @@ class Languagerobot extends Component {
                     <Row
                       content={
                         <p className={pStyle}>
-                          The limits are equally clear. The concept never became a field-tested classroom product, so it should be read as archive work that proves method rather than impact. Even so, it shows a pattern that still matters in my work: identify where trust is likely to break, then design behavior around that reality instead of around a polished demo.
+                          The limits are equally clear. The concept never became a field-tested classroom product, so it should be read as archive work that shows method rather than impact. Even so, it shows a pattern that still matters in my work: identify where trust is likely to break, then design behavior around that reality instead of around a polished demo.
                         </p>
                       }
                     />

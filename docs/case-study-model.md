@@ -28,7 +28,9 @@ Render these fields in this order when the evidence exists:
 1. Key decisions
 1. Design details
 1. Implementation support
-1. Outcome
+1. Hard metrics
+1. Qualitative evidence
+1. Proxy evidence
 1. Reflection
 
 ## Mandatory Fields For Legacy Cases
@@ -47,7 +49,7 @@ evidence is genuinely missing:
 - Users
 - Business context
 - Constraints
-- Outcome
+- Hard metrics, qualitative evidence, or proxy evidence
 - Reflection
 
 ## Optional Fields
@@ -69,6 +71,12 @@ Leave these out when the source does not support them:
 - Missing metrics must not be fabricated.
 - If evidence is missing, prefer a short note like `Not documented in source`
   instead of inventing a result.
+- Use `Hard metrics` for measured product, user, or business outcomes, or for
+  a clear note that no such metrics are documented.
+- Use `Qualitative evidence` for interviews, observation, course feedback, or
+  direct participant/stakeholder comments.
+- Use `Proxy evidence` for indirect signals such as competition recognition,
+  prototype completion, artifact quality, or external coverage.
 - Keep claims at the evidence level: concept work stays concept work, and
   archive work stays archive work.
 
@@ -102,7 +110,9 @@ Use the model like this:
           keyDecisions: "...",
           designDetails: "...",
           implementationSupport: "...",
-          outcome: "...",
+          hardMetrics: "...",
+          qualitativeEvidence: "...",
+          proxyEvidence: "...",
           reflection: "...",
         }}
       />

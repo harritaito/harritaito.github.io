@@ -95,8 +95,12 @@ class Thesis extends Component {
                     "Technology acceptance is the biggest barrier: wearables are intimidating, expensive, and make technicians feel self-conscious in front of clients",
                     "The smartphone on a holder, extended with touchless input, is still more practical for large-scale field deployment than most current HMDs",
                   ],
-                  outcome:
-                    "A grounded theory of industrial XR interaction, three core design principles, and a literature-backed review of input techniques suitable for field maintenance contexts.",
+                  hardMetrics:
+                    "No adoption, deployment, or field-performance metrics are claimed from this thesis.",
+                  qualitativeEvidence:
+                    "Six expert interviews and grounded theory coding produced the interaction categories, design principles, and literature-backed input-technique review.",
+                  proxyEvidence:
+                    "The public thesis documents the research method, participant profile, coding logic, and resulting industrial XR interaction model.",
                   reflection:
                     "The grounded theory remains untested in a production deployment. The value is in clarifying why certain techniques fail and what an interaction designer needs to prioritise — not in claiming a shipped industrial product.",
                 }}
@@ -138,7 +142,7 @@ class Thesis extends Component {
                     <Row
                       content={
                         <p className={pStyle}>
-                          A grounded theory approach — the theory emerges from the data rather than testing a predetermined hypothesis. Six senior Finnish industrial XR professionals were interviewed: four lead UX designers, a research director, and a software development engineer. All had eight or more years of experience, and all had shipped or closely observed industrial XR in the field.
+                          A grounded theory approach — the theory emerges from the data rather than testing a predetermined hypothesis. Six experienced Finnish industrial XR professionals were interviewed: four lead UX designers, a research director, and a software development engineer. All had substantial field experience and had shipped or closely observed industrial XR in the field.
                         </p>
                       }
                     />

@@ -19,7 +19,10 @@ describe('CaseStudyMeta', () => {
           users: ['Primary users', 'Secondary users'],
           businessContext: 'The brief came from a client request.',
           constraints: ['Short timeline', 'Limited evidence'],
-          outcome: 'A concept outcome.',
+          hardMetrics: 'No product metrics were published.',
+          qualitativeEvidence: 'Participants described the concept as useful.',
+          proxyEvidence: 'The concept was selected for further review.',
+          reflection: 'A useful archive example.',
         }}
       />
     );
@@ -33,8 +36,14 @@ describe('CaseStudyMeta', () => {
     expect(markup).toContain('Interaction design');
     expect(markup).toContain('Team');
     expect(markup).toContain('1 designer');
-    expect(markup).toContain('Outcome');
-    expect(markup).toContain('A concept outcome.');
+    expect(markup).toContain('Hard metrics');
+    expect(markup).toContain('No product metrics were published.');
+    expect(markup).toContain('Qualitative evidence');
+    expect(markup).toContain('Participants described the concept as useful.');
+    expect(markup).toContain('Proxy evidence');
+    expect(markup).toContain('The concept was selected for further review.');
+    expect(markup).toContain('Reflection');
+    expect(markup).toContain('A useful archive example.');
   });
 
   test('omits fields that are not provided', () => {
@@ -48,6 +57,7 @@ describe('CaseStudyMeta', () => {
 
     expect(markup).toContain('My role');
     expect(markup).not.toContain('Team');
-    expect(markup).not.toContain('Outcome');
+    expect(markup).not.toContain('Hard metrics');
+    expect(markup).not.toContain('Proxy evidence');
   });
 });

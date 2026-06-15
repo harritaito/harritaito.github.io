@@ -149,11 +149,15 @@ class Kivakaupunki extends Component {
                     "Use case description",
                   ],
                   implementationSupport:
-                    "I supported the HTML, React, and CSS layout while the developer set up the Heroku backend CRUD API.",
-                  outcome:
-                    "The team won part of the competition prize, but the archive keeps the result framed as a partial competition success rather than a product launch.",
+                    "I worked on the HTML, React, and CSS layout while the developer set up the Heroku backend CRUD API.",
+                  hardMetrics:
+                    "No adoption, official-use, or long-term service metrics are documented for this competition MVP.",
+                  qualitativeEvidence:
+                    "The heuristic review identified clear status visibility, back navigation, and consistent screen structure, while also naming missing error handling and help documentation.",
+                  proxyEvidence:
+                    "The competition entry received part of the prize, which suggests the concept and implementation were strong enough for the jury to recognize under competition constraints.",
                   reflection:
-                  "A useful archive example of implementation support under competition constraints, but not a claim of production adoption.",
+                    "A useful archive example of implementation support under competition constraints, but not a claim of production adoption.",
                 }}
               />
 
@@ -163,7 +167,7 @@ class Kivakaupunki extends Component {
                   <span>
                     <Row content={
                       <p className={pStyle}>
-                        I led the service, interaction, and UI framing: use case, pencil drafts, Pixelmator mockups, screen flow, and heuristic evaluation. I also supported the HTML, React, and CSS layout work, while the developer set up the Heroku backend and CRUD API. The MVP and competition result were team output.
+                        I handled the service, interaction, and UI framing: use case, pencil drafts, Pixelmator mockups, screen flow, and heuristic evaluation. I also worked on the HTML, React, and CSS layout, while the developer set up the Heroku backend and CRUD API. The MVP and competition result were team output.
                       </p>
                     }/>
                   </span>
@@ -381,7 +385,7 @@ class Kivakaupunki extends Component {
                     }/>
                     <Row content={
                       <p className={pStyle}>
-                        I ran a heuristic evaluation against Nielsen's 10 principles. Status visibility was handled through headlines and the back button. Language matched the user's context. The browser itself served as the emergency exit. Screens were consistent with Material Design and LLB standards. Error handling was not implemented — that was a gap. Recognition over recall worked because the flow was short and states were clearly labeled. The interface stayed minimal. The main missing pieces were proper error messaging and in-app help, though the LLB portal included a feedback form.
+                        The review found a few practical strengths: the current state was visible through headings and the top-right indicator, back navigation was available, and the screens followed a consistent structure. It also made the limits clear. Error messages, help, and documentation were missing, so the MVP was useful as a competition prototype rather than as a complete public-service workflow.
                       </p>
                     }/>
 
@@ -401,14 +405,14 @@ class Kivakaupunki extends Component {
 
                   <Row content={
                     <p className={pStyle}>
-                      We won the competition, but not in a satisfactory way. From the start, we had a confident team together, we were sure to produce something. We had a solid concept, but because of our day jobs too little time was reserved for software development. I learned that every project should start, by appointing a <b>product owner or project manager title</b>, so that there would be someone who is responsible for scheduling.
+                      The entry received part of the prize, but that is only proxy evidence. It says the concept and prototype were credible in the competition setting, not that the service was adopted or used by city officials.
                     </p>
                   }
                   />
 
                   <Row content={
                     <p className={pStyle}>
-                      A lot of confidence was gained as we truly can make awesome things together and thus learned to value each other's skills and professionalism. We hope we can tackle more projects together in the future.
+                      The more durable lesson was about ownership. The concept moved from use case to interface to implementation support, but the compressed schedule made coordination fragile. If I were doing the same work again, I would define ownership and decision rhythm earlier instead of treating scheduling as a side task.
                     </p>
                   }
                   />

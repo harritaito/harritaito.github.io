@@ -159,8 +159,12 @@ class Aikakone extends Component {
                     "Paper mockups",
                     "Digital mockup",
                   ],
-                  outcome:
-                    "The concept was voted second-best in the course and received positive feedback, but it did not reach market.",
+                  hardMetrics:
+                    "No clinical, commercial, or usage metrics are documented for this concept.",
+                  qualitativeEvidence:
+                    "Nurse interviews and prototype conversations gave positive feedback on the direction and helped clarify where the service might fit in care routines.",
+                  proxyEvidence:
+                    "The concept placed second in the course, which is a course-context signal rather than evidence of market or care impact.",
                   reflection:
                     "A useful archive example of service design under care constraints, not proof of clinical or commercial impact.",
                 }}
@@ -256,7 +260,7 @@ class Aikakone extends Component {
                     <Row
                       content={
                         <p className={pStyle}>
-                          We treated reminiscence as a supported conversation, not as a test or a claim about treatment. The design had to feel safe enough to bring into a care routine without adding friction or embarrassment.
+                          We treated reminiscence as a conversation aid, not as a test or a claim about treatment. The design had to feel safe enough to bring into a care routine without adding friction or embarrassment.
                         </p>
                       }
                     />
@@ -391,7 +395,7 @@ class Aikakone extends Component {
                     <Row
                       content={
                         <p className={pStyle}>
-                          Aikakone combined pictures, sound, and text around the same story so a facilitator could pick the right entry point for the person in front of them. The shared-history view supported common memories, while Elämänkaari and Profiili focused on personal history and what staff should know about the person.
+                          Aikakone combined pictures, sound, and text around the same story so a facilitator could pick the right entry point for the person in front of them. The shared-history view was meant to support common memories, while Elämänkaari and Profiili focused on personal history and what staff should know about the person.
                         </p>
                       }
                     />
@@ -533,7 +537,7 @@ class Aikakone extends Component {
                     <Row
                       content={
                         <p className={pStyle}>
-                          It also showed the limits of an older course concept. The project earned positive feedback and a second-place course result, but it stayed at archive level and did not become a launched service.
+                          It also showed the limits of an older course concept. The project received positive course and prototype feedback and placed second in the course, but it stayed at archive level and did not become a launched service.
                         </p>
                       }
                     />
