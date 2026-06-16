@@ -27,12 +27,33 @@ describe('Projects navigation helpers', () => {
   test('exposes featured work with problem-first headings and status labels', () => {
     const featured = proj.featuredProjects;
 
-    expect(featured).toHaveLength(5);
-    expect(featured[0].projectName).toBe('Thesis');
+    expect(featured).toHaveLength(3);
+    expect(featured.map((project) => project.projectName)).toEqual([
+      'Thesis',
+      'Writing',
+      'Archive'
+    ]);
+    expect(featured.map((project) => project.link)).toEqual([
+      '/thesis',
+      '/writing',
+      '/projects'
+    ]);
     expect(featured[0].label).toBe('Research');
+    expect(featured[1].label).toBe('Writing');
     const last = featured[featured.length - 1];
-    expect(last.problemTitle).toBe('Coming soon');
-    expect(last.label).toBe('In development');
+    expect(last.problemTitle).toBe('Older work, kept in context');
+    expect(last.label).toBe('Archive');
     expect(last.archive).toBe(false);
+  });
+
+  test('keeps older case studies in the archive', () => {
+    const archiveProjects = proj.projects.map((project) => project.projectName);
+
+    expect(archiveProjects).toEqual([
+      'Thesis',
+      'HRI Study',
+      'Kiva Kaupunki',
+      'Aikakone'
+    ]);
   });
 });
