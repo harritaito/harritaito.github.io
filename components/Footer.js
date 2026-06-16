@@ -3,7 +3,7 @@ import Social from './Social';
 const Footer = () => (
   <footer className="row footer">
     <div style={{marginTop: "1.5em"}} className={"col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6"}>
-      Made with ⌚ by Harri
+      Made by me
     </div>
     <Social/>
     <style jsx>{`

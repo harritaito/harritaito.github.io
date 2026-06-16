@@ -105,23 +105,6 @@ class Home extends Component {
           ))}
         </section>
 
-        <section className="section" id="contact" aria-labelledby="contact-heading">
-          <Row
-            content={
-              <h2 className="col-xs-12 col-sm-10 col-md-9 col-lg-6 col-xl-6 section-heading" id="contact-heading">
-                Contact
-              </h2>
-            }
-          />
-          <Row
-            content={
-              <div className="col-xs-12 col-sm-10 col-md-9 col-lg-8 col-xl-7 section-copy contact-copy">
-                I’m happy to talk with teams that need product judgment, system thinking, or research-led design support. The easiest way to reach me is by email — my first name, here at this domain.
-              </div>
-            }
-          />
-        </section>
-
         <Footer />
         <style jsx>{`
           .Home h1 {
@@ -265,10 +248,6 @@ class Home extends Component {
 
           .Home .section-inline-link {
             display: inline-block;
-          }
-
-          .Home .contact-copy {
-            margin-top: 0.25em;
           }
 
           @media only screen and (max-width: 412px) {
