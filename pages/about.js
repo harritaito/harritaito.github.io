@@ -80,8 +80,7 @@ class About extends Component {
           <Row
             content={
               <p className="about-me-copy col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6">
-                If something here made you curious,{" "}
-                <a href="mailto:harri@harritaito.com">let’s talk</a>.
+                I’m happy to talk with teams that need product judgment, system thinking, or research-led design support. The easiest way to reach me is by email — my first name, here at this domain.
               </p>
             }
           />

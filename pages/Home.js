@@ -105,32 +105,6 @@ class Home extends Component {
           ))}
         </section>
 
-        <section className="section" id="contact" aria-labelledby="contact-heading">
-          <Row
-            content={
-              <h2 className="col-xs-12 col-sm-10 col-md-9 col-lg-6 col-xl-6 section-heading" id="contact-heading">
-                Contact
-              </h2>
-            }
-          />
-          <Row
-            content={
-              <div className="col-xs-12 col-sm-10 col-md-9 col-lg-8 col-xl-7 section-copy contact-copy">
-                I’m happy to talk with teams that need product judgment, system thinking, or research-led design support. Reach me at{" "}
-                <span className="obfuscated-email" aria-label="harri@harritaito.com">
-                  harri [at] harritaito [dot] com
-                </span>{" "}
-                or{" "}
-                <a href={"https://calendly.com/harritaito/45min/"}>
-                  book time on my calendar
-                  <HighlightUnderline />
-                </a>
-                .
-              </div>
-            }
-          />
-        </section>
-
         <Footer />
         <style jsx>{`
           .Home h1 {
@@ -274,28 +248,6 @@ class Home extends Component {
 
           .Home .section-inline-link {
             display: inline-block;
-          }
-
-          .Home .contact-copy {
-            margin-top: 0.25em;
-          }
-
-          .Home .obfuscated-email {
-            display: inline-block;
-            font-weight: 600;
-            position: relative;
-            z-index: 0;
-          }
-
-          .Home .obfuscated-email::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0.15em;
-            width: 100%;
-            height: 8px;
-            background: ${colors.markerHighlight};
-            z-index: -1;
           }
 
           @media only screen and (max-width: 412px) {
