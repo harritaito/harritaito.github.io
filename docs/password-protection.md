@@ -64,6 +64,28 @@ HTML will require the password before showing the content.
   Static HTML must be encrypted after export, otherwise the content can still be
   found in the page source or JavaScript bundle.
 
+## Can I password-protect a project?
+
+Yes, but only if the private project content is not hardcoded into a public page
+component.
+
+The current project case studies under `pages/` are normal React pages. Their
+copy and structure are bundled into public JavaScript during static export. If
+you add a React password prompt around one of those pages, the content can still
+be found by inspecting the generated files.
+
+For a confidential project, use one of these approaches:
+
+1. **Recommended now:** write the case study as a protected Markdown page in
+   `content/private/`, then share the `/writing/<slug>/` URL with the password.
+2. **Recommended later:** migrate project case studies to content files so
+   private projects can use the same encryption pipeline as protected writing.
+3. **Avoid:** adding a client-side password check around `pages/thesis.js`,
+   `pages/hri-study.js`, or another hardcoded project page.
+
+This keeps the plaintext source out of Git and prevents exported HTML or Next.js
+data files from leaking private work.
+
 ## Current scope
 
 The implemented protection path is for writing pages under `/writing/[slug]`.
