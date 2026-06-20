@@ -5,6 +5,8 @@ import ProjectsList from "../components/Projects";
 import Row from "../components/Row";
 import Footer from "../components/Footer";
 import HeroLineArt from "../components/HeroLineArt";
+import HeroFacts from "../components/HeroFacts";
+import SelectedWorkList from "../components/SelectedWorkList";
 import HighlightUnderline from "../components/design-system/HighlightUnderline";
 import { colors, radii } from "../components/design-system/tokens";
 
@@ -67,6 +69,7 @@ class Home extends Component {
                 <p className="hero-intro">
                   Most design problems are structure problems in disguise. I work out what's actually going on, make it clear, and help the team carry it somewhere real.
                 </p>
+                <HeroFacts />
                 <div className="about-link">
                   <Link href="/about" as="/about">
                     More about me.
@@ -87,6 +90,13 @@ class Home extends Component {
               >
                 Work
               </h2>
+            }
+          />
+          <Row
+            content={
+              <div className="col-xs-12 col-sm-12 col-md-11 col-lg-10 col-xl-9">
+                <SelectedWorkList />
+              </div>
             }
           />
           {featuredProjects.map((project, index) => (
