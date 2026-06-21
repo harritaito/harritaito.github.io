@@ -64,12 +64,24 @@ class Home extends Component {
             content={
               <div className="col-xs-12 col-sm-8 col-md-9 col-lg-6 col-xl-6 hero">
                 <p className="tagline">
-                  Product designer. I make the complicated parts legible — and bring that with me to every team.
+                  I design complex digital products that make business
+                  operations, data, and decision-making easier to understand
+                  and scale.
                 </p>
                 <p className="hero-intro">
-                  Most design problems are structure problems in disguise. I work out what's actually going on, make it clear, and help the team carry it somewhere real.
+                  I work from discovery into UX architecture: mapping the messy
+                  parts, shaping flows, turning repeated UI decisions into
+                  design-system patterns, and checking accessibility early. I
+                  stay close to engineers and product teams so AI and data
+                  workflows become interfaces people can understand, use, and
+                  maintain.
                 </p>
                 <HeroFacts />
+                <div className="cta-group">
+                  <a href="#work" className="primary-cta">
+                    See selected work
+                  </a>
+                </div>
                 <div className="about-link">
                   <Link href="/about" as="/about">
                     More about me.
@@ -189,8 +201,7 @@ class Home extends Component {
             margin-top: 2em;
           }
 
-          .Home .primary-cta,
-          .Home .secondary-cta {
+          .Home .primary-cta {
             display: inline-block;
             font-weight: 600;
             text-decoration: none;
@@ -206,17 +217,6 @@ class Home extends Component {
           .Home .primary-cta:hover,
           .Home .primary-cta:focus {
             background: #1475b9;
-          }
-
-          .Home .secondary-cta {
-            border: 2px solid rgba(30, 149, 237, 0.45);
-            color: inherit;
-          }
-
-          .Home .secondary-cta:hover,
-          .Home .secondary-cta:focus {
-            border-color: ${colors.accentBlue};
-            color: ${colors.accentBlue};
           }
 
           .Home .availability {
