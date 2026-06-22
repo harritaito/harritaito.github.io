@@ -23,6 +23,7 @@ export const shadows = {
   mediaHover: "0 0.75em 1.25em 0 rgba(0,0,0,0.30)",
   card: "0 1em 2em 0 rgba(0,0,0,0.30)",
   cardHover: "0 1.5em 2.5em 0 rgba(0,0,0,0.30)",
+  light: "0 0.25em 0.5em 0 rgba(0,0,0,0.15)",
   nav: "0 .2em .2em 0 rgba(0,0,0,0.10)",
 };
 
