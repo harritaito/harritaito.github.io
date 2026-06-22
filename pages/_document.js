@@ -54,7 +54,10 @@ export default class MyDocument extends Document {
             sizes="192x192"
             href={`/static/media/touch-icon.png?v=${v}`}
           />
-          <link rel="apple-touch-icon" href={`/static/media/touch-icon.png?v=${v}`} />
+          <link
+            rel="apple-touch-icon"
+            href={`/static/media/touch-icon.png?v=${v}`}
+          />
           <link
             rel="mask-icon"
             href={`/static/favicon-mask.svg?v=${v}`}
@@ -62,8 +65,22 @@ export default class MyDocument extends Document {
           />
           <link rel="icon" href={`/static/favicon.ico?v=${v}`} />
           <link rel="manifest" href="/manifest.webmanifest" />
-          <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)" />
-          <meta name="theme-color" content="#0b1120" media="(prefers-color-scheme: dark)" />
+          <meta
+            name="theme-color"
+            content="#fafafa"
+            media="(prefers-color-scheme: light)"
+          />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigi />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Voltaire&display=swap"
+            rel="stylesheet"
+          />
+          <meta
+            name="theme-color"
+            content="#0b1120"
+            media="(prefers-color-scheme: dark)"
+          />
           <meta property="og:type" content="website" />
           <meta property="og:site_name" content={siteName} />
           <meta property="og:locale" content={locale} />
@@ -138,7 +155,7 @@ export default class MyDocument extends Document {
                 }
 
                 h1 {
-                font-family: Trirong, serif;
+                font-family: 'Voltaire', sans-serif;
                 font-weight: 500;
                 font-size: 4em;
                 letter-spacing: .1rem;

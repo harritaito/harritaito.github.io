@@ -36,7 +36,9 @@ const ArticleMeta = ({ frontmatter, readingTime }) => {
         <div>
           <dt>Published</dt>
           <dd>
-            <time dateTime={frontmatter.date || undefined}>{formatDate(frontmatter.date)}</time>
+            <time dateTime={frontmatter.date || undefined}>
+              {formatDate(frontmatter.date)}
+            </time>
           </dd>
         </div>
         <div>
@@ -47,7 +49,9 @@ const ArticleMeta = ({ frontmatter, readingTime }) => {
           <div>
             <dt>Updated</dt>
             <dd>
-              <time dateTime={frontmatter.updated}>{formatDate(frontmatter.updated)}</time>
+              <time dateTime={frontmatter.updated}>
+                {formatDate(frontmatter.updated)}
+              </time>
             </dd>
           </div>
         ) : null}
@@ -74,8 +78,8 @@ const ArticleFooter = ({ frontmatter, slug }) => {
       <p className="footer-kicker">Keep reading</p>
       <h2>More notes from the worktable</h2>
       <p>
-        This piece is part of a small writing shelf for process notes, research reflections,
-        and design decisions that do not need a full case study.
+        This piece is part of a small writing shelf for process notes, research
+        reflections, and design decisions that do not need a full case study.
       </p>
       <div className="article-footer-actions">
         <Link href="/writing" legacyBehavior>
@@ -109,14 +113,18 @@ const Article = ({ frontmatter, content, readingTime, slug }) => (
     <style jsx global>{`
       .Article .project-page {
         background:
-          radial-gradient(circle at 12% 8%, rgba(139, 200, 246, 0.22), transparent 17rem),
+          radial-gradient(
+            circle at 12% 8%,
+            rgba(139, 200, 246, 0.22),
+            transparent 17rem
+          ),
           linear-gradient(180deg, rgba(255, 255, 255, 0.64), transparent 24rem),
           ${colors.pageBackground};
         padding-top: 5rem;
       }
 
       .Article .project-page h1 {
-        font-family: Trirong, serif;
+        font-family: "Voltaire", sans-serif;
         font-size: clamp(3rem, 8vw, 6.5rem);
         font-weight: 500;
         letter-spacing: 0.02em;

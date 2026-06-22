@@ -65,8 +65,8 @@ class Home extends Component {
               <div className="col-xs-12 col-sm-8 col-md-9 col-lg-6 col-xl-6 hero">
                 <p className="tagline">
                   I design complex digital products that make business
-                  operations, data, and decision-making easier to understand
-                  and scale.
+                  operations, data, and decision-making easier to understand and
+                  scale.
                 </p>
                 <p className="hero-intro">
                   I work from discovery into UX architecture: mapping the messy
@@ -131,7 +131,7 @@ class Home extends Component {
         <style jsx>{`
           .Home h1 {
             margin-top: -0.5rem;
-            font-family: Trirong, serif;
+            font-family: "Voltaire", sans-serif;
             margin-bottom: 1.2rem;
           }
 
