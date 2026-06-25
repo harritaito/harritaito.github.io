@@ -6,7 +6,6 @@ import Row from "../components/Row";
 import Footer from "../components/Footer";
 import HeroLineArt from "../components/HeroLineArt";
 import HeroFacts from "../components/HeroFacts";
-import SelectedWorkList from "../components/SelectedWorkList";
 import HighlightUnderline from "../components/design-system/HighlightUnderline";
 import { colors, radii } from "../components/design-system/tokens";
 
@@ -102,13 +101,6 @@ class Home extends Component {
               >
                 Work
               </h2>
-            }
-          />
-          <Row
-            content={
-              <div className="col-xs-12 col-sm-12 col-md-11 col-lg-10 col-xl-9">
-                <SelectedWorkList />
-              </div>
             }
           />
           {featuredProjects.map((project, index) => (

@@ -28,12 +28,6 @@ const PAGE_METADATA = {
       "Learn about Harri Halonen, an experience designer based in Tampere working across research, service design, and product strategy.",
     path: "/about",
   },
-  "/contact": {
-    title: "Contact | Harri Halonen",
-    description:
-      "Contact Harri Halonen for thoughtful collaborations, design conversations, and research-led product work.",
-    path: "/contact",
-  },
   "/thesis": {
     title: "Industrial XR thesis | Harri Halonen",
     description:

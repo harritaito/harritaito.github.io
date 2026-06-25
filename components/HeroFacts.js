@@ -1,6 +1,5 @@
 import React from "react";
-import Link from "next/link";
-import { colors, radii, shadows } from "./design-system/tokens";
+import { colors } from "./design-system/tokens";
 
 const HERO_FACTS = [
   {
@@ -27,19 +26,17 @@ const HeroFacts = () => (
         </div>
       ))}
     </div>
-    <Link href="/contact" className="hero-facts__contact">
-      Start a conversation
-    </Link>
+    <a href="mailto:harri@harritaito.com" className="hero-facts__contact">
+      harri@harritaito.com
+    </a>
     <style jsx>{`
       .hero-facts {
-        background: var(--surface-elevated-color);
-        border-radius: 1.5rem;
-        box-shadow: ${shadows.media};
+        border-top: 1px solid rgba(105, 106, 109, 0.22);
         display: grid;
-        gap: 1.25rem;
+        gap: 1rem;
         margin-top: 2rem;
         max-width: 45rem;
-        padding: 1.25rem;
+        padding-top: 1.25rem;
       }
 
       .hero-facts__items {
@@ -69,26 +66,21 @@ const HeroFacts = () => (
 
       .hero-facts__contact {
         align-self: start;
-        border: 2px solid rgba(145, 87, 255, 0.35);
-        border-radius: ${radii.circle};
         color: inherit;
         display: inline-flex;
         font-weight: 600;
         justify-self: start;
-        padding: 0.65em 1.25em;
         text-decoration: none;
-        transition: border-color 0.2s ease-out, color 0.2s ease-out;
+        transition: color 0.2s ease-out;
       }
 
       .hero-facts__contact:hover,
       .hero-facts__contact:focus {
-        border-color: ${colors.accentPurple};
         color: ${colors.accentPurple};
       }
 
       @media only screen and (max-width: 45rem) {
         .hero-facts {
-          border-radius: 1.1rem;
           margin-top: 1.5rem;
         }
 
