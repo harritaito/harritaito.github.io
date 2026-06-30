@@ -26,9 +26,6 @@ const HeroFacts = () => (
         </div>
       ))}
     </div>
-    <a href="mailto:harri@harritaito.com" className="hero-facts__contact">
-      harri@harritaito.com
-    </a>
     <style jsx>{`
       .hero-facts {
         border-top: 1px solid rgba(105, 106, 109, 0.22);
