@@ -14,7 +14,7 @@ colors:
   progress-green: "#49B882"
 typography:
   display:
-    fontFamily: "Trirong, serif"
+    fontFamily: "Voltaire, sans-serif"
     fontSize: "4em"
     fontWeight: 500
     lineHeight: "1"
