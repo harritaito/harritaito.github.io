@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import HeroLineArt from "../components/HeroLineArt";
 import HeroFacts from "../components/HeroFacts";
 import CapabilityChips from "../components/CapabilityChips";
+import ProductLoop from "../components/ProductLoop";
 import HighlightUnderline from "../components/design-system/HighlightUnderline";
 import { colors, radii } from "../components/design-system/tokens";
 
@@ -119,6 +120,38 @@ class Home extends Component {
               percentage={index < 3 ? "8%" : "28%"}
             />
           ))}
+        </section>
+
+        <section
+          className="section"
+          id="how-i-work"
+          aria-labelledby="how-i-work-heading"
+        >
+          <Row
+            content={
+              <h2
+                className="col-xs-12 col-sm-10 col-md-9 col-lg-7 col-xl-7 section-heading"
+                id="how-i-work-heading"
+              >
+                From ambiguity to buildable output
+              </h2>
+            }
+          />
+          <Row
+            content={
+              <p className="col-xs-12 col-sm-10 col-md-9 col-lg-7 col-xl-6 section-copy section-subheading">
+                The same loop on most projects, end to end — I stay past the
+                handoff, through the build, design QA, and back into the system.
+              </p>
+            }
+          />
+          <Row
+            content={
+              <div className="col-xs-12 col-sm-12 col-md-11 col-lg-10 col-xl-9">
+                <ProductLoop />
+              </div>
+            }
+          />
         </section>
 
         <Footer />
