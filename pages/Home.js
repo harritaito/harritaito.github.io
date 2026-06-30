@@ -6,6 +6,7 @@ import Row from "../components/Row";
 import Footer from "../components/Footer";
 import HeroLineArt from "../components/HeroLineArt";
 import HeroFacts from "../components/HeroFacts";
+import CapabilityChips from "../components/CapabilityChips";
 import HighlightUnderline from "../components/design-system/HighlightUnderline";
 import { colors, radii } from "../components/design-system/tokens";
 
@@ -71,11 +72,12 @@ class Home extends Component {
                   I work from discovery into UX architecture: mapping the messy
                   parts, shaping flows, turning repeated UI decisions into
                   design-system patterns, and checking accessibility early. I
-                  stay close to engineers and product teams so AI and data
-                  workflows become interfaces people can understand, use, and
-                  maintain.
+                  stay close to engineers, product teams, and stakeholders so AI
+                  and data workflows become interfaces people can understand,
+                  use, and maintain — watching design quality as it gets built.
                 </p>
                 <HeroFacts />
+                <CapabilityChips />
                 <div className="cta-group">
                   <a href="#work" className="primary-cta">
                     See selected work
