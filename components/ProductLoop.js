@@ -183,6 +183,12 @@ const ProductLoop = () => {
             </span>
             <p className="product-loop__label">{item.label}</p>
             <p className="product-loop__behavior">{item.behavior}</p>
+            <p className="product-loop__output">
+              <span className="product-loop__output-kicker">
+                What this produces:{" "}
+              </span>
+              {item.output}
+            </p>
           </li>
         ))}
       </ol>
@@ -286,10 +292,29 @@ const ProductLoop = () => {
           padding-left: 2rem;
           position: relative;
           opacity: 0;
-          outline: none;
           transform: translateY(8px);
           transition: opacity 0.5s ease, transform 0.5s ease;
           transition-delay: calc(var(--i) * 70ms);
+        }
+
+        .product-loop__stage:focus-visible {
+          border-radius: 4px;
+          outline: 2px solid var(--focus-outline);
+          outline-offset: 2px;
+        }
+
+        /* Panel duplicates this visually on wide screens; keep it for
+           screen readers there, show it in-flow below the breakpoint. */
+        .product-loop__output {
+          border: 0;
+          clip: rect(0 0 0 0);
+          height: 1px;
+          margin: -1px;
+          overflow: hidden;
+          padding: 0;
+          position: absolute;
+          white-space: nowrap;
+          width: 1px;
         }
 
         .product-loop.is-visible .product-loop__stage {
@@ -509,6 +534,26 @@ const ProductLoop = () => {
 
           .product-loop__panel {
             display: none;
+          }
+
+          .product-loop__output {
+            border-left: 2px solid rgba(30, 149, 237, 0.35);
+            clip: auto;
+            color: ${colors.textMuted};
+            font-size: 0.9rem;
+            height: auto;
+            line-height: 1.55;
+            margin: 0.5rem 0 0;
+            overflow: visible;
+            padding: 0 0 0 0.75rem;
+            position: static;
+            white-space: normal;
+            width: auto;
+          }
+
+          .product-loop__output-kicker {
+            color: ${colors.accentBlue};
+            font-weight: 600;
           }
         }
 
