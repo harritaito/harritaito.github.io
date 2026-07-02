@@ -1,5 +1,4 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
-import Fonts from "../components/Fonts";
 
 const v = process.env.NEXT_PUBLIC_BUILD_ID;
 
