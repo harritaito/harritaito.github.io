@@ -52,6 +52,18 @@ const PAGE_METADATA = {
       "A memory-care reminiscence service case study explored through field research, service blueprinting, and prototype sessions.",
     path: "/aikakone",
   },
+  "/writing": {
+    title: "Writing | Harri Halonen",
+    description:
+      "Research notes, process pieces, and longer-form writing from Harri Halonen on product and service design.",
+    path: "/writing",
+  },
+  "/writing/[slug]": {
+    title: "Writing | Harri Halonen",
+    description:
+      "Research notes, process pieces, and longer-form writing from Harri Halonen on product and service design.",
+    path: "/writing",
+  },
   "/404": {
     title: "Page not found | Harri Halonen",
     description:
