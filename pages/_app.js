@@ -1,16 +1,10 @@
-import { useEffect } from "react";
 import { useRouter } from "next/router";
-import Fonts from "../components/Fonts";
 import Seo from "../components/Seo";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "react-medium-image-zoom/dist/styles.css";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
-
-  useEffect(() => {
-    Fonts();
-  }, []);
 
   return (
     <>

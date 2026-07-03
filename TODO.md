@@ -1,4 +1,11 @@
 # TODO.md — Automated Upgrade Plan for **harritaito.github.io**
+
+> **Status 2026-07-02:** Sections 1–4 and 6–9 are complete on `master`
+> (Jest 30, React 18.3, Next 15, styled-jsx 5.1.7, peripherals at target
+> versions, lockfile deduped). Section 5 (React 19) is the only upgrade
+> still open. Section 10 collects redesign notes; note that its
+> "simple contact method" must-have is currently covered by the LinkedIn
+> CTA and the email hint on /about.
 > **Protocol for Codex**
 > 1. Read the *PROMPT* block in the current section.  
 > 2. Output **one unified diff** that satisfies the *CONSTRAINTS*.  

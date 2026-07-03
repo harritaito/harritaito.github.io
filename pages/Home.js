@@ -83,6 +83,14 @@ class Home extends Component {
                   <a href="#work" className="primary-cta">
                     See selected work
                   </a>
+                  <a
+                    href="https://linkedin.com/in/harrihalonen"
+                    className="secondary-cta"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Reach me on LinkedIn
+                  </a>
                 </div>
                 <div className="about-link">
                   <Link href="/about" as="/about">
@@ -244,6 +252,22 @@ class Home extends Component {
           .Home .primary-cta:hover,
           .Home .primary-cta:focus {
             background: #1475b9;
+          }
+
+          .Home .secondary-cta {
+            display: inline-block;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: ${radii.circle};
+            padding: 0.75em 1.5em;
+            border: 1px solid ${colors.accentBlue};
+            color: ${colors.accentBlue};
+          }
+
+          .Home .secondary-cta:hover,
+          .Home .secondary-cta:focus {
+            background: ${colors.accentBlue};
+            color: white;
           }
 
           .Home .availability {

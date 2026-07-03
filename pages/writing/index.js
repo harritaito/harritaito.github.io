@@ -36,7 +36,15 @@ const WritingIndex = ({ articles }) => (
           key={article.slug}
           content={
             <article className={`${colStyle} writing-entry`}>
-              <p className="writing-date">{formatDate(article.frontmatter.date)}</p>
+              <p className="writing-date">
+                {formatDate(article.frontmatter.date)}
+                {article.readingTime ? (
+                  <span className="writing-reading-time">
+                    {" · "}
+                    {article.readingTime}
+                  </span>
+                ) : null}
+              </p>
               <h2 className="writing-title">
                 <Link href={`/writing/${article.slug}`} legacyBehavior>
                   <a>
@@ -47,6 +55,14 @@ const WritingIndex = ({ articles }) => (
               </h2>
               {article.frontmatter.summary ? (
                 <p className="writing-summary">{article.frontmatter.summary}</p>
+              ) : null}
+              {Array.isArray(article.frontmatter.tags) &&
+              article.frontmatter.tags.length ? (
+                <ul className="writing-tags" aria-label="Topics">
+                  {article.frontmatter.tags.filter(Boolean).map((tag) => (
+                    <li key={tag}>{tag}</li>
+                  ))}
+                </ul>
               ) : null}
             </article>
           }
@@ -94,6 +110,23 @@ const WritingIndex = ({ articles }) => (
         margin: 0;
         line-height: 1.7;
         color: ${colors.textMuted};
+      }
+
+      .writing-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        list-style: none;
+        margin: 0.75rem 0 0;
+        padding: 0;
+      }
+
+      .writing-tags li {
+        border: 1px solid rgba(18, 164, 45, 0.24);
+        border-radius: 999px;
+        color: ${colors.accentGreen};
+        font-size: 0.85rem;
+        padding: 0.25rem 0.7rem;
       }
     `}</style>
   </div>

@@ -61,21 +61,6 @@ const HeroFacts = () => (
         margin: 0;
       }
 
-      .hero-facts__contact {
-        align-self: start;
-        color: inherit;
-        display: inline-flex;
-        font-weight: 600;
-        justify-self: start;
-        text-decoration: none;
-        transition: color 0.2s ease-out;
-      }
-
-      .hero-facts__contact:hover,
-      .hero-facts__contact:focus {
-        color: ${colors.accentPurple};
-      }
-
       @media only screen and (max-width: 45rem) {
         .hero-facts {
           margin-top: 1.5rem;

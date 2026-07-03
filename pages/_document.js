@@ -1,5 +1,4 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
-import Fonts from "../components/Fonts";
 
 const v = process.env.NEXT_PUBLIC_BUILD_ID;
 
@@ -51,6 +50,11 @@ export default class MyDocument extends Document {
           />
           <link
             rel="icon"
+            type="image/svg+xml"
+            href={`/favicon.svg?v=${v}`}
+          />
+          <link
+            rel="icon"
             sizes="192x192"
             href={`/static/media/touch-icon.png?v=${v}`}
           />
@@ -60,7 +64,7 @@ export default class MyDocument extends Document {
           />
           <link
             rel="mask-icon"
-            href={`/static/favicon-mask.svg?v=${v}`}
+            href={`/favicon-mask.svg?v=${v}`}
             color="#49B882"
           />
           <link rel="icon" href={`/static/favicon.ico?v=${v}`} />

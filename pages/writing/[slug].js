@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import Link from "next/link";
 
 import ProjectPage from "../../components/ProjectPage";
@@ -91,8 +92,32 @@ const ArticleFooter = ({ frontmatter, slug }) => {
   );
 };
 
-const Article = ({ frontmatter, content, readingTime, slug }) => (
+const Article = ({ frontmatter, content, readingTime, slug }) => {
+  const canonicalUrl =
+    frontmatter.canonicalUrl || `https://harritaito.com/writing/${slug}`;
+
+  return (
   <div className="Article">
+    <Head>
+      <title>{`${frontmatter.title} | Harri Halonen`}</title>
+      <meta
+        name="description"
+        content={frontmatter.summary || ""}
+        key="description"
+      />
+      <link rel="canonical" href={canonicalUrl} key="canonical" />
+      <meta
+        property="og:title"
+        content={`${frontmatter.title} | Harri Halonen`}
+        key="og-title"
+      />
+      <meta
+        property="og:description"
+        content={frontmatter.summary || ""}
+        key="og-description"
+      />
+      <meta property="og:url" content={canonicalUrl} key="og-url" />
+    </Head>
     <ProjectPage
       projectName={frontmatter.title}
       title={frontmatter.title}
@@ -331,7 +356,8 @@ const Article = ({ frontmatter, content, readingTime, slug }) => (
       }
     `}</style>
   </div>
-);
+  );
+};
 
 export async function getStaticPaths() {
   return {
