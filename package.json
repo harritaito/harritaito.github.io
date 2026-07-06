@@ -13,7 +13,7 @@
     "clean": "rimraf .next out node_modules/.cache",
     "prebuild": "npm run clean",
     "build": "next build",
-    "postbuild": "node scripts/encrypt-protected.js && node scripts/create-gh-pages-files.js",
+    "postbuild": "node scripts/encrypt-protected.js && node scripts/create-gh-pages-files.js && node scripts/generate-feed.js",
     "preview": "npm run verify:out && npx --yes serve out",
     "start": "npm run preview",
     "clearCache": "npm run clean",

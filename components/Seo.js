@@ -96,6 +96,13 @@ export default function Seo({ pathname }) {
       <meta name="description" content={metadata.description} key="description" />
       {metadata.noindex ? <meta name="robots" content="noindex, follow" key="robots" /> : null}
       <link rel="canonical" href={canonicalUrl} key="canonical" />
+      <link
+        rel="alternate"
+        type="application/rss+xml"
+        title="Harri Halonen — Writing"
+        href={`${SITE_URL}/feed.xml`}
+        key="rss"
+      />
       <meta property="og:title" content={metadata.title} key="og-title" />
       <meta property="og:description" content={metadata.description} key="og-description" />
       <meta property="og:url" content={canonicalUrl} key="og-url" />

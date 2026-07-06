@@ -25,6 +25,10 @@ const WritingIndex = ({ articles }) => (
         <div className={`${colStyle} writing-intro`}>
           <h1>Writing</h1>
           <p>Research notes and longer-form pieces.</p>
+          <a className="writing-rss" href="/feed.xml">
+            RSS
+            <HighlightUnderline />
+          </a>
         </div>
       }
     />
@@ -87,6 +91,15 @@ const WritingIndex = ({ articles }) => (
 
       .writing-intro h1 {
         margin-bottom: 0.5rem;
+      }
+
+      .writing-rss {
+        display: inline-block;
+        margin-top: 0.5rem;
+        font-size: 0.85rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: ${colors.textMuted};
       }
 
       .writing-entry {
