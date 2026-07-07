@@ -8,6 +8,7 @@ import HeroLineArt from "../components/HeroLineArt";
 import HeroFacts from "../components/HeroFacts";
 import CapabilityChips from "../components/CapabilityChips";
 import ProductLoop from "../components/ProductLoop";
+import MethodArtifacts from "../components/MethodArtifacts";
 import HighlightUnderline from "../components/design-system/HighlightUnderline";
 import { colors, radii } from "../components/design-system/tokens";
 
@@ -160,6 +161,29 @@ class Home extends Component {
               </div>
             }
           />
+          <Row
+            content={
+              <h3 className="col-xs-12 col-sm-10 col-md-9 col-lg-7 col-xl-7 artifacts-heading">
+                What the loop leaves behind
+              </h3>
+            }
+          />
+          <Row
+            content={
+              <p className="col-xs-12 col-sm-10 col-md-9 col-lg-7 col-xl-6 section-copy artifacts-copy">
+                The same set of artifacts on most projects, whether it’s a
+                public service, an internal tool, or a data-heavy product. The
+                sketches are illustrative, not real project data.
+              </p>
+            }
+          />
+          <Row
+            content={
+              <div className="col-xs-12 col-sm-12 col-md-11 col-lg-10 col-xl-9">
+                <MethodArtifacts />
+              </div>
+            }
+          />
         </section>
 
         <Footer />
@@ -280,6 +304,17 @@ class Home extends Component {
 
           .Home .about-link {
             margin-top: 1.5em;
+          }
+
+          .Home .artifacts-heading {
+            margin-top: 3.5em;
+            margin-bottom: 0.4em;
+            font-size: 1.3em;
+            line-height: 1.4;
+          }
+
+          .Home .artifacts-copy {
+            margin-bottom: 2em;
           }
 
           .Home .section {
