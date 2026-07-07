@@ -103,6 +103,85 @@ class About extends Component {
 
           <Row
             content={
+              <h3 className="lead-heading col-xs-12 col-sm-12 col-md-12 col-lg-offset-3 col-lg-6 col-xl-6">
+                How I lead
+              </h3>
+            }
+          />
+
+          <Row
+            content={
+              <p className="about-me-copy col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6">
+                I lead through craft and facilitation, not a title. I haven’t
+                held formal line management, so what I offer sits elsewhere:
+                raising a team’s design quality from inside the work — running
+                critique, mentoring designers earlier in their path, and holding
+                a quality bar that survives handoff.
+              </p>
+            }
+          />
+
+          <Row
+            content={
+              <p className="about-me-copy col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6">
+                Most of it is enablement. I turn one-off calls into shared
+                standards, keep cross-functional conversations aligned on the
+                same picture, and make the design system something a team leans
+                on instead of relearns. When designers and engineers pull in
+                different directions, I facilitate toward a decision rather than
+                dig in.
+              </p>
+            }
+          />
+
+          <Row
+            content={
+              <div className="about-me-copy col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6">
+                <p className="focus-intro">
+                  A lightweight operating model I bring to design quality:
+                </p>
+                <ul className="focus-list">
+                  <li>
+                    <strong>Critique</strong> — regular, structured sessions
+                    that pressure-test work before it ships
+                  </li>
+                  <li>
+                    <strong>Accessibility review</strong> — checking contrast,
+                    focus, and semantics early, not as a final gate
+                  </li>
+                  <li>
+                    <strong>Implementation notes</strong> — writing down the
+                    intent behind a design so the build keeps it
+                  </li>
+                  <li>
+                    <strong>Decision logs</strong> — recording what we chose and
+                    why, so nobody relitigates it later
+                  </li>
+                  <li>
+                    <strong>Post-release quality review</strong> — looking at
+                    what actually shipped and feeding it back into the system
+                  </li>
+                </ul>
+              </div>
+            }
+          />
+
+          <Row
+            content={
+              <p className="about-me-copy col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6">
+                These rituals earn their place through what they prevent.
+                Decision logs stop teams relitigating settled calls; early
+                accessibility review keeps rework out of the final week;
+                implementation notes keep the build honest to the intent. What
+                comes out the other side is clearer decisions, fewer
+                clarification rounds, and interfaces that stay consistent as they
+                scale — leadership measured by the work, quietly and in practice.
+              </p>
+            }
+          />
+
+          <Row
+            content={
               <p className="about-me-copy col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6">
                 In 2021 I wrote my{" "}
                 <a
@@ -173,6 +252,10 @@ class About extends Component {
 
           .About h3 {
             text-align: center;
+          }
+
+          .About .lead-heading {
+            margin-top: 3rem;
           }
 
           .About .list {
