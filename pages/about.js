@@ -41,10 +41,22 @@ class About extends Component {
           <Row
             content={
               <p className="about-me-copy col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6">
-                I’m Harri Halonen — product and service designer based in
-                Tampere, Finland. I do the structural thinking: what the problem
-                actually is, how a service fits together, and how to make the
-                design clear enough that a team can act on it.
+                I’m Harri Halonen — an experience and product designer based in
+                Tampere, Finland. I work where business goals meet technical
+                reality, turning ambiguous requirements into clear workflows,
+                reusable patterns, and design that’s ready to build.
+              </p>
+            }
+          />
+
+          <Row
+            content={
+              <p className="about-me-copy col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6">
+                Most of my work lives in complex B2B and product systems — the
+                kind with real edge cases, long-lived data, and users who can’t
+                afford a confusing screen. I’m just as comfortable slowing down
+                for trust-sensitive and health-adjacent contexts, where the
+                right move is to design quietly and carefully.
               </p>
             }
           />
@@ -56,6 +68,36 @@ class About extends Component {
                 field research to know that what people say they want and what
                 they actually need are usually two different conversations.
               </p>
+            }
+          />
+
+          <Row
+            content={
+              <div className="about-me-copy col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6">
+                <p className="focus-intro">What I’m focused on right now:</p>
+                <ul className="focus-list">
+                  <li>
+                    <strong>Complex product systems</strong> — workflows,
+                    states, and edge cases that hold up over time
+                  </li>
+                  <li>
+                    <strong>Design systems</strong> — reusable patterns a team
+                    can actually build on
+                  </li>
+                  <li>
+                    <strong>Discovery</strong> — research-led framing before
+                    anyone touches pixels
+                  </li>
+                  <li>
+                    <strong>AI and data workflows</strong> — making dense
+                    information legible and actionable
+                  </li>
+                  <li>
+                    <strong>Implementation quality</strong> — staying close to
+                    the build so the design survives it
+                  </li>
+                </ul>
+              </div>
             }
           />
 
@@ -136,6 +178,19 @@ class About extends Component {
           .About .list {
             padding-left: 40px;
             margin-top: 0;
+          }
+
+          .About .focus-intro {
+            margin-bottom: 0.5rem;
+          }
+
+          .About .focus-list {
+            padding-left: 1.25rem;
+            margin-top: 0;
+          }
+
+          .About .focus-list li {
+            margin-bottom: 0.4rem;
           }
 
 
