@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Row from "../components/Row";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import Principles from "../components/Principles";
 import HighlightUnderline from "../components/design-system/HighlightUnderline";
 import { colors, radii } from "../components/design-system/tokens";
 import mePhoto from "../static/media/about/me.jpg";
@@ -174,6 +175,31 @@ class About extends Component {
 
           <Row
             content={
+              <h3 className="principles-heading col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6">
+                How I approach the work
+              </h3>
+            }
+          />
+
+          <Row
+            content={
+              <p className="about-me-copy col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6">
+                A few principles that shape most of what I design — the
+                judgment underneath the case studies.
+              </p>
+            }
+          />
+
+          <Row
+            content={
+              <div className="col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6">
+                <Principles />
+              </div>
+            }
+          />
+
+          <Row
+            content={
               <p className="about-me-copy col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6">
                 In 2021 I wrote my{" "}
                 <a
@@ -253,6 +279,12 @@ class About extends Component {
 
           .About .lead-heading {
             margin-top: 3rem;
+          }
+
+          .About h3.principles-heading {
+            text-align: left;
+            margin-top: 2.5rem;
+            margin-bottom: 0.5rem;
           }
 
           .About .list {
