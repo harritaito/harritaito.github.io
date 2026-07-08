@@ -1,14 +1,63 @@
 import React, { Component } from "react";
 import Isvg from "react-inlinesvg";
-import { radii } from "./design-system/tokens";
+import Modal from "react-modal";
+import { resolveAssetSrc } from "./assetSource";
+import { colors, radii } from "./design-system/tokens";
 
 import dribbble from "../static/media/social/dribbble.svg";
 import github from "../static/media/social/github.svg";
 import linkedin from "../static/media/social/linkedin.svg";
 import instagram from "../static/media/social/instagram.svg";
+import duolingoChess from "../static/media/social/duolingo-chess.svg";
 
 class Social extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      chessModalOpen: false,
+    };
+
+    this.showChessModal = this.showChessModal.bind(this);
+    this.hideChessModal = this.hideChessModal.bind(this);
+  }
+
+  showChessModal() {
+    this.setState({ chessModalOpen: true });
+    document.body.style.overflow = "hidden";
+    Modal.setAppElement("body");
+  }
+
+  hideChessModal() {
+    this.setState({ chessModalOpen: false });
+    document.body.style.overflow = "auto";
+  }
+
   render() {
+    const modalCustomStyles = {
+      overlay: {
+        overflowY: "auto",
+        position: "fixed",
+        backgroundColor: "rgba(0, 0, 0, 0.72)",
+        zIndex: 20,
+      },
+      content: {
+        height: "auto",
+        position: "relative",
+        padding: "1rem",
+        width: "min(90vw, 420px)",
+        top: "0",
+        left: "0",
+        bottom: "0",
+        right: "0",
+        border: "none",
+        borderRadius: radii.pill,
+        margin: "6vh auto",
+        background: colors.pageBackground,
+        boxShadow: "0 1em 2em 0 rgba(0,0,0,0.30)",
+      },
+    };
+
     return (
       <p className="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 social">
         <a
@@ -118,6 +167,38 @@ class Social extends Component {
           </span>
         </a>
 
+        <button
+          type="button"
+          id="duolingo-chess"
+          aria-label="Open Duolingo chess QR code"
+          onClick={this.showChessModal}
+        >
+          <span className="chess-icon" aria-hidden="true">
+            ♞
+          </span>
+        </button>
+
+        <Modal
+          isOpen={this.state.chessModalOpen}
+          onRequestClose={this.hideChessModal}
+          closeTimeoutMS={200}
+          style={modalCustomStyles}
+          contentLabel="Play chess with Harri on Duolingo"
+        >
+          <button type="button" onClick={this.hideChessModal} className="modal-close-button">
+            <span aria-hidden="true">×</span>
+            <span className="sr-only">Close Duolingo chess QR code</span>
+          </button>
+          <img
+            src={resolveAssetSrc(duolingoChess)}
+            alt="Play chess with me on Duolingo. Profile @harrrri."
+            className="duolingo-chess-card"
+            width="927"
+            height="1227"
+            decoding="async"
+          />
+        </Modal>
+
         <style jsx>{`
           .social {
             text-align: right;
@@ -127,7 +208,15 @@ class Social extends Component {
             gap: 0.5rem;
           }
 
-          .social a {
+          .social a,
+          .social button {
+            appearance: none;
+            background: transparent;
+            border: 0;
+            color: var(--icon-color);
+            cursor: pointer;
+            font: inherit;
+            padding: 0;
             text-decoration: none;
             width: 44px;
             height: 44px;
@@ -137,8 +226,16 @@ class Social extends Component {
             border-radius: ${radii.circle};
           }
 
-          .social a::after {
+          .social a::after,
+          .social button::after {
             display: none;
+          }
+
+          .chess-icon {
+            font-size: 26px;
+            line-height: 1;
+            transform: translateY(-1px);
+            transition: color 0.4s ease;
           }
 
           .social svg {
@@ -172,6 +269,45 @@ class Social extends Component {
 
           #instagram svg:hover {
             fill: #e95950;
+          }
+
+          #duolingo-chess:hover .chess-icon,
+          #duolingo-chess:focus .chess-icon {
+            color: #58cc02;
+          }
+
+          .modal-close-button {
+            appearance: none;
+            background: transparent;
+            border: 0;
+            color: #4b4b4b;
+            cursor: pointer;
+            font-family: Rubik, sans-serif;
+            font-size: 3rem;
+            line-height: 0.7;
+            padding: 0;
+            position: absolute;
+            right: 1.1rem;
+            top: 1.1rem;
+            z-index: 1;
+          }
+
+          .duolingo-chess-card {
+            border-radius: 24px;
+            display: block;
+            height: auto;
+            max-width: 100%;
+          }
+
+          .sr-only {
+            border: 0;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
           }
 
           #untappd svg:hover {
