@@ -64,6 +64,12 @@ const PAGE_METADATA = {
       "Research notes, process pieces, and longer-form writing from Harri Halonen on product and service design.",
     path: "/writing",
   },
+  "/accessibility": {
+    title: "Accessibility statement | Harri Halonen",
+    description:
+      "Accessibility statement for harritaito.com: compliance status, known issues, and how to send accessibility feedback.",
+    path: "/accessibility",
+  },
   "/404": {
     title: "Page not found | Harri Halonen",
     description:
