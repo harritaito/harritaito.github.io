@@ -4,16 +4,11 @@ import { radii } from "./design-system/tokens";
 const STORAGE_KEY = "theme";
 
 const getSystemTheme = () => {
-  if (
-    typeof window === "undefined" ||
-    typeof window.matchMedia !== "function"
-  ) {
+  if (typeof window === "undefined" || typeof window.matchMedia !== "function") {
     return "light";
   }
 
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 };
 
 const getInitialTheme = () => {
@@ -35,9 +30,7 @@ const getDocumentTheme = () => {
 
   const currentTheme = document.documentElement?.dataset?.theme;
 
-  return currentTheme === "light" || currentTheme === "dark"
-    ? currentTheme
-    : null;
+  return currentTheme === "light" || currentTheme === "dark" ? currentTheme : null;
 };
 
 const applyTheme = (theme) => {
@@ -121,8 +114,7 @@ const ThemeToggle = () => {
     }
   };
 
-  const label =
-    theme === "dark" ? "Switch to light mode" : "Switch to dark mode";
+  const label = theme === "dark" ? "Switch to light mode" : "Switch to dark mode";
   const icon = theme === "dark" ? "🌙" : "☀️";
   const text = theme === "dark" ? "Dark mode" : "Light mode";
 

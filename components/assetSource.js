@@ -1,9 +1,9 @@
 export function resolveAssetSrc(asset) {
-  if (typeof asset === 'string') {
+  if (typeof asset === "string") {
     return asset;
   }
 
-  if (asset && typeof asset.src === 'string') {
+  if (asset && typeof asset.src === "string") {
     return asset.src;
   }
 
@@ -11,9 +11,9 @@ export function resolveAssetSrc(asset) {
 }
 
 export function resolveAssetWidth(asset) {
-  return asset && typeof asset.width === 'number' ? asset.width : undefined;
+  return asset && typeof asset.width === "number" ? asset.width : undefined;
 }
 
 export function resolveAssetHeight(asset) {
-  return asset && typeof asset.height === 'number' ? asset.height : undefined;
+  return asset && typeof asset.height === "number" ? asset.height : undefined;
 }

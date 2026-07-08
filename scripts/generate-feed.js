@@ -33,13 +33,17 @@ if (!fs.existsSync(outDir) || !fs.statSync(outDir).isDirectory()) {
 }
 
 if (!fs.existsSync(cnameSourcePath)) {
-  fail(`Cannot create ${relativePath(feedPath)} because ${relativePath(cnameSourcePath)} is missing.`);
+  fail(
+    `Cannot create ${relativePath(feedPath)} because ${relativePath(cnameSourcePath)} is missing.`,
+  );
 }
 
 const domain = fs.readFileSync(cnameSourcePath, "utf8").trim();
 
 if (!domain) {
-  fail(`Cannot create ${relativePath(feedPath)} because ${relativePath(cnameSourcePath)} is empty.`);
+  fail(
+    `Cannot create ${relativePath(feedPath)} because ${relativePath(cnameSourcePath)} is empty.`,
+  );
 }
 
 const siteUrl = `https://${domain}`;
@@ -62,9 +66,7 @@ function publicArticles() {
       return { slug, frontmatter: data };
     })
     .filter((article) => !article.frontmatter.draft)
-    .sort((a, b) =>
-      String(b.frontmatter.date).localeCompare(String(a.frontmatter.date)),
-    );
+    .sort((a, b) => String(b.frontmatter.date).localeCompare(String(a.frontmatter.date)));
 }
 
 function toItem(article) {

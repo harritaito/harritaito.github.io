@@ -1,20 +1,17 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import Isvg from 'react-inlinesvg';
-import Modal from 'react-modal';
-import { resolveAssetHeight, resolveAssetSrc, resolveAssetWidth } from './assetSource';
-import HighlightUnderline from './design-system/HighlightUnderline';
-import close from '../static/media/icons/close.svg';
-
-
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import Isvg from "react-inlinesvg";
+import Modal from "react-modal";
+import { resolveAssetHeight, resolveAssetSrc, resolveAssetWidth } from "./assetSource";
+import HighlightUnderline from "./design-system/HighlightUnderline";
+import close from "../static/media/icons/close.svg";
 
 class ProjectIcon extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
       modalOpen: false,
-      imageLoaded: false
+      imageLoaded: false,
     };
 
     this.showModal = this.showModal.bind(this);
@@ -44,13 +41,13 @@ class ProjectIcon extends Component {
     square: false,
     round: false,
     links: [],
-    first: false
+    first: false,
   };
 
   showModal() {
     this.setState({ modalOpen: true });
     document.body.style.overflow = "hidden";
-    Modal.setAppElement('body');
+    Modal.setAppElement("body");
   }
 
   hideModal() {
@@ -59,24 +56,22 @@ class ProjectIcon extends Component {
   }
 
   render() {
-
     let square = this.props.square ? "square" : null;
     let round = this.props.round ? "round" : null;
     let modalVisible = "visible";
-    this.state.imageLoaded ? modalVisible = "visible" : null;
+    this.state.imageLoaded ? (modalVisible = "visible") : null;
 
     const modalCustomStyles = {
-
-      overlay : {
+      overlay: {
         overflowY: "scroll",
         position: "fixed",
         backgroundColor: "rgba(0, 0, 0, 0.75)",
       },
       content: {
-        height: 'auto',
-        position: 'relative',
-        padding: '1em',
-        width: '80vw',
+        height: "auto",
+        position: "relative",
+        padding: "1em",
+        width: "80vw",
         maxWidth: "400px",
         top: "0",
         left: "0",
@@ -85,27 +80,46 @@ class ProjectIcon extends Component {
         border: "none",
         margin: "10vh auto",
         visibility: modalVisible,
-        background: "var(--surface-elevated-color)"
-      }
-    }
-    
+        background: "var(--surface-elevated-color)",
+      },
+    };
+
     let iconClass = "project-icon col-xs-6 col-sm-3 col-md-3 col-lg-3 col-xl-2";
-    this.props.first ? iconClass += " col-sm-offset-3 col-md-offset-3 col-xl-offset-4" : null;
+    this.props.first ? (iconClass += " col-sm-offset-3 col-md-offset-3 col-xl-offset-4") : null;
 
     return (
       <div className={iconClass}>
-        <span onClick={this.showModal} style={{margin:10, height: '7em', width: '7em'}}>
-          <object><Isvg src={resolveAssetSrc(this.props.svg)} alt={this.props.alt} className={square || round}/></object>
+        <span onClick={this.showModal} style={{ margin: 10, height: "7em", width: "7em" }}>
+          <object>
+            <Isvg
+              src={resolveAssetSrc(this.props.svg)}
+              alt={this.props.alt}
+              className={square || round}
+            />
+          </object>
         </span>
         <Modal
           isOpen={this.state.modalOpen}
           onRequestClose={this.hideModal}
           closeTimeoutMS={200}
           style={modalCustomStyles}
-          contentLabel="Modal">
+          contentLabel="Modal"
+        >
           <div>
             <button onClick={this.hideModal} className={"modal-close-button"}>
-              <img src={resolveAssetSrc(close)} alt={"close button"} width="24" height="24" decoding="async" style={{border: 0, height: '1.5em', width: '1.5em', background: 'var(--surface-elevated-color)'}}/>
+              <img
+                src={resolveAssetSrc(close)}
+                alt={"close button"}
+                width="24"
+                height="24"
+                decoding="async"
+                style={{
+                  border: 0,
+                  height: "1.5em",
+                  width: "1.5em",
+                  background: "var(--surface-elevated-color)",
+                }}
+              />
             </button>
             <h2>{this.props.title}</h2>
             <div className="modal-content">
@@ -117,17 +131,23 @@ class ProjectIcon extends Component {
                 height={resolveAssetHeight(this.props.image)}
                 loading="lazy"
                 decoding="async"
-                onLoad={() => this.setState({imageLoaded: true})}
-                loader={<div className={"loader"}></div> }
+                onLoad={() => this.setState({ imageLoaded: true })}
+                loader={<div className={"loader"}></div>}
               />
-              <div style={{marginTop: "1.5em"}}>
-              {
-                (this.props.links).map(function (link, index){
+              <div style={{ marginTop: "1.5em" }}>
+                {this.props.links.map(function (link, index) {
                   return (
-                    <a key={link.title + "link" + index} href={link.url} target="_blank" rel="noopener noreferrer">{link.title}<HighlightUnderline /></a>
-                  )
-                })
-              }
+                    <a
+                      key={link.title + "link" + index}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {link.title}
+                      <HighlightUnderline />
+                    </a>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -135,9 +155,9 @@ class ProjectIcon extends Component {
 
         <style jsx>{`
           .isvg {
-            height: '7em'; 
-            width: '7em';
-            display: 'flex'
+            height: "7em";
+            width: "7em";
+            display: "flex";
           }
           .project-icon {
             display: -ms-flexbox;
@@ -150,130 +170,122 @@ class ProjectIcon extends Component {
             display: -ms-flexbox;
             display: flex;
             -ms-flex-pack: center;
-                justify-content: center;
+            justify-content: center;
             -ms-flex-align: center;
-                align-items: center;
+            align-items: center;
           }
 
           .project-icon .square svg {
             max-height: 55%;
           }
 
-      .project-icon .round svg {
-        max-height: 63%;
-      }
+          .project-icon .round svg {
+            max-height: 63%;
+          }
 
-      .project-icon svg {
-        filter: url(../static/grayscale.svg#grayscale) contrast(0);
-        /* Firefox 3.5+ */
-        -webkit-filter: grayscale(1) contrast(0);
-        /* Google Chrome & Safari 6+ */
+          .project-icon svg {
+            filter: url(../static/grayscale.svg#grayscale) contrast(0);
+            /* Firefox 3.5+ */
+            -webkit-filter: grayscale(1) contrast(0);
+            /* Google Chrome & Safari 6+ */
 
-        -webkit-transition: all .5s ease;
+            -webkit-transition: all 0.5s ease;
 
-        -o-transition: all .5s ease;
+            -o-transition: all 0.5s ease;
 
-        transition: all .5s ease;
-        max-height: 70%;
-        max-width: 120%;
-      }
+            transition: all 0.5s ease;
+            max-height: 70%;
+            max-width: 120%;
+          }
 
-      .project-icon:hover {
-        filter: none;
-        -webkit-filter: grayscale(0%);
-        cursor: pointer;
-      }
+          .project-icon:hover {
+            filter: none;
+            -webkit-filter: grayscale(0%);
+            cursor: pointer;
+          }
 
-      .ReactModalPortal > div {
-        opacity: 0;
-      }
+          .ReactModalPortal > div {
+            opacity: 0;
+          }
 
-      .ReactModalPortal .ReactModal__Overlay {
-        -webkit-transition: opacity 200ms ease-in-out;
-        -o-transition: opacity 200ms ease-in-out;
-        transition: opacity 200ms ease-in-out;
-        background: rgba(0, 0, 0, 0.15);
-      }
+          .ReactModalPortal .ReactModal__Overlay {
+            -webkit-transition: opacity 200ms ease-in-out;
+            -o-transition: opacity 200ms ease-in-out;
+            transition: opacity 200ms ease-in-out;
+            background: rgba(0, 0, 0, 0.15);
+          }
 
+          .ReactModalPortal .ReactModal__Overlay--after-open {
+            opacity: 1;
+          }
 
-      .ReactModalPortal .ReactModal__Overlay--after-open {
-        opacity: 1;
-      }
+          .ReactModalPortal .ReactModal__Overlay--before-close {
+            opacity: 0;
+          }
 
-      .ReactModalPortal .ReactModal__Overlay--before-close {
-        opacity: 0;
-      }
+          .ReactModal__Content {
+            padding: 1em;
+          }
 
+          .modal-close-button {
+            padding: 0;
+            border: 0;
+            height: 1.5em;
+            width: 1.5em;
+            position: absolute;
+            right: 1.5em;
+            top: 1.5em;
+            background: var(--surface-elevated-color);
+          }
 
-      .ReactModal__Content {
-        padding: 1em;
-      }
+          .modal-close-button img {
+            height: 1.5em;
+            width: 1.5em;
+            border: 0;
+            background: var(--surface-elevated-color);
+          }
 
+          .modal-close-button:hover {
+            cursor: pointer;
+          }
 
-      .modal-close-button {
-        padding: 0;
-        border: 0;
-        height: 1.5em;
-        width: 1.5em;
-        position: absolute;
-        right: 1.5em;
-        top: 1.5em;
-        background: var(--surface-elevated-color);
-      }
+          .modal-close-button:focus {
+            outline: none;
+          }
 
+          .modal-content {
+            -webkit-transition: all 1s ease;
+            -o-transition: all 1s ease;
+            transition: all 1s ease;
+          }
 
-      .modal-close-button img {
-        height: 1.5em;
-        width: 1.5em;
-        border: 0;
-        background: var(--surface-elevated-color);
-      }
+          .modal-content img {
+            display: block;
+            max-width: 100%;
+            margin: auto;
+            max-height: 300px;
+            -webkit-transition: all 1s ease;
+            -o-transition: all 1s ease;
+            transition: all 1s ease;
+          }
 
+          .modal-content a {
+            margin-right: 0.5em;
+          }
 
-      .modal-close-button:hover {
-        cursor: pointer;
-      }
-
-      .modal-close-button:focus {
-        outline: none;
-      }
-
-
-     .modal-content {
-        -webkit-transition: all 1s ease;
-        -o-transition: all 1s ease;
-        transition: all 1s ease;
-      }
-
-      .modal-content img {
-        display: block;
-        max-width: 100%;
-        margin: auto;
-        max-height: 300px;
-        -webkit-transition: all 1s ease;
-        -o-transition: all 1s ease;
-        transition: all 1s ease;
-      }
-
-      .modal-content a {
-        margin-right: .5em;
-      }
-
-      .modal-0-2 .loader {
-        background: gray;
-      }
-      h2{
-        display: block;
-        font-size: 1.5em;
-        -webkit-margin-before: 0.83em;
-        -webkit-margin-after: 0.83em;
-        -webkit-margin-start: 0px;
-        -webkit-margin-end: 0px;
-        font-weight: bold;
-     }
-
-    `}</style>
-
+          .modal-0-2 .loader {
+            background: gray;
+          }
+          h2 {
+            display: block;
+            font-size: 1.5em;
+            -webkit-margin-before: 0.83em;
+            -webkit-margin-after: 0.83em;
+            -webkit-margin-start: 0px;
+            -webkit-margin-end: 0px;
+            font-weight: bold;
+          }
+        `}</style>
       </div>
     );
   }

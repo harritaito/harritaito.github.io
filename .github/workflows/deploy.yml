@@ -24,12 +24,16 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
-          node-version: '20.9.0'
-          cache: 'npm'
+          node-version: "20.9.0"
+          cache: "npm"
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Install dependencies
         run: npm ci
+      - name: Lint
+        run: npm run lint
+      - name: Check formatting
+        run: npm run format:check
       - name: Run tests
         run: npm test -- --runInBand
       - name: Build project

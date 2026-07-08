@@ -13,10 +13,13 @@ const nextConfig = {
     return {
       "/": { page: "/" },
       "/about": { page: "/about" },
+      "/accessibility": { page: "/accessibility" },
+      "/saavutettavuusseloste": { page: "/saavutettavuusseloste" },
       "/projects": { page: "/projects" },
       "/kivakaupunki": { page: "/kivakaupunki" },
       "/aikakone": { page: "/aikakone" },
       "/hri-study": { page: "/hri-study" },
+      "/thesis": { page: "/thesis" },
     };
   },
 };

@@ -1,14 +1,15 @@
-import robotImage from '../static/media/home/languagerobot.jpg';
-import kivakaupunkiImage from '../static/media/home/kivakaupunki.jpg';
-import aikakoneImage from '../static/media/home/aikakone.jpg';
-import placeholderTexture from '../static/media/pohja.svg';
+import robotImage from "../static/media/home/languagerobot.jpg";
+import kivakaupunkiImage from "../static/media/home/kivakaupunki.jpg";
+import aikakoneImage from "../static/media/home/aikakone.jpg";
+import placeholderTexture from "../static/media/pohja.svg";
 
 const PROJECT_MANIFEST = [
   {
     name: "Interaction Design Principles for Industrial XR",
     projectName: "Thesis",
     problemTitle: "Interaction design for environments that break the rules",
-    description: "A research-led set of principles for XR in industrial settings — where gloves, noise, and physical load make most interface assumptions wrong.",
+    description:
+      "A research-led set of principles for XR in industrial settings — where gloves, noise, and physical load make most interface assumptions wrong.",
     image: placeholderTexture,
     link: "/thesis",
     alt: "Master's thesis on interaction design principles for industrial XR",
@@ -22,7 +23,8 @@ const PROJECT_MANIFEST = [
     name: "HRI Study",
     projectName: "HRI Study",
     problemTitle: "Trust-sensitive classroom robot design",
-    description: "Observation, teacher interviews, and theatrical prototyping shaped a clearer behavior model for a teaching-assistant robot around classroom rituals.",
+    description:
+      "Observation, teacher interviews, and theatrical prototyping shaped a clearer behavior model for a teaching-assistant robot around classroom rituals.",
     image: robotImage,
     link: "/hri-study",
     alt: "Human-Robot Interaction",
@@ -36,7 +38,8 @@ const PROJECT_MANIFEST = [
     name: "Kiva Kaupunki",
     projectName: "Kiva Kaupunki",
     problemTitle: "Operational complexity in civic reporting",
-    description: "A civic feedback idea translated into a map-based concept with service design, interface sketches, and implementation work.",
+    description:
+      "A civic feedback idea translated into a map-based concept with service design, interface sketches, and implementation work.",
     image: kivakaupunkiImage,
     link: "/kivakaupunki",
     alt: "Application for city reporting",
@@ -50,7 +53,8 @@ const PROJECT_MANIFEST = [
     name: "Aikakone",
     projectName: "Aikakone",
     problemTitle: "Discovery for memory-care services",
-    description: "Field research, service blueprinting, and facilitated prototype sessions explored what families, staff, and residents would need to trust.",
+    description:
+      "Field research, service blueprinting, and facilitated prototype sessions explored what families, staff, and residents would need to trust.",
     image: aikakoneImage,
     link: "/aikakone",
     alt: "Concept service for memory care",
@@ -64,7 +68,8 @@ const PROJECT_MANIFEST = [
     name: "Writing",
     projectName: "Writing",
     problemTitle: "Notes on design, systems, and research",
-    description: "Longer-form notes and reflections on how design work becomes clear enough to use.",
+    description:
+      "Longer-form notes and reflections on how design work becomes clear enough to use.",
     image: placeholderTexture,
     link: "/writing",
     alt: "Paper texture placeholder for writing notes",
@@ -78,7 +83,8 @@ const PROJECT_MANIFEST = [
     name: "Archive",
     projectName: "Archive",
     problemTitle: "Older work, kept in context",
-    description: "Course, concept, and community projects kept visible with clear labels about what shipped, what was explored, and what belongs to an earlier chapter.",
+    description:
+      "Course, concept, and community projects kept visible with clear labels about what shipped, what was explored, and what belongs to an earlier chapter.",
     image: placeholderTexture,
     link: "/projects",
     alt: "Paper texture placeholder for the project archive",
@@ -96,14 +102,13 @@ class Projects {
   }
 
   get featuredProjects() {
-    return PROJECT_MANIFEST
-      .filter((project) => project.featured)
+    return PROJECT_MANIFEST.filter((project) => project.featured)
       .slice()
       .sort((a, b) => a.featuredOrder - b.featuredOrder);
   }
 
   getIndexOfProject = (project) => {
-    return this.projects.findIndex(x => x.name === project);
+    return this.projects.findIndex((x) => x.name === project);
   };
 
   getNextProject = (project) => {
@@ -125,18 +130,15 @@ class Projects {
   getRandomProject = () => {
     let random = Math.floor(Math.random() * Math.floor(this.projects.length));
     return this.projects[random];
-  }
+  };
 
   getProjectsMinusCurrent = (project) => {
-
     let modProjects = this.projects.slice();
     let index = this.getIndexOfProject(project);
-    if (index > -1)
-      modProjects.splice(index, 1);
+    if (index > -1) modProjects.splice(index, 1);
 
     return modProjects;
   };
-
 }
 
 export default Projects;

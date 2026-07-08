@@ -6,15 +6,13 @@ const STAGES = [
     label: "Discovery",
     behavior:
       "Sit in the real workflow: interviews, support threads, and the spreadsheet someone quietly runs everything from.",
-    output:
-      "A map of how the work really happens — not how the org thinks it does.",
+    output: "A map of how the work really happens — not how the org thinks it does.",
   },
   {
     label: "Framing",
     behavior:
       "Name the actual problem and what we are deliberately not solving, so scope stops sliding mid-project.",
-    output:
-      "One sentence everyone agrees on: the problem, and the non-goals around it.",
+    output: "One sentence everyone agrees on: the problem, and the non-goals around it.",
   },
   {
     label: "Concept models",
@@ -38,8 +36,7 @@ const STAGES = [
     label: "Implementation support",
     behavior:
       "Stay in the build, answer the questions Figma cannot, and adjust as real constraints surface.",
-    output:
-      "Decisions made in the moment, in context — not weeks later in a thread.",
+    output: "Decisions made in the moment, in context — not weeks later in a thread.",
   },
   {
     label: "Design QA",
@@ -71,11 +68,7 @@ const GLYPHS = [
     { d: "M18 24h12M24 18v12", a: true },
   ],
   // Framing — crop brackets around a focus
-  [
-    { d: "M12 22V12h10" },
-    { d: "M44 34v10H34" },
-    { d: "M22 28h12", a: true },
-  ],
+  [{ d: "M12 22V12h10" }, { d: "M44 34v10H34" }, { d: "M22 28h12", a: true }],
   // Concept models — connected nodes
   [
     { d: "M16 16m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" },
@@ -84,37 +77,17 @@ const GLYPHS = [
     { d: "M19 18l18 3M38 24L31 38M25 39L18 20", a: true },
   ],
   // Prototypes — cursor clicking a frame
-  [
-    { d: "M12 12h24v20H12z" },
-    { d: "M30 28l15 6-6 2-2 6-7-14z", a: true },
-  ],
+  [{ d: "M12 12h24v20H12z" }, { d: "M30 28l15 6-6 2-2 6-7-14z", a: true }],
   // Design specs — annotated document
-  [
-    { d: "M16 8h18l8 8v32H16z" },
-    { d: "M34 8v8h8" },
-    { d: "M22 26h14M22 33h14M22 40h9", a: true },
-  ],
+  [{ d: "M16 8h18l8 8v32H16z" }, { d: "M34 8v8h8" }, { d: "M22 26h14M22 33h14M22 40h9", a: true }],
   // Implementation support — code brackets
-  [
-    { d: "M20 20l-8 8 8 8" },
-    { d: "M36 20l8 8-8 8" },
-    { d: "M32 16l-8 24", a: true },
-  ],
+  [{ d: "M20 20l-8 8 8 8" }, { d: "M36 20l8 8-8 8" }, { d: "M32 16l-8 24", a: true }],
   // Design QA — checked badge
-  [
-    { d: "M28 28m-16 0a16 16 0 1 0 32 0a16 16 0 1 0 -32 0" },
-    { d: "M20 29l6 6 12-13", a: true },
-  ],
+  [{ d: "M28 28m-16 0a16 16 0 1 0 32 0a16 16 0 1 0 -32 0" }, { d: "M20 29l6 6 12-13", a: true }],
   // Measurement — trend line
-  [
-    { d: "M14 12v32h32" },
-    { d: "M18 36l8-8 7 6 11-14", a: true },
-  ],
+  [{ d: "M14 12v32h32" }, { d: "M18 36l8-8 7 6 11-14", a: true }],
   // System contribution — module folded into a system
-  [
-    { d: "M28 8l16 9v18l-16 9-16-9V17z" },
-    { d: "M28 8v15m0 0l13 7m-13-7l-13 7", a: true },
-  ],
+  [{ d: "M28 8l16 9v18l-16 9-16-9V17z" }, { d: "M28 8v15m0 0l13 7m-13-7l-13 7", a: true }],
 ];
 
 const ProductLoop = () => {
@@ -141,7 +114,7 @@ const ProductLoop = () => {
           observer.disconnect();
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
     observer.observe(node);
@@ -162,9 +135,7 @@ const ProductLoop = () => {
       >
         {STAGES.map((item, index) => (
           <li
-            className={`product-loop__stage${
-              active === index ? " is-active" : ""
-            }`}
+            className={`product-loop__stage${active === index ? " is-active" : ""}`}
             key={item.label}
             style={{ "--i": index }}
             onMouseEnter={() => {
@@ -184,9 +155,7 @@ const ProductLoop = () => {
             <p className="product-loop__label">{item.label}</p>
             <p className="product-loop__behavior">{item.behavior}</p>
             <p className="product-loop__output">
-              <span className="product-loop__output-kicker">
-                What this produces:{" "}
-              </span>
+              <span className="product-loop__output-kicker">What this produces: </span>
               {item.output}
             </p>
           </li>
@@ -194,9 +163,7 @@ const ProductLoop = () => {
       </ol>
 
       <aside
-        className={`product-loop__panel${
-          active !== null ? " is-active" : ""
-        }`}
+        className={`product-loop__panel${active !== null ? " is-active" : ""}`}
         aria-hidden="true"
       >
         <div className="product-loop__panel-inner" key={displayIndex}>
@@ -243,11 +210,7 @@ const ProductLoop = () => {
 
         /* Base spine: gradient track with a slow flowing shimmer */
         .product-loop__list::before {
-          background: linear-gradient(
-            180deg,
-            ${colors.accentPurple},
-            ${colors.accentBlue}
-          );
+          background: linear-gradient(180deg, ${colors.accentPurple}, ${colors.accentBlue});
           border-radius: 1px;
           bottom: 0.55rem;
           content: "";
@@ -293,7 +256,9 @@ const ProductLoop = () => {
           position: relative;
           opacity: 0;
           transform: translateY(8px);
-          transition: opacity 0.5s ease, transform 0.5s ease;
+          transition:
+            opacity 0.5s ease,
+            transform 0.5s ease;
           transition-delay: calc(var(--i) * 70ms);
         }
 
@@ -336,7 +301,9 @@ const ProductLoop = () => {
           position: absolute;
           top: 0.4rem;
           width: 0.85rem;
-          transition: background 0.3s ease, box-shadow 0.35s ease,
+          transition:
+            background 0.3s ease,
+            box-shadow 0.35s ease,
             transform 0.3s ease;
         }
 
@@ -349,7 +316,9 @@ const ProductLoop = () => {
           opacity: 0;
           position: absolute;
           transform: scale(0.4);
-          transition: opacity 0.4s ease, transform 0.4s ease;
+          transition:
+            opacity 0.4s ease,
+            transform 0.4s ease;
         }
 
         .product-loop__stage:hover .product-loop__node,
@@ -371,7 +340,9 @@ const ProductLoop = () => {
           font-size: 0.8rem;
           font-weight: 600;
           letter-spacing: 0.08em;
-          transition: color 0.3s ease, letter-spacing 0.3s ease,
+          transition:
+            color 0.3s ease,
+            letter-spacing 0.3s ease,
             transform 0.3s ease;
         }
 
@@ -386,7 +357,9 @@ const ProductLoop = () => {
           font-size: 1.05rem;
           font-weight: 600;
           margin: 0.25rem 0 0.4rem;
-          transition: color 0.3s ease, transform 0.3s ease;
+          transition:
+            color 0.3s ease,
+            transform 0.3s ease;
         }
 
         .product-loop__stage:hover .product-loop__label,
@@ -413,7 +386,9 @@ const ProductLoop = () => {
           opacity: 0;
           transform: translateY(10px);
           pointer-events: none;
-          transition: opacity 0.45s ease, transform 0.45s ease;
+          transition:
+            opacity 0.45s ease,
+            transform 0.45s ease;
         }
 
         .product-loop__panel.is-active {
@@ -422,11 +397,7 @@ const ProductLoop = () => {
         }
 
         .product-loop__panel-inner {
-          background: linear-gradient(
-            155deg,
-            rgba(145, 87, 255, 0.08),
-            rgba(30, 149, 237, 0.05)
-          );
+          background: linear-gradient(155deg, rgba(145, 87, 255, 0.08), rgba(30, 149, 237, 0.05));
           border: 1px solid rgba(145, 87, 255, 0.18);
           border-radius: 18px;
           padding: 1.6rem 1.7rem 1.7rem;
@@ -436,11 +407,7 @@ const ProductLoop = () => {
         }
 
         .product-loop__panel-inner::before {
-          background: linear-gradient(
-            180deg,
-            ${colors.accentPurple},
-            ${colors.accentBlue}
-          );
+          background: linear-gradient(180deg, ${colors.accentPurple}, ${colors.accentBlue});
           border-radius: 3px;
           bottom: 1.6rem;
           content: "";

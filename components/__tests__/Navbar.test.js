@@ -1,27 +1,26 @@
-import Navbar from '../Navbar';
-import React from 'react';
-import { renderToStaticMarkup } from 'react-dom/server';
+import Navbar from "../Navbar";
+import React from "react";
+import { renderToStaticMarkup } from "react-dom/server";
 
-jest.mock('next/link', () => {
-  const React = require('react');
+jest.mock("next/link", () => {
+  const React = require("react");
   return {
     __esModule: true,
-    default: ({ href, children }) => React.createElement('a', { href }, children)
+    default: ({ href, children }) => React.createElement("a", { href }, children),
   };
 });
 
-jest.mock('react-headroom', () => {
-  const React = require('react');
-  return ({ children }) => React.createElement('div', null, children);
+jest.mock("react-headroom", () => {
+  const React = require("react");
+  return ({ children }) => React.createElement("div", null, children);
 });
 
-
-jest.mock('react-inlinesvg', () => {
-  const React = require('react');
-  return ({ src }) => React.createElement('span', { 'data-src': src });
+jest.mock("react-inlinesvg", () => {
+  const React = require("react");
+  return ({ src }) => React.createElement("span", { "data-src": src });
 });
 
-describe('Navbar reading progress', () => {
+describe("Navbar reading progress", () => {
   const originalDocumentElement = document.documentElement;
   const originalInnerHeight = window.innerHeight;
   const originalScrollY = window.scrollY;
@@ -38,13 +37,13 @@ describe('Navbar reading progress', () => {
 
   function createNavbar() {
     const navbar = new Navbar({});
-    navbar.setState = jest.fn(function(state) {
+    navbar.setState = jest.fn(function (state) {
       this.state = { ...this.state, ...state };
     });
     return navbar;
   }
 
-  test('calculates progress from scroll position and scrollable height', () => {
+  test("calculates progress from scroll position and scrollable height", () => {
     document.documentElement = { scrollHeight: 1200 };
     window.innerHeight = 200;
     window.scrollY = 250;
@@ -56,7 +55,7 @@ describe('Navbar reading progress', () => {
     expect(navbar.state.progress).toBe(0.25);
   });
 
-  test('uses zero progress when the page is not scrollable', () => {
+  test("uses zero progress when the page is not scrollable", () => {
     document.documentElement = { scrollHeight: 600 };
     window.innerHeight = 600;
     window.scrollY = 300;
@@ -67,7 +66,7 @@ describe('Navbar reading progress', () => {
     expect(navbar.setState).toHaveBeenCalledWith({ progress: 0 });
   });
 
-  test('clamps progress to zero when scroll position is negative', () => {
+  test("clamps progress to zero when scroll position is negative", () => {
     document.documentElement = { scrollHeight: 1200 };
     window.innerHeight = 200;
     window.scrollY = -25;
@@ -78,7 +77,7 @@ describe('Navbar reading progress', () => {
     expect(navbar.setState).toHaveBeenCalledWith({ progress: 0 });
   });
 
-  test('clamps progress to one when scroll position exceeds page height', () => {
+  test("clamps progress to one when scroll position exceeds page height", () => {
     document.documentElement = { scrollHeight: 1200 };
     window.innerHeight = 200;
     window.scrollY = 5000;
@@ -89,7 +88,7 @@ describe('Navbar reading progress', () => {
     expect(navbar.setState).toHaveBeenCalledWith({ progress: 1 });
   });
 
-  test('registers and removes progress listeners', () => {
+  test("registers and removes progress listeners", () => {
     document.documentElement = { scrollHeight: 1000 };
     window.innerHeight = 500;
     window.scrollY = 0;
@@ -100,32 +99,36 @@ describe('Navbar reading progress', () => {
     navbar.componentDidMount();
     navbar.componentWillUnmount();
 
-    expect(window.addEventListener).toHaveBeenCalledWith('scroll', navbar.updateProgress);
-    expect(window.addEventListener).toHaveBeenCalledWith('resize', navbar.updateProgress);
-    expect(window.removeEventListener).toHaveBeenCalledWith('scroll', navbar.updateProgress);
-    expect(window.removeEventListener).toHaveBeenCalledWith('resize', navbar.updateProgress);
+    expect(window.addEventListener).toHaveBeenCalledWith("scroll", navbar.updateProgress);
+    expect(window.addEventListener).toHaveBeenCalledWith("resize", navbar.updateProgress);
+    expect(window.removeEventListener).toHaveBeenCalledWith("scroll", navbar.updateProgress);
+    expect(window.removeEventListener).toHaveBeenCalledWith("resize", navbar.updateProgress);
   });
 
-  test('renders the progress element with scoped class names', () => {
-    const markup = renderToStaticMarkup(<Navbar nextProjectLink={null} nextProjectName={null} color="blue" />);
+  test("renders the progress element with scoped class names", () => {
+    const markup = renderToStaticMarkup(
+      <Navbar nextProjectLink={null} nextProjectName={null} color="blue" />,
+    );
 
     expect(markup).toMatch(/<progress[^>]*class="[^"]*progress-bar[^"]*blue/);
     expect(markup).toMatch(/class="[^"]*progress-bar-wrap/);
   });
 
-  test('renders Home link on the left and no next link when not provided', () => {
+  test("renders Home link on the left and no next link when not provided", () => {
     const markup = renderToStaticMarkup(<Navbar nextProjectLink={null} color="grey" />);
 
     expect(markup).toContain('href="/"');
-    expect(markup).toContain('>Home<');
+    expect(markup).toContain(">Home<");
     expect(markup).not.toContain('href="/#work"');
   });
 
-  test('renders the next page link on the right when provided', () => {
-    const markup = renderToStaticMarkup(<Navbar nextProjectLink="/about" nextProjectName="About" color="grey" />);
+  test("renders the next page link on the right when provided", () => {
+    const markup = renderToStaticMarkup(
+      <Navbar nextProjectLink="/about" nextProjectName="About" color="grey" />,
+    );
 
-    expect(markup).toContain('>Home<');
+    expect(markup).toContain(">Home<");
     expect(markup).toContain('href="/about"');
-    expect(markup).toContain('>About<');
+    expect(markup).toContain(">About<");
   });
 });

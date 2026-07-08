@@ -1,32 +1,33 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { colors, radii } from './design-system/tokens';
+import React from "react";
+import PropTypes from "prop-types";
+import { colors, radii } from "./design-system/tokens";
 
 const FIELD_ORDER = [
-  { key: 'myRole', label: 'My role' },
-  { key: 'team', label: 'Team' },
-  { key: 'timeline', label: 'Timeline' },
-  { key: 'context', label: 'Context' },
-  { key: 'problem', label: 'Problem' },
-  { key: 'users', label: 'Users' },
-  { key: 'businessContext', label: 'Business context' },
-  { key: 'constraints', label: 'Constraints' },
-  { key: 'discovery', label: 'Discovery' },
-  { key: 'keyInsights', label: 'Key insights' },
-  { key: 'conceptModel', label: 'Concept model' },
-  { key: 'keyDecisions', label: 'Key decisions' },
-  { key: 'designDetails', label: 'Design details' },
-  { key: 'implementationSupport', label: 'Implementation support' },
-  { key: 'hardMetrics', label: 'Hard metrics' },
-  { key: 'qualitativeEvidence', label: 'Qualitative evidence' },
-  { key: 'proxyEvidence', label: 'Proxy evidence' },
-  { key: 'reflection', label: 'Reflection' },
+  { key: "myRole", label: "My role" },
+  { key: "team", label: "Team" },
+  { key: "timeline", label: "Timeline" },
+  { key: "context", label: "Context" },
+  { key: "problem", label: "Problem" },
+  { key: "users", label: "Users" },
+  { key: "businessContext", label: "Business context" },
+  { key: "constraints", label: "Constraints" },
+  { key: "discovery", label: "Discovery" },
+  { key: "keyInsights", label: "Key insights" },
+  { key: "conceptModel", label: "Concept model" },
+  { key: "keyDecisions", label: "Key decisions" },
+  { key: "designDetails", label: "Design details" },
+  { key: "implementationSupport", label: "Implementation support" },
+  { key: "hardMetrics", label: "Hard metrics" },
+  { key: "qualitativeEvidence", label: "Qualitative evidence" },
+  { key: "proxyEvidence", label: "Proxy evidence" },
+  { key: "reflection", label: "Reflection" },
 ];
 
-const CASE_STUDY_COLUMN = 'col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-lg-offset-2dot5 col-lg-7 col-xl-offset-3 col-xl-6';
+const CASE_STUDY_COLUMN =
+  "col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-lg-offset-2dot5 col-lg-7 col-xl-offset-3 col-xl-6";
 
 const renderValue = (value, key) => {
-  if (value == null || value === '') {
+  if (value == null || value === "") {
     return null;
   }
 
@@ -61,7 +62,7 @@ const CaseStudyMeta = ({ status, summary, note, fields = {} }) => {
             {FIELD_ORDER.map(({ key, label }) => {
               const value = fields[key];
 
-              if (value == null || value === '') {
+              if (value == null || value === "") {
                 return null;
               }
 
@@ -108,7 +109,7 @@ const CaseStudyMeta = ({ status, summary, note, fields = {} }) => {
           padding: 0.85rem 1rem;
           border-radius: 1rem;
           background: rgba(255, 255, 255, 0.72);
-          box-shadow: 0 0.25em 0.5em 0 rgba(0,0,0,0.15);
+          box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.15);
           color: ${colors.textMuted};
           font-size: 0.92rem;
           line-height: 1.5;

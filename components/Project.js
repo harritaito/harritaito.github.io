@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
-import Link from 'next/link';
-import PropTypes from 'prop-types';
-import Isvg from 'react-inlinesvg';
-import { resolveAssetHeight, resolveAssetSrc, resolveAssetWidth } from './assetSource';
-import { colors, shadows } from './design-system/tokens';
-import arrow from '../static/media/icons/arrow-slim.svg';
+import React, { Component } from "react";
+import Link from "next/link";
+import PropTypes from "prop-types";
+import Isvg from "react-inlinesvg";
+import { resolveAssetHeight, resolveAssetSrc, resolveAssetWidth } from "./assetSource";
+import { colors, shadows } from "./design-system/tokens";
+import arrow from "../static/media/icons/arrow-slim.svg";
 
 class Project extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      animationProgress: 1
+      animationProgress: 1,
     };
 
     this.projectAnimation = React.createRef();
@@ -31,7 +31,7 @@ class Project extends Component {
     percentage: PropTypes.string,
     parallax: PropTypes.bool,
     endValue: PropTypes.number,
-  }
+  };
 
   static defaultProps = {
     title: "abc",
@@ -43,21 +43,22 @@ class Project extends Component {
     color: "green",
     label: "Case Study",
     parallax: true,
-    endValue: -100
-  }
+    endValue: -100,
+  };
 
   componentDidMount() {
-    this.prefersReducedMotion = typeof window.matchMedia === 'function'
-      ? window.matchMedia('(prefers-reduced-motion: reduce)').matches
-      : false;
+    this.prefersReducedMotion =
+      typeof window.matchMedia === "function"
+        ? window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        : false;
 
     if (!this.props.parallax || this.prefersReducedMotion) {
       this.setState({ animationProgress: 1 });
       return;
     }
 
-    window.addEventListener('scroll', this.queueAnimationUpdate);
-    window.addEventListener('resize', this.queueAnimationUpdate);
+    window.addEventListener("scroll", this.queueAnimationUpdate);
+    window.addEventListener("resize", this.queueAnimationUpdate);
     this.updateAnimation();
   }
 
@@ -72,8 +73,8 @@ class Project extends Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.queueAnimationUpdate);
-    window.removeEventListener('resize', this.queueAnimationUpdate);
+    window.removeEventListener("scroll", this.queueAnimationUpdate);
+    window.removeEventListener("resize", this.queueAnimationUpdate);
 
     if (this.animationFrame) {
       window.cancelAnimationFrame(this.animationFrame);
@@ -120,13 +121,13 @@ class Project extends Component {
     if (this.prefersReducedMotion) {
       return {
         opacity: 1,
-        transform: 'none'
+        transform: "none",
       };
     }
 
     return {
       opacity: this.state.animationProgress,
-      transform: `translate3d(0, ${this.props.endValue * this.state.animationProgress}px, 0)`
+      transform: `translate3d(0, ${this.props.endValue * this.state.animationProgress}px, 0)`,
     };
   }
 
@@ -166,17 +167,12 @@ class Project extends Component {
   }
 
   render() {
-
     return (
       <div className="Project">
         <div className="row">
           <div className="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 col-xl-7 col-xl-offset-2">
             {this.props.parallax ? (
-              <div
-                className="plx"
-                ref={this.projectAnimation}
-                style={this.getParallaxStyle()}
-              >
+              <div className="plx" ref={this.projectAnimation} style={this.getParallaxStyle()}>
                 {this.renderProjectLink()}
               </div>
             ) : (
@@ -190,7 +186,10 @@ class Project extends Component {
             margin-bottom: 9em;
           }
           @media only screen and (max-width: 45rem) {
-            .Project {margin-top: 5em; margin-bottom: 5em;}
+            .Project {
+              margin-top: 5em;
+              margin-bottom: 5em;
+            }
           }
 
           .Project :global(.project-link-container) {
@@ -219,16 +218,16 @@ class Project extends Component {
             overflow: hidden;
             background-color: var(--surface-elevated-color);
             -webkit-box-shadow: ${shadows.card};
-                    box-shadow: ${shadows.card};
-            -webkit-transition: box-shadow .5s ease;
-            transition: box-shadow .5s ease;
+            box-shadow: ${shadows.card};
+            -webkit-transition: box-shadow 0.5s ease;
+            transition: box-shadow 0.5s ease;
             display: flex;
             flex-direction: column;
           }
 
           .Project :global(.project-link-container:hover .case-card) {
             -webkit-box-shadow: ${shadows.cardHover};
-                    box-shadow: ${shadows.cardHover};
+            box-shadow: ${shadows.cardHover};
           }
 
           .Project :global(.case-card__media) {
@@ -275,7 +274,6 @@ class Project extends Component {
           }
 
           /* Gradient background code */
-
 
           /*
           .project-blurb .bg {
@@ -324,8 +322,8 @@ class Project extends Component {
 
           .Project :global(.case-card:hover .next-arrow) {
             -webkit-transform: translateX(5px);
-                -ms-transform: translateX(5px);
-                    transform: translateX(5px);
+            -ms-transform: translateX(5px);
+            transform: translateX(5px);
           }
 
           /* Link Styling */
@@ -334,36 +332,36 @@ class Project extends Component {
             display: -ms-flexbox;
             display: flex;
             -ms-flex-pack: justify;
-                justify-content: space-between
+            justify-content: space-between;
           }
 
           .Project :global(.bottom .next) {
             display: -ms-flexbox;
             display: flex;
-            padding: .5em 0 1em;
+            padding: 0.5em 0 1em;
           }
 
           .Project :global(.case-study-text) {
             display: inline-block;
-            -webkit-transition: all .6s ease;
-            -o-transition: all .6s ease;
-            transition: all .6s ease;
+            -webkit-transition: all 0.6s ease;
+            -o-transition: all 0.6s ease;
+            transition: all 0.6s ease;
           }
 
           .Project :global(.bottom .next-arrow) {
             width: 1em;
             height: 1em;
             margin-left: 4px;
-            -webkit-transition: all .4s linear;
-            -o-transition: all .4s linear;
-            transition: all .4s linear;
+            -webkit-transition: all 0.4s linear;
+            -o-transition: all 0.4s linear;
+            transition: all 0.4s linear;
             display: block;
           }
 
           .Project :global(.bottom .next-arrow-icon) {
-            -webkit-transition: all .6s ease;
-            -o-transition: all .6s ease;
-            transition: all .6s ease;
+            -webkit-transition: all 0.6s ease;
+            -o-transition: all 0.6s ease;
+            transition: all 0.6s ease;
           }
 
           .Project :global(.case-card .next.green .case-study-text) {
@@ -414,18 +412,17 @@ class Project extends Component {
             user-select: none;
           }
 
-
           @media only screen and (max-width: 45rem) {
             .Project :global(.case-card) {
-              -webkit-box-shadow: 0 0.75em 1.5em 0 rgba(0,0,0,0.22);
-                      box-shadow: 0 0.75em 1.5em 0 rgba(0,0,0,0.22);
+              -webkit-box-shadow: 0 0.75em 1.5em 0 rgba(0, 0, 0, 0.22);
+              box-shadow: 0 0.75em 1.5em 0 rgba(0, 0, 0, 0.22);
             }
 
             .Project :global(.plx) {
               opacity: 1 !important;
               -webkit-transform: none !important;
-                  -ms-transform: none !important;
-                      transform: none !important;
+              -ms-transform: none !important;
+              transform: none !important;
             }
           }
         `}</style>

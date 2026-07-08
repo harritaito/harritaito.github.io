@@ -1,23 +1,22 @@
-import React, { Component } from 'react';
-import Link from 'next/link';
-import PropTypes from 'prop-types';
-import { colors, radii, transitions } from './design-system/tokens';
+import React, { Component } from "react";
+import Link from "next/link";
+import PropTypes from "prop-types";
+import { colors, radii, transitions } from "./design-system/tokens";
 
 class Button extends Component {
   static propTypes = {
     label: PropTypes.string.isRequired,
     link: PropTypes.string,
     color: PropTypes.string.isRequired,
-  }
+  };
 
   static defaultProps = {
     label: "Button",
-    color: "green"
-  }
+    color: "green",
+  };
 
-  isLinkInternal () {
-    if (!this.props.link || typeof this.props.link !== 'string')
-      return false;
+  isLinkInternal() {
+    if (!this.props.link || typeof this.props.link !== "string") return false;
 
     const link = this.props.link.trim();
 
@@ -25,16 +24,16 @@ class Button extends Component {
       return false;
     }
 
-    if (link.startsWith('//')) {
+    if (link.startsWith("//")) {
       return false;
     }
 
     if (
-      link.startsWith('/') ||
-      link.startsWith('./') ||
-      link.startsWith('../') ||
-      link.startsWith('#') ||
-      link.startsWith('?')
+      link.startsWith("/") ||
+      link.startsWith("./") ||
+      link.startsWith("../") ||
+      link.startsWith("#") ||
+      link.startsWith("?")
     ) {
       return true;
     }
@@ -42,11 +41,11 @@ class Button extends Component {
     try {
       const url = new URL(link);
 
-      if (url.protocol !== 'http:' && url.protocol !== 'https:') {
+      if (url.protocol !== "http:" && url.protocol !== "https:") {
         return false;
       }
 
-      if (typeof window === 'undefined' || !window.location) {
+      if (typeof window === "undefined" || !window.location) {
         return false;
       }
 
@@ -57,28 +56,30 @@ class Button extends Component {
   }
 
   render() {
-
     const content = <span>{this.props.label}</span>;
 
     return (
       <div className={"button " + this.props.color}>
-        {
-          this.props.link ?
-            (
-              this.isLinkInternal() ?
-                <Link href={this.props.link} className="button-link">
-                  {content}
-                </Link> :
-                <a
-                  className="button-link"
-                  href={this.props.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {content}
-                </a>
-            ) : <span className="button-link button-link--static" aria-disabled="true">{content}</span>
-        }
+        {this.props.link ? (
+          this.isLinkInternal() ? (
+            <Link href={this.props.link} className="button-link">
+              {content}
+            </Link>
+          ) : (
+            <a
+              className="button-link"
+              href={this.props.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {content}
+            </a>
+          )
+        ) : (
+          <span className="button-link button-link--static" aria-disabled="true">
+            {content}
+          </span>
+        )}
         <style jsx>{`
           /* Solid Button Rules */
 
@@ -86,8 +87,8 @@ class Button extends Component {
             display: inline-block;
             position: relative;
             border-radius: ${radii.pill};
-            padding: .5em 1.5em;
-            color: #FAFAFA;
+            padding: 0.5em 1.5em;
+            color: #fafafa;
             text-decoration: none;
             -webkit-transition: ${transitions.smooth};
             -o-transition: ${transitions.smooth};
@@ -98,13 +99,14 @@ class Button extends Component {
             cursor: default;
           }
           @media only screen and (max-width: 45rem) {
-          .button :global(.button-link) {font-size: 0.9rem;}
-        }
+            .button :global(.button-link) {
+              font-size: 0.9rem;
+            }
+          }
 
           .button:hover {
             cursor: pointer;
           }
-
 
           /* Outline Button Rules */
 
@@ -116,15 +118,15 @@ class Button extends Component {
           .button.outline :global(.button-link span) {
             position: relative;
             display: inline-block;
-            padding: .3em 1.3em;
+            padding: 0.3em 1.3em;
           }
 
           .button.outline :global(.button-link::before) {
             border: 2px solid var(--muted-text-color);
             border-radius: ${radii.pill};
             width: 100%;
-            height:100%;
-            content: '';
+            height: 100%;
+            content: "";
             top: -2px;
             left: -2px;
             position: absolute;
@@ -133,16 +135,15 @@ class Button extends Component {
           /* Outline Button Colors */
 
           .button.outline.blue :global(.button-link:hover span) {
-            color: ${colors.accentBlue}
+            color: ${colors.accentBlue};
           }
 
           .button.outline.blue :global(.button-link:hover::before) {
             border-color: ${colors.accentBlue};
           }
 
-
           .button.outline.green :global(.button-link:hover span) {
-            color: ${colors.accentGreen}
+            color: ${colors.accentGreen};
           }
 
           .button.outline.green :global(.button-link:hover::before) {
@@ -156,7 +157,6 @@ class Button extends Component {
           .button.outline.red :global(.button-link:hover::before) {
             border-color: ${colors.accentRed};
           }
-
 
           .button.outline.purple :global(.button-link:hover span) {
             color: ${colors.accentPurple};

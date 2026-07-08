@@ -39,7 +39,10 @@ function resolvePassword() {
       .split("\n")
       .find((l) => l.trim().startsWith("STATICRYPT_PASSWORD="));
     if (line) {
-      return line.slice(line.indexOf("=") + 1).trim().replace(/^["']|["']$/g, "");
+      return line
+        .slice(line.indexOf("=") + 1)
+        .trim()
+        .replace(/^["']|["']$/g, "");
     }
   }
   return null;
@@ -79,11 +82,10 @@ for (const slug of slugs) {
   if (!fs.existsSync(htmlPath)) {
     fail(`expected built page missing: ${relativePath(htmlPath)}. Did the export run?`);
   }
-  execFileSync(
-    "npx",
-    ["staticrypt", htmlPath, "--short", "-d", writingOutDir],
-    { stdio: "inherit", env: { ...process.env, STATICRYPT_PASSWORD: password } },
-  );
+  execFileSync("npx", ["staticrypt", htmlPath, "--short", "-d", writingOutDir], {
+    stdio: "inherit",
+    env: { ...process.env, STATICRYPT_PASSWORD: password },
+  });
   console.log(`encrypt-protected: encrypted ${relativePath(htmlPath)}`);
 
   // Next emits a per-page JSON data blob for client-side navigation that

@@ -66,17 +66,15 @@ class Home extends Component {
             content={
               <div className="col-xs-12 col-sm-8 col-md-9 col-lg-6 col-xl-6 hero">
                 <p className="tagline">
-                  I design complex digital products that make business
-                  operations, data, and decision-making easier to understand and
-                  scale.
+                  I design complex digital products that make business operations, data, and
+                  decision-making easier to understand and scale.
                 </p>
                 <p className="hero-intro">
-                  I work from discovery into UX architecture: mapping the messy
-                  parts, shaping flows, turning repeated UI decisions into
-                  design-system patterns, and checking accessibility early. I
-                  stay close to engineers, product teams, and stakeholders so AI
-                  and data workflows become interfaces people can understand,
-                  use, and maintain — watching design quality as it gets built.
+                  I work from discovery into UX architecture: mapping the messy parts, shaping
+                  flows, turning repeated UI decisions into design-system patterns, and checking
+                  accessibility early. I stay close to engineers, product teams, and stakeholders so
+                  AI and data workflows become interfaces people can understand, use, and maintain —
+                  watching design quality as it gets built.
                 </p>
                 <HeroFacts />
                 <CapabilityChips />
@@ -131,11 +129,7 @@ class Home extends Component {
           ))}
         </section>
 
-        <section
-          className="section"
-          id="how-i-work"
-          aria-labelledby="how-i-work-heading"
-        >
+        <section className="section" id="how-i-work" aria-labelledby="how-i-work-heading">
           <Row
             content={
               <h2
@@ -149,8 +143,8 @@ class Home extends Component {
           <Row
             content={
               <p className="col-xs-12 col-sm-10 col-md-9 col-lg-7 col-xl-6 section-copy section-subheading">
-                The same loop on most projects, end to end — I stay past the
-                handoff, through the build, design QA, and back into the system.
+                The same loop on most projects, end to end — I stay past the handoff, through the
+                build, design QA, and back into the system.
               </p>
             }
           />
@@ -171,9 +165,9 @@ class Home extends Component {
           <Row
             content={
               <p className="col-xs-12 col-sm-10 col-md-9 col-lg-7 col-xl-6 section-copy artifacts-copy">
-                The same set of artifacts on most projects, whether it’s a
-                public service, an internal tool, or a data-heavy product. The
-                sketches are illustrative, not real project data.
+                The same set of artifacts on most projects, whether it’s a public service, an
+                internal tool, or a data-heavy product. The sketches are illustrative, not real
+                project data.
               </p>
             }
           />

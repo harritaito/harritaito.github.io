@@ -1,0 +1,17 @@
+node_modules/
+.next/
+out/
+package-lock.json
+docs/
+content/
+static/
+public/
+.agents/
+.claude/
+.claude-plugin/
+.cline/
+.clinerules/
+.codex/
+.impeccable/
+.vscode/
+*.md

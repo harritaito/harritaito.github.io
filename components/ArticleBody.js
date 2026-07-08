@@ -26,9 +26,7 @@ const components = {
     </a>
   ),
   img: ({ src, alt }) =>
-    inRow(
-      <img className={`${pStyle} article-image`} src={resolveAssetSrc(src)} alt={alt || ""} />,
-    ),
+    inRow(<img className={`${pStyle} article-image`} src={resolveAssetSrc(src)} alt={alt || ""} />),
   table: ({ children }) =>
     inRow(
       <div className={`${pStyle} table-wrap`}>

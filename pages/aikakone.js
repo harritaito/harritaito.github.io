@@ -177,7 +177,12 @@ class Aikakone extends Component {
                     <Row
                       content={
                         <p className={pStyle}>
-                          I contributed across service design, UX research, interaction design, and testing: contextual inquiry, interviews, Lean Service Creation canvases, service blueprinting, prototype screens, and facilitated prototype testing. The concept and course result were produced by the four-person team, so this page does not claim solo ownership or a launched care product.
+                          I contributed across service design, UX research, interaction design, and
+                          testing: contextual inquiry, interviews, Lean Service Creation canvases,
+                          service blueprinting, prototype screens, and facilitated prototype
+                          testing. The concept and course result were produced by the four-person
+                          team, so this page does not claim solo ownership or a launched care
+                          product.
                         </p>
                       }
                     />
@@ -192,21 +197,28 @@ class Aikakone extends Component {
                     <Row
                       content={
                         <p className={pStyle}>
-                          Aikakone began in the University of Tampere and Futurice's Let’s Re-Design Health Services course. Espericare's brief asked for an entertainment and stimulation service for memory care.
+                          Aikakone began in the University of Tampere and Futurice's Let’s Re-Design
+                          Health Services course. Espericare's brief asked for an entertainment and
+                          stimulation service for memory care.
                         </p>
                       }
                     />
                     <Row
                       content={
                         <p className={pStyle}>
-                          The goal was not to promise a cure or a medical result. It was to create a calmer way to support conversation, familiarity, and meaningful connection around personal memories.
+                          The goal was not to promise a cure or a medical result. It was to create a
+                          calmer way to support conversation, familiarity, and meaningful connection
+                          around personal memories.
                         </p>
                       }
                     />
                     <Row
                       content={
                         <p className={pStyle}>
-                          The care context made the brief a service-design problem as much as a content or interface one. Time was fragmented, attention was limited, and the service had to fit into ordinary care routines without creating more work.
+                          The care context made the brief a service-design problem as much as a
+                          content or interface one. Time was fragmented, attention was limited, and
+                          the service had to fit into ordinary care routines without creating more
+                          work.
                         </p>
                       }
                     />
@@ -221,14 +233,18 @@ class Aikakone extends Component {
                     <Row
                       content={
                         <p className={pStyle}>
-                          The service had to work for several people at once, each with a different reason to use it.
+                          The service had to work for several people at once, each with a different
+                          reason to use it.
                         </p>
                       }
                     />
                     <Row
                       content={
                         <p className={pStyle}>
-                          People living with memory disease needed gentle prompts, not a test. Caregivers needed a quick way to start a session. Family members could add photos and stories. New staff and volunteers needed a simple way to learn what mattered to the person.
+                          People living with memory disease needed gentle prompts, not a test.
+                          Caregivers needed a quick way to start a session. Family members could add
+                          photos and stories. New staff and volunteers needed a simple way to learn
+                          what mattered to the person.
                         </p>
                       }
                     />
@@ -238,7 +254,10 @@ class Aikakone extends Component {
                           <li>The resident stayed at the center of the conversation.</li>
                           <li>The caregiver acted as a facilitator, not as a gatekeeper.</li>
                           <li>Family members could add context and personal history.</li>
-                          <li>New staff and volunteers could learn faster without relying on informal handover alone.</li>
+                          <li>
+                            New staff and volunteers could learn faster without relying on informal
+                            handover alone.
+                          </li>
                         </ul>
                       }
                     />
@@ -253,28 +272,36 @@ class Aikakone extends Component {
                     <Row
                       content={
                         <p className={pStyle}>
-                          Working in memory care meant keeping the tone calm, adult, and respectful. The interface had to avoid pressure, avoid clutter, and leave room for silence or pauses.
+                          Working in memory care meant keeping the tone calm, adult, and respectful.
+                          The interface had to avoid pressure, avoid clutter, and leave room for
+                          silence or pauses.
                         </p>
                       }
                     />
                     <Row
                       content={
                         <p className={pStyle}>
-                          We treated reminiscence as a conversation aid, not as a test or a claim about treatment. The design had to feel safe enough to bring into a care routine without adding friction or embarrassment.
+                          We treated reminiscence as a conversation aid, not as a test or a claim
+                          about treatment. The design had to feel safe enough to bring into a care
+                          routine without adding friction or embarrassment.
                         </p>
                       }
                     />
                     <Row
                       content={
                         <p className={pStyle}>
-                          Human agency mattered throughout: the facilitator had to follow the person's pace, pause when needed, and let the conversation move where the memory led instead of forcing a scripted flow.
+                          Human agency mattered throughout: the facilitator had to follow the
+                          person's pace, pause when needed, and let the conversation move where the
+                          memory led instead of forcing a scripted flow.
                         </p>
                       }
                     />
                     <Row
                       content={
                         <p className={pStyle}>
-                          That constraint shaped what the product should not do. It should not diagnose, score, correct, or push someone through content just because the interface has a next screen.
+                          That constraint shaped what the product should not do. It should not
+                          diagnose, score, correct, or push someone through content just because the
+                          interface has a next screen.
                         </p>
                       }
                     />
@@ -289,14 +316,19 @@ class Aikakone extends Component {
                     <Row
                       content={
                         <p className={pStyle}>
-                          The concept leaned on a low cognitive load: short paths, clear labels, large visuals, and only a few moving parts at a time. That mattered because the session could happen in a room, at a bedside, or on a shared screen with limited attention.
+                          The concept leaned on a low cognitive load: short paths, clear labels,
+                          large visuals, and only a few moving parts at a time. That mattered
+                          because the session could happen in a room, at a bedside, or on a shared
+                          screen with limited attention.
                         </p>
                       }
                     />
                     <Row
                       content={
                         <p className={pStyle}>
-                          The service needed to be easy to hand over. A family member, nurse, or volunteer should be able to pick it up quickly, understand the next step, and still adapt the pace to the person in front of them.
+                          The service needed to be easy to hand over. A family member, nurse, or
+                          volunteer should be able to pick it up quickly, understand the next step,
+                          and still adapt the pace to the person in front of them.
                         </p>
                       }
                     />
@@ -318,21 +350,31 @@ class Aikakone extends Component {
                     <Row
                       content={
                         <p className={pStyle}>
-                          We started with a contextual inquiry at an Espericare facility, accompanied by a Futurice employee. We observed the environment, photographed the premises, drew a floor plan of the area residents used, and asked staff and residents questions.
+                          We started with a contextual inquiry at an Espericare facility,
+                          accompanied by a Futurice employee. We observed the environment,
+                          photographed the premises, drew a floor plan of the area residents used,
+                          and asked staff and residents questions.
                         </p>
                       }
                     />
                     <Row
                       content={
                         <p className={pStyle}>
-                          We also reviewed existing solutions, entertainment concepts, and ways to support time spent with people living with memory disease. One reference point was reminiscence therapy, which we treated carefully as a source of ideas about shared memory and caregiver familiarity rather than as proof of outcome.
+                          We also reviewed existing solutions, entertainment concepts, and ways to
+                          support time spent with people living with memory disease. One reference
+                          point was reminiscence therapy, which we treated carefully as a source of
+                          ideas about shared memory and caregiver familiarity rather than as proof
+                          of outcome.
                         </p>
                       }
                     />
                     <Row
                       content={
                         <p className={pStyle}>
-                          We returned later for structured interviews and a paper-prototype test. The research pointed to the same basic need from several directions: short sessions, low setup friction, and a way for staff to learn personal history without relying on informal coffee-break handovers.
+                          We returned later for structured interviews and a paper-prototype test.
+                          The research pointed to the same basic need from several directions: short
+                          sessions, low setup friction, and a way for staff to learn personal
+                          history without relying on informal coffee-break handovers.
                         </p>
                       }
                     />
@@ -340,9 +382,16 @@ class Aikakone extends Component {
                       content={
                         <ul className={pStyle + " list"}>
                           <li>Caregivers did not have much time for long setup or explanation.</li>
-                          <li>Residents needed support that could start quickly and remain gentle.</li>
-                          <li>Families wanted to contribute in a way that felt useful, not symbolic.</li>
-                          <li>Shared memories could help staff understand the person behind the diagnosis.</li>
+                          <li>
+                            Residents needed support that could start quickly and remain gentle.
+                          </li>
+                          <li>
+                            Families wanted to contribute in a way that felt useful, not symbolic.
+                          </li>
+                          <li>
+                            Shared memories could help staff understand the person behind the
+                            diagnosis.
+                          </li>
                         </ul>
                       }
                     />
@@ -357,14 +406,19 @@ class Aikakone extends Component {
                     <Row
                       content={
                         <p className={pStyle}>
-                          The blueprint connected what the resident experiences, what the facilitator does, and what has to happen before a session can start. That made the service easier to reason about in a care environment where the handoff matters as much as the interface.
+                          The blueprint connected what the resident experiences, what the
+                          facilitator does, and what has to happen before a session can start. That
+                          made the service easier to reason about in a care environment where the
+                          handoff matters as much as the interface.
                         </p>
                       }
                     />
                     <Row
                       content={
                         <p className={pStyle}>
-                          Lean Service Creation canvases helped us keep the concept honest about the real service around it: who prepares content, who opens the session, who adapts the pace, and who closes the loop for the next time.
+                          Lean Service Creation canvases helped us keep the concept honest about the
+                          real service around it: who prepares content, who opens the session, who
+                          adapts the pace, and who closes the loop for the next time.
                         </p>
                       }
                     />
@@ -372,8 +426,14 @@ class Aikakone extends Component {
                       content={
                         <ul className={pStyle + " list"}>
                           <li>Before the session: family or staff help gather memory material.</li>
-                          <li>During the session: the facilitator chooses media and reads the person's response.</li>
-                          <li>After the session: staff can leave with a little more context for future care moments.</li>
+                          <li>
+                            During the session: the facilitator chooses media and reads the person's
+                            response.
+                          </li>
+                          <li>
+                            After the session: staff can leave with a little more context for future
+                            care moments.
+                          </li>
                         </ul>
                       }
                     />
@@ -395,21 +455,29 @@ class Aikakone extends Component {
                     <Row
                       content={
                         <p className={pStyle}>
-                          Aikakone combined pictures, sound, and text around the same story so a facilitator could pick the right entry point for the person in front of them. The shared-history view was meant to support common memories, while Elämänkaari and Profiili focused on personal history and what staff should know about the person.
+                          Aikakone combined pictures, sound, and text around the same story so a
+                          facilitator could pick the right entry point for the person in front of
+                          them. The shared-history view was meant to support common memories, while
+                          Elämänkaari and Profiili focused on personal history and what staff should
+                          know about the person.
                         </p>
                       }
                     />
                     <Row
                       content={
                         <p className={pStyle}>
-                          The most important decision was to keep the experience guided rather than self-serve. The tool was there to support the relationship, not replace the caregiver, family member, or volunteer who brought the memory to life.
+                          The most important decision was to keep the experience guided rather than
+                          self-serve. The tool was there to support the relationship, not replace
+                          the caregiver, family member, or volunteer who brought the memory to life.
                         </p>
                       }
                     />
                     <Row
                       content={
                         <p className={pStyle}>
-                          We also kept the concept flexible across shared and individual settings. Images, music, and video material could work bedside, in a common room, or in a quick one-on-one moment between other tasks.
+                          We also kept the concept flexible across shared and individual settings.
+                          Images, music, and video material could work bedside, in a common room, or
+                          in a quick one-on-one moment between other tasks.
                         </p>
                       }
                     />
@@ -418,8 +486,13 @@ class Aikakone extends Component {
                         <ul className={pStyle + " list"}>
                           <li>Aikakone: shared history prompts for common memories.</li>
                           <li>Elämänkaari: a personal life-story view for individual history.</li>
-                          <li>Profiili: practical context about the person for staff and facilitators.</li>
-                          <li>Media categories: images, music, and video as alternate ways into the same conversation.</li>
+                          <li>
+                            Profiili: practical context about the person for staff and facilitators.
+                          </li>
+                          <li>
+                            Media categories: images, music, and video as alternate ways into the
+                            same conversation.
+                          </li>
                         </ul>
                       }
                     />
@@ -434,28 +507,38 @@ class Aikakone extends Component {
                     <Row
                       content={
                         <p className={pStyle}>
-                          The first digital draft was built in PowerPoint because the course was focused on service design and fast learning, not polished production UI. We made it behave enough like an app for staff to move through a guided Aikakone session.
+                          The first digital draft was built in PowerPoint because the course was
+                          focused on service design and fast learning, not polished production UI.
+                          We made it behave enough like an app for staff to move through a guided
+                          Aikakone session.
                         </p>
                       }
                     />
                     <Row
                       content={
                         <p className={pStyle}>
-                          We also tested the idea with simple printed images from different decades. Sitting close and speaking at an easy pace helped keep the interaction calm and gave residents room to respond in their own way.
+                          We also tested the idea with simple printed images from different decades.
+                          Sitting close and speaking at an easy pace helped keep the interaction
+                          calm and gave residents room to respond in their own way.
                         </p>
                       }
                     />
                     <Row
                       content={
                         <p className={pStyle}>
-                          Near the end of the course we visited Villa Niemi and asked nurses to try the PowerPoint prototype. We then interviewed them about feasibility, important features, fit for stimulation sessions, and when they could imagine using the concept with a resident.
+                          Near the end of the course we visited Villa Niemi and asked nurses to try
+                          the PowerPoint prototype. We then interviewed them about feasibility,
+                          important features, fit for stimulation sessions, and when they could
+                          imagine using the concept with a resident.
                         </p>
                       }
                     />
                     <Row
                       content={
                         <p className={pStyle}>
-                          The prototype was deliberately rough. Its job was to test whether the service moment made sense to staff, not to prove a finished interface or a measured care outcome.
+                          The prototype was deliberately rough. Its job was to test whether the
+                          service moment made sense to staff, not to prove a finished interface or a
+                          measured care outcome.
                         </p>
                       }
                     />
@@ -468,19 +551,46 @@ class Aikakone extends Component {
                           selectedItem={this.state.selectedSlideIndex}
                         >
                           <div>
-                            <img src={resolveAssetSrc(menu)} alt="Aikakone menu screen." width={resolveAssetWidth(menu)} height={resolveAssetHeight(menu)} decoding="async" />
+                            <img
+                              src={resolveAssetSrc(menu)}
+                              alt="Aikakone menu screen."
+                              width={resolveAssetWidth(menu)}
+                              height={resolveAssetHeight(menu)}
+                              decoding="async"
+                            />
                             <p className="legend">Aikakone menu screen.</p>
                           </div>
                           <div>
-                            <img src={resolveAssetSrc(aikakone)} alt="Aikakone session screen." width={resolveAssetWidth(aikakone)} height={resolveAssetHeight(aikakone)} loading="lazy" decoding="async" />
+                            <img
+                              src={resolveAssetSrc(aikakone)}
+                              alt="Aikakone session screen."
+                              width={resolveAssetWidth(aikakone)}
+                              height={resolveAssetHeight(aikakone)}
+                              loading="lazy"
+                              decoding="async"
+                            />
                             <p className="legend">Aikakone session screen.</p>
                           </div>
                           <div>
-                            <img src={resolveAssetSrc(profile)} alt="Profile screen for a resident." width={resolveAssetWidth(profile)} height={resolveAssetHeight(profile)} loading="lazy" decoding="async" />
+                            <img
+                              src={resolveAssetSrc(profile)}
+                              alt="Profile screen for a resident."
+                              width={resolveAssetWidth(profile)}
+                              height={resolveAssetHeight(profile)}
+                              loading="lazy"
+                              decoding="async"
+                            />
                             <p className="legend">Profile screen for a resident.</p>
                           </div>
                           <div>
-                            <img src={resolveAssetSrc(elamankaari)} alt="Elämänkaari life-story screen." width={resolveAssetWidth(elamankaari)} height={resolveAssetHeight(elamankaari)} loading="lazy" decoding="async" />
+                            <img
+                              src={resolveAssetSrc(elamankaari)}
+                              alt="Elämänkaari life-story screen."
+                              width={resolveAssetWidth(elamankaari)}
+                              height={resolveAssetHeight(elamankaari)}
+                              loading="lazy"
+                              decoding="async"
+                            />
                             <p className="legend">Elämänkaari life-story screen.</p>
                           </div>
                         </Carousel>
@@ -515,7 +625,9 @@ class Aikakone extends Component {
                     <Row
                       content={
                         <p className={"caption " + pStyle}>
-                          The menu, session, profile, and Elämänkaari screens show how the concept could be organized around shared memories, personal history, and a facilitator-led session.
+                          The menu, session, profile, and Elämänkaari screens show how the concept
+                          could be organized around shared memories, personal history, and a
+                          facilitator-led session.
                         </p>
                       }
                     />
@@ -530,28 +642,37 @@ class Aikakone extends Component {
                     <Row
                       content={
                         <p className={pStyle}>
-                          The strongest lesson from Aikakone was that trust is part of the product. A care service only works when it respects the person's pace, gives staff a simple way to act, and leaves space for family and volunteers to contribute without taking over.
+                          The strongest lesson from Aikakone was that trust is part of the product.
+                          A care service only works when it respects the person's pace, gives staff
+                          a simple way to act, and leaves space for family and volunteers to
+                          contribute without taking over.
                         </p>
                       }
                     />
                     <Row
                       content={
                         <p className={pStyle}>
-                          It also showed the limits of an older course concept. The project received positive course and prototype feedback and placed second in the course, but it stayed at archive level and did not become a launched service.
+                          It also showed the limits of an older course concept. The project received
+                          positive course and prototype feedback and placed second in the course,
+                          but it stayed at archive level and did not become a launched service.
                         </p>
                       }
                     />
                     <Row
                       content={
                         <p className={pStyle}>
-                          The later attempt to push the idea further taught a less comfortable lesson: belief in a concept is not enough if the team, ownership model, and execution discipline are not strong enough to carry it into practice.
+                          The later attempt to push the idea further taught a less comfortable
+                          lesson: belief in a concept is not enough if the team, ownership model,
+                          and execution discipline are not strong enough to carry it into practice.
                         </p>
                       }
                     />
                     <Row
                       content={
                         <p className={pStyle}>
-                          That makes it useful as evidence for trust-sensitive design: the work is strongest where human agency, emotional tone, and service handoff are treated as first-class constraints rather than afterthoughts.
+                          That makes it useful as evidence for trust-sensitive design: the work is
+                          strongest where human agency, emotional tone, and service handoff are
+                          treated as first-class constraints rather than afterthoughts.
                         </p>
                       }
                     />
