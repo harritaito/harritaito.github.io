@@ -2,6 +2,7 @@ import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 
 import AccessibilityStatement from '../../pages/accessibility';
+import Saavutettavuusseloste from '../../pages/saavutettavuusseloste';
 
 jest.mock('next/link', () => {
   const React = require('react');
@@ -32,5 +33,19 @@ describe('Accessibility statement page', () => {
   test('footer links to the statement from every page', () => {
     const markup = renderToStaticMarkup(<AccessibilityStatement />);
     expect(markup).toContain('href="/accessibility"');
+  });
+
+  test('renders the Finnish statement with the same sections and cross-links', () => {
+    const english = renderToStaticMarkup(<AccessibilityStatement />);
+    const finnish = renderToStaticMarkup(<Saavutettavuusseloste />);
+
+    expect(finnish).toContain('Saavutettavuusseloste');
+    expect(finnish).toContain('Vaatimustenmukaisuustilanne');
+    expect(finnish).toContain('Ei-saavutettava sisältö');
+    expect(finnish).toContain('Palaute ja yhteystiedot');
+    expect(finnish).toContain('Valvontaviranomainen');
+    expect(finnish).toContain('lang="fi"');
+    expect(finnish).toContain('href="/accessibility"');
+    expect(english).toContain('href="/saavutettavuusseloste"');
   });
 });

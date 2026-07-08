@@ -28,6 +28,12 @@ const AccessibilityStatement = () => (
             The statement was prepared on 8 July 2026 and is based on my own
             assessment of the site.
           </p>
+          <p className="accessibility-language-link">
+            <a href="/saavutettavuusseloste">
+              Lue tämä seloste suomeksi
+              <HighlightUnderline />
+            </a>
+          </p>
         </div>
       }
     />
@@ -51,11 +57,6 @@ const AccessibilityStatement = () => (
           <h2>Non-accessible content</h2>
           <p>The following content does not yet fully meet the requirements:</p>
           <ul>
-            <li>
-              The social media links in the footer are icon-only and lack text
-              alternatives, so screen readers cannot announce where each link
-              leads. (WCAG 1.1.1 Non-text content, 2.4.4 Link purpose)
-            </li>
             <li>
               Some external links open in a new tab without warning about it
               beforehand.
@@ -147,6 +148,17 @@ const AccessibilityStatement = () => (
       .accessibility-section p,
       .accessibility-section li {
         line-height: 1.7;
+      }
+
+      .accessibility-language-link {
+        margin-top: 0.5rem;
+        font-size: 0.85rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .accessibility-language-link a {
+        color: ${colors.textMuted};
       }
 
       .accessibility-section {

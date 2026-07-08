@@ -70,6 +70,12 @@ const PAGE_METADATA = {
       "Accessibility statement for harritaito.com: compliance status, known issues, and how to send accessibility feedback.",
     path: "/accessibility",
   },
+  "/saavutettavuusseloste": {
+    title: "Saavutettavuusseloste | Harri Halonen",
+    description:
+      "Harritaito.com-sivuston saavutettavuusseloste: vaatimustenmukaisuustilanne, tiedossa olevat puutteet ja saavutettavuuspalautteen kanava.",
+    path: "/saavutettavuusseloste",
+  },
   "/404": {
     title: "Page not found | Harri Halonen",
     description:
