@@ -1,4 +1,4 @@
-jest.mock('three', () => ({
+jest.mock("three", () => ({
   Scene: jest.fn(() => ({
     add: jest.fn(),
   })),
@@ -6,14 +6,14 @@ jest.mock('three', () => ({
     position: {},
   })),
   WebGLRenderer: jest.fn(() => {
-    throw new Error('Error creating WebGL context.');
+    throw new Error("Error creating WebGL context.");
   }),
 }));
 
-import * as THREE from 'three';
-import MorphingMesh from '../MorphingMesh';
+import * as THREE from "three";
+import MorphingMesh from "../MorphingMesh";
 
-describe('MorphingMesh WebGL fallback', () => {
+describe("MorphingMesh WebGL fallback", () => {
   const originalCreateElement = document.createElement;
   const originalAddEventListener = window.addEventListener;
   const originalMatchMedia = window.matchMedia;
@@ -25,7 +25,7 @@ describe('MorphingMesh WebGL fallback', () => {
     THREE.WebGLRenderer.mockClear();
   });
 
-  test('does not crash when Three.js cannot create a renderer', () => {
+  test("does not crash when Three.js cannot create a renderer", () => {
     const canvas = {
       getContext: jest.fn(() => ({})),
     };

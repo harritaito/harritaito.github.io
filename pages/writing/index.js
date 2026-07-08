@@ -60,8 +60,7 @@ const WritingIndex = ({ articles }) => (
               {article.frontmatter.summary ? (
                 <p className="writing-summary">{article.frontmatter.summary}</p>
               ) : null}
-              {Array.isArray(article.frontmatter.tags) &&
-              article.frontmatter.tags.length ? (
+              {Array.isArray(article.frontmatter.tags) && article.frontmatter.tags.length ? (
                 <ul className="writing-tags" aria-label="Topics">
                   {article.frontmatter.tags.filter(Boolean).map((tag) => (
                     <li key={tag}>{tag}</li>

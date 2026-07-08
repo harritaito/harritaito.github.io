@@ -78,8 +78,7 @@ const PAGE_METADATA = {
   },
   "/404": {
     title: "Page not found | Harri Halonen",
-    description:
-      "The requested page could not be found on Harri Halonen's portfolio.",
+    description: "The requested page could not be found on Harri Halonen's portfolio.",
     path: "/404",
     noindex: true,
   },

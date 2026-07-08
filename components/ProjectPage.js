@@ -1,15 +1,14 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
-import InViewport from './InViewport';
-import Video from './Video';
-import Navbar from './Navbar';
-import Project from './Project';
-import Projects from './Projects';
-import { resolveAssetHeight, resolveAssetSrc, resolveAssetWidth } from './assetSource';
-import { shadows } from './design-system/tokens';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import InViewport from "./InViewport";
+import Video from "./Video";
+import Navbar from "./Navbar";
+import Project from "./Project";
+import Projects from "./Projects";
+import { resolveAssetHeight, resolveAssetSrc, resolveAssetWidth } from "./assetSource";
+import { shadows } from "./design-system/tokens";
 
 class ProjectPage extends Component {
-
   constructor(props) {
     super(props);
 
@@ -18,11 +17,11 @@ class ProjectPage extends Component {
     const resolvedNextProject = proj.getNextProject(projectIdentifier) || proj.getRandomProject();
 
     this.state = {
-      nextProject: resolvedNextProject
+      nextProject: resolvedNextProject,
     };
 
-
-    this.pStyle = "col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-lg-offset-2dot5 col-lg-7 col-xl-offset-3 col-xl-6";
+    this.pStyle =
+      "col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-lg-offset-2dot5 col-lg-7 col-xl-offset-3 col-xl-6";
   }
 
   static propTypes = {
@@ -35,8 +34,8 @@ class ProjectPage extends Component {
     navbarColor: PropTypes.string,
     projectName: PropTypes.string,
     eyebrow: PropTypes.string,
-    showNextProject: PropTypes.bool
-  }
+    showNextProject: PropTypes.bool,
+  };
 
   static defaultProps = {
     title: "",
@@ -48,15 +47,17 @@ class ProjectPage extends Component {
     navbarColor: "",
     projectName: "",
     eyebrow: "",
-    showNextProject: true
-  }
+    showNextProject: true,
+  };
 
-  render () {
-
-
+  render() {
     return (
       <div className={"project-page container " + this.props.title}>
-        <Navbar nextProjectName={this.state.nextProject.name} nextProjectLink={this.state.nextProject.link} color={this.props.navbarColor}/>
+        <Navbar
+          nextProjectName={this.state.nextProject.name}
+          nextProjectLink={this.state.nextProject.link}
+          color={this.props.navbarColor}
+        />
         {this.props.eyebrow ? (
           <div className="header row project-eyebrow-row">
             <p className={`${this.pStyle} project-eyebrow`}>{this.props.eyebrow}</p>
@@ -70,26 +71,28 @@ class ProjectPage extends Component {
         </div>
         <div className="row">
           <div className="col-sm-12 col-md-12 col-xs-12 col-lg-12 col-xl-12">
-            {this.props.video ?
+            {this.props.video ? (
               <InViewport>
-                {({isVisible}) =>
+                {({ isVisible }) => (
                   <div>
                     <Video
                       autoplay={isVisible}
                       src={resolveAssetSrc(this.props.hero)}
-                      caption={null}/>
+                      caption={null}
+                    />
                   </div>
-                }
+                )}
               </InViewport>
-              : <img
-                  className="hero-image"
-                  src={resolveAssetSrc(this.props.hero)}
-                  alt={this.props.heroAlt}
-                  width={resolveAssetWidth(this.props.hero)}
-                  height={resolveAssetHeight(this.props.hero)}
-                  decoding="async"
-                />
-            }
+            ) : (
+              <img
+                className="hero-image"
+                src={resolveAssetSrc(this.props.hero)}
+                alt={this.props.heroAlt}
+                width={resolveAssetWidth(this.props.hero)}
+                height={resolveAssetHeight(this.props.hero)}
+                decoding="async"
+              />
+            )}
           </div>
         </div>
         <div className="content" id="reading-content">
@@ -110,10 +113,10 @@ class ProjectPage extends Component {
               alt={this.state.nextProject.alt}
               color={this.state.nextProject.color}
               label={this.state.nextProject.label}
-              percentage={'0%'}/>
+              percentage={"0%"}
+            />
           </React.Fragment>
         ) : null}
-
 
         <style jsx>{`
           .project-page {
@@ -148,39 +151,39 @@ class ProjectPage extends Component {
             font-size: 2em;
           }
           @media only screen and (max-width: 45rem) {
-            .project-page .subtitle {font-size: 1em;}
+            .project-page .subtitle {
+              font-size: 1em;
+            }
           }
 
           .project-page .subtitle p {
-            margin-top: .5em;
+            margin-top: 0.5em;
           }
 
           .hero-image {
             display: block;
             -o-object-fit: cover;
-              object-fit: cover;
+            object-fit: cover;
             width: 100%;
             height: auto;
             max-height: 20em;
             -webkit-box-shadow: ${shadows.media};
-                    box-shadow: ${shadows.media};
+            box-shadow: ${shadows.media};
           }
 
           .project-page .next-project h3 {
             font-weight: bold;
-            margin: 3rem auto .5rem;
+            margin: 3rem auto 0.5rem;
           }
 
           .project-page .Project {
             margin-top: 2em;
             margin-bottom: 0;
           }
-    `}</style>
-
+        `}</style>
       </div>
-    )
+    );
   }
-
 }
 
 export default ProjectPage;

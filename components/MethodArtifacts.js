@@ -8,8 +8,7 @@ const ARTIFACTS = [
   {
     name: "Workflow map",
     stage: "Discovery → Framing",
-    what:
-      "How the work actually moves — every step, handoff, and the spreadsheet nobody mentions until week three.",
+    what: "How the work actually moves — every step, handoff, and the spreadsheet nobody mentions until week three.",
     preview: [
       "Request ─▶ Triage ─▶ Draft ─▶ Review ─▶ Publish",
       "             │                    ▲",
@@ -19,8 +18,7 @@ const ARTIFACTS = [
   {
     name: "Role model",
     stage: "Framing",
-    what:
-      "Who owns what, where the decisions sit, and the handoffs that quietly go missing.",
+    what: "Who owns what, where the decisions sit, and the handoffs that quietly go missing.",
     preview: [
       "Requester   raises · adds context",
       "Owner       decides · accepts risk",
@@ -31,8 +29,7 @@ const ARTIFACTS = [
   {
     name: "State model",
     stage: "Concept models",
-    what:
-      "The objects underneath the screens, and the states they move between — named before anything gets drawn.",
+    what: "The objects underneath the screens, and the states they move between — named before anything gets drawn.",
     preview: [
       "Draft ─▶ In review ─▶ Approved ─▶ Live",
       "  ▲          │",
@@ -42,8 +39,7 @@ const ARTIFACTS = [
   {
     name: "Design spec",
     stage: "Design specs",
-    what:
-      "Buildable detail: default, empty, loading, error, and the edge cases engineers hit at 4pm on a Friday.",
+    what: "Buildable detail: default, empty, loading, error, and the edge cases engineers hit at 4pm on a Friday.",
     preview: [
       "Table · empty · loading · error",
       "Row   · selected · disabled",
@@ -53,8 +49,7 @@ const ARTIFACTS = [
   {
     name: "QA checklist",
     stage: "Design QA",
-    what:
-      "What “done” means, checked against intent before users find the gaps for me.",
+    what: "What “done” means, checked against intent before users find the gaps for me.",
     preview: [
       "☑ Empty + error states present",
       "☑ Focus order + visible focus",
@@ -65,8 +60,7 @@ const ARTIFACTS = [
   {
     name: "Decision log",
     stage: "Throughout",
-    what:
-      "Dated calls, the reason, and the tradeoff — so “why is it like this” has an answer months later.",
+    what: "Dated calls, the reason, and the tradeoff — so “why is it like this” has an answer months later.",
     preview: [
       "2026-03 · one list, not tabs",
       "  why  · users scan, don't switch",
@@ -106,7 +100,9 @@ const MethodArtifacts = () => (
         flex-direction: column;
         min-width: 0;
         padding: 1.4rem 1.5rem 1.5rem;
-        transition: box-shadow 0.3s ease, transform 0.3s ease;
+        transition:
+          box-shadow 0.3s ease,
+          transform 0.3s ease;
       }
 
       .method-artifacts__card:hover {

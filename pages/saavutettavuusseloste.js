@@ -19,16 +19,12 @@ const Saavutettavuusseloste = () => (
           <h1>Saavutettavuusseloste</h1>
           <p>
             Tämä saavutettavuusseloste koskee <strong>harritaito.com</strong>
-            -sivustoa. Henkilökohtaisena portfoliona sivusto ei kuulu
-            digitaalisten palvelujen tarjoamisesta annetun lain (306/2019)
-            soveltamisalaan — seloste julkaistaan vapaaehtoisesti lain
-            edellyttämää mallia noudattaen, koska saavutettavuudella on väliä
+            -sivustoa. Henkilökohtaisena portfoliona sivusto ei kuulu digitaalisten palvelujen
+            tarjoamisesta annetun lain (306/2019) soveltamisalaan — seloste julkaistaan
+            vapaaehtoisesti lain edellyttämää mallia noudattaen, koska saavutettavuudella on väliä
             joka tapauksessa.
           </p>
-          <p>
-            Seloste on laadittu 8.7.2026, ja se perustuu omaan arviooni
-            sivustosta.
-          </p>
+          <p>Seloste on laadittu 8.7.2026, ja se perustuu omaan arviooni sivustosta.</p>
           <p className="accessibility-language-link">
             <Link href="/accessibility" legacyBehavior>
               <a>
@@ -46,8 +42,8 @@ const Saavutettavuusseloste = () => (
         <section className={`${colStyle} accessibility-section`} lang="fi">
           <h2>Vaatimustenmukaisuustilanne</h2>
           <p>
-            Sivusto täyttää suurelta osin WCAG 2.1 -ohjeistuksen A- ja AA-tason
-            vaatimukset. Tiedossa olevat puutteet on lueteltu alla.
+            Sivusto täyttää suurelta osin WCAG 2.1 -ohjeistuksen A- ja AA-tason vaatimukset.
+            Tiedossa olevat puutteet on lueteltu alla.
           </p>
         </section>
       }
@@ -59,21 +55,16 @@ const Saavutettavuusseloste = () => (
           <h2>Ei-saavutettava sisältö</h2>
           <p>Seuraava sisältö ei vielä täytä vaatimuksia kaikilta osin:</p>
           <ul>
+            <li>Osa ulkoisista linkeistä avautuu uuteen välilehteen ilman ennakkovaroitusta.</li>
             <li>
-              Osa ulkoisista linkeistä avautuu uuteen välilehteen ilman
-              ennakkovaroitusta.
-            </li>
-            <li>
-              Projektisivut ovat kuvapainotteisia, ja joidenkin vanhempien
-              kuvien tekstivastineet ovat ohuempia kuin pitäisi. (WCAG 1.1.1
-              Ei-tekstuaalinen sisältö)
+              Projektisivut ovat kuvapainotteisia, ja joidenkin vanhempien kuvien tekstivastineet
+              ovat ohuempia kuin pitäisi. (WCAG 1.1.1 Ei-tekstuaalinen sisältö)
             </li>
           </ul>
           <p>
-            Muilta osin sivusto tähtää vahvaan perustasoon: semanttiset otsikot
-            ja maamerkit, näkyvä näppäimistökohdistus, luotettavat kontrastit
-            sekä vaaleassa että tummassa teemassa, ja animaatiot kunnioittavat
-            laitteesi liikkeen vähentämisen asetusta.
+            Muilta osin sivusto tähtää vahvaan perustasoon: semanttiset otsikot ja maamerkit, näkyvä
+            näppäimistökohdistus, luotettavat kontrastit sekä vaaleassa että tummassa teemassa, ja
+            animaatiot kunnioittavat laitteesi liikkeen vähentämisen asetusta.
           </p>
         </section>
       }
@@ -84,8 +75,8 @@ const Saavutettavuusseloste = () => (
         <section className={`${colStyle} accessibility-section`} lang="fi">
           <h2>Palaute ja yhteystiedot</h2>
           <p>
-            Jos huomaat sivustolla saavutettavuusongelman tai et pääse käsiksi
-            tarvitsemaasi sisältöön, haluan kuulla siitä. Minut tavoittaa{" "}
+            Jos huomaat sivustolla saavutettavuusongelman tai et pääse käsiksi tarvitsemaasi
+            sisältöön, haluan kuulla siitä. Minut tavoittaa{" "}
             <a
               href={"https://linkedin.com/in/harrihalonen"}
               target="_blank"
@@ -94,8 +85,8 @@ const Saavutettavuusseloste = () => (
               LinkedInissä
               <HighlightUnderline />
             </a>{" "}
-            tai sähköpostilla — etunimeni, tässä verkkotunnuksessa. Pyrin
-            vastaamaan 14 päivän kuluessa.
+            tai sähköpostilla — etunimeni, tässä verkkotunnuksessa. Pyrin vastaamaan 14 päivän
+            kuluessa.
           </p>
         </section>
       }
@@ -106,12 +97,10 @@ const Saavutettavuusseloste = () => (
         <section className={`${colStyle} accessibility-section`} lang="fi">
           <h2>Valvontaviranomainen</h2>
           <p>
-            Suomessa digipalvelulain soveltamisalaan kuuluvia verkkosivustoja
-            valvoo Liikenne- ja viestintävirasto Traficom. Koska tämä
-            henkilökohtainen sivusto ei kuulu lain soveltamisalaan,
-            valvontamenettely ei koske sitä — palaute tulee suoraan minulle,
-            ja korjaan löydetyt puutteet. Traficomin ohjeistus vaatimuksista
-            löytyy osoitteesta{" "}
+            Suomessa digipalvelulain soveltamisalaan kuuluvia verkkosivustoja valvoo Liikenne- ja
+            viestintävirasto Traficom. Koska tämä henkilökohtainen sivusto ei kuulu lain
+            soveltamisalaan, valvontamenettely ei koske sitä — palaute tulee suoraan minulle, ja
+            korjaan löydetyt puutteet. Traficomin ohjeistus vaatimuksista löytyy osoitteesta{" "}
             <a
               href={"https://www.saavutettavuusvaatimukset.fi"}
               target="_blank"

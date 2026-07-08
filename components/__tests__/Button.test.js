@@ -1,59 +1,58 @@
-import React from 'react';
-import { renderToStaticMarkup } from 'react-dom/server';
+import React from "react";
+import { renderToStaticMarkup } from "react-dom/server";
 
-import Button from '../Button';
+import Button from "../Button";
 
-describe('Button.isLinkInternal', () => {
-  test('returns true for relative links', () => {
-    const btn = new Button({ label: 'Test', link: '/about', color: 'green' });
+describe("Button.isLinkInternal", () => {
+  test("returns true for relative links", () => {
+    const btn = new Button({ label: "Test", link: "/about", color: "green" });
     expect(btn.isLinkInternal()).toBe(true);
   });
 
-  test('returns true for same host links', () => {
+  test("returns true for same host links", () => {
     const host = window.location.host;
-    const protocol = window.location.protocol || 'https:';
-    const btn = new Button({ label: 'Test', link: `${protocol}//${host}/page`, color: 'green' });
+    const protocol = window.location.protocol || "https:";
+    const btn = new Button({ label: "Test", link: `${protocol}//${host}/page`, color: "green" });
     expect(btn.isLinkInternal()).toBe(true);
   });
 
-
-  test('returns false for external links', () => {
-    const btn = new Button({ label: 'Test', link: 'https://other.com', color: 'green' });
+  test("returns false for external links", () => {
+    const btn = new Button({ label: "Test", link: "https://other.com", color: "green" });
     expect(btn.isLinkInternal()).toBe(false);
   });
 
-  test('returns false when window is undefined (SSR)', () => {
+  test("returns false when window is undefined (SSR)", () => {
     const originalWindow = global.window;
     global.window = undefined;
 
     try {
-      const btn = new Button({ label: 'Test', link: 'https://example.com', color: 'green' });
+      const btn = new Button({ label: "Test", link: "https://example.com", color: "green" });
       expect(btn.isLinkInternal()).toBe(false);
     } finally {
       global.window = originalWindow;
     }
   });
 
-  test('returns true for root-relative links when window is undefined (SSR)', () => {
+  test("returns true for root-relative links when window is undefined (SSR)", () => {
     const originalWindow = global.window;
     global.window = undefined;
 
     try {
-      const btn = new Button({ label: 'Test', link: '/projects', color: 'green' });
+      const btn = new Button({ label: "Test", link: "/projects", color: "green" });
       expect(btn.isLinkInternal()).toBe(true);
     } finally {
       global.window = originalWindow;
     }
   });
 
-  test('returns false for protocol-relative links', () => {
-    const btn = new Button({ label: 'Test', link: '//example.com/path', color: 'green' });
+  test("returns false for protocol-relative links", () => {
+    const btn = new Button({ label: "Test", link: "//example.com/path", color: "green" });
     expect(btn.isLinkInternal()).toBe(false);
   });
 });
 
-describe('Button rendering', () => {
-  test('renders an anchor for internal links', () => {
+describe("Button rendering", () => {
+  test("renders an anchor for internal links", () => {
     const markup = renderToStaticMarkup(<Button label="Test" link="/about" color="green" />);
     expect(markup).toContain('href="/about"');
     expect(markup).toMatch(/class="[^"]*button-link/);
@@ -61,9 +60,9 @@ describe('Button rendering', () => {
     expect(markup).not.toContain('rel="noopener noreferrer"');
   });
 
-  test('renders external links with a new-tab safety contract', () => {
+  test("renders external links with a new-tab safety contract", () => {
     const markup = renderToStaticMarkup(
-      <Button label="Read case study" link="https://example.com/case" color="green" />
+      <Button label="Read case study" link="https://example.com/case" color="green" />,
     );
 
     expect(markup).toContain('href="https://example.com/case"');
@@ -72,10 +71,10 @@ describe('Button rendering', () => {
     expect(markup).toMatch(/class="[^"]*button-link/);
   });
 
-  test('renders a static accessible label when no link is provided', () => {
+  test("renders a static accessible label when no link is provided", () => {
     const markup = renderToStaticMarkup(<Button label="Contact" color="green" />);
     expect(markup).toContain('aria-disabled="true"');
     expect(markup).toMatch(/class="[^"]*button-link--static/);
-    expect(markup).not.toContain('href=');
+    expect(markup).not.toContain("href=");
   });
 });

@@ -18,16 +18,14 @@ const AccessibilityStatement = () => (
         <div className={`${colStyle} accessibility-intro`}>
           <h1>Accessibility statement</h1>
           <p>
-            This accessibility statement applies to <strong>harritaito.com</strong>.
-            As a personal portfolio, this site is not covered by the Finnish Act
-            on the Provision of Digital Services (306/2019) — the statement is
-            published voluntarily, following the model that the Act requires of
-            public-sector services, because accessibility matters here
+            This accessibility statement applies to <strong>harritaito.com</strong>. As a personal
+            portfolio, this site is not covered by the Finnish Act on the Provision of Digital
+            Services (306/2019) — the statement is published voluntarily, following the model that
+            the Act requires of public-sector services, because accessibility matters here
             regardless.
           </p>
           <p>
-            The statement was prepared on 8 July 2026 and is based on my own
-            assessment of the site.
+            The statement was prepared on 8 July 2026 and is based on my own assessment of the site.
           </p>
           <p className="accessibility-language-link">
             <Link href="/saavutettavuusseloste" legacyBehavior>
@@ -46,9 +44,8 @@ const AccessibilityStatement = () => (
         <section className={`${colStyle} accessibility-section`}>
           <h2>Compliance status</h2>
           <p>
-            This website largely meets the Web Content Accessibility Guidelines
-            (WCAG) 2.1 level A and AA requirements. The known shortcomings are
-            listed below.
+            This website largely meets the Web Content Accessibility Guidelines (WCAG) 2.1 level A
+            and AA requirements. The known shortcomings are listed below.
           </p>
         </section>
       }
@@ -60,21 +57,16 @@ const AccessibilityStatement = () => (
           <h2>Non-accessible content</h2>
           <p>The following content does not yet fully meet the requirements:</p>
           <ul>
+            <li>Some external links open in a new tab without warning about it beforehand.</li>
             <li>
-              Some external links open in a new tab without warning about it
-              beforehand.
-            </li>
-            <li>
-              The case studies are image-heavy, and the text alternatives of
-              some older images are thinner than they should be. (WCAG 1.1.1
-              Non-text content)
+              The case studies are image-heavy, and the text alternatives of some older images are
+              thinner than they should be. (WCAG 1.1.1 Non-text content)
             </li>
           </ul>
           <p>
-            Elsewhere the site aims for a solid baseline: semantic headings and
-            landmarks, visible keyboard focus, dependable color contrast in both
-            light and dark themes, and animation that respects the
-            reduced-motion preference of your device.
+            Elsewhere the site aims for a solid baseline: semantic headings and landmarks, visible
+            keyboard focus, dependable color contrast in both light and dark themes, and animation
+            that respects the reduced-motion preference of your device.
           </p>
         </section>
       }
@@ -85,8 +77,8 @@ const AccessibilityStatement = () => (
         <section className={`${colStyle} accessibility-section`}>
           <h2>Feedback and contact information</h2>
           <p>
-            If you notice an accessibility problem on this site, or cannot
-            access something you need, I want to hear about it. You can{" "}
+            If you notice an accessibility problem on this site, or cannot access something you
+            need, I want to hear about it. You can{" "}
             <a
               href={"https://linkedin.com/in/harrihalonen"}
               target="_blank"
@@ -95,8 +87,7 @@ const AccessibilityStatement = () => (
               reach me on LinkedIn
               <HighlightUnderline />
             </a>
-            , or by email — my first name, here at this domain. I aim to
-            respond within 14 days.
+            , or by email — my first name, here at this domain. I aim to respond within 14 days.
           </p>
         </section>
       }
@@ -107,11 +98,10 @@ const AccessibilityStatement = () => (
         <section className={`${colStyle} accessibility-section`}>
           <h2>Supervisory authority</h2>
           <p>
-            In Finland, websites covered by the Act on the Provision of Digital
-            Services are supervised by the Finnish Transport and Communications
-            Agency Traficom. Because this personal site falls outside the scope
-            of the Act, that enforcement process does not apply here — feedback
-            comes straight to me, and I fix what is found. Traficom&rsquo;s
+            In Finland, websites covered by the Act on the Provision of Digital Services are
+            supervised by the Finnish Transport and Communications Agency Traficom. Because this
+            personal site falls outside the scope of the Act, that enforcement process does not
+            apply here — feedback comes straight to me, and I fix what is found. Traficom&rsquo;s
             guidance on the requirements is available at{" "}
             <a
               href={"https://www.saavutettavuusvaatimukset.fi"}

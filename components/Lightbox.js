@@ -1,28 +1,25 @@
-import React, {Component} from 'react';
-import { Carousel } from 'react-responsive-carousel';
-import { resolveAssetHeight, resolveAssetSrc, resolveAssetWidth } from './assetSource';
+import React, { Component } from "react";
+import { Carousel } from "react-responsive-carousel";
+import { resolveAssetHeight, resolveAssetSrc, resolveAssetWidth } from "./assetSource";
 
 class Lightbox extends Component {
-
-  constructor () {
+  constructor() {
     super();
 
     this.state = {
-      modalIsOpen: false
+      modalIsOpen: false,
     };
   }
 
-  
   componentDidUpdate(prevProps) {
     if (prevProps.open !== this.props.open) {
       this.setState({
-        modalIsOpen: this.props.open
+        modalIsOpen: this.props.open,
       });
     }
   }
 
-
-  render () {
+  render() {
     return (
       <div className="lightbox">
         <Carousel showThumbs={false} showStatus={false}>
@@ -30,7 +27,7 @@ class Lightbox extends Component {
             <div key={i}>
               <img
                 src={resolveAssetSrc(img.src)}
-                alt={img.caption || ''}
+                alt={img.caption || ""}
                 width={resolveAssetWidth(img.src)}
                 height={resolveAssetHeight(img.src)}
                 loading={i === 0 ? undefined : "lazy"}

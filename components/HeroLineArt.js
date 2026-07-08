@@ -124,22 +124,11 @@ class HeroLineArt extends Component {
               d="M681 546h92v55c0 29-20 48-46 48s-46-19-46-48v-55zm92 14h16c27 0 27 40 0 40h-16"
               className="cup"
             />
-            <path
-              pathLength="1"
-              d="M704 531c-17-25 17-29 0-53m43 53c-17-25 17-29 0-53"
-            />
+            <path pathLength="1" d="M704 531c-17-25 17-29 0-53m43 53c-17-25 17-29 0-53" />
             <path pathLength="1" d="M660 657h151" />
 
-            <path
-              pathLength="1"
-              d="M735 177h19m-10-10v20"
-              className="accent-line"
-            />
-            <path
-              pathLength="1"
-              d="M990 337h25m-13-13v26"
-              className="accent-line"
-            />
+            <path pathLength="1" d="M735 177h19m-10-10v20" className="accent-line" />
+            <path pathLength="1" d="M990 337h25m-13-13v26" className="accent-line" />
             <path pathLength="1" d="M681 344h21m-11-11v22" />
             <path
               pathLength="1"

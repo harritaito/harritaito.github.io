@@ -1,9 +1,8 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
-import { shadows } from './design-system/tokens';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { shadows } from "./design-system/tokens";
 
 class Video extends Component {
-
   componentDidUpdate(prevProps) {
     if (prevProps.autoplay !== this.props.autoplay) {
       this.props.autoplay ? this.playVideo() : this.stopVideo();
@@ -16,8 +15,8 @@ class Video extends Component {
     webMsrc: PropTypes.string,
     mp4src: PropTypes.string,
     caption: PropTypes.string,
-    controls: PropTypes.bool
-  }
+    controls: PropTypes.bool,
+  };
 
   static defaultProps = {
     autoplay: false,
@@ -25,29 +24,29 @@ class Video extends Component {
     webMsrc: "",
     mp4src: "",
     caption: "",
-    controls: false
-  }
+    controls: false,
+  };
 
   playVideo = () => {
-    if (!this._video || typeof this._video.play !== 'function') {
+    if (!this._video || typeof this._video.play !== "function") {
       return;
     }
 
     const playPromise = this._video.play();
-    if (playPromise && typeof playPromise.catch === 'function') {
+    if (playPromise && typeof playPromise.catch === "function") {
       playPromise.catch(() => {});
     }
-  }
+  };
 
   stopVideo = () => {
-    if (!this._video || typeof this._video.pause !== 'function') {
+    if (!this._video || typeof this._video.pause !== "function") {
       return;
     }
 
     this._video.pause();
-  }
+  };
 
-  render () {
+  render() {
     const fallbackSrc = this.props.src || "";
     const webMsrc = this.props.webMsrc || fallbackSrc;
     const mp4src = this.props.mp4src || fallbackSrc;
@@ -57,50 +56,47 @@ class Video extends Component {
       <span>
         <video
           className={"video " + this.props.className}
-          ref={(video) => { this._video = video; }}
+          ref={(video) => {
+            this._video = video;
+          }}
           preload="metadata"
           muted
           loop
           controls={this.props.controls}
           autoPlay={this.props.autoplay}
         >
-
           <source src={webMsrc} type="video/webm" />
           <source src={mp4src} type="video/mp4" />
 
-          <p>Your browser does not support the video tag. You can alternatively <a href={downloadSrc}>download</a> the video.</p>
-        </video>
-        {this.props.caption ?
-          <p className={"caption"}>
-            {this.props.caption}
+          <p>
+            Your browser does not support the video tag. You can alternatively{" "}
+            <a href={downloadSrc}>download</a> the video.
           </p>
-          : null
-        }
+        </video>
+        {this.props.caption ? <p className={"caption"}>{this.props.caption}</p> : null}
 
-      <style jsx>{`
-        .video {
-          width: 100%;
-          margin: .75em auto;
-          -webkit-box-shadow: ${shadows.media};
-                  box-shadow: ${shadows.media};
-        }
+        <style jsx>{`
+          .video {
+            width: 100%;
+            margin: 0.75em auto;
+            -webkit-box-shadow: ${shadows.media};
+            box-shadow: ${shadows.media};
+          }
 
-        .video + .caption {
-          margin-bottom: 1em;
-        }
+          .video + .caption {
+            margin-bottom: 1em;
+          }
 
-        .video.vertical-video {
-          max-height: 520px;
-          width: auto;
-          margin: auto;
-          display: block;
-        }
-      `}</style>
-
+          .video.vertical-video {
+            max-height: 520px;
+            width: auto;
+            margin: auto;
+            display: block;
+          }
+        `}</style>
       </span>
-    )
+    );
   }
-
 }
 
 export default Video;

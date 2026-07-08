@@ -44,47 +44,21 @@ export default class MyDocument extends Document {
         <Head>
           <meta charSet="UTF-8" />
           <meta httpEquiv="Cache-Control" content="public, max-age=86400" />
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, viewport-fit=cover"
-          />
-          <link
-            rel="icon"
-            type="image/svg+xml"
-            href={`/favicon.svg?v=${v}`}
-          />
-          <link
-            rel="icon"
-            sizes="192x192"
-            href={`/static/media/touch-icon.png?v=${v}`}
-          />
-          <link
-            rel="apple-touch-icon"
-            href={`/static/media/touch-icon.png?v=${v}`}
-          />
-          <link
-            rel="mask-icon"
-            href={`/favicon-mask.svg?v=${v}`}
-            color="#49B882"
-          />
+          <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+          <link rel="icon" type="image/svg+xml" href={`/favicon.svg?v=${v}`} />
+          <link rel="icon" sizes="192x192" href={`/static/media/touch-icon.png?v=${v}`} />
+          <link rel="apple-touch-icon" href={`/static/media/touch-icon.png?v=${v}`} />
+          <link rel="mask-icon" href={`/favicon-mask.svg?v=${v}`} color="#49B882" />
           <link rel="icon" href={`/static/favicon.ico?v=${v}`} />
           <link rel="manifest" href="/manifest.webmanifest" />
-          <meta
-            name="theme-color"
-            content="#fafafa"
-            media="(prefers-color-scheme: light)"
-          />
+          <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigi />
           <link
             href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Voltaire&display=swap"
             rel="stylesheet"
           />
-          <meta
-            name="theme-color"
-            content="#0b1120"
-            media="(prefers-color-scheme: dark)"
-          />
+          <meta name="theme-color" content="#0b1120" media="(prefers-color-scheme: dark)" />
           <meta property="og:type" content="website" />
           <meta property="og:site_name" content={siteName} />
           <meta property="og:locale" content={locale} />
@@ -1489,9 +1463,7 @@ export default class MyDocument extends Document {
         </Head>
         <body>
           {this.props.customValue}
-          <noscript>
-            Sorry! You'll need to enable JavaScript to see my site.
-          </noscript>
+          <noscript>Sorry! You'll need to enable JavaScript to see my site.</noscript>
           <Main />
           <NextScript />
         </body>

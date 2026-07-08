@@ -41,10 +41,9 @@ class About extends Component {
           <Row
             content={
               <p className="about-me-copy col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6">
-                I’m Harri Halonen — an experience and product designer based in
-                Tampere, Finland. I work where business goals meet technical
-                reality, turning ambiguous requirements into clear workflows,
-                reusable patterns, and design that’s ready to build.
+                I’m Harri Halonen — an experience and product designer based in Tampere, Finland. I
+                work where business goals meet technical reality, turning ambiguous requirements
+                into clear workflows, reusable patterns, and design that’s ready to build.
               </p>
             }
           />
@@ -52,10 +51,9 @@ class About extends Component {
           <Row
             content={
               <p className="about-me-copy col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6">
-                Most of my work lives in complex B2B and product systems — the
-                kind with real edge cases, long-lived data, and users who can’t
-                afford a confusing screen. I’m just as comfortable slowing down
-                for trust-sensitive and health-adjacent contexts, where the
+                Most of my work lives in complex B2B and product systems — the kind with real edge
+                cases, long-lived data, and users who can’t afford a confusing screen. I’m just as
+                comfortable slowing down for trust-sensitive and health-adjacent contexts, where the
                 right move is to design quietly and carefully.
               </p>
             }
@@ -64,9 +62,9 @@ class About extends Component {
           <Row
             content={
               <p className="about-me-copy col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6">
-                My background runs through HCI, service design, and enough
-                field research to know that what people say they want and what
-                they actually need are usually two different conversations.
+                My background runs through HCI, service design, and enough field research to know
+                that what people say they want and what they actually need are usually two different
+                conversations.
               </p>
             }
           />
@@ -77,24 +75,22 @@ class About extends Component {
                 <p className="focus-intro">What I’m focused on right now:</p>
                 <ul className="focus-list">
                   <li>
-                    <strong>Complex product systems</strong> — workflows,
-                    states, and edge cases that hold up over time
+                    <strong>Complex product systems</strong> — workflows, states, and edge cases
+                    that hold up over time
                   </li>
                   <li>
-                    <strong>Design systems</strong> — reusable patterns a team
-                    can actually build on
+                    <strong>Design systems</strong> — reusable patterns a team can actually build on
                   </li>
                   <li>
-                    <strong>Discovery</strong> — research-led framing before
-                    anyone touches pixels
+                    <strong>Discovery</strong> — research-led framing before anyone touches pixels
                   </li>
                   <li>
-                    <strong>AI and data workflows</strong> — making dense
-                    information legible and actionable
+                    <strong>AI and data workflows</strong> — making dense information legible and
+                    actionable
                   </li>
                   <li>
-                    <strong>Implementation quality</strong> — staying close to
-                    the build so the design survives it
+                    <strong>Implementation quality</strong> — staying close to the build so the
+                    design survives it
                   </li>
                 </ul>
               </div>
@@ -112,11 +108,10 @@ class About extends Component {
           <Row
             content={
               <p className="about-me-copy col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6">
-                I lead through craft and facilitation, not a title. I haven’t
-                held formal line management, so what I offer sits elsewhere:
-                raising a team’s design quality from inside the work — running
-                critique, mentoring designers earlier in their path, and holding
-                a quality bar that survives handoff.
+                I lead through craft and facilitation, not a title. I haven’t held formal line
+                management, so what I offer sits elsewhere: raising a team’s design quality from
+                inside the work — running critique, mentoring designers earlier in their path, and
+                holding a quality bar that survives handoff.
               </p>
             }
           />
@@ -124,12 +119,10 @@ class About extends Component {
           <Row
             content={
               <p className="about-me-copy col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6">
-                Most of it is enablement. I turn one-off calls into shared
-                standards, keep cross-functional conversations aligned on the
-                same picture, and make the design system something a team leans
-                on instead of relearns. When designers and engineers pull in
-                different directions, I facilitate toward a decision rather than
-                dig in.
+                Most of it is enablement. I turn one-off calls into shared standards, keep
+                cross-functional conversations aligned on the same picture, and make the design
+                system something a team leans on instead of relearns. When designers and engineers
+                pull in different directions, I facilitate toward a decision rather than dig in.
               </p>
             }
           />
@@ -142,24 +135,24 @@ class About extends Component {
                 </p>
                 <ul className="focus-list">
                   <li>
-                    <strong>Critique</strong> — regular, structured sessions
-                    that pressure-test work before it ships
+                    <strong>Critique</strong> — regular, structured sessions that pressure-test work
+                    before it ships
                   </li>
                   <li>
-                    <strong>Accessibility review</strong> — checking contrast,
-                    focus, and semantics early, not as a final gate
+                    <strong>Accessibility review</strong> — checking contrast, focus, and semantics
+                    early, not as a final gate
                   </li>
                   <li>
-                    <strong>Implementation notes</strong> — writing down the
-                    intent behind a design so the build keeps it
+                    <strong>Implementation notes</strong> — writing down the intent behind a design
+                    so the build keeps it
                   </li>
                   <li>
-                    <strong>Decision logs</strong> — recording what we chose and
-                    why, so nobody relitigates it later
+                    <strong>Decision logs</strong> — recording what we chose and why, so nobody
+                    relitigates it later
                   </li>
                   <li>
-                    <strong>Post-release quality review</strong> — looking at
-                    what actually shipped and feeding it back into the system
+                    <strong>Post-release quality review</strong> — looking at what actually shipped
+                    and feeding it back into the system
                   </li>
                 </ul>
               </div>
@@ -169,13 +162,12 @@ class About extends Component {
           <Row
             content={
               <p className="about-me-copy col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6">
-                These rituals earn their place through what they prevent.
-                Decision logs stop teams relitigating settled calls; early
-                accessibility review keeps rework out of the final week;
-                implementation notes keep the build honest to the intent. What
-                comes out the other side is clearer decisions, fewer
-                clarification rounds, and interfaces that stay consistent as they
-                scale — leadership measured by the work, quietly and in practice.
+                These rituals earn their place through what they prevent. Decision logs stop teams
+                relitigating settled calls; early accessibility review keeps rework out of the final
+                week; implementation notes keep the build honest to the intent. What comes out the
+                other side is clearer decisions, fewer clarification rounds, and interfaces that
+                stay consistent as they scale — leadership measured by the work, quietly and in
+                practice.
               </p>
             }
           />
@@ -192,8 +184,7 @@ class About extends Component {
                   master’s thesis on interaction design for industrial XR
                   <HighlightUnderline />
                 </a>{" "}
-                at Tampere University. Off the clock: film photography and
-                basketball.
+                at Tampere University. Off the clock: film photography and basketball.
               </p>
             }
           />
@@ -201,7 +192,8 @@ class About extends Component {
           <Row
             content={
               <p className="about-me-copy col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6">
-                I’m happy to talk with teams that need product judgment, system thinking, or research-led design support. The easiest way is to{" "}
+                I’m happy to talk with teams that need product judgment, system thinking, or
+                research-led design support. The easiest way is to{" "}
                 <a
                   href={"https://linkedin.com/in/harrihalonen"}
                   target="_blank"
@@ -222,7 +214,9 @@ class About extends Component {
             padding-top: 1rem;
           }
           @media only screen and (max-width: 45rem) {
-            .About .content {padding-top: 0.5rem;}
+            .About .content {
+              padding-top: 0.5rem;
+            }
           }
 
           .About .content .my-photo-container {
@@ -238,7 +232,10 @@ class About extends Component {
             border-radius: ${radii.circle};
           }
           @media only screen and (max-width: 45rem) {
-            .About .my-photo {height: 12rem; width: 12rem;}
+            .About .my-photo {
+              height: 12rem;
+              width: 12rem;
+            }
           }
 
           .About .my-photo img {
@@ -276,7 +273,6 @@ class About extends Component {
             margin-bottom: 0.4rem;
           }
 
-
           .About .nav .navbar-link:hover {
             color: ${colors.accentGrey};
           }
@@ -292,8 +288,8 @@ class About extends Component {
           .About .emoji {
             display: inline-block;
             margin-right: 2px;
-        }
-      `}</style>
+          }
+        `}</style>
       </div>
     );
   }

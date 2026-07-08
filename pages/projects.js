@@ -22,12 +22,19 @@ const ProjectsPage = () => {
           <div className="col-xs-12 col-sm-10 col-md-9 col-lg-8 col-xl-7 archive-intro">
             <h1>Archive</h1>
             <p>
-              Older work and concept pieces. The home page has the main selection — this is everything else.
+              Older work and concept pieces. The home page has the main selection — this is
+              everything else.
             </p>
           </div>
         }
       />
-      <Row content={<div className="col-xs-12"><MorphingMesh /></div>} />
+      <Row
+        content={
+          <div className="col-xs-12">
+            <MorphingMesh />
+          </div>
+        }
+      />
       {projects.map((p) => (
         <Project
           key={p.name}
@@ -52,7 +59,8 @@ const ProjectsPage = () => {
       <Row
         content={
           <p className="col-xs-12 col-sm-10 col-md-9 col-lg-8 col-xl-7 archive-copy">
-            Community, course, and volunteer projects — kept here to be honest about what shipped, what's conceptual, and what never quite made it.
+            Community, course, and volunteer projects — kept here to be honest about what shipped,
+            what's conceptual, and what never quite made it.
           </p>
         }
       />

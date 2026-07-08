@@ -23,9 +23,7 @@ class Navbar extends Component {
   updateProgress() {
     const height = document.documentElement.scrollHeight - window.innerHeight;
     const rawValue = height > 0 ? window.scrollY / height : 0;
-    const value = Number.isFinite(rawValue)
-      ? Math.min(1, Math.max(0, rawValue))
-      : 0;
+    const value = Number.isFinite(rawValue) ? Math.min(1, Math.max(0, rawValue)) : 0;
     this.setState({ progress: value });
   }
 
@@ -77,10 +75,7 @@ class Navbar extends Component {
                 <Link href={this.props.nextProjectLink} legacyBehavior>
                   <a className="next navbar-link">
                     {this.props.nextProjectName}
-                    <Isvg
-                      className={"next-arrow"}
-                      src={resolveAssetSrc(arrow)}
-                    />
+                    <Isvg className={"next-arrow"} src={resolveAssetSrc(arrow)} />
                   </a>
                 </Link>
               </div>
@@ -97,7 +92,7 @@ class Navbar extends Component {
             z-index: 1 !important;
             transform: translateY(0px);
             -webkit-box-shadow: var(--navbar-shadow);
-                    box-shadow: var(--navbar-shadow);
+            box-shadow: var(--navbar-shadow);
           }
           .headroom--unfixed {
             position: absolute !important;
@@ -127,22 +122,24 @@ class Navbar extends Component {
 
           .headroom--unfixed .navbar {
             -webkit-box-shadow: none;
-                    box-shadow: none;
+            box-shadow: none;
           }
 
           .headroom--unfixed .progress-bar-wrap {
             display: none;
           }
-          .headroom-wrapper{height: 3.5rem;}
+          .headroom-wrapper {
+            height: 3.5rem;
+          }
           .navbar {
-            padding-bottom: .6em;
+            padding-bottom: 0.6em;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
             gap: 0.5em;
             -webkit-box-shadow: var(--navbar-shadow);
-                    box-shadow: var(--navbar-shadow);
+            box-shadow: var(--navbar-shadow);
             background: var(--surface-elevated-color);
             color: var(--link-color);
           }
@@ -156,9 +153,9 @@ class Navbar extends Component {
             align-items: center;
             padding: 1em 1em 0em 1em;
             outline: none;
-            -webkit-transition: all .2s linear;
-            -o-transition: all .2s linear;
-            transition: all .2s linear;
+            -webkit-transition: all 0.2s linear;
+            -o-transition: all 0.2s linear;
+            transition: all 0.2s linear;
             -webkit-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
@@ -188,9 +185,9 @@ class Navbar extends Component {
             height: 1rem;
             width: 1rem;
             margin-left: 4px;
-            -webkit-transition: all .3s linear;
-            -o-transition: all .3s linear;
-            transition: all .3s linear;
+            -webkit-transition: all 0.3s linear;
+            -o-transition: all 0.3s linear;
+            transition: all 0.3s linear;
           }
 
           .next-arrow {
@@ -200,10 +197,9 @@ class Navbar extends Component {
 
           .navbar .next:hover .next-arrow {
             -webkit-transform: translateX(3px);
-                -ms-transform: translateX(3px);
-                    transform: translateX(3px);
+            -ms-transform: translateX(3px);
+            transform: translateX(3px);
           }
-
 
           .progress-bar-wrap {
             position: fixed;
@@ -242,8 +238,8 @@ class Navbar extends Component {
             color: ${colors.accentPurple};
           }
 
-         progress.progress-bar.grey {
-            color: ${colors.accentGrey}
+          progress.progress-bar.grey {
+            color: ${colors.accentGrey};
           }
 
           progress.progress-bar::-webkit-progress-bar {
@@ -266,7 +262,6 @@ class Navbar extends Component {
             background-color: ${colors.accentRed};
           }
 
-
           progress.progress-bar.blue::-webkit-progress-value {
             background-color: ${colors.accentBlue};
           }
@@ -274,7 +269,6 @@ class Navbar extends Component {
           progress.progress-bar.blue::-moz-progress-bar {
             background-color: ${colors.accentBlue};
           }
-
 
           progress.progress-bar.green::-webkit-progress-value {
             background-color: ${colors.accentGreen};
@@ -301,9 +295,7 @@ class Navbar extends Component {
               padding: 0.75em 0.75em 0 0.75em;
             }
           }
-
-
-    `}</style>
+        `}</style>
       </header>
     );
   }

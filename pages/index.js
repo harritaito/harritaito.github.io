@@ -1,9 +1,9 @@
-import Home from './Home';
+import Home from "./Home";
 
 const Index = () => (
   <div>
-    <Home/>
+    <Home />
   </div>
-)
+);
 
 export default Index;

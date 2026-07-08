@@ -27,13 +27,17 @@ if (!fs.statSync(outDir).isDirectory()) {
 }
 
 if (!fs.existsSync(cnameSourcePath)) {
-  fail(`Cannot create ${relativePath(cnameOutputPath)} because ${relativePath(cnameSourcePath)} is missing.`);
+  fail(
+    `Cannot create ${relativePath(cnameOutputPath)} because ${relativePath(cnameSourcePath)} is missing.`,
+  );
 }
 
 const domain = fs.readFileSync(cnameSourcePath, "utf8").trim();
 
 if (!domain) {
-  fail(`Cannot create ${relativePath(cnameOutputPath)} because ${relativePath(cnameSourcePath)} is empty.`);
+  fail(
+    `Cannot create ${relativePath(cnameOutputPath)} because ${relativePath(cnameSourcePath)} is empty.`,
+  );
 }
 
 try {

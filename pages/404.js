@@ -1,2 +1,2 @@
-import PageNotFound from './_error';
+import PageNotFound from "./_error";
 export default PageNotFound;

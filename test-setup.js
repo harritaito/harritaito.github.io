@@ -1,21 +1,21 @@
 // Basic DOM mocks for tests running in node environment
-if (typeof global.document === 'undefined') {
+if (typeof global.document === "undefined") {
   global.document = {
-    body: { style: { overflow: 'auto' } },
+    body: { style: { overflow: "auto" } },
     querySelector: () => null,
-    createElement: () => ({ style: {} })
+    createElement: () => ({ style: {} }),
   };
 }
-if (typeof global.window === 'undefined') {
-  global.window = { location: { host: 'localhost', protocol: 'https:' } };
+if (typeof global.window === "undefined") {
+  global.window = { location: { host: "localhost", protocol: "https:" } };
 }
 
-if (typeof globalThis.performance === 'undefined') {
-  const { performance } = require('perf_hooks');
+if (typeof globalThis.performance === "undefined") {
+  const { performance } = require("perf_hooks");
   globalThis.performance = performance;
 }
 
-if (typeof global.requestAnimationFrame === 'undefined') {
+if (typeof global.requestAnimationFrame === "undefined") {
   global.requestAnimationFrame = (cb) => setTimeout(cb, 0);
   global.cancelAnimationFrame = (id) => clearTimeout(id);
 }
@@ -27,5 +27,5 @@ Object.assign(global.window, {
   cancelAnimationFrame: global.cancelAnimationFrame,
   Date,
   setTimeout,
-  clearTimeout
+  clearTimeout,
 });
