@@ -30,6 +30,10 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Install dependencies
         run: npm ci
+      - name: Lint
+        run: npm run lint
+      - name: Check formatting
+        run: npm run format:check
       - name: Run tests
         run: npm test -- --runInBand
       - name: Build project

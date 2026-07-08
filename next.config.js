@@ -19,6 +19,7 @@ const nextConfig = {
       "/kivakaupunki": { page: "/kivakaupunki" },
       "/aikakone": { page: "/aikakone" },
       "/hri-study": { page: "/hri-study" },
+      "/thesis": { page: "/thesis" },
     };
   },
 };

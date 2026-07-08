@@ -1,9 +1,10 @@
+import Link from 'next/link';
 import Social from './Social';
 
 const Footer = () => (
   <footer className="row footer">
     <div style={{marginTop: "1.5em"}} className={"col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6"}>
-      Made by me · <a href="/accessibility">Accessibility</a>
+      Made by me · <Link href="/accessibility" legacyBehavior><a>Accessibility</a></Link>
     </div>
     <Social/>
     <style jsx>{`

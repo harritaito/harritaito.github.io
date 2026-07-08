@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -29,10 +30,12 @@ const Saavutettavuusseloste = () => (
             sivustosta.
           </p>
           <p className="accessibility-language-link">
-            <a href="/accessibility">
-              Read this statement in English
-              <HighlightUnderline />
-            </a>
+            <Link href="/accessibility" legacyBehavior>
+              <a>
+                Read this statement in English
+                <HighlightUnderline />
+              </a>
+            </Link>
           </p>
         </div>
       }

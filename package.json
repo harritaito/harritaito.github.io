@@ -17,6 +17,9 @@
     "preview": "npm run verify:out && npx --yes serve out",
     "start": "npm run preview",
     "clearCache": "npm run clean",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "verify:out": "node scripts/verify-out.js",
     "deploy": "npm run build && npm run verify:out",
     "test": "jest"
@@ -48,10 +51,19 @@
     "three": "^0.184.0",
     "victory": "^37.3.6"
   },
+  "overrides": {
+    "next": {
+      "postcss": "^8.5.10"
+    }
+  },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.5",
     "babel-jest": "^30.0.4",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "^15.5.20",
     "jest": "^30.0.4",
     "jest-environment-jsdom": "^30.0.5",
+    "prettier": "^3.9.4",
     "rimraf": "^5.0.5",
     "staticrypt": "^3.5.4"
   }
