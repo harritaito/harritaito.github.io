@@ -579,11 +579,11 @@ class Languagerobot extends Component {
                     <Row
                       content={
                         <div className={pStyle + " links"} style={{ marginTop: "1.5em" }}>
-                          <a href="https://smarttampere.fi/lapsikeskeisempaa-robotiikkaa-opiskelijoilta-ideoita-opetusrobottien-kehittamiseksi/">
+                          <a href="https://web.archive.org/web/20220813063322/https://smarttampere.fi/lapsikeskeisempaa-robotiikkaa-opiskelijoilta-ideoita-opetusrobottien-kehittamiseksi/">
                             Lapsikeskeisempää robotiikkaa
                           </a>
                           <span style={{ marginLeft: "1.5em" }}>
-                            <a href="https://smarttampere.fi/en/towards-child-centered-robotics-ideas-from-students-to-develop-teaching-robots/">
+                            <a href="https://web.archive.org/web/20221002041853/https://smarttampere.fi/en/towards-child-centered-robotics-ideas-from-students-to-develop-teaching-robots/">
                               Towards child-centered robotics
                             </a>
                           </span>

@@ -67,13 +67,6 @@ class Misc extends Component {
                 </p>
               </span>
             }
-
-            links={[
-              {
-                title: "Event page",
-                url: "http://communities.techstars.com/events/14666",
-              },
-            ]}
           />
         </div>
 
@@ -123,11 +116,7 @@ class Misc extends Component {
             links={[
               {
                 title: "Aki Lindberg",
-                url: "http://www.akilindberg.com/projects",
-              },
-              {
-                title: "Invision Prototype",
-                url: "https://projects.invisionapp.com/share/2RABGLFAK#/screens/218769135_RiittaRecycleWeb_With_Some",
+                url: "https://web.archive.org/web/20190508170707/https://www.akilindberg.com/",
               },
             ]}
           />
@@ -159,7 +148,7 @@ class Misc extends Component {
             links={[
               {
                 title: "Aki Lindberg",
-                url: "http://www.akilindberg.com/projects",
+                url: "https://web.archive.org/web/20190508170707/https://www.akilindberg.com/",
               },
               {
                 title: "Video for TUTlab",
