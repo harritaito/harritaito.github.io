@@ -6,6 +6,7 @@ import Process from "../components/Process";
 import ProjectSection from "../components/ProjectSection";
 import Row from "../components/Row";
 import { resolveAssetHeight, resolveAssetSrc, resolveAssetWidth } from "../components/assetSource";
+import CraftDetail from "../components/design-system/CraftDetail";
 import HighlightUnderline from "../components/design-system/HighlightUnderline";
 import { colors, shadows } from "../components/design-system/tokens";
 import { Carousel } from "react-responsive-carousel";
@@ -494,6 +495,81 @@ class Aikakone extends Component {
                             same conversation.
                           </li>
                         </ul>
+                      }
+                    />
+                  </span>
+                }
+              />
+
+              <ProjectSection
+                title={"States and microcopy"}
+                content={
+                  <span>
+                    <Row
+                      content={
+                        <p className={pStyle}>
+                          The PowerPoint prototype never had to load, fail, or save anything real.
+                          A production memory-care tool would earn or lose trust in exactly those
+                          moments, so the concept examples below show how I would design the states
+                          the prototype never reached.
+                        </p>
+                      }
+                    />
+                    <Row
+                      content={
+                        <CraftDetail
+                          className={pStyle}
+                          kind={"Loading state"}
+                          title={"Waiting for session media without breaking the moment"}
+                          issue={
+                            "Care-home networks are slow, and a bare spinner in front of a resident turns a shared moment into an awkward silence the facilitator has to fill."
+                          }
+                          before={"Loading…"}
+                          after={
+                            "Getting the 1960s photos ready — this can take a moment on the shared network. The conversation doesn't need to wait for the screen."
+                          }
+                          why={
+                            "The copy gives the facilitator something to do with the pause: it names what is coming, blames the network rather than the person or the tool, and reminds them the session is the conversation, not the screen."
+                          }
+                        />
+                      }
+                    />
+                    <Row
+                      content={
+                        <CraftDetail
+                          className={pStyle}
+                          kind={"Error recovery"}
+                          title={"A failed photo set should not end the session"}
+                          issue={
+                            "A raw 'content failed to load' error reads as breakage and quietly suggests something may be lost — a frightening implication in a tool that holds someone's life story."
+                          }
+                          before={"Error: Content could not be loaded. Please try again later."}
+                          after={
+                            "These photos aren't opening right now. Nothing in the life-story archive has been lost — try the music from the same decade, or come back to the photos later."
+                          }
+                          why={
+                            "In a memory-care setting the error state has two jobs: say explicitly that nothing is lost, and hand the facilitator an immediate alternative so the session keeps its rhythm."
+                          }
+                        />
+                      }
+                    />
+                    <Row
+                      content={
+                        <CraftDetail
+                          className={pStyle}
+                          kind={"Microcopy for sensitive data"}
+                          title={"Confirming a save to a resident's profile"}
+                          issue={
+                            "Profiili holds personal history and care notes. A generic 'Saved' confirms the mechanics but says nothing about who can see information this sensitive."
+                          }
+                          before={"Changes saved."}
+                          after={
+                            "Saved to the resident's profile. Notes here are visible only to the care staff of this home — not to other residents or visitors."
+                          }
+                          why={
+                            "The moment of saving is when staff and family wonder who will read this. Answering that question in the confirmation, every time, is how a product handling personal care data earns routine trust."
+                          }
+                        />
                       }
                     />
                   </span>

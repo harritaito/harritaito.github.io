@@ -9,6 +9,7 @@ import Process from "../components/Process";
 import ProjectSection from "../components/ProjectSection";
 import Row from "../components/Row";
 import { resolveAssetHeight, resolveAssetSrc, resolveAssetWidth } from "../components/assetSource";
+import CraftDetail from "../components/design-system/CraftDetail";
 import HighlightUnderline from "../components/design-system/HighlightUnderline";
 import { colors, shadows } from "../components/design-system/tokens";
 import { Carousel } from "react-responsive-carousel";
@@ -530,6 +531,62 @@ class Kivakaupunki extends Component {
                           the MVP was useful as a competition prototype rather than as a complete
                           public-service workflow.
                         </p>
+                      }
+                    />
+                  </span>
+                }
+              />
+
+              <ProjectSection
+                title={"States and microcopy"}
+                content={
+                  <span>
+                    <Row
+                      content={
+                        <p className={pStyle}>
+                          The heuristic review flagged missing error messages and help as the MVP's
+                          clearest gaps. Rather than leave that as a finding, the concept examples
+                          below show two of the states the MVP skipped and how I would write them
+                          now.
+                        </p>
+                      }
+                    />
+                    <Row
+                      content={
+                        <CraftDetail
+                          className={pStyle}
+                          kind={"Empty state"}
+                          title={"A map with no feedback yet"}
+                          issue={
+                            "Before the first report, the MVP's map was simply blank — which reads as a broken or abandoned service rather than a new one."
+                          }
+                          before={"No results found."}
+                          after={
+                            "No reports on this route yet. Seen something on your ride worth flagging — a rough stop, a full bus, a driver who nailed it? Tap the spot on the map to leave the first one."
+                          }
+                          why={
+                            "An empty civic tool has one job: turn 'nothing here' into 'you go first.' Naming concrete report-worthy moments teaches what the tool is for at exactly the moment the user decides whether it is worth using."
+                          }
+                        />
+                      }
+                    />
+                    <Row
+                      content={
+                        <CraftDetail
+                          className={pStyle}
+                          kind={"Success feedback"}
+                          title={"Closing the loop after a report is sent"}
+                          issue={
+                            "'Form submitted' confirms the transaction but not the point — civic feedback feels like shouting into a void unless the product shows the report landed somewhere visible."
+                          }
+                          before={"Your form has been submitted."}
+                          after={
+                            "Thanks — your report is now on the map for other passengers to see. It stays attached to this stop, so patterns here become visible over time."
+                          }
+                          why={
+                            "The honest promise a prototype can make is visibility, not municipal action. Showing the report living publicly on the map gives the sender proof of effect without overclaiming what the city will do."
+                          }
+                        />
                       }
                     />
                   </span>
