@@ -7,7 +7,7 @@ describe("WritingCloudBackground", () => {
 
     expect(Array.from({ length: 5 }, first)).toEqual(Array.from({ length: 5 }, second));
     expect(Array.from({ length: 5 }, seededRandom("writing"))).not.toEqual(
-      Array.from({ length: 5 }, seededRandom("other"))
+      Array.from({ length: 5 }, seededRandom("other")),
     );
   });
 

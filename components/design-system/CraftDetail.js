@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { colors, radii, shadows } from './tokens';
+import React from "react";
+import PropTypes from "prop-types";
+import { colors, radii, shadows } from "./tokens";
 
 // A compact before/after module for showing product-behavior craft:
 // loading states, error recovery, empty states, and microcopy tone.
@@ -145,7 +145,7 @@ CraftDetail.propTypes = {
 };
 
 CraftDetail.defaultProps = {
-  className: '',
+  className: "",
 };
 
 export default CraftDetail;

@@ -61,16 +61,17 @@ export function createCloudShape(random, width, height, depth = 1) {
       height * range(random, 0.55, 0.74),
     ],
     () => [width * range(random, 0.07, 0.13), height * range(random, 0.13, 0.23)],
-    [10, 15]
+    [10, 15],
   );
   addPuffs(
     Math.floor(range(random, 9, 14)),
     (progress) => [
       width * (0.12 + progress * 0.76) + range(random, -width * 0.045, width * 0.045),
-      height * range(random, 0.24, 0.5) - Math.sin(progress * Math.PI) * height * range(random, 0.08, 0.2),
+      height * range(random, 0.24, 0.5) -
+        Math.sin(progress * Math.PI) * height * range(random, 0.08, 0.2),
     ],
     () => [width * range(random, 0.06, 0.13), height * range(random, 0.12, 0.22)],
-    [10, 16]
+    [10, 16],
   );
   addPuffs(
     Math.floor(range(random, 8, 12)),
@@ -79,7 +80,7 @@ export function createCloudShape(random, width, height, depth = 1) {
       height * range(random, 0.12, 0.3),
     ],
     () => [width * range(random, 0.06, 0.14), height * range(random, 0.07, 0.14)],
-    [9, 14]
+    [9, 14],
   );
 
   const facetCount = Math.round(range(random, 22, 38) * depth);
@@ -87,7 +88,14 @@ export function createCloudShape(random, width, height, depth = 1) {
     const cx = range(random, -width * 0.04, width * 1.04);
     const cy = range(random, height * 0.08, height * 0.9);
     facets.push({
-      points: polygon(random, cx, cy, width * range(random, 0.018, 0.055), height * range(random, 0.025, 0.08), random() > 0.82 ? 4 : 3),
+      points: polygon(
+        random,
+        cx,
+        cy,
+        width * range(random, 0.018, 0.055),
+        height * range(random, 0.025, 0.08),
+        random() > 0.82 ? 4 : 3,
+      ),
       shade: cy / height,
       cool: cy > height * range(random, 0.52, 0.72),
       hueOffset: range(random, -7, 8),
@@ -141,7 +149,12 @@ function drawCloud(ctx, cloud, x, y, opacity) {
   veil.addColorStop(0, "rgba(255, 255, 251, 0.14)");
   veil.addColorStop(1, "rgba(246, 232, 208, 0.04)");
   ctx.fillStyle = veil;
-  ctx.fillRect(x - cloud.width * 0.08, y - cloud.height * 0.08, cloud.width * 1.16, cloud.height * 1.16);
+  ctx.fillRect(
+    x - cloud.width * 0.08,
+    y - cloud.height * 0.08,
+    cloud.width * 1.16,
+    cloud.height * 1.16,
+  );
   ctx.restore();
 }
 
@@ -155,27 +168,37 @@ function createClouds(width, height, seed) {
 
   return layers
     .flatMap((layer, layerIndex) =>
-      Array.from({ length: Math.ceil(width / (620 - layerIndex * 70)) + layer.count }, (_, index) => {
-        const cloudWidth = Math.min(width * 1.08 + 180, Math.max(260, width * range(random, ...layer.width)));
-        const cloudHeight = cloudWidth * range(random, 0.17, 0.29);
-        const progress = index / Math.max(1, Math.ceil(width / (620 - layerIndex * 70)) + layer.count - 1);
-        return {
-          ...createCloudShape(random, cloudWidth, cloudHeight, layer.depth),
-          baseX: -cloudWidth * 0.72 + progress * (width + cloudWidth * 1.36) + range(random, -cloudWidth * 0.16, cloudWidth * 0.16),
-          y: height * range(random, ...layer.y) - cloudHeight * range(random, 0.08, 0.2),
-          width: cloudWidth,
-          height: cloudHeight,
-          depth: layer.depth,
-          direction: (index + layerIndex) % 2 === 0 ? 1 : -1,
-          speed: range(random, ...layer.speed),
-          opacity: range(random, 0.48, 0.72),
-          hue: range(random, 34, 45),
-          phase: range(random, 0, Math.PI * 2),
-          floatAmplitude: range(random, 1.5, 5.5) * layer.depth,
-          floatSpeed: range(random, 0.55, 1.1),
-          gap: cloudWidth * range(random, 0.04, 0.18),
-        };
-      })
+      Array.from(
+        { length: Math.ceil(width / (620 - layerIndex * 70)) + layer.count },
+        (_, index) => {
+          const cloudWidth = Math.min(
+            width * 1.08 + 180,
+            Math.max(260, width * range(random, ...layer.width)),
+          );
+          const cloudHeight = cloudWidth * range(random, 0.17, 0.29);
+          const progress =
+            index / Math.max(1, Math.ceil(width / (620 - layerIndex * 70)) + layer.count - 1);
+          return {
+            ...createCloudShape(random, cloudWidth, cloudHeight, layer.depth),
+            baseX:
+              -cloudWidth * 0.72 +
+              progress * (width + cloudWidth * 1.36) +
+              range(random, -cloudWidth * 0.16, cloudWidth * 0.16),
+            y: height * range(random, ...layer.y) - cloudHeight * range(random, 0.08, 0.2),
+            width: cloudWidth,
+            height: cloudHeight,
+            depth: layer.depth,
+            direction: (index + layerIndex) % 2 === 0 ? 1 : -1,
+            speed: range(random, ...layer.speed),
+            opacity: range(random, 0.48, 0.72),
+            hue: range(random, 34, 45),
+            phase: range(random, 0, Math.PI * 2),
+            floatAmplitude: range(random, 1.5, 5.5) * layer.depth,
+            floatSpeed: range(random, 0.55, 1.1),
+            gap: cloudWidth * range(random, 0.04, 0.18),
+          };
+        },
+      ),
     )
     .sort((a, b) => a.depth - b.depth);
 }
@@ -192,15 +215,26 @@ function drawBackground(ctx, width, height, clouds, time, options, reducedMotion
   clouds.forEach((cloud) => {
     const motion = reducedMotion ? 0 : time * 0.001 * cloud.speed * cloud.direction * options.speed;
     const span = width + cloud.width + cloud.gap;
-    const x = ((cloud.baseX + motion + cloud.width) % span + span) % span - cloud.width;
-    const bob = reducedMotion ? 0 : Math.sin(time * 0.00032 * cloud.floatSpeed + cloud.phase) * cloud.floatAmplitude;
+    const x = ((((cloud.baseX + motion + cloud.width) % span) + span) % span) - cloud.width;
+    const bob = reducedMotion
+      ? 0
+      : Math.sin(time * 0.00032 * cloud.floatSpeed + cloud.phase) * cloud.floatAmplitude;
     const positions = [x];
     if (x > 0) positions.push(x - span);
     if (x + cloud.width < width) positions.push(x + span);
-    positions.forEach((position) => drawCloud(ctx, cloud, position, cloud.y + bob, options.opacity));
+    positions.forEach((position) =>
+      drawCloud(ctx, cloud, position, cloud.y + bob, options.opacity),
+    );
   });
 
-  const vignette = ctx.createRadialGradient(width * 0.46, height * 0.22, 0, width * 0.46, height * 0.22, Math.max(width, height) * 0.82);
+  const vignette = ctx.createRadialGradient(
+    width * 0.46,
+    height * 0.22,
+    0,
+    width * 0.46,
+    height * 0.22,
+    Math.max(width, height) * 0.82,
+  );
   vignette.addColorStop(0, "rgba(255, 255, 252, 0.22)");
   vignette.addColorStop(0.72, "rgba(139, 200, 246, 0.055)");
   vignette.addColorStop(1, "rgba(105, 106, 109, 0.11)");
@@ -229,7 +263,15 @@ function useCloudCanvas(canvasRef, options = DEFAULTS) {
       canvas.height = Math.max(1, Math.floor(height * dpr));
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       clouds = createClouds(width, height, settings.seed);
-      drawBackground(ctx, width, height, clouds, performance.now(), settings, mediaQuery?.matches ?? false);
+      drawBackground(
+        ctx,
+        width,
+        height,
+        clouds,
+        performance.now(),
+        settings,
+        mediaQuery?.matches ?? false,
+      );
     };
 
     const tick = (time) => {

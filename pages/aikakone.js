@@ -508,8 +508,8 @@ class Aikakone extends Component {
                     <Row
                       content={
                         <p className={pStyle}>
-                          The PowerPoint prototype never had to load, fail, or save anything real.
-                          A production memory-care tool would earn or lose trust in exactly those
+                          The PowerPoint prototype never had to load, fail, or save anything real. A
+                          production memory-care tool would earn or lose trust in exactly those
                           moments, so the concept examples below show how I would design the states
                           the prototype never reached.
                         </p>

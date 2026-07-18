@@ -184,8 +184,8 @@ class About extends Component {
           <Row
             content={
               <p className="about-me-copy col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6">
-                A few principles that shape most of what I design — the
-                judgment underneath the case studies.
+                A few principles that shape most of what I design — the judgment underneath the case
+                studies.
               </p>
             }
           />

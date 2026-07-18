@@ -189,20 +189,20 @@ class Home extends Component {
           <Row
             content={
               <p className="col-xs-12 col-sm-10 col-md-9 col-lg-7 col-xl-6 section-copy">
-                I came to product design through front-end work, so I spec the way engineers
-                read: every component arrives with its states, validation rules, responsive
-                behavior, and accessibility expectations written down — not discovered in a code
-                review. That background changes the questions I ask, not the work I do: I flag
-                what the backend can’t promise before it becomes a UI bug, and I’m in the pull
-                requests when a state I drew meets data I didn’t expect.
+                I came to product design through front-end work, so I spec the way engineers read:
+                every component arrives with its states, validation rules, responsive behavior, and
+                accessibility expectations written down — not discovered in a code review. That
+                background changes the questions I ask, not the work I do: I flag what the backend
+                can’t promise before it becomes a UI bug, and I’m in the pull requests when a state
+                I drew meets data I didn’t expect.
               </p>
             }
           />
           <Row
             content={
               <p className="col-xs-12 col-sm-10 col-md-9 col-lg-7 col-xl-6 section-copy artifacts-copy">
-                It’s still design work — the spec exists so the intent survives the build.
-                Here’s the shape of one, end to end.
+                It’s still design work — the spec exists so the intent survives the build. Here’s
+                the shape of one, end to end.
               </p>
             }
           />
