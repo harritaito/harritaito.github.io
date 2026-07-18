@@ -62,7 +62,7 @@ const DirectionSettingCase = () => (
             }
             fields={{
               myRole:
-                'Design lead for the ambiguous front end of projects: stakeholder interviews, research, assumption and risk mapping, workshop facilitation, and keeping the record of decisions as direction forms.',
+                'Designer driving the ambiguous front end of projects: stakeholder interviews, research, assumption and risk mapping, workshop facilitation, and keeping the record of decisions as direction forms.',
               team: 'This work is never solo by definition — it happens with product managers, engineers, and business stakeholders. Specific collaborators are documented per project, not inflated here.',
               context:
                 'The phase where a project has momentum but no shape: a goal everyone phrases differently, assumptions nobody has written down, and three functions each optimizing for their own picture of success.',
