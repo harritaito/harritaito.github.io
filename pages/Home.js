@@ -215,6 +215,47 @@ class Home extends Component {
           />
         </section>
 
+        <section className="section" id="contact" aria-labelledby="contact-heading">
+          <Row
+            content={
+              <h2
+                className="col-xs-12 col-sm-10 col-md-9 col-lg-6 col-xl-6 section-heading"
+                id="contact-heading"
+              >
+                Say hello
+              </h2>
+            }
+          />
+          <Row
+            content={
+              <p className="col-xs-12 col-sm-10 col-md-9 col-lg-7 col-xl-6 section-copy">
+                If any of this sounds like what your team is working on — product design roles,
+                complex product systems, design systems, or AI and data workflows — I’d be glad to
+                hear about it. A short note on what you’re building is plenty; no pitch required.
+              </p>
+            }
+          />
+          <Row
+            content={
+              <div className="col-xs-12 col-sm-10 col-md-9 col-lg-7 col-xl-6">
+                <div className="cta-group contact-cta-group">
+                  <a
+                    href="https://linkedin.com/in/harrihalonen"
+                    className="primary-cta"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Reach me on LinkedIn
+                  </a>
+                </div>
+                <p className="section-copy contact-email-note">
+                  Email works too — my first name, here at this domain.
+                </p>
+              </div>
+            }
+          />
+        </section>
+
         <Footer />
         <style jsx>{`
           .Home h1 {
@@ -329,6 +370,14 @@ class Home extends Component {
             font-weight: 600;
             letter-spacing: 0.05em;
             text-transform: uppercase;
+          }
+
+          .Home .contact-cta-group {
+            margin-top: 0.5em;
+          }
+
+          .Home .contact-email-note {
+            margin-top: 1.5em;
           }
 
           .Home .about-link {

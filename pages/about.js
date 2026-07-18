@@ -218,8 +218,9 @@ class About extends Component {
           <Row
             content={
               <p className="about-me-copy col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6">
-                I’m happy to talk with teams that need product judgment, system thinking, or
-                research-led design support. The easiest way is to{" "}
+                If your team is thinking about any of this — product design roles, complex product
+                systems, design systems, or AI and data workflows — I’m glad to compare notes. The
+                easiest way is to{" "}
                 <a
                   href={"https://linkedin.com/in/harrihalonen"}
                   target="_blank"
