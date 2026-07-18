@@ -5,6 +5,7 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import Row from "../../components/Row";
 import HighlightUnderline from "../../components/design-system/HighlightUnderline";
+import WritingCloudBackground from "../../components/WritingCloudBackground";
 import { colors } from "../../components/design-system/tokens";
 import { getAllArticles } from "../../lib/articles";
 
@@ -19,6 +20,7 @@ function formatDate(value) {
 
 const WritingIndex = ({ articles }) => (
   <div className="Writing container">
+    <WritingCloudBackground />
     <Navbar nextProjectLink={null} color="green" />
     <Row
       content={
@@ -75,8 +77,22 @@ const WritingIndex = ({ articles }) => (
     <Footer />
     <style jsx>{`
       .Writing {
+        isolation: isolate;
+        min-height: 100vh;
+        overflow: hidden;
         padding-top: 5rem;
         padding-bottom: 2rem;
+        position: relative;
+      }
+
+      .Writing :global(.writing-cloud-background) {
+        height: 100%;
+        inset: 0;
+        opacity: 0.72;
+        pointer-events: none;
+        position: absolute;
+        width: 100%;
+        z-index: -1;
       }
       @media only screen and (max-width: 45rem) {
         .Writing {
