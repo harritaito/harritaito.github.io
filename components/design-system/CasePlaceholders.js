@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { colors, radii } from './tokens';
+import React from "react";
+import PropTypes from "prop-types";
+import { colors, radii } from "./tokens";
 
 // Presentational scaffolding for the design-system case shell.
 // Both components make incomplete areas obvious on the page itself, so the
@@ -61,7 +61,7 @@ ArtifactPlaceholder.propTypes = {
 };
 
 ArtifactPlaceholder.defaultProps = {
-  className: '',
+  className: "",
 };
 
 export const TbdNote = ({ children, className }) => (
@@ -102,5 +102,5 @@ TbdNote.propTypes = {
 
 TbdNote.defaultProps = {
   children: null,
-  className: '',
+  className: "",
 };

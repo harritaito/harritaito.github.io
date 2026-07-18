@@ -11,7 +11,7 @@ describe("CraftDetail", () => {
       before="No results found."
       after="No reports on this route yet."
       why="Turns a dead end into an instruction."
-    />
+    />,
   );
 
   test("labels the module as a concept example", () => {

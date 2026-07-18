@@ -56,9 +56,9 @@ const SpecSheet = () => (
       <p className="spec-sheet__kicker">Design spec · one component, in full</p>
       <h4 className="spec-sheet__title">Filter field + results list</h4>
       <p className="spec-sheet__note">
-        Illustrative example — the structure is how I actually spec, the project is not real.
-        Where a design system exists, each rule below points at named tokens and components
-        instead of raw values.
+        Illustrative example — the structure is how I actually spec, the project is not real. Where
+        a design system exists, each rule below points at named tokens and components instead of raw
+        values.
       </p>
     </header>
 
