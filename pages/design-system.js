@@ -216,7 +216,10 @@ const DesignSystemCase = () => (
                   content={
                     <div className={pStyle}>
                       <div className="token-table-wrap">
-                        <table className="token-table">
+                        <table
+                          className="token-table"
+                          aria-label="Live token values from the site's design system"
+                        >
                           <thead>
                             <tr>
                               <th scope="col">Token</th>

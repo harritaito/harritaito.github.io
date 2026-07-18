@@ -185,6 +185,7 @@ const SpecSheet = () => (
       .spec-sheet__questions li::before {
         color: ${colors.accentBlue};
         content: "?";
+        content: "?" / "";
         font-weight: 600;
         left: 0;
         position: absolute;
