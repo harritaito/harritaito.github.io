@@ -2,7 +2,7 @@
 
 Source repo for Harri Halonen's personal portfolio site. App built with [Next.js](https://nextjs.org/), exported as static HTML for GitHub Pages. Site focuses on selected design and development case studies, personal profile, contact paths.
 This repository contains the source code for Harri Halonen's personal portfolio website. The site is written with [Next.js](https://nextjs.org/) and exported to static HTML so it can be served via GitHub Pages.
-This portfolio highlights design and development projects and shares background about the author. The site now includes a dedicated Projects page, contact links for reaching out (LinkedIn and email), and automatic dark mode styling.
+This portfolio presents Harri as a designer of complex digital products — discovery, UX architecture, design systems, and AI/data workflows — through case studies labeled honestly by status (shipped, concept, in progress, archive). The site includes a dedicated Projects page, contact links for reaching out (LinkedIn and email), and automatic dark mode styling.
 
 ## Stack
 

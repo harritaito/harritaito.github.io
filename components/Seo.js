@@ -7,25 +7,25 @@ const PAGE_METADATA = {
   "/": {
     title: "Harri Halonen | Product designer",
     description:
-      "Portfolio of Harri Halonen, a Finnish experience designer shaping research-led services and humane digital products from Tampere.",
+      "Harri Halonen designs complex digital products: discovery, UX architecture, design systems, and AI and data workflows made understandable for the people who use them.",
     path: "/",
   },
   "/Home": {
     title: "Harri Halonen | Product designer",
     description:
-      "Portfolio of Harri Halonen, a Finnish experience designer shaping research-led services and humane digital products from Tampere.",
+      "Harri Halonen designs complex digital products: discovery, UX architecture, design systems, and AI and data workflows made understandable for the people who use them.",
     path: "/",
   },
   "/projects": {
     title: "Projects | Harri Halonen",
     description:
-      "Selected case studies from Harri Halonen across industrial XR, public services, healthcare, and emerging technology product design.",
+      "Case studies and archived work from Harri Halonen, labeled honestly by status: research, concept explorations, and earlier projects across product and service design.",
     path: "/projects",
   },
   "/about": {
     title: "About | Harri Halonen",
     description:
-      "Learn about Harri Halonen, an experience designer based in Tampere working across research, service design, and product strategy.",
+      "About Harri Halonen, an experience and product designer in Tampere focused on complex product systems, design systems, discovery research, and AI and data workflows.",
     path: "/about",
   },
   "/thesis": {
@@ -49,8 +49,32 @@ const PAGE_METADATA = {
   "/aikakone": {
     title: "Aikakone | Harri Halonen",
     description:
-      "A memory-care reminiscence service case study explored through field research, service blueprinting, and prototype sessions.",
+      "A memory-care reminiscence concept explored through field research, service blueprinting, and prototype sessions. Concept work, not a shipped service.",
     path: "/aikakone",
+  },
+  "/design-system": {
+    title: "Design system case | Harri Halonen",
+    description:
+      "An in-progress case on scaling product consistency through a design system: tokens, component behavior, states, accessibility, and developer handoff.",
+    path: "/design-system",
+  },
+  "/operations-platform": {
+    title: "Operations platform case | Harri Halonen",
+    description:
+      "An in-progress case on designing a product for fragmented operational workflows: domain research, stakeholder mapping, concept modeling, and UI design.",
+    path: "/operations-platform",
+  },
+  "/direction-setting": {
+    title: "Direction-setting methods | Harri Halonen",
+    description:
+      "An in-progress methods case on moving a team from ambiguity to shared direction: interviews, assumption mapping, workshops, and decision logs.",
+    path: "/direction-setting",
+  },
+  "/ai-decision-support": {
+    title: "AI as decision support (concept) | Harri Halonen",
+    description:
+      "A concept framework for designing AI as decision support in operational workflows: support roles, uncertainty display, and inspectable evidence. Not shipped work.",
+    path: "/ai-decision-support",
   },
   "/writing": {
     title: "Writing | Harri Halonen",
