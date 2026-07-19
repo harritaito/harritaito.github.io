@@ -20,6 +20,10 @@ const nextConfig = {
       "/aikakone": { page: "/aikakone" },
       "/hri-study": { page: "/hri-study" },
       "/thesis": { page: "/thesis" },
+      "/ai-decision-support": { page: "/ai-decision-support" },
+      "/design-system": { page: "/design-system" },
+      "/direction-setting": { page: "/direction-setting" },
+      "/operations-platform": { page: "/operations-platform" },
     };
   },
 };
