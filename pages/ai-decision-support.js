@@ -12,8 +12,10 @@ import placeholderTexture from "../static/media/pohja.svg";
 // (components/Projects.js) and the primary nav. It is a publish-safe
 // CONCEPT SHELL for an AI-assisted operational decision workflow: the
 // structure and design principles are real design thinking; no shipped AI
-// product, model, pipeline, or client evidence is claimed. It stays
-// unlisted until real, cleared artifacts exist to attach.
+// product, model, pipeline, or client evidence is claimed. It is linked
+// from the homepage "Where the work concentrates" index (AI & Data) with
+// an explicit concept-shell label; it stays out of the Work cards and nav
+// until real, cleared artifacts exist to attach.
 //
 // COPY GUIDANCE — read before filling any section:
 //

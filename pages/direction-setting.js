@@ -11,7 +11,9 @@ import placeholderTexture from "../static/media/pohja.svg";
 // NOTE: This case is intentionally kept out of the Projects manifest
 // (components/Projects.js) and the primary nav. It is a publish-safe shell
 // for a methods case about moving teams from ambiguity to shared direction:
-// every incomplete area is labelled on the page, and it stays unlisted until
+// every incomplete area is labelled on the page. It is linked from the
+// homepage "Where the work concentrates" index (Systems) with an
+// in-progress label; it stays out of the Work cards and nav until
 // anonymized artifacts and evidence are attached.
 //
 // WHAT IS REAL VS PENDING — read before filling any section:
