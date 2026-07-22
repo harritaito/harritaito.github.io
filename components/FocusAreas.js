@@ -11,8 +11,7 @@ const FOCUS_AREAS = [
   {
     id: "systems",
     title: "Systems",
-    lead:
-      "Operational products with many roles, uneven permissions, and workflows that live partly in tools and partly in people’s heads. I make that complexity legible first — workflow maps, role and state models — then help decide what the product should absorb, and in what order.",
+    lead: "Operational products with many roles, uneven permissions, and workflows that live partly in tools and partly in people’s heads. I make that complexity legible first — workflow maps, role and state models — then help decide what the product should absorb, and in what order.",
     now: [
       {
         href: "/direction-setting",
@@ -30,15 +29,13 @@ const FOCUS_AREAS = [
         tag: "the loop and its artifacts, on this page",
       },
     ],
-    progress:
-      "An anonymized operations-platform case is being written up as evidence is cleared.",
+    progress: "An anonymized operations-platform case is being written up as evidence is cleared.",
     progressLink: { href: "/operations-platform", label: "Read the case shell" },
   },
   {
     id: "research",
     title: "Research",
-    lead:
-      "Design decisions that trace back to evidence: field observation, interviews, synthesis — and honest limits on what the findings can claim. This is the oldest thread in the work and the best documented one.",
+    lead: "Design decisions that trace back to evidence: field observation, interviews, synthesis — and honest limits on what the findings can claim. This is the oldest thread in the work and the best documented one.",
     now: [
       {
         href: "/thesis",
@@ -67,8 +64,7 @@ const FOCUS_AREAS = [
   {
     id: "ai-and-data",
     title: "AI & Data",
-    lead:
-      "A current focus, labelled as such: designing AI as decision support inside real workflows — visible uncertainty, easy override, a fallback path that works. No shipped AI product is claimed here; the framework I design against is the evidence so far.",
+    lead: "A current focus, labelled as such: designing AI as decision support inside real workflows — visible uncertainty, easy override, a fallback path that works. No shipped AI product is claimed here; the framework I design against is the evidence so far.",
     now: [
       {
         href: "/ai-decision-support",
