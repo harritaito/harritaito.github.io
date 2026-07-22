@@ -1,9 +1,11 @@
 # TODO.md — Automated Upgrade Plan for **harritaito.github.io**
 
-> **Status 2026-07-02:** Sections 1–4 and 6–9 are complete on `master`
-> (Jest 30, React 18.3, Next 15, styled-jsx 5.1.7, peripherals at target
-> versions, lockfile deduped). Section 5 (React 19) is the only upgrade
-> still open. Section 10 collects redesign notes; note that its
+> **Status 2026-07-22:** Sections 0–4 and 6–9 are complete on `master`
+> and kept below as a historical record only — do not re-run them.
+> Current stack: React 18.3.1, Next 15.5, Jest 30, ESLint 9,
+> styled-jsx 5.1.7, peripherals at target versions, lockfile deduped.
+> Section 5 (React 19) is the only upgrade still open.
+> Section 10 collects redesign notes; note that its
 > "simple contact method" must-have is currently covered by the LinkedIn
 > CTA and the email hint on /about.
 > **Protocol for Codex**
@@ -11,18 +13,18 @@
 > 2. Output **one unified diff** that satisfies the *CONSTRAINTS*.  
 > 3. Output **one Conventional Commit** line (`type(scope): subject`).  
 > 4. **Stop**. (No explanations.)  
-> 5. Proceed to the next section only after CI (unit tests + ESLint + Playwright + Percy) passes.
+> 5. Proceed to the next section only after CI (unit tests + ESLint) passes.
 
 ---
 
-## 0 · safety-net 🛡️
+## 0 · safety-net 🛡️ — ✅ done
 Human-only step; Codex does **not** execute.
 - Freeze `package-lock.json` (`git tag v2025-07-pre-upgrade`).
-- Ensure Playwright smoke tests and Percy are green.
+- Ensure unit tests and ESLint are green.
 
 ---
 
-## 1 · upgrade/jest-30 🔧
+## 1 · upgrade/jest-30 🔧 — ✅ done
 **PROMPT**
 
 Branch: upgrade/jest-30
@@ -41,7 +43,7 @@ BEGIN.
 
 ---
 
-## 2 · upgrade/react-17 ⚛️
+## 2 · upgrade/react-17 ⚛️ — ✅ done
 **PROMPT**
 
 Branch: upgrade/react-17
@@ -55,7 +57,7 @@ BEGIN.
 
 ---
 
-## 3 · codemod/react-imports 🛠️
+## 3 · codemod/react-imports 🛠️ — ✅ done
 **PROMPT**
 
 Branch: codemod/react-imports
@@ -71,7 +73,7 @@ BEGIN.
 
 ---
 
-## 4 · upgrade/react-18 ⚛️➕
+## 4 · upgrade/react-18 ⚛️➕ — ✅ done
 **PROMPT**
 
 Branch: upgrade/react-18
@@ -87,7 +89,7 @@ BEGIN.
 
 ---
 
-## 5 · upgrade/react-19 ⚛️🚀
+## 5 · upgrade/react-19 ⚛️🚀 — ⏳ open (repo currently on React 18.3.1)
 **PROMPT**
 
 Branch: upgrade/react-19
@@ -102,7 +104,7 @@ BEGIN.
 
 ---
 
-## 6 · upgrade/next-10 ⛓️
+## 6 · upgrade/next-10 ⛓️ — ✅ done (repo now on Next 15.5)
 **PROMPT**
 
 Branch: upgrade/next-10
@@ -119,7 +121,7 @@ BEGIN.
 
 ---
 
-## 7 · upgrade/styled-jsx-5 🎨
+## 7 · upgrade/styled-jsx-5 🎨 — ✅ done
 **PROMPT**
 
 Branch: upgrade/styled-jsx-5
@@ -134,7 +136,7 @@ BEGIN.
 
 ---
 
-## 8 · upgrade/peripherals-1 📦
+## 8 · upgrade/peripherals-1 📦 — ✅ done
 **PROMPT**
 
 Branch: upgrade/peripherals-1
@@ -153,7 +155,7 @@ BEGIN.
 
 ---
 
-## 9 · cleanup/dedupe-audit 🧹
+## 9 · cleanup/dedupe-audit 🧹 — ✅ done
 **PROMPT**
 
 Branch: cleanup/dedupe-audit
@@ -170,8 +172,12 @@ BEGIN.
 
 ### Completion ✅
 Project is considered **upgraded** when:
-1. `main` branch builds with Node 20, React 19, Next 15, and all updated libs.  
-2. Unit tests, ESLint, Playwright, and Percy visual snapshots are green.  
+1. `master` branch builds with Node 20, React 19, Next 15, and all updated libs.  
+2. Unit tests and ESLint are green.  
+
+### Future (aspirational, not set up)
+- Playwright smoke tests in CI.
+- Percy visual snapshots in CI.
 
 ---
 
