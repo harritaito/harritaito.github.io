@@ -7,5 +7,6 @@ module.exports = {
   },
   moduleNameMapper: {
     "\\.(svg|png|jpg|jpeg|gif|webp)$": "<rootDir>/test-file-stub.js",
+    "^styled-jsx/style$": "<rootDir>/test-styled-jsx-stub.js",
   },
 };

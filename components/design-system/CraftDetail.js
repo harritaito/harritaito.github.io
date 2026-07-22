@@ -7,7 +7,7 @@ import { colors, radii, shadows } from "./tokens";
 // Every instance is explicitly tagged as a concept example so the page
 // never implies the revised copy shipped in the original project.
 
-const CraftDetail = ({ kind, title, issue, before, after, why, className }) => (
+const CraftDetail = ({ kind, title, issue, before, after, why, className = "" }) => (
   <div className={className}>
     <section className="craft-detail">
       <header className="craft-detail-header">
@@ -142,10 +142,6 @@ CraftDetail.propTypes = {
   after: PropTypes.string.isRequired,
   why: PropTypes.string.isRequired,
   className: PropTypes.string,
-};
-
-CraftDetail.defaultProps = {
-  className: "",
 };
 
 export default CraftDetail;
