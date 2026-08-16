@@ -108,11 +108,10 @@ study; frame it honestly and it keeps informing decisions for years.
 
 - Learn the domain's language before the first interview, from places where
   practitioners talk to each other — not from the interview itself.
-- Ask for the last time, not the general case. Stories carry reasons;
-  opinions carry verdicts.
+- Ask for the last time it happened, not the general case.
 - When an answer stops at a boundary — NDA, politics, memory — write it
   down right then, and report it next to the finding it touched.
 - Keep your synthesis honest: let categories emerge from the material
   before you reach for the literature or your own expectations.
 - Offer small-sample findings as a lens to test decisions against, never
-  as proof. The honesty is what makes them durable.
+  as proof.

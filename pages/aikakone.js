@@ -167,7 +167,7 @@ class Aikakone extends Component {
                   proxyEvidence:
                     "The concept placed second in the course, which is a course-context signal rather than evidence of market or care impact.",
                   reflection:
-                    "A useful archive example of service design under care constraints, not proof of clinical or commercial impact.",
+                    "A useful archive example of service design under care constraints. It proves nothing about clinical or commercial impact.",
                 }}
               />
 
@@ -282,9 +282,9 @@ class Aikakone extends Component {
                     <Row
                       content={
                         <p className={pStyle}>
-                          We treated reminiscence as a conversation aid, not as a test or a claim
-                          about treatment. The design had to feel safe enough to bring into a care
-                          routine without adding friction or embarrassment.
+                          We treated reminiscence as a conversation aid, and made no claim about
+                          treatment. The design had to feel safe enough to bring into a care routine
+                          without adding friction or embarrassment.
                         </p>
                       }
                     />
@@ -336,7 +336,8 @@ class Aikakone extends Component {
                     <Row
                       content={
                         <p className={pStyle}>
-                          The aim was to reduce cognitive load, not add another tool to learn.
+                          The aim was to reduce cognitive load rather than add another tool to
+                          learn.
                         </p>
                       }
                     />
@@ -584,8 +585,8 @@ class Aikakone extends Component {
                       content={
                         <p className={pStyle}>
                           The first digital draft was built in PowerPoint because the course was
-                          focused on service design and fast learning, not polished production UI.
-                          We made it behave enough like an app for staff to move through a guided
+                          focused on service design and fast learning rather than production UI. We
+                          made it behave enough like an app for staff to move through a guided
                           Aikakone session.
                         </p>
                       }
@@ -613,8 +614,8 @@ class Aikakone extends Component {
                       content={
                         <p className={pStyle}>
                           The prototype was deliberately rough. Its job was to test whether the
-                          service moment made sense to staff, not to prove a finished interface or a
-                          measured care outcome.
+                          service moment made sense to staff. It was never meant to demonstrate a
+                          finished interface or a measured care outcome.
                         </p>
                       }
                     />

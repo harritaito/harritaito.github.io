@@ -91,10 +91,9 @@ const DesignSystemCase = () => (
                 <Row
                   content={
                     <p className={pStyle}>
-                      The real problem a design system solves is infrastructure, not decoration. It
-                      has to make the correct UI the easy UI to build, hold up under real handoff
-                      pressure, and stay trustworthy through QA — so teams inherit consistency
-                      instead of negotiating it each sprint.
+                      A design system is infrastructure. It has to make the correct UI the easy UI
+                      to build, hold up under real handoff pressure, and stay trustworthy through QA
+                      — so teams inherit consistency instead of negotiating it each sprint.
                     </p>
                   }
                 />
@@ -123,8 +122,7 @@ const DesignSystemCase = () => (
                       This case sits on the design-to-code boundary: shaping component behavior and
                       token structure, writing the documentation that makes them usable, and running
                       the implementation QA that keeps the built product matching the intended
-                      system. It is design-engineering work, framed honestly around what can be
-                      evidenced.
+                      system. It is design-engineering work, framed around what can be evidenced.
                     </p>
                   }
                 />
@@ -196,7 +194,7 @@ const DesignSystemCase = () => (
                 <Row
                   content={
                     <p className={pStyle}>
-                      Good components are defined by behavior, not just appearance: what is fixed,
+                      Good components are defined by behavior as much as appearance: what is fixed,
                       what flexes, how they respond to content length, and how they compose. The
                       system documents anatomy and the rules that keep a component correct wherever
                       it lands — so a contributor cannot accidentally build an off-system variant.
@@ -421,7 +419,7 @@ const DesignSystemCase = () => (
                       Implementation QA is the step that keeps the built product honest to the
                       system. A repeatable checklist — token usage, state coverage, accessibility,
                       responsive behavior, and edge cases — turns consistency from an aspiration
-                      into something that is actually verified before it ships.
+                      into something that is verified before it ships.
                     </p>
                   }
                 />
@@ -458,7 +456,7 @@ const DesignSystemCase = () => (
                 <Row
                   content={
                     <p className={pStyle}>
-                      One honest proxy is already live: the token layer in this portfolio drives its
+                      One proxy is already live: the token layer in this portfolio drives its
                       shadows, radii, and accents from a single source, so the same discipline this
                       case argues for is visible in the site presenting it.
                     </p>
@@ -495,9 +493,9 @@ const DesignSystemCase = () => (
                 <Row
                   content={
                     <TbdNote className={pStyle}>
-                      A specific, honest reflection tied to the real project — what worked, what was
-                      hard, and what would change next time — will replace this placeholder once the
-                      case is populated.
+                      A specific reflection tied to the real project — what worked, what was hard,
+                      and what would change next time — will replace this placeholder once the case
+                      is populated.
                     </TbdNote>
                   }
                 />

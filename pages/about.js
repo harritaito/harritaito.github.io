@@ -55,7 +55,7 @@ class About extends Component {
                 Most of my work lives in complex B2B and product systems — the kind with real edge
                 cases, long-lived data, and users who can’t afford a confusing screen. I’m just as
                 comfortable slowing down for trust-sensitive and health-adjacent contexts, where the
-                right move is to design quietly and carefully.
+                right move is to design carefully and without flourish.
               </p>
             }
           />
@@ -109,10 +109,10 @@ class About extends Component {
           <Row
             content={
               <p className="about-me-copy col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6">
-                I lead through craft and facilitation, not a title. I haven’t held formal line
-                management, so what I offer sits elsewhere: raising a team’s design quality from
-                inside the work — running critique, mentoring designers earlier in their path, and
-                holding a quality bar that survives handoff.
+                I lead through craft and facilitation. I haven’t held formal line management, so
+                what I offer sits elsewhere: raising a team’s design quality from inside the work,
+                running critique, mentoring designers earlier in their path, and holding a quality
+                bar that survives handoff.
               </p>
             }
           />
@@ -130,33 +130,13 @@ class About extends Component {
 
           <Row
             content={
-              <div className="about-me-copy col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6">
-                <p className="focus-intro">
-                  A lightweight operating model I bring to design quality:
-                </p>
-                <ul className="focus-list">
-                  <li>
-                    <strong>Critique</strong> — regular, structured sessions that pressure-test work
-                    before it ships
-                  </li>
-                  <li>
-                    <strong>Accessibility review</strong> — checking contrast, focus, and semantics
-                    early, not as a final gate
-                  </li>
-                  <li>
-                    <strong>Implementation notes</strong> — writing down the intent behind a design
-                    so the build keeps it
-                  </li>
-                  <li>
-                    <strong>Decision logs</strong> — recording what we chose and why, so nobody
-                    relitigates it later
-                  </li>
-                  <li>
-                    <strong>Post-release quality review</strong> — looking at what actually shipped
-                    and feeding it back into the system
-                  </li>
-                </ul>
-              </div>
+              <p className="about-me-copy col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6">
+                The operating model behind that is light. Regular, structured critique that
+                pressure-tests work before it ships. Accessibility review early, checking contrast,
+                focus, and semantics rather than gating at the end. Implementation notes that record
+                the intent behind a design so the build keeps it. Decision logs of what we chose and
+                why. And a post-release look at what shipped, fed back into the system.
+              </p>
             }
           />
 
@@ -164,11 +144,9 @@ class About extends Component {
             content={
               <p className="about-me-copy col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6">
                 These rituals earn their place through what they prevent. Decision logs stop teams
-                relitigating settled calls; early accessibility review keeps rework out of the final
-                week; implementation notes keep the build honest to the intent. What comes out the
-                other side is clearer decisions, fewer clarification rounds, and interfaces that
-                stay consistent as they scale — leadership measured by the work, quietly and in
-                practice.
+                relitigating settled calls, early accessibility review keeps rework out of the final
+                week, and implementation notes keep the build true to the intent. What comes out the
+                other side is clearer decisions and interfaces that stay consistent as they scale.
               </p>
             }
           />
@@ -218,9 +196,8 @@ class About extends Component {
           <Row
             content={
               <p className="about-me-copy col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-xl-6">
-                If your team is thinking about any of this — product design roles, complex product
-                systems, design systems, or AI and data workflows — I’m glad to compare notes. The
-                easiest way is to{" "}
+                If your team is thinking about any of this, I’m glad to compare notes. The easiest
+                way is to{" "}
                 <a
                   href={"https://linkedin.com/in/harrihalonen"}
                   target="_blank"

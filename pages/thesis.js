@@ -106,7 +106,7 @@ class Thesis extends Component {
                   proxyEvidence:
                     "The public thesis documents the research method, participant profile, coding logic, and resulting industrial XR interaction model.",
                   reflection:
-                    "The grounded theory remains untested in a production deployment. The value is in clarifying why certain techniques fail and what an interaction designer needs to prioritise — not in claiming a shipped industrial product.",
+                    "The grounded theory remains untested in a production deployment. Its value is in clarifying why certain techniques fail and what an interaction designer needs to prioritise.",
                 }}
               />
 
@@ -241,8 +241,8 @@ class Thesis extends Component {
                         <p className={pStyle}>
                           Unencumbered perception is the single most important factor. The interface
                           has to stay out of the way of the user's awareness of their physical
-                          environment — a technician who is focused on a display instead of the
-                          machine they're servicing is a safety problem, not a UX problem.
+                          environment. A technician who is focused on a display instead of the
+                          machine they're servicing has a safety problem on their hands.
                         </p>
                       }
                     />
@@ -281,9 +281,9 @@ class Thesis extends Component {
                     <Row
                       content={
                         <p className={pStyle}>
-                          Technicians need just-in-time information access — quick help
-                          mid-maintenance, not step-by-step guidance for tasks they already know.
-                          The interviews were emphatic about this. Industrial XR content often
+                          Technicians need just-in-time information access: quick help
+                          mid-maintenance for the parts of a job they have not done before. The
+                          interviews were emphatic about this. Industrial XR content often
                           overcorrects toward explaining everything:{" "}
                           <em>
                             "Videos of AR maintenance contain an awful amount of great looking 3D
@@ -306,7 +306,7 @@ class Thesis extends Component {
                           </em>{" "}
                           XR has real potential to reduce this — in-situ documentation, automatic
                           logging, photo capture — but only if reporting is designed as a
-                          first-class use case, not an afterthought.
+                          first-class use case from the start.
                         </p>
                       }
                     />

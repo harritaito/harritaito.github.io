@@ -131,12 +131,11 @@ const DirectionSettingCase = () => (
                     <p className={pStyle}>
                       Before anyone debates the future, the present has to be on one page. A
                       current-state journey — assembled from the interviews and from watching the
-                      work happen — shows what users and the organization actually do today,
-                      including the workarounds nobody put in the brief. This artifact does quiet
-                      political work: it moves the argument from &ldquo;my opinion versus
-                      yours&rdquo; to &ldquo;here is the wall, point at the part you disagree
-                      with.&rdquo; Most alignment problems shrink once everyone is criticizing the
-                      same picture.
+                      work happen — shows what users and the organization do today, including the
+                      workarounds nobody put in the brief. This artifact does quiet political work:
+                      it moves the argument from &ldquo;my opinion versus yours&rdquo; to
+                      &ldquo;here is the wall, point at the part you disagree with.&rdquo; Most
+                      alignment problems shrink once everyone is criticizing the same picture.
                     </p>
                   }
                 />
@@ -165,10 +164,10 @@ const DirectionSettingCase = () => (
                       Stakeholder views are hypotheses, not evidence. Research in this phase is
                       scoped tightly to the disagreements that matter: user interviews, observation,
                       or lightweight testing aimed at the specific questions the team cannot settle
-                      from the inside. The standard is honest, not heroic — a handful of well-chosen
-                      conversations that kill a wrong assumption beats a research theater program
-                      nobody reads. Findings go back to the team attributed to evidence, not to the
-                      designer, which is what lets them override seniority in the room.
+                      from the inside. A handful of well-chosen conversations that kill a wrong
+                      assumption beats a research theater program nobody reads. Findings go back to
+                      the team attributed to evidence rather than to the designer, which is what
+                      lets them override seniority in the room.
                     </p>
                   }
                 />
@@ -230,7 +229,7 @@ const DirectionSettingCase = () => (
                       understood. Mapping risks with the team, and being explicit about which are
                       design risks, which are engineering risks, and which are business risks, does
                       two things: it stops any one function from silently carrying risk the others
-                      created, and it gives the eventual direction its honest price tag. A direction
+                      created, and it gives the eventual direction its real price tag. A direction
                       chosen without a risk map is a preference, not a decision.
                     </p>
                   }
@@ -283,8 +282,8 @@ const DirectionSettingCase = () => (
                   content={
                     <TbdNote className={pStyle}>
                       A real session design — its intended decision, the agenda built backwards from
-                      it, and what the session actually produced — will be documented here with
-                      anonymized materials.
+                      it, and what the session produced — will be documented here with anonymized
+                      materials.
                     </TbdNote>
                   }
                 />
@@ -410,9 +409,9 @@ const DirectionSettingCase = () => (
                   content={
                     <TbdNote className={pStyle}>
                       Documented outcomes per project — directions that held through delivery,
-                      disagreements resolved without escalation, and an honest note on the times a
-                      chosen direction had to change and what the method missed — will be added here
-                      as evidence is cleared.
+                      disagreements resolved without escalation, and a note on the times a chosen
+                      direction had to change and what the method missed — will be added here as
+                      evidence is cleared.
                     </TbdNote>
                   }
                 />

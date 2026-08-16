@@ -60,7 +60,7 @@ const AiDecisionSupportCase = () => (
           <CaseStudyMeta
             status={"Concept shell — no shipped AI evidence claimed"}
             summary={
-              "A capability case about designing AI into complex, trust-sensitive B2B workflows. The premise: in operational domains, AI earns its place as decision support — a well-behaved input into a human decision — not as a novelty layer or a chatbot bolted onto the side. This page documents the structure and principles I design against."
+              "A capability case about designing AI into complex, trust-sensitive B2B workflows. The premise: in operational domains, AI earns its place as decision support, a well-behaved input into a human decision, rather than a novelty layer bolted onto the side. This page documents the structure and principles I design against."
             }
             note={
               "This is a concept and framework page, marked as such throughout. It contains no shipped AI product, no model performance numbers, and no client evidence — those are shown as pending artifacts and will only ever be filled with real, cleared, anonymized material. The design judgment on this page is the evidence it offers."
@@ -71,7 +71,7 @@ const AiDecisionSupportCase = () => (
               problem:
                 "Problem type: the decision itself is sound but expensive — high volume, high vigilance cost, error consequences that are asymmetric. The design question is where machine assistance genuinely reduces that load without displacing accountability.",
               constraints:
-                "Wrong decisions are costly and traceability is mandatory, so the design must assume the model will sometimes be wrong and make that survivable: visible uncertainty, inspectable evidence, human override, and a working fallback path are requirements, not enhancements.",
+                "Wrong decisions are costly and traceability is mandatory, so the design must assume the model will sometimes be wrong and make that survivable: visible uncertainty, inspectable evidence, human override, and a working fallback path are all requirements.",
               proxyEvidence:
                 "Until a shipped case can be documented, the evidence here is the framework itself: the section structure below is the checklist I hold AI features against, and each section states the design position it encodes.",
             }}
@@ -87,9 +87,8 @@ const AiDecisionSupportCase = () => (
                       Every credible AI feature starts with a precise account of the work as it
                       exists without the model. Who decides, on what cadence, with what consequences
                       when they are wrong. If the task cannot be described crisply without
-                      mentioning AI, the AI has nothing concrete to support — and the feature is
-                      decoration. Writing this account first also sets the baseline that any later
-                      measurement of the AI has to beat.
+                      mentioning AI, the model has nothing concrete to support. Writing this account
+                      first also sets the baseline that any later measurement of the AI has to beat.
                     </p>
                   }
                 />
@@ -115,7 +114,7 @@ const AiDecisionSupportCase = () => (
                 <Row
                   content={
                     <p className={pStyle}>
-                      The honest reason to add AI to a workflow is usually cognitive: sustained
+                      The real reason to add AI to a workflow is usually cognitive: sustained
                       vigilance over mostly-normal data, comparisons across more items than working
                       memory holds, or pattern checks that fatigue erodes over a shift. Locating
                       exactly where attention is being spent — and where it degrades — tells you
@@ -147,13 +146,13 @@ const AiDecisionSupportCase = () => (
                 <Row
                   content={
                     <p className={pStyle}>
-                      Decision-support design is data design. The user is already inspecting
+                      Decision-support design starts with the data. The user is already inspecting
                       something — images, sensor streams, records, events — and their trust in any
                       machine suggestion depends on being able to see the same evidence the
-                      suggestion points at. Cataloguing the data honestly matters: its volume and
-                      update rhythm, but also its failure modes — gaps, sensor noise, stale
-                      readings, ambiguous cases — because those are exactly the conditions under
-                      which a model quietly stops deserving trust.
+                      suggestion points at. Cataloguing the data matters: its volume and update
+                      rhythm, but also its failure modes — gaps, sensor noise, stale readings,
+                      ambiguous cases — because those are exactly the conditions under which a model
+                      quietly stops deserving trust.
                     </p>
                   }
                 />
@@ -179,13 +178,12 @@ const AiDecisionSupportCase = () => (
                 <Row
                   content={
                     <p className={pStyle}>
-                      The support role has to be chosen, not assumed. A model can rank what deserves
-                      attention first, pre-fill what is tedious to enter, flag what deviates from
-                      normal, or draft an assessment for review — and each role implies a different
-                      interface contract. What stays constant is the boundary: the model proposes,
-                      the human disposes. A recommendation is an input to the decision, never the
-                      decision itself, and the interface should make acting against the model
-                      exactly as easy as acting with it.
+                      The support role is a choice the team has to make explicitly. A model can rank
+                      what deserves attention first, pre-fill what is tedious to enter, flag what
+                      deviates from normal, or draft an assessment for review, and each role implies
+                      a different interface contract. What stays constant is the boundary. A
+                      recommendation is an input to the decision, and the interface should make
+                      acting against the model exactly as easy as acting with it.
                     </p>
                   }
                 />
@@ -196,7 +194,7 @@ const AiDecisionSupportCase = () => (
                       spatial and stateful — the user is looking at evidence, not composing prose —
                       and forcing that through conversation adds friction while hiding the data. A
                       conversational surface earns a place only when the workflow genuinely is a
-                      dialogue, and that need would have to show up in research, not in a trend.
+                      dialogue, and that need would have to show up in research first.
                     </p>
                   }
                 />
@@ -228,8 +226,7 @@ const AiDecisionSupportCase = () => (
                       user should do differently — “worth a look” versus “needs your judgment”
                       versus “the model has little basis here” — and make low confidence loud rather
                       than apologetic. The most dangerous state in decision support is a wrong
-                      suggestion delivered fluently, so the design treats calibrated doubt as a
-                      feature, not an embarrassment.
+                      suggestion delivered fluently.
                     </p>
                   }
                 />
@@ -259,9 +256,9 @@ const AiDecisionSupportCase = () => (
                       check, in the vocabulary of their domain. That rarely means exposing model
                       internals; it means pointing at evidence — the region of the image, the
                       readings that deviated, the past cases this one resembles — so the user can
-                      agree or disagree with the suggestion on its merits. Explanation the user
-                      cannot verify is reassurance, not explainability, and reassurance is precisely
-                      what a trust-sensitive workflow does not need.
+                      agree or disagree with the suggestion on its merits. If the user cannot check
+                      the explanation, it is only reassurance, which is the last thing a
+                      trust-sensitive workflow needs.
                     </p>
                   }
                 />
@@ -287,14 +284,14 @@ const AiDecisionSupportCase = () => (
                 <Row
                   content={
                     <p className={pStyle}>
-                      Override is a first-class action, not an escape hatch. The user can reject,
-                      correct, or annotate any suggestion without justifying themselves to the
-                      interface, without extra friction, and without the system nagging them back
-                      toward agreement. Defaults matter most here: nothing consequential proceeds on
-                      model output alone, and “accept” is a deliberate act rather than the path of
-                      least resistance. The accountability structure stays intact — the person who
-                      decides is the person the organization already holds responsible, and the
-                      interface never blurs that.
+                      Override is a first-class action. The user can reject, correct, or annotate
+                      any suggestion without justifying themselves to the interface, without extra
+                      friction, and without the system nagging them back toward agreement. Defaults
+                      matter most here: nothing consequential proceeds on model output alone, and
+                      “accept” is a deliberate act rather than the path of least resistance. The
+                      accountability structure stays intact — the person who decides is the person
+                      the organization already holds responsible, and the interface never blurs
+                      that.
                     </p>
                   }
                 />
@@ -323,10 +320,9 @@ const AiDecisionSupportCase = () => (
                       The system will be wrong, late, or unavailable, and the workflow has to
                       survive all three. That means designing the degraded modes explicitly: what
                       the screen says when the model has no answer, how stale predictions are marked
-                      before they mislead, and — most importantly — a manual path that remains a
-                      complete, practiced way to do the job. If the fallback only exists in
-                      documentation, the AI has become a single point of failure wearing a helpful
-                      face.
+                      before they mislead, and, most importantly, a manual path that remains a
+                      complete, practiced way to do the job. A fallback that only exists in
+                      documentation means the model is a single point of failure.
                     </p>
                   }
                 />

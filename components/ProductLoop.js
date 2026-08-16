@@ -6,7 +6,7 @@ const STAGES = [
     label: "Discovery",
     behavior:
       "Sit in the real workflow: interviews, support threads, and the spreadsheet someone quietly runs everything from.",
-    output: "A map of how the work really happens — not how the org thinks it does.",
+    output: "A map of how the work really happens, including the parts the org has forgotten.",
   },
   {
     label: "Framing",
@@ -24,7 +24,7 @@ const STAGES = [
     label: "Prototypes",
     behavior:
       "Put clickable flows in front of real data and real users to find where the idea breaks.",
-    output: "Evidence — where the flow holds, and where it quietly falls apart.",
+    output: "Evidence about where the flow holds and where it falls apart.",
   },
   {
     label: "Design specs",
@@ -36,7 +36,7 @@ const STAGES = [
     label: "Implementation support",
     behavior:
       "Stay in the build, answer the questions Figma cannot, and adjust as real constraints surface.",
-    output: "Decisions made in the moment, in context — not weeks later in a thread.",
+    output: "Decisions made in context, while the constraint is still on screen.",
   },
   {
     label: "Design QA",
@@ -46,9 +46,8 @@ const STAGES = [
   },
   {
     label: "Measurement",
-    behavior:
-      "Watch it in use and ask the honest question: did this make the work easier, or just different?",
-    output: "An honest read on whether the work actually got easier.",
+    behavior: "Watch it in use and ask whether this made the work easier or just different.",
+    output: "A read on whether the work got easier.",
   },
   {
     label: "System contribution",

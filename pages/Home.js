@@ -75,8 +75,8 @@ class Home extends Component {
                   I work from discovery into UX architecture: mapping the messy parts, shaping
                   flows, turning repeated UI decisions into design-system patterns, and checking
                   accessibility early. I stay close to engineers, product teams, and stakeholders so
-                  AI and data workflows become interfaces people can understand, use, and maintain —
-                  watching design quality as it gets built.
+                  AI and data workflows become interfaces people can understand, use, and maintain.
+                  I watch the design quality as it gets built.
                 </p>
                 <HeroFacts />
                 <CapabilityChips />
@@ -166,7 +166,7 @@ class Home extends Component {
                 className="col-xs-12 col-sm-10 col-md-9 col-lg-7 col-xl-7 section-heading"
                 id="how-i-work-heading"
               >
-                From ambiguity to buildable output
+                How I work, end to end
               </h2>
             }
           />
@@ -220,18 +220,17 @@ class Home extends Component {
               <p className="col-xs-12 col-sm-10 col-md-9 col-lg-7 col-xl-6 section-copy">
                 I came to product design through front-end work, so I spec the way engineers read:
                 every component arrives with its states, validation rules, responsive behavior, and
-                accessibility expectations written down — not discovered in a code review. That
-                background changes the questions I ask, not the work I do: I flag what the backend
-                can’t promise before it becomes a UI bug, and I’m in the pull requests when a state
-                I drew meets data I didn’t expect.
+                accessibility expectations written down, before anyone finds them in a code review.
+                That background changes the questions I ask. I flag what the backend can’t promise
+                before it becomes a UI bug, and I’m in the pull requests when a state I drew meets
+                data I didn’t expect.
               </p>
             }
           />
           <Row
             content={
               <p className="col-xs-12 col-sm-10 col-md-9 col-lg-7 col-xl-6 section-copy artifacts-copy">
-                It’s still design work — the spec exists so the intent survives the build. Here’s
-                the shape of one, end to end.
+                It’s still design work. The spec exists so the intent survives the build.
               </p>
             }
           />
@@ -258,9 +257,9 @@ class Home extends Component {
           <Row
             content={
               <p className="col-xs-12 col-sm-10 col-md-9 col-lg-7 col-xl-6 section-copy">
-                If any of this sounds like what your team is working on — product design roles,
-                complex product systems, design systems, or AI and data workflows — I’d be glad to
-                hear about it. A short note on what you’re building is plenty; no pitch required.
+                If any of this sounds like what your team is working on, whether that’s a product
+                design role, a complex product system, a design system, or AI and data workflows,
+                I’d be glad to hear about it. A short note on what you’re building is plenty.
               </p>
             }
           />

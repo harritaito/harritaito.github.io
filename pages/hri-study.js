@@ -239,8 +239,8 @@ class Languagerobot extends Component {
                       content={
                         <ul className={pStyle + " list"}>
                           <li>
-                            Speech recognition failed often enough that the team had to design for
-                            breakdown, not for a perfect voice UI.
+                            Speech recognition failed often enough that the team had to treat
+                            breakdown as the normal case.
                           </li>
                           <li>
                             The robot had to behave predictably in front of young children, where
@@ -251,7 +251,7 @@ class Languagerobot extends Component {
                             role instead of pretending the robot could replace it.
                           </li>
                           <li>
-                            The final concept was evaluated as a concept, not validated as a
+                            The final concept was evaluated as a concept and never validated as a
                             production classroom system.
                           </li>
                         </ul>

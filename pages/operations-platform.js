@@ -233,11 +233,11 @@ const OperationsPlatformCase = () => (
                 <Row
                   content={
                     <p className={pStyle}>
-                      A workflow is really a chain of decisions: who may proceed, what needs
-                      checking, when an exception escalates. Identifying every decision point — what
-                      information it needs, who is authorized to make it, and what happens on each
-                      branch — is the analysis that lets a product support the workflow instead of
-                      just digitizing its paperwork.
+                      A workflow is a chain of decisions: who may proceed, what needs checking, when
+                      an exception escalates. Identifying every decision point — what information it
+                      needs, who is authorized to make it, and what happens on each branch — is the
+                      analysis that lets a product support the workflow instead of just digitizing
+                      its paperwork.
                     </p>
                   }
                 />
@@ -298,7 +298,7 @@ const OperationsPlatformCase = () => (
                       itself a design decision: the first journeys must be complete enough that
                       people can move their real work over, or the old tools stay authoritative and
                       the product becomes one more parallel system. Prioritization here means
-                      choosing end-to-end slices of the workflow, not features.
+                      choosing end-to-end slices of the workflow rather than individual features.
                     </p>
                   }
                 />
@@ -327,8 +327,8 @@ const OperationsPlatformCase = () => (
                       With the model and priorities set, the interface work is about making dense
                       operational information scannable and the next required action obvious — for
                       each role, at each state of the work. Prototypes earn their keep in this
-                      domain by being tested against real scenarios: the messy case, the exception,
-                      the handoff, not just the happy path.
+                      domain by being tested against the scenarios that hurt: the messy case, the
+                      exception, the handoff.
                     </p>
                   }
                 />
