@@ -4,6 +4,12 @@ Date: 2026-09-01
 Scope: source, content, accessibility, security, performance, testing, and deployment  
 Status: proposed; no production behavior changed
 
+## Progress
+
+- 2026-09-01: `SEC-01` and `SEC-02` completed. The production dependency audit reports zero
+  vulnerabilities, and `prop-types` is now declared directly. Tests, lint, build, and export
+  verification pass with the patched dependency graph.
+
 ## Purpose
 
 This audit turns repository evidence into a sequenced improvement program. It deliberately
@@ -34,7 +40,7 @@ acceptance criteria.
 ### Security and release integrity
 
 
-#### SEC-01 — P0 (confirmed)
+#### SEC-01 — completed
 
 - **Evidence and impact:** Production audit reports high-severity advisories through `next`,
   `postcss`, `sharp`, `js-yaml`, and `nanoid`; dependency ranges and the PostCSS override live in
@@ -43,7 +49,7 @@ acceptance criteria.
   document which server-only advisories are unreachable in a static deployment.
 - **Verification:** `npm audit --omit=dev`; tests; serial build; inspect lock diff.
 
-#### SEC-02 — P1 (confirmed)
+#### SEC-02 — completed
 
 - **Evidence and impact:** `prop-types` is imported by components such as `ProjectPage`,
   `InViewport`, and `ProjectIcon` but is not declared; `npm ls prop-types --depth=0` is empty. The
