@@ -3,6 +3,9 @@
 - **Date:** 2026-09-01
 - **Scope:** source, content, accessibility, security, performance, testing, and deployment
 - **Status:** proposed; Phase 0 remediation is in progress
+Date: 2026-09-01  
+Scope: source, content, accessibility, security, performance, testing, and deployment  
+Status: proposed; no production behavior changed
 
 ## Progress
 
@@ -74,6 +77,7 @@ acceptance criteria.
   step rejects plaintext.
 
 #### SEC-04 — completed
+#### SEC-04 — P1 (confirmed)
 
 - **Evidence and impact:** `scripts/verify-out.js` checks export structure but does not detect
   plaintext protected content or prove encryption completed.
@@ -89,6 +93,7 @@ acceptance criteria.
 - **Verification:** Workflow lint; inspect resolved action SHAs; successful Pages deployment.
 
 #### SEC-06 — completed
+#### SEC-06 — P2 (confirmed)
 
 - **Evidence and impact:** `getArticleSlugs` concatenates public and private slugs while
   `directoryFor` silently prefers private. Duplicate slugs can shadow content or create duplicate
@@ -97,6 +102,7 @@ acceptance criteria.
 - **Verification:** Unit test with colliding fixtures; build must fail descriptively.
 
 #### SEC-07 — completed
+#### SEC-07 — P1 (confirmed)
 
 - **Evidence and impact:** The deployment workflow runs on pushes to `master` and manual dispatch,
   but not pull requests. Repository-owned checks can therefore run only after merge.
