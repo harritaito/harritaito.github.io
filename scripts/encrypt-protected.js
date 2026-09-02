@@ -15,7 +15,9 @@ const matter = require("gray-matter");
 
 const rootDir = path.join(__dirname, "..");
 const privateDir = path.join(rootDir, "content", "private");
+const manifestPath = path.join(rootDir, "content", "protected-articles.json");
 const outDir = path.join(rootDir, "out");
+const outputManifestPath = path.join(outDir, ".protected-articles.json");
 const writingOutDir = path.join(outDir, "writing");
 const nextDataDir = path.join(outDir, "_next", "data");
 
@@ -62,9 +64,46 @@ function protectedSlugs() {
     .map((file) => file.replace(/\.md$/, ""));
 }
 
-const slugs = protectedSlugs();
+function expectedProtectedSlugs() {
+  if (!fs.existsSync(manifestPath)) {
+    fail(`missing protected article manifest: ${relativePath(manifestPath)}`);
+  }
+
+  let slugs;
+  try {
+    slugs = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
+  } catch (error) {
+    fail(`invalid protected article manifest: ${error.message}`);
+  }
+
+  if (!Array.isArray(slugs) || slugs.some((slug) => typeof slug !== "string" || !slug.trim())) {
+    fail(`${relativePath(manifestPath)} must contain an array of non-empty slug strings`);
+  }
+
+  const normalized = [...new Set(slugs)].sort();
+  if (normalized.length !== slugs.length) {
+    fail(`${relativePath(manifestPath)} contains duplicate slugs`);
+  }
+  return normalized;
+}
+
+const slugs = protectedSlugs().sort();
+const expectedSlugs = expectedProtectedSlugs();
+const missingSlugs = expectedSlugs.filter((slug) => !slugs.includes(slug));
+const untrackedSlugs = slugs.filter((slug) => !expectedSlugs.includes(slug));
+
+if (missingSlugs.length > 0) {
+  fail(`expected protected source missing for: ${missingSlugs.join(", ")}`);
+}
+if (untrackedSlugs.length > 0) {
+  fail(
+    `protected article manifest is missing: ${untrackedSlugs.join(", ")}. ` +
+      `Update ${relativePath(manifestPath)} before building.`,
+  );
+}
 
 if (slugs.length === 0) {
+  fs.writeFileSync(outputManifestPath, `${JSON.stringify({ slugs: [] })}\n`);
   console.log("encrypt-protected: no protected articles, nothing to encrypt.");
   process.exit(0);
 }
@@ -101,3 +140,6 @@ for (const slug of slugs) {
     }
   }
 }
+
+fs.writeFileSync(outputManifestPath, `${JSON.stringify({ slugs })}\n`);
+console.log(`encrypt-protected: wrote ${relativePath(outputManifestPath)}`);
