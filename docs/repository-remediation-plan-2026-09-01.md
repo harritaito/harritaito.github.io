@@ -1,8 +1,8 @@
 # Repository remediation plan
 
-Date: 2026-09-01  
-Scope: source, content, accessibility, security, performance, testing, and deployment  
-Status: proposed; no production behavior changed
+- **Date:** 2026-09-01
+- **Scope:** source, content, accessibility, security, performance, testing, and deployment
+- **Status:** proposed; Phase 0 remediation is in progress
 
 ## Progress
 
