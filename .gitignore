@@ -22,4 +22,4 @@ yarn-error.log*
 
 # password-protected article sources — must never reach the public repo.
 # Only their encrypted built HTML reaches the deployed build output.
-/content/private
+/content/private/
