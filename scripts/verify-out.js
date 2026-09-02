@@ -5,6 +5,8 @@ const rootDir = path.join(__dirname, "..");
 const outDir = path.join(rootDir, "out");
 const cnameSourcePath = path.join(rootDir, "CNAME");
 const cnameOutputPath = path.join(outDir, "CNAME");
+const protectedManifestPath = path.join(rootDir, "content", "protected-articles.json");
+const protectedOutputManifestPath = path.join(outDir, ".protected-articles.json");
 
 const requiredFiles = [
   "index.html",
@@ -17,6 +19,7 @@ const requiredFiles = [
   "writing.html",
   ".nojekyll",
   "CNAME",
+  ".protected-articles.json",
 ];
 
 const requiredDirectories = ["_next", "static"];
@@ -48,6 +51,15 @@ function assertDirectory(filePath) {
   }
 }
 
+function readJson(filePath, label) {
+  try {
+    return JSON.parse(fs.readFileSync(filePath, "utf8"));
+  } catch (error) {
+    failures.push(`Invalid ${label}: ${relativePath(filePath)} (${error.message})`);
+    return null;
+  }
+}
+
 assertDirectory(outDir);
 
 for (const fileName of requiredFiles) {
@@ -73,6 +85,42 @@ if (fs.existsSync(cnameSourcePath) && fs.existsSync(cnameOutputPath)) {
   }
 } else if (!fs.existsSync(cnameSourcePath)) {
   failures.push(`Missing file: ${relativePath(cnameSourcePath)}`);
+}
+
+if (fs.existsSync(protectedManifestPath) && fs.existsSync(protectedOutputManifestPath)) {
+  const expectedSlugs = readJson(protectedManifestPath, "protected article manifest");
+  const outputManifest = readJson(protectedOutputManifestPath, "protected export manifest");
+
+  if (Array.isArray(expectedSlugs) && outputManifest && Array.isArray(outputManifest.slugs)) {
+    const expected = [...expectedSlugs].sort();
+    const actual = [...outputManifest.slugs].sort();
+    if (JSON.stringify(expected) !== JSON.stringify(actual)) {
+      failures.push(
+        `Protected export manifest mismatch: expected ${expected.join(", ") || "(none)"}, ` +
+          `got ${actual.join(", ") || "(none)"}`,
+      );
+    }
+
+    for (const slug of expected) {
+      assertFile(path.join(outDir, "writing", `${slug}.html`));
+      const dataRoot = path.join(outDir, "_next", "data");
+      if (fs.existsSync(dataRoot)) {
+        for (const buildId of fs.readdirSync(dataRoot)) {
+          const dataPath = path.join(dataRoot, buildId, "writing", `${slug}.json`);
+          if (fs.existsSync(dataPath)) {
+            failures.push(`Protected page data was not removed: ${relativePath(dataPath)}`);
+          }
+        }
+      }
+    }
+  } else if (outputManifest && !Array.isArray(outputManifest.slugs)) {
+    failures.push(
+      `Invalid protected export manifest: ${relativePath(protectedOutputManifestPath)} ` +
+        `must contain a slugs array`,
+    );
+  }
+} else if (!fs.existsSync(protectedManifestPath)) {
+  failures.push(`Missing file: ${relativePath(protectedManifestPath)}`);
 }
 
 if (failures.length > 0) {

@@ -1,5 +1,8 @@
 # Repository remediation plan
 
+- **Date:** 2026-09-01
+- **Scope:** source, content, accessibility, security, performance, testing, and deployment
+- **Status:** proposed; Phase 0 remediation is in progress
 Date: 2026-09-01  
 Scope: source, content, accessibility, security, performance, testing, and deployment  
 Status: proposed; no production behavior changed
@@ -9,6 +12,11 @@ Status: proposed; no production behavior changed
 - 2026-09-01: `SEC-01` and `SEC-02` completed. The production dependency audit reports zero
   vulnerabilities, and `prop-types` is now declared directly. Tests, lint, build, and export
   verification pass with the patched dependency graph.
+- 2026-09-01: `SEC-04`, `SEC-06`, and `SEC-07` completed. Protected exports now leave a verified
+  completion manifest, expected protected sources cannot silently disappear, article slug collisions
+  fail the build, and pull requests run validation without deployment permissions. `SEC-03` is
+  mitigated by the fail-closed deployment gate; eliminating the intermediate plaintext directory
+  remains open.
 
 ## Purpose
 
@@ -68,6 +76,7 @@ acceptance criteria.
 - **Verification:** Fixture containing a unique secret; interrupt-before-encrypt test; assert deploy
   step rejects plaintext.
 
+#### SEC-04 — completed
 #### SEC-04 — P1 (confirmed)
 
 - **Evidence and impact:** `scripts/verify-out.js` checks export structure but does not detect
@@ -83,6 +92,7 @@ acceptance criteria.
 - **Proposed correction:** Pin actions to commit SHAs and use Dependabot or Renovate for updates.
 - **Verification:** Workflow lint; inspect resolved action SHAs; successful Pages deployment.
 
+#### SEC-06 — completed
 #### SEC-06 — P2 (confirmed)
 
 - **Evidence and impact:** `getArticleSlugs` concatenates public and private slugs while
@@ -91,6 +101,7 @@ acceptance criteria.
 - **Proposed correction:** Detect duplicates and fail with both source paths.
 - **Verification:** Unit test with colliding fixtures; build must fail descriptively.
 
+#### SEC-07 — completed
 #### SEC-07 — P1 (confirmed)
 
 - **Evidence and impact:** The deployment workflow runs on pushes to `master` and manual dispatch,
