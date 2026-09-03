@@ -53,23 +53,52 @@ float snoise(vec3 v){
 const VERTEX_SHADER = `
 uniform float uTime;
 varying float vDisplacement;
+varying vec3 vNormalV;
+varying vec3 vViewPos;
 ${NOISE_GLSL}
+float fbm(vec3 p){
+  float f = 0.0;
+  f += 0.60 * snoise(p);
+  f += 0.30 * snoise(p * 2.0 + 4.7);
+  f += 0.10 * snoise(p * 4.0 + 9.1);
+  return f;
+}
 void main(){
-  float n = snoise(normal * 1.4 + uTime * 0.25);
+  float n = fbm(normal * 0.85 + uTime * 0.18);
   vDisplacement = n;
-  vec3 displaced = position + normal * n * 0.32;
-  gl_Position = projectionMatrix * modelViewMatrix * vec4(displaced, 1.0);
+  vec3 displaced = position + normal * n * 0.30;
+  vec4 mv = modelViewMatrix * vec4(displaced, 1.0);
+  vViewPos = mv.xyz;
+  vNormalV = normalize(normalMatrix * normal);
+  gl_Position = projectionMatrix * mv;
 }
 `;
 
 const FRAGMENT_SHADER = `
 uniform vec3 uColorA;
 uniform vec3 uColorB;
+uniform vec3 uColorC;
 varying float vDisplacement;
+varying vec3 vNormalV;
+varying vec3 vViewPos;
 void main(){
-  float t = smoothstep(-1.0, 1.0, vDisplacement);
-  vec3 color = mix(uColorA, uColorB, t);
-  gl_FragColor = vec4(color, 0.85);
+  vec3 N = normalize(vNormalV);
+  vec3 V = normalize(-vViewPos);
+  vec3 L = normalize(vec3(0.4, 0.7, 0.6));
+  float diff = clamp(dot(N, L), 0.0, 1.0);
+  float lighting = 0.5 + diff * 0.6;
+  float fresnel = pow(1.0 - clamp(dot(N, V), 0.0, 1.0), 3.0);
+  // Hue: warm to purple where lit/upper, cool to blue where shadowed/lower.
+  float vertical = clamp(vViewPos.y * 0.35 + 0.5, 0.0, 1.0);
+  float hue = clamp(diff * 0.55 + vertical * 0.45, 0.0, 1.0);
+  vec3 base = mix(uColorB, uColorA, hue);
+  vec3 color = base * lighting;
+  color = mix(color, uColorC, diff * 0.12);
+  color += uColorC * fresnel * 0.5;
+  // Feather the silhouette: rim stays luminous but turns semi-transparent
+  // so the form dissolves into the page instead of a hard cut.
+  float alpha = 0.92 - fresnel * 0.32;
+  gl_FragColor = vec4(color, alpha);
 }
 `;
 
@@ -88,16 +117,6 @@ class MorphingMesh extends Component {
     }
 
     const canvas = document.createElement("canvas");
-    let gl = null;
-    try {
-      gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
-    } catch (error) {
-      return;
-    }
-    if (!gl) {
-      // No WebGL support — leave the empty container, graceful fallback.
-      return;
-    }
 
     this.prefersReducedMotion =
       typeof window.matchMedia === "function"
@@ -108,7 +127,7 @@ class MorphingMesh extends Component {
 
     this.scene = new THREE.Scene();
 
-    this.camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
+    this.camera = new THREE.PerspectiveCamera(45, width / (height || 1), 0.1, 100);
     this.camera.position.z = 3.2;
 
     try {
@@ -133,6 +152,7 @@ class MorphingMesh extends Component {
         uTime: { value: 0 },
         uColorA: { value: new THREE.Color(colors.accentPurple) },
         uColorB: { value: new THREE.Color(colors.accentBlue) },
+        uColorC: { value: new THREE.Color("#c3b3ff") },
       },
     });
 
@@ -213,8 +233,10 @@ class MorphingMesh extends Component {
     this.lastTime = now;
 
     this.material.uniforms.uTime.value += delta;
-    this.mesh.rotation.y += delta * 0.15;
-    this.mesh.rotation.x += delta * 0.05;
+    this.mesh.rotation.y += delta * 0.12;
+    this.mesh.rotation.x += delta * 0.04;
+    const breathe = 1 + Math.sin(this.material.uniforms.uTime.value * 0.5) * 0.03;
+    this.mesh.scale.setScalar(breathe);
 
     this.renderer.render(this.scene, this.camera);
     this.animationFrame = window.requestAnimationFrame(this.renderFrame);
@@ -231,7 +253,7 @@ class MorphingMesh extends Component {
       }
       const { clientWidth: width, clientHeight: height } = this.container.current;
       this.renderer.setSize(width, height);
-      this.camera.aspect = width / height;
+      this.camera.aspect = width / (height || 1);
       this.camera.updateProjectionMatrix();
       if (this.prefersReducedMotion) {
         this.renderer.render(this.scene, this.camera);
