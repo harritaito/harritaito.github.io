@@ -14,6 +14,9 @@ import SpecSheet from "../components/SpecSheet";
 import HighlightUnderline from "../components/design-system/HighlightUnderline";
 import { colors, radii } from "../components/design-system/tokens";
 
+// Set to true when the process section is ready to show again.
+const SHOW_HOW_I_WORK = false;
+
 class Home extends Component {
   constructor() {
     super();
@@ -153,13 +156,18 @@ class Home extends Component {
           <Row
             content={
               <div className="col-xs-12 col-sm-12 col-md-11 col-lg-10 col-xl-9">
-                <FocusAreas />
+                <FocusAreas showHowIWork={SHOW_HOW_I_WORK} />
               </div>
             }
           />
         </section>
 
-        <section className="section" id="how-i-work" aria-labelledby="how-i-work-heading">
+        <section
+          className="section"
+          id="how-i-work"
+          aria-labelledby="how-i-work-heading"
+          hidden={!SHOW_HOW_I_WORK}
+        >
           <Row
             content={
               <h2
