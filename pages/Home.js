@@ -14,7 +14,8 @@ import SpecSheet from "../components/SpecSheet";
 import HighlightUnderline from "../components/design-system/HighlightUnderline";
 import { colors, radii } from "../components/design-system/tokens";
 
-// Set to true when the process section is ready to show again.
+// Set each flag to true when its section is ready to show again.
+const SHOW_FOCUS_AREAS = false;
 const SHOW_HOW_I_WORK = false;
 
 class Home extends Component {
@@ -134,7 +135,12 @@ class Home extends Component {
           ))}
         </section>
 
-        <section className="section" id="focus" aria-labelledby="focus-heading">
+        <section
+          className="section"
+          id="focus"
+          aria-labelledby="focus-heading"
+          hidden={!SHOW_FOCUS_AREAS}
+        >
           <Row
             content={
               <h2
