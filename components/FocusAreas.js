@@ -103,10 +103,7 @@ const FocusAreas = ({ showHowIWork = true }) => (
         <p className="focus-area__label">Proof today</p>
         <ul className="focus-area__links">
           {area.now.map((item) => (
-            <li
-              key={item.href + item.label}
-              hidden={!showHowIWork && item.href === "/#how-i-work"}
-            >
+            <li key={item.href + item.label} hidden={!showHowIWork && item.href === "/#how-i-work"}>
               <Link href={item.href} legacyBehavior>
                 <a className="focus-area__link">
                   {item.label}
