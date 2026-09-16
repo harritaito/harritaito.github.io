@@ -87,7 +87,7 @@ const FOCUS_AREAS = [
   },
 ];
 
-const FocusAreas = () => (
+const FocusAreas = ({ showHowIWork = true }) => (
   <div className="focus-areas">
     {FOCUS_AREAS.map((area) => (
       <section
@@ -103,7 +103,10 @@ const FocusAreas = () => (
         <p className="focus-area__label">Proof today</p>
         <ul className="focus-area__links">
           {area.now.map((item) => (
-            <li key={item.href + item.label}>
+            <li
+              key={item.href + item.label}
+              hidden={!showHowIWork && item.href === "/#how-i-work"}
+            >
               <Link href={item.href} legacyBehavior>
                 <a className="focus-area__link">
                   {item.label}
